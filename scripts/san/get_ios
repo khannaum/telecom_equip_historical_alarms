@@ -1,0 +1,10 @@
+BEGIN{
+ ORS=""
+}
+{ 
+if(NR==1){print ""}
+print $0 
+if($0~/Predictive Failure Analysis/){print "\n"}
+
+
+}

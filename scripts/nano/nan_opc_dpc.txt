@@ -1,0 +1,2 @@
+swversion|DPC|0PC
+|("nanoGSM BSC SR4.1 v179d0")|5162|7677|("4.60.56")|

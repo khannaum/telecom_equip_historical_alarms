@@ -1,0 +1,42 @@
+#!/bin/sh
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd /home/NCOR6649/scripts/daily_gen/clean_gen
+
+#zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z   | grep -v "E__" |  sed "s;23:59:59;11:59:59 PM;g" | sed "s;00:00:00;00:00:00 AM;g" | sort -u |  perl perl_eas_consol.pl    > eas_main_f
+#zcat  /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z  | grep "E__"|   sort -u |  perl perl_eas_consol.pl    >> eas_main_f
+
+zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z |  sed "s/ |/|/g" | sort -u | egrep -e "00:00:00|12:00:00|23:59:59" | egrep "AM|PM" | sed "s;00:00:00;00:00:00 AM;g" | sed "s;23:59:59;11:59:59 PM;g" | sed "s;12:;00:;g" | sort -u |  perl perl_eas_consol.pl   > eas_main_f
+zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z | sed "s/ |/|/g" | sort -u | egrep -e "00:00:00|12:00:00|23:59:59" | egrep -v "AM|PM" |  sort -u |  perl perl_eas_consol.pl   >> eas_main_f
+zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z | sed "s/ |/|/g" | sort -u | egrep -v "00:00:00|12:00:00|23:59:59" | sort -u |  perl perl_eas_consol.pl >> eas_main_f
+cat eas_main_f |  nawk 'FS="|", OFS="|" { split($1,dd,"~");print dd[1] } ' |  sort -u   > keyf
+cat eas_main_f |  nawk 'FS="|", OFS="|" { print $1 } ' | sort -u  > key_file
+
+perl easc.pl | nawk 'FS="~" , OFS="|" { print $1 } '  > gen_sites_7
+
+
+
+zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z | egrep -v -f gen_sites_7  > nwd1_gen_run_$DAY$MONTH$YEAR
+zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z | egrep  -f  gen_sites_7 |  perl perl_eas_excl.pl >> nwd1_gen_run_$DAY$MONTH$YEAR
+
+rm -f nwd1_gen_run_$DAY$MONTH$YEAR.Z
+compress nwd1_gen_run_$DAY$MONTH$YEAR
+
+mv nwd1_gen_run_$DAY$MONTH$YEAR.Z /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z
+
+
+
+#zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z | grep "00:00:00" | egrep "AM|PM" | sed "s;00:00:00;00:00:00 AM;g" | sed "s;12:;00:;g" | sort -u |  perl perl_eas_consol.pl
+#zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z | grep "12:00:00" | egrep "AM|PM" | sed "s;00:00:00;00:00:00 AM;g" | sed "s;12:;00:;g" | sort -u |  perl perl_eas_consol.pl
+#zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z | grep "23:59:59" |  egrep "AM|PM" | sed "s;23:59:59;11:59:59 PM;g"  | sort -u |  perl perl_eas_consol.pl
+
+# zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z | egrep -e "00:00:00|12:00:00|23:59:59" | egrep "AM|PM" | sed "s;00:00:00;00:00:00 AM;g" | sed "s;23:59:59;11:59:59 PM;g" | sed "s;12:;00:;g" | sort -u 
+# zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z | egrep -v "00:00:00|12:00:00|23:59:59" | sort -u |  perl perl_eas_consol.pl

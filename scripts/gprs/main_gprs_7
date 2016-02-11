@@ -1,0 +1,60 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+
+cd /home/NCOR6649/scripts/gprs 
+
+
+zcat /tmp/ev_logs/*.txt.Z  | perl search.pl -l "GPRS Unavailable - No PDCHs|EGPRS Unavailable - No EGPRS" | perl search.pl -l "equipmentFailureEvent" | nawk -f first > n_rsl.txt
+
+zcat /tmp/ev_logs/*.txt.Z  | perl search.pl -l "GPRS Unavailable - No GPRS" | perl search.pl -l "qualityOfServiceFailureEvent" | nawk -f first_no >> n_rsl.txt
+
+
+
+nawk -f getmain1 n_rsl.txt|sort -u  > indexs
+
+  nawk -f get_rsl_n n_rsl.txt |  nawk -f sep_bsc_site_date | sort -u > /home/NCOR6649/logs/gprs/gprs_mot_$DAY-$MONTH 
+
+rm -f /home/NCOR6649/logs/gprs/gprs_mot_$DAY-$MONTH.Z
+rm -f /home/NCOR6649/logs/gprs/gprs_hu_$DAY-$MONTH.Z
+
+compress /home/NCOR6649/logs/gprs/gprs_mot_$DAY-$MONTH 
+
+rm -f n_rsl.txt
+
+/bin/sh /home/NCOR6649/scripts/alcatel/main_gprs
+
+
+zcat /home/NCOR6649/logs/gprs/h_omc*_gprs_logs_*$DAY*.txt.Z | sort -u > /home/NCOR6649/logs/gprs/gprs_hu_$DAY-$MONTH
+
+compress /home/NCOR6649/logs/gprs/gprs_hu_$DAY-$MONTH
+
+
+gprs_mot=gprs_mot_$DAY-$MONTH
+gprs_alu=gprs_alu_$DAY-$MONTH
+gprs_hu=gprs_hu_$DAY-$MONTH
+
+echo " gprs report " > gprs_ste
+
+/usr/bin/uuencode /home/NCOR6649/logs/gprs/gprs_mot_$DAY-$MONTH.Z  $gprs_mot.Z | mailx -s $gprs_mot nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,tehmina.iftikhar@mobilink.net < gprs_ste
+
+/usr/bin/uuencode /home/NCOR6649/logs/gprs/gprs_alu_$DAY-$MONTH.Z  $gprs_alu.Z | mailx -s $gprs_alu nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,tehmina.iftikhar@mobilink.net < gprs_ste
+/usr/bin/uuencode /home/NCOR6649/logs/gprs/gprs_hu_$DAY-$MONTH.Z  $gprs_hu.Z | mailx -s $gprs_hu nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,tehmina.iftikhar@mobilink.net < gprs_ste
+
+
+echo "### End #####"
+
+
+
+ 
+ 

@@ -1,0 +1,130 @@
+#!/bin/ksh
+
+# cd /home/oann/scripts/core/h_tg
+
+
+#user=`echo '"noc_core"'`
+#echo  "$user"
+#password=` echo '"Mobilink123"' `
+#echo "$password"
+
+server="10.31.24.21"
+
+Ser=`echo  "\"$server---O&M System\""`
+last=`echo "\"---O&MSystem\""`
+#echo "$Ser"
+
+#for file in `cat ll`;do echo " ";done
+
+#grep "BSGSM" /usr/gsm/config/global/NE.MAP|awk '{print $2}'>./bss_name
+
+# echo " " > ./gath
+
+echo " " > final
+ echo " " > raw
+echo "" > f_gath
+ echo "" > gath
+echo "" > test
+ dos2unix -ascii -850 *.csv  > mfip.txt;
+# cat mfip.csv  | dos2unix -ascii -850 > mfip.txt
+for i in `cat mfip.txt |   perl -e 's/ //g' -w -p -i `
+do
+
+echo $i
+
+echo "" > gath
+
+#printf $i
+
+msc_name=`printf $i | awk ' { FS="," ;print $1 } '`
+msc=`printf $i | awk ' { FS="," ;print $2 } '`
+m_user=`echo $i | awk ' { FS="," ;print $3 } '`
+m_passwd=`echo $i | awk ' { FS="," ;print $4 } '`
+m_ser=`echo  "\"$msc---O&M System\""`
+
+media=`echo $i | awk ' { FS="," ;print $6 } '`
+md_user=`echo $i | awk ' { FS="," ;print $7 } '`
+md_passwd=`echo $i | awk ' { FS="," ;print $8 } '`
+pt_code=`echo $i | awk ' { FS="," ;print $9 } '`
+echo $m_user
+
+
+
+ user=`echo  "\"$m_user\"" `
+ password=`echo "\"$m_passwd\"" ` 
+
+ echo  $msc
+ echo $user
+
+
+  (echo  "LGI:op=$user,PWd=$password,SER=$m_ser;";sleep 3 ; echo "DSP OFTK:;" ; sleep 20 ) | telnet  $msc 6000  > gath_f
+
+ cat gath_f | nawk -f comp | grep -v -i "test" > raw
+ echo "" > new
+
+for j in `cat raw`
+do
+echo $j
+
+off=`echo $j | awk ' { FS="|" ; print $2 } ' `
+DT=`echo $j | awk ' { FS="|" ; print $3 } ' `
+
+echo $off
+ (echo  "LGI:op=$user,PWd=$password,SER=$m_ser;";sleep 3 ; echo "DSP OFTS: STATE=FAULT, ON=\"$off\" ;" ; sleep 30 ) | telnet  $msc 6000  > test
+
+
+# cat test | nawk -f comp1  >> new
+
+cat test > ofts_falt
+
+
+# cat ofts_falt >> ofts_falt_f
+
+
+(echo  "LGI:op=$user,PWd=$password,SER=$m_ser;";sleep 3 ; echo "LST TKCDIST: ON=\"$off\"  ;  " ; sleep 60 ) | telnet $msc 6000 > ofc_test
+
+
+# cat ofc_test >> ofc_test_f
+
+ sh main_h_ddiu_test 
+
+done
+
+# (echo  "LGI:op=$user,PWd=$password,SER=$m_ser;";sleep 3 ; echo "LST TKCDIST: ON=\"$off\"  ;  " ; sleep 60 ) | tel
+##net  $msc 6000 > ofc_test
+
+
+
+#for jj in `cat new`
+#do
+#echo $jj
+
+#off=`echo $jj | awk ' { FS="|" ; print $1 } ' `
+#st_ic=`echo $jj | awk ' { FS="|" ; print $2 } ' `
+
+#et_ic=`echo $jj | awk ' { FS="|" ; print $3 } ' ` 
+
+#echo $off
+# (echo  "LGI:op=$user,PWd=$password,SER=$m_ser;";sleep 3 ; echo "LST OFCTKC: CDT=OFCCIC, QR=ALL, ON=\"$off\" , SCIC=$st_ic, ECIC=$et_ic  ;" ; sleep 60 ) | telnet  $msc 6000 > ofc_test   
+
+#cat ofc_test | nawk -f comp4 | grep -v "|direction|"  >> gath 
+
+# cat ofc_test >> wah_ofc
+
+
+ 
+done
+
+
+
+# LST OFCTKC: CDT=OFCCIC, QR=ALL,  ON=\"$off\" ,ON="S04KR", SCIC=416, ECIC=543;   
+ #   cat gath >> l_gath
+
+  perl getbsc1.pl $media $md_user $md_passwd $pt_code > raw_new
+
+ cat raw_new | tr -d '\015' | nawk -f comp2 | /usr/xpg4/bin/grep -vE "TID-|-----|\(N|FrNo-|of-|--" | sed '/^$/d'|  nawk -v ll=$msc_name ' { print ll,"_",$0 } '    >> final
+
+
+
+
+# nawk -f comp_last | nawk -v ll=$msc_name ' { print ll,"_",$0 } '    >> final

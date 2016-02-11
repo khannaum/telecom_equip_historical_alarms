@@ -1,0 +1,180 @@
+Trying 10.175.4.10...
+Connected to 10.175.4.10.
+Escape character is '^]'.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Welcome to MSOFTX3000 Operation and Maintenance Center
+Version : MSC9880 MSOFTX3000V100R008
+Copyright(c) Huawei. All Rights Reserved
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++    ISBHuawei-2        2011-10-14 09:25:30+05:00
+O&M    #351786
+%%LGI:op="noc_core",PWd="*****",SER="10.175.4.10---O&M System";%%
+RETCODE = 0  Operation succeeded
+
+noc_core logged in successfully
+---    END
+
++++    ISBHuawei-2        2011-10-14 09:25:34+05:00
+O&M    #351787
+%%LST ALMLOG:  CLRFLG=CLEARED-1&UNCLEARED-1, STARTAID=1705, ALVL=CRITICAL-1&MAJOR-1&MINOR-1&WARNING-1, ASS=POWER-1&ENV-1&SIG-1&TRUNK-1&HARDWARE-1&SOFTWARE-1&RUN
+-1&COMM-1&SERVICE-1&HANDLE-1, SD=2011&10&12;%%
+RETCODE = 0  Operation succeeded
+
+ALARM  110831      Fault  Major       Exchange  1705    Signaling       
+     Sync serial No.  =  217849    
+          Alarm name  =  MTP LINK FAILED
+   Alarm raised time  =  2011-10-14 08:54:29+05:00
+       Location info  =  Office Name=BISB188Z(45), Board Type=WBSG, Shelf 
+                         No.=1, Frame No.=7, Slot No.=15, Location No.=0, 
+                         Module No.=143, Link Name=BISB188Z_01(25), Link 
+                         Type=M2UA 64K, NI=National network, DPC=H'000DFA, 
+                         OPC=H'00142A, DSP Name = BISB188Z(26), SLC=1, Alarm 
+                         Reason=Link failed because M2UA link failed(Cause 
+                         Code=67)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2011-10-14 08:54:32+05:00
+          Module No.  =  143
+
+ALARM  110822      Fault  Major       Exchange  1705    Signaling       
+     Sync serial No.  =  217832    
+          Alarm name  =  MTP LINK FAILED
+   Alarm raised time  =  2011-10-14 06:41:05+05:00
+       Location info  =  Office Name=BISB188Z(45), Board Type=WBSG, Shelf 
+                         No.=1, Frame No.=7, Slot No.=15, Location No.=0, 
+                         Module No.=143, Link Name=BISB188Z_01(25), Link 
+                         Type=M2UA 64K, NI=National network, DPC=H'000DFA, 
+                         OPC=H'00142A, DSP Name = BISB188Z(26), SLC=1, Alarm 
+                         Reason=Link failed because M2UA link failed(Cause 
+                         Code=67)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2011-10-14 06:42:06+05:00
+          Module No.  =  143
+
+ALARM  107614      Fault  Major       Exchange  1705    Signaling       
+     Sync serial No.  =  211494    
+          Alarm name  =  MTP LINK FAILED
+   Alarm raised time  =  2011-10-13 16:22:39+05:00
+       Location info  =  Office Name=BISB188Z(45), Board Type=WBSG, Shelf 
+                         No.=1, Frame No.=7, Slot No.=15, Location No.=0, 
+                         Module No.=143, Link Name=BISB188Z_01(25), Link 
+                         Type=M2UA 64K, NI=National network, DPC=H'000DFA, 
+                         OPC=H'00142A, DSP Name = BISB188Z(26), SLC=1, Alarm 
+                         Reason=Link failed because M2UA link failed(Cause 
+                         Code=67)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2011-10-13 16:23:53+05:00
+          Module No.  =  143
+
+ALARM  107609      Fault  Major       Exchange  1705    Signaling       
+     Sync serial No.  =  211477    
+          Alarm name  =  MTP LINK FAILED
+   Alarm raised time  =  2011-10-13 16:21:44+05:00
+       Location info  =  Office Name=BISB188Z(45), Board Type=WBSG, Shelf 
+                         No.=1, Frame No.=7, Slot No.=15, Location No.=0, 
+                         Module No.=143, Link Name=BISB188Z_01(25), Link 
+                         Type=M2UA 64K, NI=National network, DPC=H'000DFA, 
+                         OPC=H'00142A, DSP Name = BISB188Z(26), SLC=1, Alarm 
+                         Reason=Link failed because M2UA link failed(Cause 
+                         Code=67)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2011-10-13 16:21:47+05:00
+          Module No.  =  143
+
+ALARM  106545      Fault  Major       Exchange  1705    Signaling       
+     Sync serial No.  =  209363    
+          Alarm name  =  MTP LINK FAILED
+   Alarm raised time  =  2011-10-13 12:06:54+05:00
+       Location info  =  Office Name=BISB188Z(45), Board Type=WBSG, Shelf 
+                         No.=1, Frame No.=7, Slot No.=15, Location No.=0, 
+                         Module No.=143, Link Name=BISB188Z_01(25), Link 
+                         Type=M2UA 64K, NI=National network, DPC=H'000DFA, 
+                         OPC=H'00142A, DSP Name = BISB188Z(26), SLC=1, Alarm 
+                         Reason=Link failed because M2UA link failed(Cause 
+                         Code=67)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2011-10-13 12:06:58+05:00
+          Module No.  =  143
+
+ALARM  106395      Fault  Major       Exchange  1705    Signaling       
+     Sync serial No.  =  209068    
+          Alarm name  =  MTP LINK FAILED
+   Alarm raised time  =  2011-10-13 11:17:21+05:00
+       Location info  =  Office Name=BISB188Z(45), Board Type=WBSG, Shelf 
+                         No.=1, Frame No.=7, Slot No.=15, Location No.=0, 
+                         Module No.=143, Link Name=BISB188Z_01(25), Link 
+                         Type=M2UA 64K, NI=National network, DPC=H'000DFA, 
+                         OPC=H'00142A, DSP Name = BISB188Z(26), SLC=1, Alarm 
+                         Reason=Link failed because M2UA link failed(Cause 
+                         Code=67)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2011-10-13 11:19:30+05:00
+          Module No.  =  143
+
+ALARM  106162      Fault  Major       Exchange  1705    Signaling       
+     Sync serial No.  =  208603    
+          Alarm name  =  MTP LINK FAILED
+   Alarm raised time  =  2011-10-13 05:10:44+05:00
+       Location info  =  Office Name=CH599(232), Board Type=WBSG, Shelf No.=1, 
+                         Frame No.=2, Slot No.=13, Location No.=0, Module 
+                         No.=137, Link Name=BCHD599Z_00(9), Link Type=M2UA 64K, 
+                         NI=National network, DPC=H'001DBF, OPC=H'00142C, DSP 
+                         Name = CHARSADDACITY_1(232), SLC=0, Alarm Reason=Link 
+                         failed because M2UA link failed(Cause Code=67)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2011-10-13 05:10:47+05:00
+          Module No.  =  137
+
+ALARM  106163      Fault  Major       Exchange  1705    Signaling       
+     Sync serial No.  =  208602    
+          Alarm name  =  MTP LINK FAILED
+   Alarm raised time  =  2011-10-13 05:10:44+05:00
+       Location info  =  Office Name=CH599(232), Board Type=WBSG, Shelf No.=1, 
+                         Frame No.=2, Slot No.=13, Location No.=0, Module 
+                         No.=137, Link Name=BCHD599Z_01(10), Link Type=M2UA 
+                         64K, NI=National network, DPC=H'001DBF, OPC=H'00142C, 
+                         DSP Name = CHARSADDACITY_1(232), SLC=1, Alarm 
+                         Reason=Link failed because M2UA link failed(Cause 
+                         Code=67)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2011-10-13 05:10:47+05:00
+          Module No.  =  137
+
+ALARM  102549      Fault  Major       Exchange  1705    Signaling       
+     Sync serial No.  =  201451    
+          Alarm name  =  MTP LINK FAILED
+   Alarm raised time  =  2011-10-12 12:59:13+05:00
+       Location info  =  Office Name=BISB479Z(47), Board Type=WBSG, Shelf 
+                         No.=0, Frame No.=1, Slot No.=12, Location No.=0, 
+                         Module No.=134, Link Name=BISB479Z_01(14), Link 
+                         Type=M2UA 64K, NI=National network, DPC=H'000C2F, 
+                         OPC=H'00142A, DSP Name = BISB479Z(43), SLC=1, Alarm 
+                         Reason=Link failed because M2UA link failed(Cause 
+                         Code=67)
+          Auto Clear  =  true                  
+          Module No.  =  134
+
+(Number of results = 9)
+---    END
+10.175.4.14nocfmMobilink1232011&10&12+++    HUAWEI UMG8900        2011-10-14 09:25:49
+ O&M    #2
+ %%LST ALMLOG:  CLRFLG=CLEARED-1&UNCLEARED-1, STARTAID=1705, ASS=POWER-1&ENV-1&SIG-1&TRUNK-1&HARDWARE-1&SOFTWARE-1&RUN-1&COMM-1&SERVICE-1&HANDLE-1,
+  SD=2011&10&12;%%
+ RETCODE = 60202  Unauthorized operation.
+ 
+ 
+ ---    END
+ 
+ 
+ 

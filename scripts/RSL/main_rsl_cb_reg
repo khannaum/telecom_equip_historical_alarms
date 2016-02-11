@@ -1,0 +1,32 @@
+#!/bin/sh
+
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd  /home/NCOR6649/scripts/RSL/
+
+
+#join -t "," -a1 -o 1.2 2.2 1.5 1.6 1.7 -e "--MISSING--" <(cat /etc/passwd | awk -F: '{$4=sprintf("%06s", $4);print $4","$1","$2","$3","$6","$7","$5}' | sort) <(cat /etc/group | awk -F: '{$3=sprintf("%06s", $3);print $3","$1}' | sort)
+
+zcat /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv.Z | nawk 'FS="|" , OFS="|" { gsub(/[ \t]+$/,"",$7);print $0 } ' | sort -u |  nawk 'FS="|" , OFS="|" { print toupper(substr($3,1,7)),$0 } '  |  nawk 'FS="|" , OFS="|" { $1=sprintf("%07s", $1) ; print $0 } ' | sort  > A
+dos2unix regsheet.csv > regsheet1.csv
+cat regsheet1.csv | sed "s/,/|/g" > regsheet.txt 
+cat regsheet.txt  | nawk 'FS="|" , OFS="|" { $1=toupper(sprintf("%07s", $1)) ; print $0 } ' | sort  > B
+
+join -t "|" -a1 -o 2.1,1.2,1.3,1.4,1.5,1.6,1.7,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.17,2.18  -e "missing" A B  | sed "s/|/,/g" | nawk 'FS="," , OFS="," { gsub(/[ \t]+$/,"",$7);print $0 } ' | sort -u > /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv
+
+rm -f /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv.Z
+rm -f A
+rm -f B
+
+compress /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv
+
+
+
+
+
+
+
+ # /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv

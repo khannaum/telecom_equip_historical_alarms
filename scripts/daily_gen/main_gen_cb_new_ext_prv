@@ -1,0 +1,127 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd  /home/NCOR6649/scripts/daily_gen/ 
+
+nwd1_gen_run=nwd1_gen_run_$DAY$MONTH$YEAR
+
+# Huawei
+zcat /home/NCOR6649/logs/huawei/lapd_genset_low*_vol_$DAY$MONTH$YEAR.txt.Z |  /usr/xpg4/bin/grep -i -E "genset|DG Running|GenSet|Custom Environment|genset|DG Running|GenSet|Custom Environment|Genset Operation|Generator " |  perl perl_d_gen.pl | nawk 'FS="|" , OFS="|" { print $0,"Genset On"} ' | sort -u > /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR
+ 
+cat /home/NCOR6649/daily_h_gen.txt | /usr/xpg4/bin/grep -i -E "genset|DG Running|GenSet|Custom Environment|genset|DG Running|GenSet|Custom Environment|Genset Operation|Generator" |  perl perl_h_gen_alm.pl | nawk 'FS="|" , OFS="|" { print $0,"Genset On"} ' | sort -u >> /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR
+
+# Transmission
+#zcat /home/NCOR6649/logs/txngen/txn_rep_gen_$YEAR$MONTH$DAY.Z | perl perl_txn_gen.pl | nawk 'FS="|" , OFS="|" {split($3,oc," ");split(oc[1],coc,"/"); newoc=coc[1]"/"coc[2]"/"coc[3]" "oc[2]; split($4,cl," ");split(cl[1],ccl,"/"); newcl=ccl[1]"/"ccl[2]"/"ccl[3]" "cl[2];print $1,$2,newoc,newcl,"Genset On"} ' >> /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR
+
+# ZTE 
+zcat /home/NCOR6649/logs/zte/zte_eas_$YEAR$MONTH$DAY.Z |  grep -i "genset" | sed "s;\";;g"  >> /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR
+
+#/home/NCOR6649/logs/zte/zte_eas_$PYEAR$PMONTH$PDAY
+
+
+
+#  ALU
+
+
+ zcat /home/NCOR6649/logs/eas/alu_eas_$DAY-$MONTH.Z  | sort -u | grep -i genset |  nawk 'FS="|" , OFS="|" { print $1,$2,"",$3,$4,$5 } ' |  perl perl_d_gen_alu.pl >> /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR 
+
+
+
+zcat /home/NCOR6649/logs/genset/alu_cur_gen.txt.Z | sort -u | /usr/xpg4/bin/grep -i -E "genset|DG Running|GenSet|Custom Environment" | grep -i "Alcatel" | nawk 'FS="|" , OFS="|" { print $2,$3,$5,$6 } ' |sort -u |   perl perl_alu_gen_alm.pl >> /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR
+
+# Erricson
+
+zcat /home/NCOR6649/logs/err/erc_gen_$DAY$MONTH$YEAR.Z  | nawk 'FS="|" , OFS="|" { print $0,"Genset On" } '| sort -u >> /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR
+
+
+# Mot
+
+ zcat /home/NCOR6649/logs/eas/mot_eas_$DAY-$MONTH.Z  | grep -i gen |  nawk 'FS="|" , OFS="|" { print $1,$2,"",$3,$4,$5 } ' |  perl perl_d_gen_mot.pl | sed  "s/\.//g"  >> /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR
+
+
+ zcat /home/NCOR6649/logs/genset/mot_cur_gen.txt.Z | /usr/xpg4/bin/grep -i -E "gen|DG Running|GenSet" | grep -i "Motorola" | nawk 'FS="|" , OFS="|" { print $2,$3,$5,$6,$7 } ' | sort -u |  perl perl_alu_gen_mot.pl | sed  "s/\.//g" >> /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR 
+
+
+
+ ##  Huawei txn genset u2000 alarms 
+ zcat /home/NCOR6649/logs/txngen/txn_rep_gen_$YEAR$MONTH$DAY.Z  | nawk 'FS="|" , OFS="|" { print $0,"Genset On" } ' >> /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR
+
+cat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR | sort -u | nawk 'FS="|" , OFS="|" { gsub(/ /,"", $1);gsub(/ /,"",$2);gsub(/  /,"",$5); print $1,$2,$3,$4,$5 }' > /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR_new
+
+mv /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR_new /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR
+
+rm -f  /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z
+
+
+
+  
+compress /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR 
+
+# /usr/bin/uuencode /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z $nwd1_gen_run.Z | mailx -s $nwd1_gen_run nauman.khan@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,muhammad.salman@mobilink.net
+
+# rm -f hu_lapd_genset_low.txt.Z
+
+# segregate the alarm from Netecho
+
+# 1: segrate all sites which will be updated weekly 2: segrete daily sites
+dos2unix /home/NCOR6649/scripts/netecho/ts.csv | sort -u  > ts.txt
+zcat /home/NCOR6649/logs/netecho/net_*_$DAY$MONTH$YEAR.Z  | nawk 'FS="|" , OFS="|" { print substr($2,1,7) } ' |  sort -u >> ts.txt
+
+# segrate netecho sites
+zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z | grep -v -i "trigg" | /usr/xpg4/bin/grep -v -f ts.txt  > /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR_temp
+
+# combine netecho sites
+zcat /home/NCOR6649/logs/netecho/net_gen_run_$DAY$MONTH$YEAR.Z | sed "s;|A$;;g" | nawk 'FS="|" , OFS="|" { print $0,"Genset On"} ' | sort -u >>  /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR_temp
+ 
+ sleep 5
+ 
+ # exclusions
+ cat /home/NCOR6649/logs/eas/site_exlc.txt  |  grep -v "Zte swap Site to be excluded from ALU only" |    nawk 'FS="|" , OFS="|" { if(NR>2 ) {print $1 } } '   > h1
+ 
+ cat  /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR_temp > gen_temp
+ 
+ cat gen_temp | /usr/xpg4/bin/grep -v -f h1  > nwd1_gen_run_$DAY$MONTH$YEAR
+ 
+cat gen_temp | /usr/xpg4/bin/grep  -f h1 > /home/NCOR6649/logs/genset/nwd1_gen_run_excl_$DAY$MONTH$YEAR
+ 
+rm -f /home/NCOR6649/logs/genset/nwd1_gen_run_excl_$DAY$MONTH$YEAR.Z
+
+ compress /home/NCOR6649/logs/genset/nwd1_gen_run_excl_$DAY$MONTH$YEAR
+ 
+ cat /home/NCOR6649/logs/zte/zte_cell.csv | nawk 'FS="," , OFS="|" { if(NR>2 ) {print substr($4,1,7) } } '  | uniq  > h2
+ 
+ cat  nwd1_gen_run_$DAY$MONTH$YEAR |  grep "Z_O" > zte_gen_temp
+ 
+ cat  nwd1_gen_run_$DAY$MONTH$YEAR  | grep -v "Z_O" | /usr/xpg4/bin/grep  -v -f h2 > nwd1_gen_run_$DAY$MONTH$YEAR_temp 
+ 
+ echo "combine"
+ 
+ cat nwd1_gen_run_$DAY$MONTH$YEAR_temp  zte_gen_temp > /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR_temp
+ 
+ mv /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR_temp /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR
+
+ rm -f  /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z
+rm -f  nwd1_gen_run_$DAY$MONTH$YEAR_temp  zte_gen_temp nwd1_gen_run_$DAY$MONTH$YEAR
+  
+compress /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR
+
+sh /home/NCOR6649/scripts/daily_gen/clean_gen/main_clean_gen
+
+/usr/bin/uuencode /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z $nwd1_gen_run.Z | mailx -s $nwd1_gen_run nauman.khan@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,muhammad.salman@mobilink.net
+ 
+echo "### End #####"
+
+
+
+ 
+ 

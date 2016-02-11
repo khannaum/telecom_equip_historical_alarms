@@ -1,0 +1,42 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd /home/NCOR6649/scripts/tre/
+
+sh  ftp_cal
+
+
+
+
+
+
+
+cat /tmp/cal/omc*_cal.csv |  grep "notCleared" | nawk -f get_alm_cal | /usr/xpg4/bin/grep -E "GLT656A|SKU658A|HNZ657A|CHL659A" > /home/NCOR6649/logs/mtl/mtl_pta_cu_st.txt
+
+
+
+
+
+
+
+
+rm -f /home/NCOR6649/logs/mtl/mtl_pta_cu_st.txt.Z 
+
+compress /home/NCOR6649/logs/mtl/mtl_pta_cu_st.txt 
+
+echo "### End #####"
+
+
+
+ 
+ 

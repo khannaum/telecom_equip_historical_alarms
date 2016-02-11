@@ -1,0 +1,123 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`date +%d`
+YEAR=`date +%Y`
+MONTH=`date +%m`
+
+cdate=`date +%Y_%m_%d_%H_%m_%S`
+ndate=`date +%Y_%m_%d` 
+
+PDAY=`TZ=GMT+24 date +%d`
+PYEAR=`TZ=GMT+24 date +%Y`
+PMONTH=`TZ=GMT+24 date +%m`
+
+pdate=`TZ=GMT+24 date +%Y_%m_%d`
+
+cd /home/NCOR6649/scripts/daily_gen 
+
+
+
+
+
+
+
+#zcat /home/NOCCORDT/alu_alm.txt.Z |  nawk 'FS="|" , OFS="|" { if(length($2)<=7){print "Alcatel",$1,$2,$3,$6,$7,$8,"bsc",$4} } ' | perl alu_act_alm_5.pl > bsc.txt
+
+#zcat /home/NOCCORDT/alu_alm.txt.Z |  nawk 'FS="|" , OFS="|" { if(length($2)>7){print "Alcatel",$1,$2,$3,$6,$7,$8,"bts",$4} } ' | perl alu_act_alm_5.pl > bts.txt 
+
+
+
+#zcat /home/NOCCORDT/nwd_mot_act.txt.Z |  nawk 'FS="|" , OFS="|" { if($3==0||$3~/PCU/){print "Motorola",$1,$2,$3" "$4" "$5" ",$8,$9,"ll","bsc",$4 } } ' >> bsc.txt
+#zcat /home/NOCCORDT/nwd_mot_act.txt.Z |  nawk 'FS="|" , OFS="|" { if($3>0&&$3!~/PCU/){print "Motorola",$1,$2,$3"_"$4"_"$5"_"$6,$8,$9,"ll","bts",$4 } } ' >> bts.txt
+
+zcat /home/NCOR6649/huawei*.txt.Z | sort -u | nawk 'FS="," , OFS="|" { if(length($2)==1){print "Huawei",$1,$2,$7"_"$4,$5,$3,$4,"bsc",$7 }} ' >bsc.txt
+
+zcat /home/NCOR6649/huawei*.txt.Z | sort -u | nawk 'FS="," , OFS="|" { if(length($2)!=1){print "Huawei",$1,$2,$7"_"$4,$5,$3,$4,"bts",$7 }} ' > bts.txt
+
+cat bsc.txt bts.txt | perl -e 's/  / /g' -w -p -i  > nwd_bss_cur.txt
+
+# zcat /home/NCOR6649/logs/zte/cur_alm_zte.Z  | nawk 'FS="," , OFS="|" { {print "ZTE",$0 } } ' >> nwd_bss_cur.txt
+
+zcat /home/NCOR6649/logs/err/erc_act_alm.Z  | sort -u | nawk 'FS="|" , OFS="|" { if(length($2)==0){t = $3; $3= $5; $5= t; print "Ericsson",$0,"bsc",""  } } '  >> nwd_bss_cur.txt
+zcat /home/NCOR6649/logs/err/erc_act_alm.Z  | sort -u | nawk 'FS="|" , OFS="|" { if(length($2)>0){t = $3; $3= $5; $5= t; print "Ericsson",$0,"bts",""  } } '  >> nwd_bss_cur.txt
+
+#zcat  /tmp/zte/report_active_alarm_$YEAR$MONTH$DAY*_*.csv.Z  
+rm -f bsc.txt bts.txt
+
+rm -f nwd_bss_cur.txt.Z
+
+compress nwd_bss_cur.txt 
+
+mv nwd_bss_cur.txt.Z /home/NCOR6649/nwd_bss_cur.txt.Z
+
+nwd_bss_cur=nwd_bss_cur_alm
+
+/usr/bin/uuencode /home/NCOR6649/nwd_bss_cur.txt.Z $nwd_bss_cur.Z | mailx -s $nwd_bss_cur nauman.khan@mobilink.net,,NOOR.HUDA@mobilink.net,abdul.rauf@mobilink.net,farhan.muhammad@mobilink.net,abdullah.abbas@mobilink.net,qamar.z@mobilink.net
+
+<<COMMENT1
+
+zcat /home/NCOR6649/nwd_bss_cur.txt.Z | nawk 'FS="|", OFS="|" { if(($5!~/^00/)&&($5~/:/)&&(length$(5)>1)){print $0 } } ' > nwd_bss_cur_$cdate.txt
+
+
+cat Alarms_Resp |  sed "s;04/01/2014;$MONTH/$DAY/$YEAR;g" >  Alarms_Resp_$ndate.txt
+
+cat Motorola_Alams_Severity |  sed "s;04/01/2014;$MONTH/$DAY/$YEAR;g" > Motorola_Alams_Severity_$ndate.txt 
+
+ftp -n -p 10.50.28.202 <<EOF
+user ftp_user_omcr ftpomcr12
+hash
+bin
+cd /data5/ALARMS/ALARMS_DATA
+lcd  /home/NCOR6649/scripts/daily_gen/
+mput nwd_bss_cur_$cdate.txt
+
+mput Alarms_Resp_$ndate.txt
+
+mput Motorola_Alams_Severity_$ndate.txt
+bye
+EOF
+
+rm -f  nwd_bss_cur_$cdate.txt Alarms_Resp_$ndate.txt Motorola_Alams_Severity_$ndate.txt
+
+
+
+cd /home/NCOR6649/scripts/alcatel/
+
+gzcat /tmp/hal/omc*$PDAY$PMONTH$PYEAR.tgz | nawk -f  get_alm_all_hal  |  grep -v "::" > alc_evt_log_$pdate.txt
+
+ftp -n -p 10.50.28.202 <<EOF
+user ftp_user_omcr ftpomcr12
+hash
+bin
+cd /data5/ALARMS/ALARMS_DATA
+lcd  /home/NCOR6649/scripts/alcatel/
+
+mput alc_evt_log_$pdate.txt
+
+bye
+EOF
+
+rm -f alc_evt_log_$pdate.txt
+
+
+
+cd /home/NCOR6649/scripts/san
+
+echo "************Daily Sanity Checks **********************"                                                                                                          
+                                                                                                                                                                       
+ /bin/sh CheckFiles_at_DWH > san_ch_dwh                                                                                                                                                                       
+ san_ch_cell=san_ch_dwh                                                                                                                                                         
+                                                                                                                                                                       
+                                                                                                                                                                       
+ mailx -s "Daily Sanity Checks for Alarms Uploading file Status" nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,mohammad.imran@mobilink.net,aamer.hussain@mobilink.net,hafiz.farooq@mobilink.net,rauf.riaz@mobilink.net < san_ch_dwh 
+#zcat /home/NCOR6649/huawei*.txt.Z | nawk 'FS="," , OFS="|" { if(length($2)>1){print "Huawei",$1,$2,$7"_"$4,$5,$3 }} '
+echo "======End======"
+
+COMMENT1

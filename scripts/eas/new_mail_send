@@ -1,0 +1,52 @@
+#!/bin/sh
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+rm -f new_reg
+touch new_reg
+
+#mailx -s "$(echo -e "Newsletter issue 3\nContent-Type: text/html")" nauman.khan@mobilink.net < report.html
+
+for i in `dos2unix /home/NCOR6649/scripts/RSL/regsheet.txt > regsheet_n.txt ; cat regsheet_n.txt | grep -i "macro" |  perl -e 's/ //g' -w -p -i `
+do
+
+#echo $i
+
+site_code=`printf $i | nawk 'FS="|" , OFS="|" { print $1 }  '`
+
+#echo $site_code
+
+#echo "*** Genset/Mains Failure/Low Voltage/SOB *** "
+
+zcat `find /home/NCOR6649/logs/genset/nwd1_gen_run_*.Z -type f -mtime -9` | grep $site_code | wc -l > gtt
+zcat `find /home/NCOR6649/logs/netecho/nwd_mains_fail_*.Z -type f -mtime -9` | grep $site_code | wc -l > mtt
+zcat `find /home/NCOR6649/logs/err/erc_sob_*.Z -type f -mtime -9` | grep $site_code | wc -l > stt
+zcat `find /home/NCOR6649/logs/err/erc_low_*.Z /home/NCOR6649/logs/low_vol/nwd_low_vol_*.Z -type f -mtime -9` | grep $site_code | wc -l > ltt
+
+gt=`cat gtt`
+mt=`cat mtt`
+st=`cat stt`
+lt=`cat ltt`
+
+#-v nct=$ct
+#echo $ct
+printf $i | nawk -v gct="${gt}" -v mct="${mt}"  -v sct="${st}" -v lct="${lt}" 'FS="|" , OFS="|"  { gsub(/ /, "", gct);gsub(/ /, "", mct);gsub(/ /, "", sct);gsub(/ /, "", lct) ;print $0,"===",gct,mct,sct,lct }  '  >> new_reg
+
+#if [ $ct -gt 0 ]; then
+#printf $i | nawk -v nct=$ct 'FS="|" , OFS="|"  { print $0,"===",nct }  '  
+
+#else
+#printf $i | nawk 'FS="|" , OFS="|" { print $0,"N" }  '  >> new_reg
+
+#fi
+
+
+
+
+done

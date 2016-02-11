@@ -1,0 +1,12 @@
+BEGIN{
+	 FS="," ; OFS=","
+}
+{
+ 	 split($8,bsc,"(")
+ 	 split($10,site,"(")
+   split(site[2],sid,")")
+   if(NR>2 ) { print  "ZTE","ZTE_OMC",bsc[1],site[1],$12,sid[1],$13,$14 } 
+  
+ }
+END{
+ }

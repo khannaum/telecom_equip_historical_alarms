@@ -1,0 +1,34 @@
+#!/bin/sh
+
+cd /home/NCOR6649/scripts/san/bsc_site
+
+cat bsc_site_ct.csv | dos2unix > bsc_site_ct_new.csv
+mv bsc_site_ct_new.csv bsc_site_ct.csv
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+PDAY=`TZ=GMT+48 date +%d`
+
+#cd /home/NCOR6649/scripts/alcatel/
+
+zcat /home/NCOR6649/logs/rsl/Alcatel.txt.Z /home/NCOR6649/logs/rsl/Motorola.txt.Z /home/NCOR6649/logs/huawei/hu_lapd_genset_low.txt.Z /home/NCOR6649/logs/zte/daily_zte_rsl.Z | grep "/$DAY" | sed 's/ //' | nawk ' FS="|"  { print $1,"|",$2 } ' |  sort -u | nawk ' FS="|"  { print $1} ' |  uniq -c | sort -nr  | sed 's/ //' | sed 's/  //'| sed 's/  / /' |sed 's/^ //' > today_st
+ 
+
+
+perl getbsc1.pl > bsc_no_site.csv
+
+nwd_gen_run=bsc_no_sites__$DAY$MONTH$YEAR.csv
+
+/usr/bin/uuencode bsc_no_site.csv $nwd_gen_run | mailx -s $nwd_gen_run nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net
+
+
+
+echo "### End #####"
+
+#  sh mail_rsl_alu

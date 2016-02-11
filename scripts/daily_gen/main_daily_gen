@@ -1,0 +1,65 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT date +%d`
+YEAR=`TZ=GMT date +%Y`
+MONTH=`TZ=GMT date +%m`
+
+
+
+cd /home/NCOR6649/scripts/daily_gen 
+
+daily_run_gen=daily_run_gen_$DAY$MONTH$YEAR
+
+
+
+
+
+cat /home/NCOR6649/daily_h_gen.txt | /usr/xpg4/bin/grep -i -E "gen|DG Running|GenSet" | nawk 'FS="|" , OFS="|" { print "Huawei",$1,$2,$3,$4 } ' > /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt
+
+zcat /home/NOCCORDT/alu_alm.txt.Z | /usr/xpg4/bin/grep -i  "genset" | nawk 'FS="|" , OFS="|" {  print "Alcatel",$1,$2,$6,$7 } ' | perl alu_act_gen_5.pl  >> /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt
+
+zcat /home/NOCCORDT/nwd_mot_act.txt.Z | /usr/xpg4/bin/grep -i  "genset" | nawk 'FS="|" , OFS="|" { print "Motorola",$1,$2,$8,$9 } ' >> /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt 
+  
+# zcat /home/NCOR6649/logs/zte/cur_alm_zte.Z  | /usr/xpg4/bin/grep -i  "genset" | nawk 'FS="|" , OFS="|" { print "ZTE",$1,$2,$4,$5 } '  >> /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt
+
+zcat  /tmp/zte/report_active_alarm_$YEAR$MONTH$DAY_*.csv.Z | grep -i "genset" | nawk -f /home/NCOR6649/scripts/zte/zte_rsl_gen_act | nawk 'FS="|" , OFS="|" { print "ZTE",$1,$2,$3,$5 } ' >>  /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt
+
+dos2unix excl.csv > excl.txt
+ 
+cat /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt  | grep -i "genset" | grep -v -i "trigg" | /usr/xpg4/bin/grep -v -f excl.txt > /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH_tem.txt
+
+zcat /home/NCOR6649/nwd_bss_cur.txt.Z |  grep "Ericsson" |  grep "RADIO X-CEIVER ADMINISTRATION BTS EXTERNAL FAULT" | grep -i "gen" | nawk 'FS="|" , OFS="|" {  print $1,$2,$3,$5,"GENSET ON"} '  >> /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH_tem.txt
+
+mv /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH_tem.txt /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt
+
+# 1: segrate all sites which will be updated weekly 2: segrete daily sites
+dos2unix /home/NCOR6649/scripts/netecho/ts.csv | sort -u  > ts.txt
+zcat /home/NCOR6649/logs/netecho/net_*_$DAY$MONTH$YEAR.Z  | nawk 'FS="|" , OFS="|" { print substr($2,1,7) } ' |  sort -u >> ts.txt
+
+sh ftp_nete
+
+cat  /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt  | grep -v -i "trigg" | /usr/xpg4/bin/grep -v -f ts.txt > /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt_temp
+cat ne_gen_mf_act_$DAY$MONTH$YEAR.txt | grep " Running" | sort -u | nawk 'FS="|" , OFS="|" { print "Huawei",$1,$2,$3,$4 }' >> /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt_temp
+
+mv /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt_temp /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt
+rm -f /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt.Z
+ 
+compress /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt 
+rm -f  ne_gen_mf_act_$DAY$MONTH$YEAR.txt
+
+/usr/bin/uuencode /home/NCOR6649/logs/genset/daily_run_gen_$DAY-$MONTH.txt.Z $daily_run_gen.txt.Z | mailx -s $daily_run_gen nauman.khan@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,aamir.mahmood@mobilink.net,farrukh.hussain@mobilink.net
+
+
+echo "### End #####"
+
+
+
+ 
+ 

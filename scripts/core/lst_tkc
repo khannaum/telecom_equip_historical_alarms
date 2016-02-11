@@ -1,0 +1,226 @@
+LST N7TKC: QR=LOCAL;
+MSX-HW18-SWL1
++++    HW18-Sahiwal        2010-10-08 14:21:43+05:00
+O&M    #1051624
+%%/*17022024*/LST N7TKC: QR=LOCAL;%%
+RETCODE = 0  Operation succeeded
+
+Circuit Distributing
+--------------------
+ Trunk group name  MGW Name  Start CIC  End CIC  Start TID  End TID  Circuit type  WCCU/WCSU module number  Start Circuit No  Server name  Domain name 
+
+ ALC6              0         0          127      8928       9055     ISUP          57                       384               LOCAL        PUBLIC      
+ ALC6              0         128        159      34432      34463    ISUP          57                       512               LOCAL        PUBLIC      
+ ALC6              0         160        223      34464      34527    ISUP          55                       896               LOCAL        PUBLIC      
+ ALC6              0         224        319      37952      38047    ISUP          55                       960               LOCAL        PUBLIC      
+ ALC6              0         320        351      38048      38079    ISUP          43                       288               LOCAL        PUBLIC      
+ ALC6              0         352        479      46336      46463    ISUP          43                       320               LOCAL        PUBLIC      
+ ALC6              0         480        511      19424      19455    ISUP          22                       1568              LOCAL        PUBLIC      
+ ALC6              0         512        543      19456      19487    ISUP          30                       9888              LOCAL        PUBLIC      
+ ALC6              0         544        575      20000      20031    ISUP          30                       1024              LOCAL        PUBLIC      
+ ALC6              0         576        607      20032      20063    ISUP          30                       1984              LOCAL        PUBLIC      
+ MSC-1 LHR         0         0          255      7424       7679     ISUP          56                       512               LOCAL        PUBLIC      
+ MSC-1 LHR         0         256        319      15616      15679    ISUP          56                       768               LOCAL        PUBLIC      
+ MSC-1 LHR         0         320        351      15808      15839    ISUP          56                       960               LOCAL        PUBLIC      
+ MSC-1 LHR         0         352        479      18272      18399    ISUP          56                       992               LOCAL        PUBLIC      
+ MSC-1 LHR         0         480        511      20064      20095    ISUP          30                       2240              LOCAL        PUBLIC      
+ MSC-1 LHR         0         512        543      20096      20127    ISUP          30                       3104              LOCAL        PUBLIC      
+ MSC-1 LHR         0         544        575      20128      20159    ISUP          30                       4032              LOCAL        PUBLIC      
+ MSC-1 LHR         0         576        607      20160      20191    ISUP          30                       4928              LOCAL        PUBLIC      
+ MSC-1 LHR         0         608        639      20192      20223    ISUP          30                       5856              LOCAL        PUBLIC      
+ MSC-10            0         0          127      27488      27615    ISUP          28                       1760              LOCAL        PUBLIC      
+ MSC-10            0         128        159      27616      27647    ISUP          36                       1920              LOCAL        PUBLIC      
+ MSC-10            0         160        287      33568      33695    ISUP          36                       1952              LOCAL        PUBLIC      
+ MSC-10            0         288        319      33696      33727    ISUP          39                       1664              LOCAL        PUBLIC      
+ MSC-10            0         320        479      35616      35775    ISUP          39                       1696              LOCAL        PUBLIC      
+ MSC-10            0         480        511      320        351      ISUP          28                       2464              LOCAL        PUBLIC      
+ MSC-10            0         512        735      5472       5695     ISUP          28                       2496              LOCAL        PUBLIC      
+ MSC-10            0         736        799      6432       6495     ISUP          28                       2720              LOCAL        PUBLIC      
+ MSC-10            0         800        1055     6496       6751     ISUP          39                       2080              LOCAL        PUBLIC      
+ MSC-10            0         1056       1119     7360       7423     ISUP          39                       2336              LOCAL        PUBLIC      
+ MSC-10            0         1152       1183     28928      28959    ISUP          33                       7040              LOCAL        PUBLIC      
+ MSC-10            0         1184       1215     34368      34399    ISUP          26                       2016              LOCAL        PUBLIC      
+ MSC-10            0         1216       1247     34560      34591    ISUP          26                       2976              LOCAL        PUBLIC      
+ MSC-10            0         1248       1279     42720      42751    ISUP          26                       3904              LOCAL        PUBLIC      
+ MSC-10            0         1280       1311     42752      42783    ISUP          26                       4896              LOCAL        PUBLIC      
+ MSC-10            0         1312       1343     42784      42815    ISUP          26                       5824              LOCAL        PUBLIC      
+ MSC-10            0         1344       1375     43328      43359    ISUP          26                       7360              LOCAL        PUBLIC      
+ MSC-10            0         1376       1407     43360      43391    ISUP          26                       8352              LOCAL        PUBLIC      
+ MSC-10            0         1408       1439     43392      43423    ISUP          26                       9696              LOCAL        PUBLIC      
+ MSC-10            0         1440       1471     43424      43455    ISUP          26                       640               LOCAL        PUBLIC      
+ MSC-10            0         1472       1503     20224      20255    ISUP          41                       9184              LOCAL        PUBLIC      
+ MSC-10            0         1504       1535     20256      20287    ISUP          41                       256               LOCAL        PUBLIC      
+ MSC-10            0         1536       1567     20288      20319    ISUP          41                       1184              LOCAL        PUBLIC      
+ MSC-10            0         1568       1599     20320      20351    ISUP          41                       2112              LOCAL        PUBLIC      
+ MSC-10            0         1600       1631     20352      20383    ISUP          41                       3008              LOCAL        PUBLIC      
+ MSC-10            0         1632       1663     20384      20415    ISUP          41                       3968              LOCAL        PUBLIC      
+ MSC-10            0         1664       1695     20416      20447    ISUP          41                       4896              LOCAL        PUBLIC      
+ MSC-10            0         1696       1727     20448      20479    ISUP          41                       6016              LOCAL        PUBLIC      
+ MSC-10            0         1728       1759     21408      21439    ISUP          41                       6880              LOCAL        PUBLIC      
+ MSC-10            0         1760       1791     47488      47519    ISUP          41                       7776              LOCAL        PUBLIC      
+ MSC-10            0         1792       1823     47520      47551    ISUP          41                       8704              LOCAL        PUBLIC      
+ S13LH             0         0          95       9216       9311     ISUP          35                       480               LOCAL        PUBLIC      
+ S13LH             0         96         191      9792       9887     ISUP          35                       576               LOCAL        PUBLIC      
+ S13LH             0         192        319      10080      10207    ISUP          35                       864               LOCAL        PUBLIC      
+ S13LH             0         320        735      20480      20895    ISUP          50                       0                 LOCAL        PUBLIC      
+ S13LH             0         736        1055     34816      35135    ISUP          25                       0                 LOCAL        PUBLIC      
+ S13LH             0         1056       1439     44032      44415    ISUP          52                       0                 LOCAL        PUBLIC      
+ S13LH             0         1440       1599     32064      32223    ISUP          35                       1312              LOCAL        PUBLIC      
+ S13LH             0         1600       1759     35136      35295    ISUP          25                       608               LOCAL        PUBLIC      
+ S13LH             0         1760       1919     43552      43711    ISUP          50                       960               LOCAL        PUBLIC      
+ S13LH             0         1920       2079     44640      44799    ISUP          52                       576               LOCAL        PUBLIC      
+ S13LH             0         2080       2399     19104      19423    ISUP          48                       384               LOCAL        PUBLIC      
+ S13LH             0         2400       2431     21568      21599    ISUP          52                       1472              LOCAL        PUBLIC      
+ S13LH             0         2432       2719     22112      22399    ISUP          52                       1504              LOCAL        PUBLIC      
+ S13LH             0         2720       2911     33216      33407    ISUP          36                       1440              LOCAL        PUBLIC      
+ S13LH             0         2912       3167     36128      36383    ISUP          40                       1024              LOCAL        PUBLIC      
+ S13LH             0         3168       3199     38272      38303    ISUP          44                       1056              LOCAL        PUBLIC      
+ S13LH             0         3200       3231     44576      44607    ISUP          30                       5088              LOCAL        PUBLIC      
+ S13LH             0         3232       3359     38336      38463    ISUP          44                       1120              LOCAL        PUBLIC      
+ S13LH             0         3360       3391     32448      32479    ISUP          26                       608               LOCAL        PUBLIC      
+ S13LH             0         3424       3519     32512      32607    ISUP          26                       672               LOCAL        PUBLIC      
+ S13LH             0         3520       3679     34624      34783    ISUP          38                       1824              LOCAL        PUBLIC      
+ S13LH             0         3680       3871     49152      49343    ISUP          59                       1152              LOCAL        PUBLIC      
+ SG01L             0         0          95       0          95       ISUP          23                       0                 LOCAL        PUBLIC      
+ SG01L             0         96         255      1184       1343     ISUP          24                       160               LOCAL        PUBLIC      
+ SG01L             0         256        447      4608       4799     ISUP          27                       512               LOCAL        PUBLIC      
+ SG01L             0         448        703      8256       8511     ISUP          34                       0                 LOCAL        PUBLIC      
+ SG01L             0         704        959      9312       9567     ISUP          26                       0                 LOCAL        PUBLIC      
+ SG01L             0         960        1119     1024       1183     ISUP          24                       1696              LOCAL        PUBLIC      
+ SG01L             0         1120       1183     1600       1663     ISUP          24                       1856              LOCAL        PUBLIC      
+ SG01L             0         1184       1247     1984       2047     ISUP          24                       1920              LOCAL        PUBLIC      
+ SG01L             0         1248       1375     25312      25439    ISUP          23                       2112              LOCAL        PUBLIC      
+ SG01L             0         1376       1567     29024      29215    ISUP          31                       1312              LOCAL        PUBLIC      
+ SG01L             0         1568       1823     50240      50495    ISUP          51                       512               LOCAL        PUBLIC      
+ SG01L             0         1824       1855     44864      44895    ISUP          30                       1920              LOCAL        PUBLIC      
+ SG01L             0         1856       1887     44896      44927    ISUP          30                       2784              LOCAL        PUBLIC      
+ SG01L             0         1888       1919     44928      44959    ISUP          30                       3712              LOCAL        PUBLIC      
+ SG03L             0         0          95       96         191      ISUP          23                       96                LOCAL        PUBLIC      
+ SG03L             0         96         127      11936      11967    ISUP          24                       320               LOCAL        PUBLIC      
+ SG03L             0         128        287      1344       1503     ISUP          24                       352               LOCAL        PUBLIC      
+ SG03L             0         288        319      1504       1535     ISUP          27                       704               LOCAL        PUBLIC      
+ SG03L             0         320        479      4800       4959     ISUP          27                       736               LOCAL        PUBLIC      
+ SG03L             0         480        511      4960       4991     ISUP          35                       672               LOCAL        PUBLIC      
+ SG03L             0         512        671      9888       10047    ISUP          35                       704               LOCAL        PUBLIC      
+ SG03L             0         672        703      10048      10079    ISUP          42                       0                 LOCAL        PUBLIC      
+ SG03L             0         704        863      10688      10847    ISUP          42                       32                LOCAL        PUBLIC      
+ SG03L             0         864        895      10848      10879    ISUP          38                       672               LOCAL        PUBLIC      
+ SG03L             0         896        959      11968      12031    ISUP          38                       704               LOCAL        PUBLIC      
+ SG03L             0         960        1215     11328      11583    ISUP          38                       0                 LOCAL        PUBLIC      
+ SG03L             0         1216       1471     12480      12735    ISUP          39                       0                 LOCAL        PUBLIC      
+ SG03L             0         1472       1823     13376      13727    ISUP          40                       0                 LOCAL        PUBLIC      
+ SG03L             0         1824       2079     31232      31487    ISUP          34                       1088              LOCAL        PUBLIC      
+ SG03L             0         2080       2143     33152      33215    ISUP          42                       192               LOCAL        PUBLIC      
+ SG03L             0         2144       2303     49792      49951    ISUP          59                       544               LOCAL        PUBLIC      
+ SG03L             0         2400       2431     50048      50079    ISUP          59                       800               LOCAL        PUBLIC      
+ SG03L             0         2464       2495     50112      50143    ISUP          59                       864               LOCAL        PUBLIC      
+ SG06L             0         0          31       7168       7199     ISUP          49                       1760              LOCAL        PUBLIC      
+ SG06L             0         32         191      7200       7359     ISUP          32                       512               LOCAL        PUBLIC      
+ SG06L             0         192        223      8160       8191     ISUP          32                       672               LOCAL        PUBLIC      
+ SG06L             0         224        255      8224       8255     ISUP          34                       992               LOCAL        PUBLIC      
+ SG06L             0         256        319      9152       9215     ISUP          34                       1024              LOCAL        PUBLIC      
+ SG06L             0         320        351      10208      10239    ISUP          35                       1280              LOCAL        PUBLIC      
+ SG06L             0         352        543      12288      12479    ISUP          25                       320               LOCAL        PUBLIC      
+ SG06L             0         544        639      13216      13311    ISUP          25                       512               LOCAL        PUBLIC      
+ SG06L             0         640        703      13312      13375    ISUP          40                       832               LOCAL        PUBLIC      
+ SG06L             0         704        735      14208      14239    ISUP          40                       896               LOCAL        PUBLIC      
+ SG06L             0         736        1119     50816      51199    ISUP          51                       0                 LOCAL        PUBLIC      
+ SG06L             0         1120       1215     352        447      ISUP          23                       1440              LOCAL        PUBLIC      
+ SG06L             0         1216       1247     960        991      ISUP          23                       1536              LOCAL        PUBLIC      
+ SG06L             0         1248       1599     17920      18271    ISUP          47                       640               LOCAL        PUBLIC      
+ SG06L             0         1600       1663     38464      38527    ISUP          44                       1248              LOCAL        PUBLIC      
+ SG06L             0         1664       1919     39680      39935    ISUP          45                       1056              LOCAL        PUBLIC      
+ SG06L             0         1920       2079     27328      27487    ISUP          27                       1536              LOCAL        PUBLIC      
+ SG06L             0         2080       2239     33408      33567    ISUP          36                       1760              LOCAL        PUBLIC      
+ SG06L             0         2240       2399     35456      35615    ISUP          25                       768               LOCAL        PUBLIC      
+ SG06L             0         2400       2559     50496      50655    ISUP          51                       768               LOCAL        PUBLIC      
+ SG07L             0         0          31       192        223      ISUP          23                       192               LOCAL        PUBLIC      
+ SG07L             0         32         63       288        319      ISUP          23                       288               LOCAL        PUBLIC      
+ SG07L             0         64         95       1536       1567     ISUP          24                       5376              LOCAL        PUBLIC      
+ SG07L             0         96         127      1568       1599     ISUP          24                       544               LOCAL        PUBLIC      
+ SG07L             0         128        159      1664       1695     ISUP          24                       640               LOCAL        PUBLIC      
+ SG07L             0         160        319      480        639      ISUP          23                       768               LOCAL        PUBLIC      
+ SG07L             0         320        607      10880      11167    ISUP          46                       0                 LOCAL        PUBLIC      
+ SG07L             0         608        639      992        1023     ISUP          23                       1568              LOCAL        PUBLIC      
+ SG07L             0         640        671      4096       4127     ISUP          27                       1408              LOCAL        PUBLIC      
+ SG07L             0         672        767      4512       4607     ISUP          27                       1440              LOCAL        PUBLIC      
+ SG07L             0         768        799      6112       6143     ISUP          28                       992               LOCAL        PUBLIC      
+ SG07L             0         800        863      11200      11263    ISUP          46                       288               LOCAL        PUBLIC      
+ SG07L             0         864        927      11264      11327    ISUP          38                       1440              LOCAL        PUBLIC      
+ SG07L             0         928        1023     11840      11935    ISUP          38                       1504              LOCAL        PUBLIC      
+ SG07L             0         1024       1119     14240      14335    ISUP          40                       928               LOCAL        PUBLIC      
+ SG07L             0         1120       1183     15296      15359    ISUP          43                       1120              LOCAL        PUBLIC      
+ SG07L             0         1184       1215     16352      16383    ISUP          44                       800               LOCAL        PUBLIC      
+ SG07L             0         1216       1247     17376      17407    ISUP          45                       1024              LOCAL        PUBLIC      
+ SG07L             0         1248       1503     22656      22911    ISUP          53                       0                 LOCAL        PUBLIC      
+ SG07L             0         1504       1759     24032      24287    ISUP          54                       352               LOCAL        PUBLIC      
+ SG07L             0         1760       1855     24800      24895    ISUP          23                       1600              LOCAL        PUBLIC      
+ SG07L             0         1888       2143     49536      49791    ISUP          59                       896               LOCAL        PUBLIC      
+ SG07L             0         2144       2175     32480      32511    ISUP          42                       7232              LOCAL        PUBLIC      
+ SG07L             0         2176       2207     38304      38335    ISUP          42                       8160              LOCAL        PUBLIC      
+ SG07L             0         2208       2208     47712      47712    ISUP          42                       6272              LOCAL        PUBLIC      
+ SG07L             0         2240       2271     43488      43519    ISUP          42                       9696              LOCAL        PUBLIC      
+ SG07L             0         2272       2303     43520      43551    ISUP          42                       9376              LOCAL        PUBLIC      
+ SG07L             0         2304       2335     44416      44447    ISUP          42                       288               LOCAL        PUBLIC      
+ SG07L             0         2336       2367     44448      44479    ISUP          42                       1184              LOCAL        PUBLIC      
+ SG07L             0         2368       2399     44480      44511    ISUP          42                       2112              LOCAL        PUBLIC      
+ SG07L             0         2400       2431     44512      44543    ISUP          42                       3040              LOCAL        PUBLIC      
+ SG07L             0         2432       2463     44544      44575    ISUP          42                       3968              LOCAL        PUBLIC      
+ TSHLI             0         832        863      21504      21535    ISUP          52                       5216              LOCAL        PUBLIC      
+ TSHLI             0         864        895      21536      21567    ISUP          52                       6272              LOCAL        PUBLIC      
+ TXSHL             0         0          31       18400      18431    ISUP          29                       2496              LOCAL        PUBLIC      
+ TXSHL             0         32         63       18432      18463    ISUP          22                       6336              LOCAL        PUBLIC      
+ TXSHL             0         64         95       18464      18495    ISUP          30                       320               LOCAL        PUBLIC      
+ TXSHL             0         96         127      18496      18527    ISUP          44                       928               LOCAL        PUBLIC      
+ TXSHL             0         128        191      19040      19103    ISUP          44                       960               LOCAL        PUBLIC      
+ TXSHL             0         768        799      21440      21471    ISUP          58                       9344              LOCAL        PUBLIC      
+ TXSHL             0         800        831      21472      21503    ISUP          33                       5696              LOCAL        PUBLIC      
+ URP               0         0          31       47744      47775    ISUP          30                       3360              LOCAL        PUBLIC      
+ URP               0         32         63       47776      47807    ISUP          30                       4416              LOCAL        PUBLIC      
+ URP               0         64         95       47808      47839    ISUP          30                       5472              LOCAL        PUBLIC      
+ URP               0         96         127      47840      47871    ISUP          30                       6560              LOCAL        PUBLIC      
+ URP               0         128        159      48128      48159    ISUP          30                       7488              LOCAL        PUBLIC      
+ URP               0         192        255      48192      48255    ISUP          30                       9504              LOCAL        PUBLIC      
+ URP               0         256        287      48256      48287    ISUP          30                       672               LOCAL        PUBLIC      
+ URP               0         288        319      48288      48319    ISUP          30                       2272              LOCAL        PUBLIC      
+ URP               0         320        351      48320      48351    ISUP          41                       3296              LOCAL        PUBLIC      
+ URP               0         352        383      48352      48383    ISUP          41                       4288              LOCAL        PUBLIC      
+ URP               0         384        415      48384      48415    ISUP          41                       5344              LOCAL        PUBLIC      
+ URP               0         480        511      48480      48511    ISUP          41                       8384              LOCAL        PUBLIC      
+ URP               0         512        543      48512      48543    ISUP          41                       9376              LOCAL        PUBLIC      
+ URP               0         544        575      48544      48575    ISUP          41                       9280              LOCAL        PUBLIC      
+ URP               0         576        607      48608      48639    ISUP          41                       512               LOCAL        PUBLIC      
+ URP               0         608        639      48640      48671    ISUP          41                       1664              LOCAL        PUBLIC      
+(Number of results = 182)
+
+---    END
+
+
+LST TKCBYTID: MGWNAME="0", TID=9055, ST=YES, SOF=YES;
+MSX-HW18-SWL1
++++    HW18-Sahiwal        2010-10-08 14:23:17+05:00
+O&M    #1051626
+%%/*17022209*/LST TKCBYTID: MGWNAME="0", TID=9055, ST=YES, SOF=YES;%%
+RETCODE = 0  Operation succeeded
+
+Basic Information
+-----------------
+ Trunk group name  CIC     TID     WCCU/WCSU module number  Circuit Number  Domain name 
+
+ ALC6              127     9055    57                       511             PUBLIC      
+
+Trunk Group Related
+-------------------
+ Trunk group name  Circuit type  Group direction       OPC     DPC     MGW Name 
+
+ ALC6              ISUP          Bi-directional Trunk  00139F  00105E  0        
+
+Office Related
+--------------
+ Office direction name 
+
+ ALC6LHR               
+
+---    END
+
+

@@ -1,0 +1,92 @@
+BEGIN{
+	 print "BSC","|","Site","|","Device","|","Device_ID","|","Alarm Code","|","Date Time","|","Alarm Description"
+	#FS="\n";OFS="|";RS="\n"
+	
+}
+{
+ 	
+	if ($0 ~ /\|/){
+		split($0,f1,"|")
+		bsc = f1[1]
+		site = f1[2]
+	} else if ($0 == "-------------------- ---- ---- -------- ---------- ---------------------------"){
+		start = "on"
+	} 
+	if (start == "on" && $0 !=  "-------------------- ---- ---- -------- ---------- ---------------------------") {
+			if ($0 ~ /FMIC/ || $0 ~ /OIC/ ){
+			
+				if (time != "") {
+					# printf("\n%s|%s|%s|%s|%s|%s %s|%s",bsc,site,device_type,device_id,alarm_code,date,time,alarm_string)
+				}
+
+			fmic = 1 
+			omc=1
+				device_type = $1
+				device_id = $2 $3 $4
+				alarm_code = $5
+				tag = $6  $7
+				date = $8 
+				alarm_string = $9 " " $10 " " $11 " " $12 " " $13   
+				time= $7
+			
+				
+
+       		                for (x=15;x<=NF;x=x+1)
+	                        {
+					alarm_string = alarm_string  " " $x
+                       		}
+
+			}
+		
+	if ( $0 !~ /FMIC/ && fmic == 1 && $0 !~ /OIC/ && omc==1 ){
+				fmic = 2
+				omc=2
+				 for (x=3;x<=NF;x=x+1)
+				{
+					if ($x == ":"){
+						time=$x
+						time_set="on"
+					}
+					if (time_set == "on" && $x != ":"){
+				
+						alarm_string = alarm_string  " " $x
+						
+				}
+				 
+				}
+				
+				 if ($1 ~ /\:/ ){
+				date=date "|" $1
+				device_type=device_type 
+				alarm_string= alarm_string " " $2 " " $3 " " $4 " " $5  " " $6 " " $7 " " $8
+				}
+				if ($2 ~ /\:/ ) {
+				date=date "|" $2
+				device_type = device_type " " $1
+				alarm_string= alarm_string " " $3 " " $4 " " $5  " " $6 " " $7 " " $8
+				}
+				
+				  printf(" %s|%s|%s|%s|%s|%s|%s |%s\n",bsc,site,device_type,device_id,alarm_code,tag,date,alarm_string)
+				
+				time_set = "off"
+				
+
+			}
+
+			if ( $0 !~ /\:/ &&  fmic == 2  && omc==2 ) {
+					fmic = 0 
+					omc=0
+					 
+					#for (x=1;x<=NF;x=x+1)
+                                	 #{
+					#	alarm_string = alarm_string  
+						
+					# }
+					
+					#printf(" %s|%s|%s|%s|%s|%s|%s |%s\n",bsc,site,device_type,device_id,alarm_code,tag,date,alarm_string)
+			}
+			
+           	
+	}
+
+}

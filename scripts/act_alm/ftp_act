@@ -1,0 +1,76 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+#cd /home/oann/scripts/RSL
+
+#` cp /home/Motorola/ev_logs/s*.txt.Z /tmp/ev_logs/
+
+cd /home/NOCCORDT/  
+
+echo "sunfire2"
+ftp -n -p 10.231.10.65 <<EOF
+user NOCCORDT noccord1 
+hash
+bin
+cd /home/NOCCORDT/act  
+
+mget m5ksys1.Z 
+bye
+
+EOF
+
+
+echo "sunfire3"
+ftp -n -p 10.231.10.30 <<EOF
+user NOCCORDT Mobilink1
+hash
+bin
+cd /home/NOCCORDT/act
+
+mget sunfire3.Z
+bye
+
+EOF
+
+
+echo "sunfire4"
+ftp -n -p 10.231.10.50 <<EOF
+user NOCCORDT Mobilink1
+hash
+bin
+cd /home/NOCCORDT/act
+
+mget sunfire4.Z
+bye
+
+EOF
+
+
+
+sleep 20
+
+zcat m5ksys1.Z sunfire3.Z sunfire4.Z   > nwd_mot_act.txt
+
+rm -f nwd_mot_act.txt.Z
+
+compress nwd_mot_act.txt
+
+# gzcat HAL*.tgz | grep "LOSS-OF-ALL-CHAN" | nawk -f get_alm_hal | grep "\/18"
+
+
+echo "### End #####"
+
+
+
+ 
+ 

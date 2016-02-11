@@ -1,0 +1,197 @@
+Trying 10.175.4.10...
+Connected to 10.175.4.10.
+Escape character is '^]'.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Welcome to MSOFTX3000 Operation and Maintenance Center
+Version : MSC9880 MSOFTX3000V100R008
+Copyright(c) Huawei. All Rights Reserved
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++    ISBHuawei-2        2012-02-23 07:39:36+05:00
+O&M    #1974467
+%%LGI:op="noc_core",PWd="*****",SER="10.175.4.10---O&M System";%%
+RETCODE = 0  Operation succeeded
+
+noc_core logged in successfully
+---    END
+
++++    ISBHuawei-2        2012-02-23 07:39:38+05:00
+O&M    #1974469
+%%LST ALMLOG: CLRFLG=CLEARED-1&UNCLEARED-1, STARTAID=1713, ALVL=CRITICAL-1&MAJOR-1&MINOR-1&WARNING-1, ASS=POWER-1&ENV-1&SIG-1&TRUNK-1&HARDWARE-1&SOFTWARE-1&RUN-
+1&COMM-1&SERVICE-1&HANDLE-1, SD=2012&02&22;%%
+RETCODE = 0  Operation succeeded
+
+ALARM  820529      Fault  Critical    Exchange  1713    Signaling       
+     Sync serial No.  =  1629949   
+          Alarm name  =  MTP ROUTE UNAVAILABLE
+   Alarm raised time  =  2012-02-23 02:01:25+05:00
+       Location info  =  NI=National network, DPC( Point Code of The DSP 
+                         Associated With The Route)=H'000DCD, APC( Adjacent 
+                         Signaling Point Code.)=H'000DCD, OPC( Local Point Code 
+                         Associated With The DSP)=H'00142C,  DSP Type=Signaling 
+                         point, DSP Name=PSHNWS085M-BSC12(222), 
+                         LinkSetName=PSHNWS085M-BSC12(222), Route 
+                         Name=PSHNWS085M-BSC12(98)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2012-02-23 02:01:45+05:00
+          Module No.  =  0(BAM)
+
+ALARM  820531      Fault  Critical    Exchange  1713    Signaling       
+     Sync serial No.  =  1629948   
+          Alarm name  =  MTP ROUTE UNAVAILABLE
+   Alarm raised time  =  2012-02-23 02:01:25+05:00
+       Location info  =  NI=National network, DPC( Point Code of The DSP 
+                         Associated With The Route)=H'000F40, APC( Adjacent 
+                         Signaling Point Code.)=H'000F40, OPC( Local Point Code 
+                         Associated With The DSP)=H'00142C,  DSP Type=Signaling 
+                         point, DSP Name=BATK227Z(52), LinkSetName=BATK227Z(9), 
+                         Route Name=BATK227Z(62)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2012-02-23 02:01:45+05:00
+          Module No.  =  0(BAM)
+
+ALARM  820539      Fault  Critical    Exchange  1713    Signaling       
+     Sync serial No.  =  1629945   
+          Alarm name  =  MTP ROUTE UNAVAILABLE
+   Alarm raised time  =  2012-02-23 02:01:27+05:00
+       Location info  =  NI=National network, DPC( Point Code of The DSP 
+                         Associated With The Route)=H'001E00, APC( Adjacent 
+                         Signaling Point Code.)=H'001E00, OPC( Local Point Code 
+                         Associated With The DSP)=H'00142C,  DSP Type=Signaling 
+                         point, DSP Name=BATK482Z(51), LinkSetName=BATK482Z(8), 
+                         Route Name=BATK482Z(60)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2012-02-23 02:01:45+05:00
+          Module No.  =  0(BAM)
+
+ALARM  820466      Fault  Critical    Exchange  1713    Signaling       
+     Sync serial No.  =  1629920   
+          Alarm name  =  MTP ROUTE UNAVAILABLE
+   Alarm raised time  =  2012-02-23 02:01:22+05:00
+       Location info  =  NI=National network, DPC( Point Code of The DSP 
+                         Associated With The Route)=H'000F87, APC( Adjacent 
+                         Signaling Point Code.)=H'000F87, OPC( Local Point Code 
+                         Associated With The DSP)=H'00142C,  DSP Type=Signaling 
+                         point, DSP Name=BSC PABBI(223), LinkSetName=BSC 
+                         PABBI(223), Route Name=BSC PABBI(127)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2012-02-23 02:01:45+05:00
+          Module No.  =  0(BAM)
+
+ALARM  820385      Fault  Critical    Exchange  1713    Signaling       
+     Sync serial No.  =  1629906   
+          Alarm name  =  MTP ROUTE UNAVAILABLE
+   Alarm raised time  =  2012-02-23 02:01:18+05:00
+       Location info  =  NI=National network, DPC( Point Code of The DSP 
+                         Associated With The Route)=H'000F96, APC( Adjacent 
+                         Signaling Point Code.)=H'000F96, OPC( Local Point Code 
+                         Associated With The DSP)=H'00142C,  DSP Type=Signaling 
+                         point, DSP Name=PSH TST BSC(200), LinkSetName=PSH TST 
+                         BSC(200), Route Name=PSH TST BSC(95)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2012-02-23 02:01:45+05:00
+          Module No.  =  0(BAM)
+
+ALARM  820387      Fault  Critical    Exchange  1713    Signaling       
+     Sync serial No.  =  1629887   
+          Alarm name  =  MTP ROUTE UNAVAILABLE
+   Alarm raised time  =  2012-02-23 02:01:18+05:00
+       Location info  =  NI=National network, DPC( Point Code of The DSP 
+                         Associated With The Route)=H'001DBF, APC( Adjacent 
+                         Signaling Point Code.)=H'001DBF, OPC( Local Point Code 
+                         Associated With The DSP)=H'00142C,  DSP Type=Signaling 
+                         point, DSP Name=CHARSADDACITY_1(232), 
+                         LinkSetName=CHARSADDACITY_1(232), Route 
+                         Name=CHARSADDACITY_1(63)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2012-02-23 02:01:45+05:00
+          Module No.  =  0(BAM)
+
+ALARM  820374      Fault  Critical    Exchange  1713    Signaling       
+     Sync serial No.  =  1629758   
+          Alarm name  =  MTP ROUTE UNAVAILABLE
+   Alarm raised time  =  2012-02-23 02:01:17+05:00
+       Location info  =  NI=National network, DPC( Point Code of The DSP 
+                         Associated With The Route)=H'001DC8, APC( Adjacent 
+                         Signaling Point Code.)=H'001DC8, OPC( Local Point Code 
+                         Associated With The DSP)=H'00142C,  DSP Type=Signaling 
+                         point, DSP Name=PABBI_2(233), 
+                         LinkSetName=PABBI_2(233), Route Name=PABBI_2(110)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2012-02-23 02:01:45+05:00
+          Module No.  =  0(BAM)
+
+ALARM  820004      Fault  Critical    Exchange  1713    Signaling       
+     Sync serial No.  =  1629072   
+          Alarm name  =  MTP ROUTE UNAVAILABLE
+   Alarm raised time  =  2012-02-23 00:38:21+05:00
+       Location info  =  NI=National network, DPC( Point Code of The DSP 
+                         Associated With The Route)=H'0013F1, APC( Adjacent 
+                         Signaling Point Code.)=H'0014B6, OPC( Local Point Code 
+                         Associated With The DSP)=H'00142C,  DSP Type=Signaling 
+                         point, DSP Name=SMSC-51-MGW(49), 
+                         LinkSetName=STP2A-PESHAWAR(202), Route 
+                         Name=SMSC-51-MGW(143)
+          Auto Clear  =  true                  
+        Cleared type  =  Manual cleared        
+        Cleared time  =  2012-02-23 01:20:30+05:00
+          Module No.  =  0(BAM)
+
+ALARM  820005      Fault  Critical    Exchange  1713    Signaling       
+     Sync serial No.  =  1629071   
+          Alarm name  =  MTP ROUTE UNAVAILABLE
+   Alarm raised time  =  2012-02-23 00:38:21+05:00
+       Location info  =  NI=National network, DPC( Point Code of The DSP 
+                         Associated With The Route)=H'0013F1, APC( Adjacent 
+                         Signaling Point Code.)=H'0014B6, OPC( Local Point Code 
+                         Associated With The DSP)=H'00142A,  DSP Type=Signaling 
+                         point, DSP Name=SMSC-51(27), LinkSetName=STP-2(21), 
+                         Route Name=SMSC-51(84)
+          Auto Clear  =  true                  
+        Cleared type  =  Manual cleared        
+        Cleared time  =  2012-02-23 01:20:30+05:00
+          Module No.  =  0(BAM)
+
+ALARM  820006      Fault  Critical    Exchange  1713    Signaling       
+     Sync serial No.  =  1629070   
+          Alarm name  =  MTP ROUTE UNAVAILABLE
+   Alarm raised time  =  2012-02-23 00:38:21+05:00
+       Location info  =  NI=National network, DPC( Point Code of The DSP 
+                         Associated With The Route)=H'0013F1, APC( Adjacent 
+                         Signaling Point Code.)=H'0014B5, OPC( Local Point Code 
+                         Associated With The DSP)=H'00142A,  DSP Type=Signaling 
+                         point, DSP Name=SMSC-51(27), LinkSetName=STP-1(20), 
+                         Route Name=SMSC-51(6)
+          Auto Clear  =  true                  
+        Cleared type  =  Manual cleared        
+        Cleared time  =  2012-02-23 01:20:30+05:00
+          Module No.  =  0(BAM)
+
+ALARM  820009      Fault  Critical    Exchange  1713    Signaling       
+     Sync serial No.  =  1629068   
+          Alarm name  =  MTP ROUTE UNAVAILABLE
+   Alarm raised time  =  2012-02-23 00:38:21+05:00
+       Location info  =  NI=National network, DPC( Point Code of The DSP 
+                         Associated With The Route)=H'0013F1, APC( Adjacent 
+                         Signaling Point Code.)=H'0014B5, OPC( Local Point Code 
+                         Associated With The DSP)=H'00142C,  DSP Type=Signaling 
+                         point, DSP Name=SMSC-51-MGW(49), 
+                         LinkSetName=STP1A-PESHAWAR(201), Route 
+                         Name=SMSC-51-MGW(142)
+          Auto Clear  =  true                  
+        Cleared type  =  Manual cleared        
+        Cleared time  =  2012-02-23 01:20:29+05:00
+          Module No.  =  0(BAM)
+
+(Number of results = 11)
+---    END

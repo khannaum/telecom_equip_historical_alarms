@@ -1,0 +1,131 @@
+#!/bin/sh
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+cd /home/NCOR6649/scripts/eas
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+rm -f new_reg_eas
+touch new_reg_eas
+rm -f gtt
+touch gtt
+
+
+#mailx -s "$(echo -e "Newsletter issue 3\nContent-Type: text/html")" nauman.khan@mobilink.net < report.html
+
+
+
+zcat ` find /home/NCOR6649/logs/genset/nwd1_gen_run_*.Z /home/NCOR6649/logs/genset/nwd1_gen_run_excl_*.Z  -type f -mtime -7 `  |  sort -u |  perl perl_eas_consol.pl    > eas_main_f
+cat eas_main_f |  nawk 'FS="|", OFS="|" { split($1,dd,"~");print dd[1] } ' |  sort -u   > keyf
+cat eas_main_f |  nawk 'FS="|", OFS="|" { print $1 } ' | sort -u  > key_file
+perl easc.pl  > gen_sites_7
+
+zcat ` find /home/NCOR6649/logs/netecho/nwd_mains_fail_*.Z -type f -mtime -7 ` | sort -u |  perl perl_eas_consol.pl     > eas_main_f
+cat eas_main_f |  nawk 'FS="|", OFS="|" { split($1,dd,"~");print dd[1] } ' |  sort -u   > keyf
+cat eas_main_f |  nawk 'FS="|", OFS="|" { print $1 } ' | sort -u  > key_file
+perl easc.pl   > mf_sites_7
+
+zcat ` find /home/NCOR6649/logs/err/erc_sob_*.Z -type f -mtime -7 `    |  sort -u | perl perl_eas_consol.pl     > eas_main_f
+zcat ` find /home/NCOR6649/logs/zte/zte_eas_*.Z -type f -mtime -7 `    |   grep "SYSTEM" | sort -u | perl perl_eas_consol.pl  >> eas_main_f
+cat eas_main_f |  nawk 'FS="|", OFS="|" { split($1,dd,"~");print dd[1] } ' |  sort -u   > keyf
+cat eas_main_f |  nawk 'FS="|", OFS="|" { print $1 } ' | sort -u  > key_file
+perl easc.pl   > sob_sites_7
+
+zcat ` find /home/NCOR6649/logs/err/erc_low_*.Z /home/NCOR6649/logs/low_vol/nwd_low_vol_*.Z -type f -mtime -7 `  | sort -u | perl perl_eas_consol.pl    > eas_main_f
+zcat ` find /home/NCOR6649/logs/zte/zte_eas_*.Z -type f -mtime -7 `    |   grep "LOW VOL" | sort -u | perl perl_eas_consol.pl  >> eas_main_f
+cat eas_main_f |  nawk 'FS="|", OFS="|" { split($1,dd,"~");print dd[1] } ' |  sort -u   > keyf
+cat eas_main_f |  nawk 'FS="|", OFS="|" { print $1 } ' | sort -u  > key_file
+perl easc.pl   > low_sites_7
+<<COMMENT1
+zcat ` find /home/NCOR6649/logs/rsl/nwd_rsl_*.Z -type f -mtime -7 `  | sort -u | perl perl_rsl_consol.pl    > eas_main_f
+cat eas_main_f |  nawk 'FS="|", OFS="|" { split($1,dd,"~");print dd[1] } ' |  sort -u   > keyf
+cat eas_main_f |  nawk 'FS="|", OFS="|" { print $1 } ' | sort -u  > key_file
+perl easc_avl.pl   > rsl_sites_7
+COMMENT1
+
+cat gen_sites_7  mf_sites_7   | nawk 'FS="|" , OFS="|" { split($1,dd,"~");if(length(dd[2])>0){print dd[2]} } ' | sort -u >  date_file
+cat gen_sites_7 mf_sites_7  | nawk 'FS="|" , OFS="|" { split($1,dd,"~");if(length(dd[2])>0){print dd[2]}  } ' |  sort -u | head -7 |  xargs -n7 | sed "s/ /|/g"  > heading_date
+
+
+
+cd  /home/NCOR6649/scripts/RSL/
+dos2unix regsheet.csv > regsheet1.csv
+cat regsheet1.csv | sed "s/,/|/g" > regsheet.txt
+dos2unix cell_info.csv  | sed "s/,/|/g" > cell
+dos2unix in_out.csv | sed "s/,/|/g" | sed "s/\"//g" | nawk 'FS="|" , OFS="|" { print substr($1,1,7),$2 } ' |  sort -u  > in_out
+dos2unix gen_stat.csv | sed "s/,/|/g" > gen_stat
+
+cd /home/NCOR6649/scripts/eas
+
+for i in ` dos2unix /home/NCOR6649/scripts/RSL/regsheet.txt | grep -i "macro" > regsheet_n.txt ; cat regsheet_n.txt | grep -i "macro" |  perl -e 's/ //g' -w -p -i `
+do
+
+#echo $i
+
+site_code=`printf $i | nawk 'FS="|" , OFS="|" { print $1 }  '`
+idod=`  cat /home/NCOR6649/scripts/RSL/in_out | sort -u  |  (grep -s $site_code  || printf -- " \n" )  | nawk 'FS="|" , OFS="|" { print $2 } ' `
+genstat=` cat /home/NCOR6649/scripts/RSL/gen_stat | sort -u |  (grep -s $site_code  || printf -- " \n" )  | nawk 'FS="|" , OFS="~" { print $4,$5 } ' `
+i=`printf "$i|$idod|$genstat"`
+#echo $site_code
+
+#echo "*** Genset/Mains Failure/Low Voltage/SOB *** "
+rm -f gtt mtt stt ltt rtt
+touch gtt mtt stt ltt rtt
+
+for j in `cat date_file | head -7`
+do
+datee=`printf $j | nawk 'FS="|" , OFS="|" { print $1 }  '`
+
+cat gen_sites_7 | grep $site_code | ( grep  -s $datee || printf -- "0\n" )  |  nawk 'FS="|" , OFS="|" { if($1!=0){print $2 } else print $1} '   >> gtt
+
+cat mf_sites_7  | grep $site_code | ( grep  -s $datee || printf -- "0\n" )  |  nawk 'FS="|" , OFS="|" { if($1!=0){print $2 } else print $1} '   >> mtt
+cat sob_sites_7 | grep $site_code | ( grep  -s $datee || printf -- "0\n" )  |  nawk 'FS="|" , OFS="|" { if($1!=0){print $2 } else print $1} '   >> stt
+cat low_sites_7 | grep $site_code | ( grep  -s $datee || printf -- "0\n" )  |  nawk 'FS="|" , OFS="|" { if($1!=0){print $2 } else print $1} '   >> ltt
+
+# cat rsl_sites_7 | grep $site_code | ( grep  -s $datee || printf -- "0\n" )  |  nawk 'FS="|" , OFS="|" { if($1!=0){print $2 } else print $1} '   >> rtt
+done
+ 
+gt=` cat gtt  |  xargs -n7 | sed "s/ /|/g" | nawk 'FS="|" , OFS="|" { print "GENS",$0 }' `
+mt=` cat mtt  |  xargs -n7 | sed "s/ /|/g" | nawk 'FS="|" , OFS="|" { print "MAN",$0 } ' `
+st=` cat stt  |  xargs -n7 | sed "s/ /|/g" | nawk 'FS="|" , OFS="|" { print "SOB",$0 } ' `
+lt=` cat ltt  |  xargs -n7 | sed "s/ /|/g" | nawk 'FS="|" , OFS="|" { print "LOW",$0 } ' `
+#rt=` cat rtt  |  xargs -n7 | sed "s/ /|/g" | nawk 'FS="|" , OFS="|" { print "NAV",$0 } ' `
+rm -f gtt mtt stt ltt rtt
+
+
+#-v nct=$ct
+#echo $ct
+#printf $i | nawk -v gct="${gt}" -v mct="${mt}"  -v sct="${st}" -v lct="${lt}" 'FS="|" , OFS="|"  { gsub(/ /, "", gct);gsub(/ /, "", mct);gsub(/ /, "", sct);gsub(/ /, "", lct) ;print $0,"===",gct,mct,sct,lct }  '  >> new_reg_eas
+
+printf $i | nawk -v gct="${gt}"  'FS="|" , OFS="|"  { gsub(/ /, "", gct) ;print $0,gct }  '  >> new_reg_eas
+printf $i | nawk -v mct="${mt}"  'FS="|" , OFS="|"  { gsub(/ /, "", mct) ;print $0,mct }  '  >> new_reg_eas
+
+printf $i | nawk -v sct="${st}"  'FS="|" , OFS="|"  { gsub(/ /, "", sct) ;print $0,sct }  '  >> new_reg_eas
+printf $i | nawk -v lct="${lt}"  'FS="|" , OFS="|"  { gsub(/ /, "", lct) ;print $0,lct }  '  >> new_reg_eas
+
+#printf $i | nawk -v rct="${rt}"  'FS="|" , OFS="|"  { gsub(/ /, "", rct) ;print $0,rct }  '  >> new_reg_eas
+
+
+#printf $i | nawk -v mct="${mt}"  'FS="|" , OFS="|"  { gsub(/ /, "", gct) ;print $0,mct }  '
+#printf $i | nawk -v sct="${st}"  'FS="|" , OFS="|"  { gsub(/ /, "", gct) ;print $0,sct }  '  
+#printf $i | nawk -v lct="${lt}"  'FS="|" , OFS="|"  { gsub(/ /, "", gct) ;print $0,lct }  ' 
+
+#if [ $ct -gt 0 ]; then
+#printf $i | nawk -v nct=$ct 'FS="|" , OFS="|"  { print $0,"===",nct }  '  
+
+#else
+#printf $i | nawk 'FS="|" , OFS="|" { print $0,"N" }  '  >> new_reg_eas
+
+#fi
+
+
+
+
+
+
+done
+
+# sh new_mail_send_eas_final

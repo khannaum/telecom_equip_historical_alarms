@@ -1,0 +1,95 @@
+==============================
+Huawei Daily  event  Omc Data Files
+==============================
+-rw-r--r--   1 NCOR6649 omcread     294K Feb 10 05:07 lapd_genset_low6_vol_09022016.txt.Z
+-rw-r--r--   1 NCOR6649 omcread      69K Feb 10 05:26 3g_cell_out5_09022016.txt.Z
+-rw-r--r--   1 NCOR6649 omcread     291K Feb 11 02:06 lapd_genset_low4_vol_10022016.txt.Z
+-rw-r--r--   1 NCOR6649 omcread        0 Feb 11 05:00 3g_cell_out6_10022016.txt
+-rw-r--r--   1 NCOR6649 omcread      31K Feb 11 05:01 3g_cell_out_10022016.txt.Z
+-rw-r--r--   1 NCOR6649 omcread     217K Feb 11 05:02 lapd_genset_low5_vol_10022016.txt.Z
+-rw-r--r--   1 NCOR6649 omcread     286K Feb 11 05:07 lapd_genset_low6_vol_10022016.txt.Z
+-rw-r--r--   1 NCOR6649 omcread      84K Feb 11 05:25 3g_cell_out5_10022016.txt.Z
+drwxrwxrwx   2 NCOR6649 omcread      13K Feb 11 06:20 hsix
+-rw-r--r--   1 NOCCORDT omc         815K Feb 11 07:15 hu_lapd_genset_low.txt.Z
+==============================
+Huawei Daily  Current Alarms  OMC Data Files
+
+==============================
+-rw-r--r--   1 NCOR6649 omcread     107K Feb 11 08:00 /home/NCOR6649/huawei5_active_alm.txt.Z
+-rw-r--r--   1 NCOR6649 omcread     156K Feb 11 08:00 /home/NCOR6649/huawei4_active_alm.txt.Z
+-rw-r--r--   1 NCOR6649 omcread     141K Feb 11 08:00 /home/NCOR6649/huawei6_active_alm.txt.Z
+==============================
+ZTE Daily    Files
+==============================
+-rw-r--r--   1 NOCCORDT omc         231K Feb  9 05:30 zte_eas_20160208.Z
+-rw-r--r--   1 NOCCORDT omc          12K Feb  9 05:30 zte_3g_20160208.Z
+-rw-r--r--   1 NOCCORDT omc          97K Feb 10 05:30 zte_rsl_20160209.Z
+-rw-r--r--   1 NOCCORDT omc         227K Feb 10 05:30 zte_eas_20160209.Z
+-rw-r--r--   1 NOCCORDT omc          16K Feb 10 05:30 zte_3g_20160209.Z
+-rw-r--r--   1 NOCCORDT omc         149K Feb 11 05:30 zte_rsl_20160210.Z
+-rw-r--r--   1 NOCCORDT omc         246K Feb 11 05:30 zte_eas_20160210.Z
+-rw-rw-r--   1 NOCCORDT omc         443K Feb 11 05:30 zte_cell.csv
+-rw-r--r--   1 NOCCORDT omc          16K Feb 11 05:30 zte_3g_20160210.Z
+-rwxrwxrwx   1 NOCCORDT omc         149K Feb 11 07:15 daily_zte_rsl.Z
+==============================
+Ericssion Daily Alarms omc data Files
+==============================
+-rw-r--r--   1 NCOR6649 omcread     250K Feb 10 08:49 erc_act_alm.Z
+-rw-r--r--   1 NCOR6649 omcread      18K Feb 11 05:44 erc_rsl_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread     180K Feb 11 05:44 erc_mains_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread      85K Feb 11 05:44 erc_gen_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread     133K Feb 11 05:44 erc_sob_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread      45K Feb 11 05:44 erc_low_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread      12K Feb 11 06:09 3g_cell_out_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread      19K Feb 11 06:57 erc_3g_cell.Z
+-rw-r--r--   1 NCOR6649 omcread      71K Feb 11 07:45 erc_rsl_cell.Z
+-rw-r--r--   1 NCOR6649 omcread     5.5K Feb 11 07:49 erc_gprs_week_10022016.Z
+==============================
+Netecho Daily Alarms omc data Files
+==============================
+-rw-r--r--   1 NOCCORDT omc         587K Feb  7 08:45 nwd_mains_fail_06022016.Z
+-rw-r--r--   1 NOCCORDT omc          96K Feb  8 08:45 net_gen_run_07022016.Z
+-rw-r--r--   1 NOCCORDT omc         200K Feb  8 08:45 net_mains_fail_07022016.Z
+-rw-r--r--   1 NOCCORDT omc         554K Feb  8 08:45 nwd_mains_fail_07022016.Z
+-rw-r--r--   1 NOCCORDT omc         102K Feb  9 08:45 net_gen_run_08022016.Z
+-rw-r--r--   1 NOCCORDT omc         211K Feb  9 08:45 net_mains_fail_08022016.Z
+-rw-r--r--   1 NOCCORDT omc         601K Feb  9 08:45 nwd_mains_fail_08022016.Z
+-rw-r--r--   1 NOCCORDT omc         101K Feb 10 08:45 net_gen_run_09022016.Z
+-rw-r--r--   1 NOCCORDT omc         212K Feb 10 08:45 net_mains_fail_09022016.Z
+-rw-r--r--   1 NOCCORDT omc         599K Feb 10 08:45 nwd_mains_fail_09022016.Z
+==============================
+TXN Daily    Files
+==============================
+-rw-r--r--   1 NOCCORDT omc         1.9K Feb 10 07:40 txn_rep_gen_20160209.Z
+-rw-r--r--   1 NOCCORDT omc         925K Feb 10 09:45 mwkp_reports_10022016.tar.bz2
+-rw-r--r--   1 NOCCORDT omc         2.1K Feb 11 07:40 txn_rep_gen_20160210.Z
+==============================
+Sotrage stats
+==============================
+Filesystem             size   used  avail capacity  Mounted on
+/dev/md/dsk/d0          36G   6.2G    29G    18%    /
+/devices                 0K     0K     0K     0%    /devices
+ctfs                     0K     0K     0K     0%    /system/contract
+proc                     0K     0K     0K     0%    /proc
+mnttab                   0K     0K     0K     0%    /etc/mnttab
+swap                    27G   1.7M    27G     1%    /etc/svc/volatile
+objfs                    0K     0K     0K     0%    /system/object
+sharefs                  0K     0K     0K     0%    /etc/dfs/sharetab
+/dev/md/dsk/d20         55G    36G    19G    66%    /usr
+fd                       0K     0K     0K     0%    /dev/fd
+/dev/md/dsk/d10         83G    42G    40G    52%    /var
+swap                    40G    13G    27G    33%    /tmp
+swap                    27G    88K    27G     1%    /var/run
+/dev/md/dsk/d75        9.8G    10M   9.7G     1%    /zones
+/dev/md/dsk/d60        7.7G   7.8M   7.6G     1%    /solbak
+/dev/md/dsk/d35         10G   5.7G   4.7G    55%    /home
+/dev/md/dsk/d30        6.7G   6.9M   6.7G     1%    /omcgen
+/dev/md/dsk/d15         69G   9.7G    58G    15%    /opt
+/dev/md/dsk/d40        5.8G   2.8G   2.9G    50%    /usr/omc
+/dev/md/dsk/d45        1.9G    44M   1.8G     3%    /usr/omc/logs
+/dev/md/dsk/d50         16G   3.0G    13G    20%    /usr/omc/ne_data
+/dev/md/dsk/d65        7.9G   8.0M   7.8G     1%    /usr/omc/logs/bss_sec
+/dev/md/dsk/d70        2.0G   2.0M   1.9G     1%    /usr/omc/logs/sleeping_cell
+/dev/md/dsk/d80        994M   1.0M   934M     1%    /usr/omc/ne_data/e1mon
+/dev/md/dsk/d55         13G    17M    13G     1%    /usr/omc/ne_data/raw_stats
+==============================

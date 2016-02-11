@@ -1,0 +1,100 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+#cd /home/oann/scripts/RSL
+
+#` cp /home/Motorola/ev_logs/s*.txt.Z /tmp/ev_logs/
+
+mkdir /tmp/hal/
+chmod 777 /tmp/hal/ 
+
+echo "omc1"
+ftp -T 15 -n -p 10.231.160.1 <<EOF
+user omc3ftp omc3ftp
+hash
+bin
+cd HALD
+
+mget HAL.tgz
+bye
+
+EOF
+mv HAL.tgz /tmp/hal/omc1$DAY$MONTH$YEAR.tgz
+
+
+echo "omc2"
+ftp -T 15 -n -p 10.231.80.1 <<EOF
+user omc3ftp omc3ftp
+hash
+bin
+cd HALD
+
+mget HAL.tgz
+bye
+
+EOF
+mv HAL.tgz /tmp/hal/omc2$DAY$MONTH$YEAR.tgz
+
+
+echo "omc3"
+ftp -T 15 -n -p 10.231.90.4 <<EOF
+user omc3ftp omc3ftp
+hash
+bin
+cd HALD
+
+mget HAL.tgz
+bye
+
+EOF
+mv HAL.tgz /tmp/hal/omc3$DAY$MONTH$YEAR.tgz
+
+
+echo "omc4"
+ftp -T 15 -n -p 10.231.140.1 <<EOF
+user omc3ftp omc3ftp
+hash
+bin
+cd HALD
+
+mget HAL.tgz
+bye
+
+EOF
+mv HAL.tgz /tmp/hal/omc4$DAY$MONTH$YEAR.tgz
+
+
+echo "omc5"
+ftp -T 15 -n -p 10.231.150.1 <<EOF
+user omc3ftp omc3ftp
+hash
+bin
+cd HALD
+
+mget HAL.tgz
+bye
+
+EOF
+mv HAL.tgz /tmp/hal/omc5$DAY$MONTH$YEAR.tgz
+
+
+
+# gzcat HAL*.tgz | grep "LOSS-OF-ALL-CHAN" | nawk -f get_alm_hal | grep "\/18"
+
+
+echo "### End #####"
+
+
+
+ 
+ 

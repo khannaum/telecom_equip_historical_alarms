@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# su - root
+echo "Enter User:"
+read user
+echo "Enter HMI IP:"
+read ip
+ 
+echo $user 
+echo $ip
+
+ssh $user@$ip << END 
+
+ls ;  USER='$user' ; export $USER ; echo $USER
+
+vncserver
+
+echo "kkkk" > pp
+
+cat pp
+
+  
+ 
+END
+
+
+
+ 
+
+
+
+echo "======End======"
+

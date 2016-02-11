@@ -1,0 +1,38 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+PDAY=`TZ=GMT+48 date +%d`
+
+cd /home/NCOR6649/scripts/alcatel/
+
+ sh  ftp_hal
+
+
+
+
+# compress /home/NCOR6649/logs/rsl/all_mot_rsl_site_$DAY-$MONTH 
+
+
+gzcat /tmp/hal/omc*$DAY$MONTH$YEAR.tgz | grep "LOSS-OF-ALL-CHAN" | nawk -f get_alm_hal |  /usr/xpg4/bin/grep -E "\/$DAY|\/$PDAY" | grep -v "::" | perl  hal_date_c.pl | sort -u  > /home/NCOR6649/logs/rsl/loac_alu_$DAY-$MONTH
+
+rm -f  /home/NCOR6649/logs/rsl/loac_alu_$DAY-$MONTH.Z
+rm -f /home/NCOR6649/logs/rsl/Alcatel.txt.Z
+
+
+compress /home/NCOR6649/logs/rsl/loac_alu_$DAY-$MONTH
+
+cp /home/NCOR6649/logs/rsl/loac_alu_$DAY-$MONTH.Z /home/NCOR6649/logs/rsl/Alcatel.txt.Z
+
+
+echo "### End #####"
+
+  sh mail_rsl_alu

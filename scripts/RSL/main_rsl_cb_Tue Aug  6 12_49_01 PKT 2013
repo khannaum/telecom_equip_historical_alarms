@@ -1,0 +1,45 @@
+#!/bin/sh
+
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd  /home/NCOR6649/scripts/RSL/
+
+####Motorola###########
+
+zcat /home/NCOR6649/logs/rsl/all_mot_rsl_site_$DAY-$MONTH.Z  | grep -v "|/          /" | nawk 'FS="|" , OFS="|" { print $1,$2,"",$3,$4,$5 } ' | perl perl_d_rsl_mot.pl | sed  "s/\.//g" | grep -vi "_OLD\>" | grep -v "_ML\>"  |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980" | nawk 'FS="|" , OFS="|" { print "Motorola",$0}' > /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z  | grep "Motorola" |  grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980" | nawk 'FS="|" , OFS="|" { split($5,dd," ");split(dd[1],d,"-");print $2,$3,d[2]"-"d[3]"-"d[1]" "dd[2]} ' | sed -e "s/  //g" | sort -u | perl perl_alu_rsl_mot.pl  | nawk 'FS="|" , OFS="|" { print "Motorola",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+#####Alcatel###########
+
+ zcat /home/NCOR6649/logs/rsl/loac_alu_$DAY-$MONTH.Z | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,$5 }'  | perl perl_d_rsl_alu.pl | nawk 'FS="|" , OFS="|" { print "Alcatel",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z  | grep -i "Alcatel" | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $2,$3,$4,$5 } ' |sort -u | perl perl_alu_rsl_alm.pl | nawk 'FS="|" , OFS="|" { print "Alcatel",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+#####Huawei#########
+
+
+ zcat /home/NCOR6649/logs/huawei/lapd_genset_low*_vol_$DAY$MONTH$YEAR.txt.Z |  grep "GSM Cell out of Service" | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| perl perl_d_rsl_alu.pl | nawk 'FS="|" , OFS="|" { print "Huawei",$0}' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+ zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z  | grep -i "Huawei" | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $2,$3,$4,$5 } ' |sort -u | perl perl_hu_rsl_alm.pl | nawk 'FS="|" , OFS="|" { print "Huawei",$0}' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+#######Zte#########
+
+
+ zcat /home/NCOR6649/logs/zte/daily_zte_rsl.Z |  grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test" | grep -v "|1980" | nawk 'FS="|" , OFS="|" { split($4,oc," ");split(oc[1],coc,"/"); newoc=coc[2]"/"coc[3]"/"coc[1]" "oc[2]; split($5,cl," ");split(cl[1],ccl,"/"); newcl=ccl[2]"/"ccl[3]"/"ccl[1]" "cl[2];print $1,$2,$3,newoc,newcl} ' | perl perl_d_rsl_alu.pl | nawk 'FS="|" , OFS="|" { print "ZTE",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z | grep "ZTE" |  grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test" | grep -v "|1980" |  nawk 'FS="|" , OFS="|" { split($5,oc," ");split(oc[1],coc,"-"); newoc=coc[2]"/"coc[3]"/"coc[1]" "oc[2]; print $2,$3,$4,newoc} ' | perl perl_hu_rsl_alm.pl | nawk 'FS="|" , OFS="|" { print "ZTE",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+cat /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR | sort -u > /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv
+rm -f /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+rm -f /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv.Z
+
+compress /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv
+
+nwd_rsl=nwd_rsl_$DAY$MONTH$YEAR.csv
+
+/usr/bin/uuencode /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv.Z  $nwd_rsl.Z  | mailx -s $nwd_rsl nauman.khan@mobilink.net,ali.a@mobilink.net,MAJID.MUNIR@mobilink.net,NOOR.HUDA@mobilink.net,tehmina.iftikhar@mobilink.net,asif.r@mobilink.net

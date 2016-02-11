@@ -1,0 +1,85 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=` date +%d`
+YEAR=` date +%Y`
+MONTH=`date +%m`
+Time=`date +%H%M%S`
+
+cd /home/NCOR6649/scripts/alcatel/
+
+sh  main_cal
+
+
+
+
+# compress /home/NCOR6649/logs/rsl/all_mot_rsl_site_$DAY-$MONTH 
+
+
+
+zcat /home/NOCCORDT/alu_alm.txt.Z | grep "LOSS-OF-ALL-CHAN" | nawk 'FS ="|", OFS="|" { print $1,$2,$3,$6 } ' | perl eas_date_c.pl | sort -u  > /home/NCOR6649/logs/dt_site/alu_dt_new_$DAY$MONTH$Time 
+
+
+rm -f /home/NCOR6649/logs/dt_site/alu_dt_new_$DAY$MONTH$Time.Z
+
+compress /home/NCOR6649/logs/dt_site/alu_dt_new_$DAY$MONTH$Time
+
+/bin/perl getbsc1.pl
+
+sleep 15
+
+
+echo "new sunfire2"
+ftp -n -p 10.231.10.60 <<EOF
+user NOCCORDT noccord1  
+hash
+bin
+cd scripts 
+
+mget sitestatus.out 
+bye
+
+EOF
+
+mv sitestatus.out /home/NOCCORDT/scripts/sitestatus.out 
+ 
+ 
+cat /home/NOCCORDT/scripts/sitestatus.out | grep "|D|" | nawk 'FS="|",OFS="|" { print $1,$2,$3,$4"-"$5,$6,$8 } ' > /home/NCOR6649/logs/dt_site/mot_dt_new_$DAY$MONTH$Time
+# cp /home/NOCCORDT/scripts/sitestatus.out /home/NOCCORDT/scripts/sitestatus$DAY$MONTH$TIME.out
+compress /home/NCOR6649/logs/dt_site/mot_dt_new_$DAY$MONTH$Time  
+
+
+
+zcat /home/NCOR6649/huawei*_active_alm.txt.Z  | grep "GSM Cell out of Service" |  sort -u  > /home/NCOR6649/logs/dt_site/hu_dt_new_$DAY$MONTH$Time 
+
+compress /home/NCOR6649/logs/dt_site/hu_dt_new_$DAY$MONTH$Time
+
+
+
+alu_dt=alu_dt_new_$DAY$MONTH$Time
+mot_dt=mot_dt_new_$DAY$MONTH$Time
+hu_dt=hu_dt_new_$DAY$MONTH$Time
+zte_dt=zte_down_st_new_$YEAR$MONTH$DAY
+
+
+/usr/bin/uuencode /home/NCOR6649/logs/dt_site/alu_dt_new_$DAY$MONTH$Time.Z  $alu_dt.Z | mailx -s $alu_dt nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net
+
+/usr/bin/uuencode /home/NCOR6649/logs/dt_site/mot_dt_new_$DAY$MONTH$Time.Z  $mot_dt.Z | mailx -s $mot_dt nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net
+
+/usr/bin/uuencode /home/NCOR6649/logs/dt_site/hu_dt_new_$DAY$MONTH$Time.Z  $hu_dt.Z | mailx -s $hu_dt nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net
+
+/usr/bin/uuencode /home/NCOR6649/logs/zte/zte_down_st_new_$YEAR$MONTH$DAY.Z  $zte_dt.Z | mailx -s $zte_dt nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net
+
+
+echo "### End #####"
+
+
+
+ 
+ 

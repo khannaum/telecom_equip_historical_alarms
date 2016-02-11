@@ -1,0 +1,49 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd /home/NCOR6649/scripts/tre/
+
+sh  ftp_cal
+
+
+
+
+
+
+cat /tmp/cal/omc1_cal.csv |  grep "notCleared" | nawk -f get_alm_cal  > /home/noccord/alu_alm
+
+cat /tmp/cal/omc1_cal.csv |  grep "notCleared" | nawk -f get_alm_cal | /usr/xpg4/bin/grep -E "RX-TX|SW-AN|G-BTS" | nawk 'FS="|" , OFS="|" { print $8,$1,$2,$3,$6,$7,"omc1" } ' > /home/NCOR6649/logs/tre/daily_tre.txt
+
+
+cat /tmp/cal/omc2_cal.csv |  grep "notCleared" | nawk -f get_alm_cal | /usr/xpg4/bin/grep -E "RX-TX|SW-AN|G-BTS" | nawk 'FS="|" , OFS="|" { print $8,$1,$2,$3,$6,$7,"omc2" } ' >> /home/NCOR6649/logs/tre/daily_tre.txt
+
+cat /tmp/cal/omc3_cal.csv |  grep "notCleared" | nawk -f get_alm_cal | /usr/xpg4/bin/grep -E "RX-TX|SW-AN|G-BTS" | nawk 'FS="|" , OFS="|" { print $8,$1,$2,$3,$6,$7,"omc3" } ' >> /home/NCOR6649/logs/tre/daily_tre.txt
+
+cat /tmp/cal/omc4_cal.csv |  grep "notCleared" | nawk -f get_alm_cal | /usr/xpg4/bin/grep -E "RX-TX|SW-AN|G-BTS" | nawk 'FS="|" , OFS="|" { print $8,$1,$2,$3,$6,$7,"omc4" } ' >> /home/NCOR6649/logs/tre/daily_tre.txt
+
+cat /tmp/cal/omc5_cal.csv |  grep "notCleared" | nawk -f get_alm_cal | /usr/xpg4/bin/grep -E "RX-TX|SW-AN|G-BTS" | nawk 'FS="|" , OFS="|" { print $8,$1,$2,$3,$6,$7,"omc5" } ' >> /home/NCOR6649/logs/tre/daily_tre.txt
+
+
+
+
+
+rm -f  /home/NCOR6649/logs/tre/daily_tre.txt.Z
+
+compress /home/NCOR6649/logs/tre/daily_tre.txt 
+
+echo "### End #####"
+
+
+
+ 
+ 

@@ -1,0 +1,40 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24  date +%Y`
+MONTH=`TZ=GMT+24  date +%m`
+
+
+
+
+
+ftp -n -p 10.231.170.60 <<EOF
+user FTPNETCO ftpnetco
+hash
+bin
+cd /tmp/exportAlarms
+
+mget ne_gen_mf_hs_$DAY$MONTH$YEAR.txt
+
+mget ne_gen_mf_act_$DAY$MONTH$YEAR.txt
+
+bye
+
+EOF
+#mv HAL.tgz /tmp/hal/omc1$DAY$MONTH$YEAR.tgz
+
+
+
+
+
+
+
+ 
+ 

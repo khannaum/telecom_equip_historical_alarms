@@ -1,0 +1,14 @@
+BEGIN{
+ FS=";"
+OFS="|"
+}
+
+{
+split($2,bsc," ")
+oc_date=substr($1,5,2)"/"substr($1,7,2)"/"substr($1,1,4)" "substr($1,9,2)":"substr($1,11,2)":"substr($1,13,2)
+cl_date=substr($13,5,2)"/"substr($13,7,2)"/"substr($13,1,4)" "substr($13,9,2)":"substr($13,11,2)":"substr($13,13,2)
+#print $1,$2,$13 
+
+print bsc[1],bsc[2],bsc[3]""bsc[4],oc_date,cl_date
+}
+

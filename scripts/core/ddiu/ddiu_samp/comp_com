@@ -1,0 +1,66 @@
+BEGIN{
+ FS = " "
+
+# ORS="|"
+OFS="|"
+#Office direction name  Trunk group name  Network indicator  OPC     DPC     Circuit type  Start CIC  End CIC.  Start TID.  E
+#nd TID.  Module No.  Start Circuit No.  End Circuit No.  Server name  Domain name  Total Installed Circuits
+}
+
+
+#/<BeginEvent>/,/<EndEvent>/{s=$0;l=NR}
+{
+
+if($0~/\+\+\+/){ anode=$2}
+if ( ($0~/--------------------/) || ($0~/---------------------/) || ($0~/----------------------------/) )
+       
+{
+ key=1
+while ($0!~/END/ ) 
+{
+ getline
+  
+ 
+if ($0!~/END/ && $0!~/Number of results/   )
+
+{
+    # print length($0),anode,$0
+     
+
+       if( (length($0)>100) && ($0!~/Trunk/) )
+       {    
+      # print $0
+        if(key==1)
+        { 
+          ft=$1"|"$2;key=0
+        } 
+        print anode,$1,$2,$6,$7
+       kk=$2
+       
+        }
+      
+    
+   
+   
+   } 
+   
+    # if ( $0~/Number of results/ && key==0 ) {  print ft,kk;key=1 }  
+
+
+}
+
+# print 2,ft,kk
+
+# print "\n"
+
+}
+
+
+#print "\n"
+
+
+}
+END {
+#print "===================="
+}
+

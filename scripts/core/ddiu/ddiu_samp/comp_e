@@ -1,0 +1,23 @@
+BEGIN{
+ FS = "|"
+
+# ORS="|"
+OFS="|"
+#Office direction name  Trunk group name  Network indicator  OPC     DPC     Circuit type  Start CIC  End CIC.  Start TID.  E
+#nd TID.  Module No.  Start Circuit No.  End Circuit No.  Server name  Domain name  Total Installed Circuits
+}
+
+
+#/<BeginEvent>/,/<EndEvent>/{s=$0;l=NR}
+{
+
+       
+ print $0,$9
+
+
+}
+
+END {
+#print "===================="
+}
+

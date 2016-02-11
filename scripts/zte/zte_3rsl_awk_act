@@ -1,0 +1,17 @@
+BEGIN{
+	 FS="," ; OFS="|"
+}
+{
+ 	 split($37,cd," ")
+ 	   split(cd[1],cod,"-")
+  split($13,od," ")
+  split(od[1],dod,"-")
+  split($3,f1,"_")
+  #print $32,$48,$51,$13,$39
+  if(f1[1]!~/CL/){f1[2]=f1[1] }
+  oc=dod[2]"/"dod[3]"/"dod[1]" "od[2] ; cl=cod[2]"/"cod[3]"/"cod[1]" "cd[2]
+   if(NR>2  && length($32) > 2){print $32,$42,$45,oc } 
+ 
+ }
+END{
+ }

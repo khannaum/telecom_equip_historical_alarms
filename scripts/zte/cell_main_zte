@@ -1,0 +1,37 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+
+
+DAY=`TZ=GMT date +%d`
+YEAR=`TZ=GMT date +%Y`
+MONTH=`TZ=GMT date +%m`
+
+PDAY=`TZ=GMT+24 date +%d`
+PYEAR=`TZ=GMT+24 date +%Y`
+PMONTH=`TZ=GMT+24 date +%m`
+
+cd /home/NCOR6649/scripts/zte
+echo $YEAR$MONTH$DAY
+# cat TCH_AVL_8PM_9PM_2416_201504200500.csv | nawk -f zte_cell_awk
+#cat  /home/NOCCORDT/logs/report_rsl_$YEAR$MONTH$DAY*_*.csv  | nawk 'FS="," , OFS="|" { split($37,cd," ");split(cd[1],cod,"-");split($9,od," ");split(od[1],dod,"-");split($3,f1,"_"); oc=dod[2]"/"dod[3]"/"dod[1]" "od[2] ; cl=cod[2]"/"cod[3]"/"cod[1]" "cd[2] ; if(NR>2  && length($32) > 2){print $32,substr(f1[2],1,7),$49,oc,cl} }' | perl /home/NCOR6649/scripts/RSL/perl_d_rsl_alu.pl > /home/NCOR6649/logs/zte/zte_rsl_$PYEAR$PMONTH$PDAY
+
+#cd  /home/NOCCORDT/logs/
+#unzip TCH_AVL_8PM_9PM_*_$YEAR$MONTH$DAY*.zip
+#cd /home/NCOR6649/scripts/zte
+
+gzcat /home/NOCCORDT/logs/TCH_AVL_8PM_9PM_*_$YEAR$MONTH$DAY*.zip | nawk -f zte_cell_awk > /home/NCOR6649/logs/zte/zte_cell.csv  
+
+
+
+
+
+
+
+
+ 
+ 

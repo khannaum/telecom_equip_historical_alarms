@@ -1,0 +1,755 @@
+"10.31.24.25---O&M System"
+OPC
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC= ;
++++    HUAWEI UMG8900        2010-10-20 15:26:15
+O&M    #2         
+%%LST TDMTID: TIDFVDEC= ;%%
+RETCODE = 60003  Grammar error in command line
+
+
+---    END
+
+
+mml>26752
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=26752 ;
++++    HUAWEI UMG8900        2010-10-20 15:26:21
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=26752 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+26752   4     15    NULL  4     0     
+(Number of results = 1)
+
+---    END
+
+
+mml>26784
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>26816
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=26816 ;
++++    HUAWEI UMG8900        2010-10-20 15:26:33
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=26816 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+26816   4     15    NULL  6     0     
+(Number of results = 1)
+
+---    END
+
+
+mml>12480
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>12512
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>15808
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>25408
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>25440
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=25440 ;
++++    HUAWEI UMG8900        2010-10-20 15:27:03
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=25440 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+25440   4     13    NULL  27    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>26432
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>25760
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=25760 ;
++++    HUAWEI UMG8900        2010-10-20 15:27:15
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=25760 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+25760   4     14    NULL  5     0     
+(Number of results = 1)
+
+---    END
+
+
+mml>18496
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=18496 ;
++++    HUAWEI UMG8900        2010-10-20 15:27:21
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=18496 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+18496   3     15    NULL  2     0     
+(Number of results = 1)
+
+---    END
+
+
+mml>18528
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>18560
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>4224
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=4224 ;
++++    HUAWEI UMG8900        2010-10-20 15:27:40
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=4224 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+4224    2     1     NULL  4     0     
+(Number of results = 1)
+
+---    END
+
+
+mml>4800
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>3712
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=3712 ;
++++    HUAWEI UMG8900        2010-10-20 15:27:52
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=3712 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+3712    2     0     NULL  20    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>3616
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=3616 ;
++++    HUAWEI UMG8900        2010-10-20 15:27:58
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=3616 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+3616    2     0     NULL  17    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>3648
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>3680
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>16224
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=16224 ;
++++    HUAWEI UMG8900        2010-10-20 15:28:16
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=16224 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+16224   3     12    NULL  27    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>16256
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=16256 ;
++++    HUAWEI UMG8900        2010-10-20 15:28:22
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=16256 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+16256   3     12    NULL  28    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>16928
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=16928 ;
++++    HUAWEI UMG8900        2010-10-20 15:28:28
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=16928 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+16928   3     13    NULL  17    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>17376
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=17376 ;
++++    HUAWEI UMG8900        2010-10-20 15:28:34
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=17376 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+17376   3     13    NULL  31    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>18432
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=18432 ;
++++    HUAWEI UMG8900        2010-10-20 15:28:40
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=18432 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+18432   3     15    NULL  0     0     
+(Number of results = 1)
+
+---    END
+
+
+mml>18464
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=18464 ;
++++    HUAWEI UMG8900        2010-10-20 15:28:46
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=18464 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+18464   3     15    NULL  1     0     
+(Number of results = 1)
+
+---    END
+
+
+mml>18752
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=18752 ;
++++    HUAWEI UMG8900        2010-10-20 15:28:52
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=18752 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+18752   3     15    NULL  10    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>18784
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>19072
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>19232
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=19232 ;
++++    HUAWEI UMG8900        2010-10-20 15:29:10
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=19232 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+19232   3     15    NULL  25    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>25280
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=25280 ;
++++    HUAWEI UMG8900        2010-10-20 15:29:16
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=25280 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+25280   4     13    NULL  22    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>25312
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=25312 ;
++++    HUAWEI UMG8900        2010-10-20 15:29:22
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=25312 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+25312   4     13    NULL  23    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>28224
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=28224 ;
++++    HUAWEI UMG8900        2010-10-20 15:29:28
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=28224 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+28224   5     0     NULL  18    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>28256
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>28320
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=28320 ;
++++    HUAWEI UMG8900        2010-10-20 15:29:40
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=28320 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+28320   5     0     NULL  21    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>29024
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=29024 ;
++++    HUAWEI UMG8900        2010-10-20 15:29:46
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=29024 ;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+29024   5     1     NULL  11    0     
+(Number of results = 1)
+
+---    END
+
+
+mml>29280

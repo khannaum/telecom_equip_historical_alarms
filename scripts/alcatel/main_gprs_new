@@ -1,0 +1,34 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+PDAY=`TZ=GMT+48 date +%d`
+
+cd /home/NCOR6649/scripts/alcatel/
+
+
+
+
+
+
+
+gzcat /tmp/hal/omc*$DAY$MONTH$YEAR.tgz   | grep "Loss of Packet Service" | nawk -f get_alm_hal | /usr/xpg4/bin/grep -E "\/$DAY|\/$PDAY" | grep -v "::" | perl  hal_date_c.pl |   sort -u > /home/NCOR6649/logs/gprs/gprs_alu_$DAY-$MONTH
+
+rm -f  /home/NCOR6649/logs/gprs/gprs_alu_$DAY-$MONTH.Z
+
+compress /home/NCOR6649/logs/gprs/gprs_alu_$DAY-$MONTH
+
+echo "### End #####"
+
+
+
+ 
+ 

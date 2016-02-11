@@ -1,0 +1,6 @@
+#!/bin/sh
+i="a"
+name="aabbcc"
+
+me=` echo $i"|"$name | nawk ' { FS="|" ; if( $2 ~ $1){print $2} } ' `
+ echo $me

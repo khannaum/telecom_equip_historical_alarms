@@ -1,0 +1,17 @@
+#!/bin/sh
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+# cd /home/NCOR6649/scripts/eas
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+
+zcat /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv.Z   | sort -u | perl perl_rsl_consol.pl    > eas_main_f
+#zcat /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv.Z   | sort -u | perl perl_rsl_consol.pl | more
+cat eas_main_f |  nawk 'FS="|", OFS="|" { split($1,dd,"~");print dd[1] } ' |  sort -u   > keyf
+cat eas_main_f |  nawk 'FS="|", OFS="|" { print $1 } ' | sort -u  > key_file
+perl easc_avl.pl   > rsl_sites_7

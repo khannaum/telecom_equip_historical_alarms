@@ -1,0 +1,97 @@
+#!/bin/ksh
+
+cd /home/oann/scripts/core/mtp_r_fl_h/
+
+#user=`echo '"noc_core"'`
+#echo  "$user"
+#password=` echo '"Mobilink123"' `
+#echo "$password"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+# 2011&09&29
+
+date_v=$YEAR"&"$MONTH"&"$DAY
+
+echo $date_v
+
+server="10.31.24.21"
+
+Ser=`echo  "\"$server---O&M System\""`
+last=`echo "\"---O&MSystem\""`
+#echo "$Ser"
+
+#for file in `cat ll`;do echo " ";done
+
+#grep "BSGSM" /usr/gsm/config/global/NE.MAP|awk '{print $2}'>./bss_name
+
+# echo " " > ./gath
+
+echo "" > core_h_evt 
+
+
+dos2unix -ascii -850 fip.csv  > mfip.csv;
+
+# grep "10.175.4.10"
+
+for i in `cat mfip.csv | perl -e 's/ //g' -w -p -i `
+do
+
+echo $i
+
+#printf $i
+msc_name=`printf $i | awk ' { FS="," ;print $1 } '`
+msc=`printf $i | awk ' { FS="," ;print $2 } '`
+m_user=`echo $i | awk ' { FS="," ;print $3 } '`
+m_passwd=`echo $i | awk ' { FS="," ;print $4 } '`
+m_ser=`echo  "\"$msc---O&M System\""`
+
+media=`echo $i | awk ' { FS="," ;print $6 } '`
+md_user=`echo $i | awk ' { FS="," ;print $7 } '`
+md_passwd=`echo $i | awk ' { FS="," ;print $8 } '`
+pt_code=`echo $i | awk ' { FS="," ;print $9 } '`
+echo $m_user
+
+
+
+ user=`echo  "\"$m_user\"" `
+ password=`echo "\"$m_passwd\"" ` 
+
+ echo  $msc
+ echo $user
+
+
+ (echo  "LGI:op=$user,PWd=$password,SER=$m_ser;";sleep 3 ; echo "LST ALMLOG: CLRFLG=CLEARED-1&UNCLEARED-1, STARTAID=1713, ALVL=CRITICAL-1&MAJOR-1&MINOR-1&WARNING-1, ASS=POWER-1&ENV-1&SIG-1&TRUNK-1&HARDWARE-1&SOFTWARE-1&RUN-1&COMM-1&SERVICE-1&HANDLE-1, SD=$date_v; ";sleep 10 ) | telnet  $msc 6000     > core_h_evt
+
+
+  cat core_h_evt >> f_gath
+
+#  perl get_mg_alm.pl $media $md_user $md_passwd $pt_code $date_v >> core_h_evt 
+
+#  cat raw | tr -d '\015' | nawk -f comp2 | /usr/xpg4/bin/grep -vE "TID-|-----|\(N" | sed '/^$/d'   >> final
+
+
+
+ cat core_h_evt | nawk -f getmain2 | nawk -v ll=$msc_name ' { print ll,"_",$0 } '  | perl -e 's/  / /g' -w -p -i >> /home/oann/logs/core_flu/core_h_mtp_route_un_fl$DAY$MONTH$YEAR
+
+done
+
+
+
+rm -f /home/oann/logs/core_flu/core_h_mtp_route_un_fl$DAY$MONTH$YEAR.Z
+
+compress /home/oann/logs/core_flu/core_h_mtp_route_un_fl$DAY$MONTH$YEAR
+
+
+mot_rsl=h_mtp_route_un_fl_$DAY$MONTH$YEAR
+
+ /usr/bin/uuencode  /home/oann/logs/core_flu/core_h_mtp_route_un_fl$DAY$MONTH$YEAR.Z $mot_rsl.txt.Z | mailx -s $mot_rsl nauman.khan@mobilink.net,ali.k@mobilink.net,SANA.MAHMOOD@mobilink.net,obaid.r@mobilink.net,sana.saleem@mobilink.net
+
+
+ #
+
+
+
+

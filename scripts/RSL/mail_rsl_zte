@@ -1,0 +1,29 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+
+mot_rsl=mot_rsl_$DAY$MONTH$YEAR
+hu_rsl=zte_rsl_$DAY$MONTH$YEAR
+
+
+/usr/bin/uuencode /home/NCOR6649/logs/zte/daily_zte_rsl.Z  $hu_rsl.txt.Z | mailx -s $hu_rsl nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net
+
+# rm -f hu_lapd_genset_low.txt.Z
+
+
+echo "### End #####"
+
+
+
+ 
+ 

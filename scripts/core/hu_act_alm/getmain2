@@ -1,0 +1,42 @@
+BEGIN{
+ 
+#ORS="|"
+}
+
+{ 
+if($0~/\+\+\+/){ anode=$2}
+if($0~/ALARM/){ alarm=$2"|"$4"|"$6"|"$7 }
+if($0~/Sync serial No./) { split($0,tp,"=");ser_n=tp[2] }
+if($0~/Alarm name/) { split($0,tp,"=");alarm_name=tp[2]}
+if($0~/Alarm raised time/) { split($0,tp,"=");split(tp[2],dt,"+");alarm_rt=dt[1]}
+
+if($0~/Location info/)
+{
+lc=$0
+lc1=""
+
+a=""
+
+ while ( $0 !~ /Module No/)
+{
+  if(NR==1){print ""}
+  getline  
+  
+  if($0 !~ /Module No/ && length($0)>0){ a=a" "$1" "$2" "$3" "$4" "$5" "$6" "$7} 
+   if($0 ~/Module No/ && length($0)>0){print anode,"|",alarm,"|",ser_n,"|",alarm_name,"|",alarm_rt,"|",lc,"",a } 
+   
+}
+
+#print "\n" 
+
+
+
+
+} 
+
+}
+
+END{
+#print "thanks"
+}
+

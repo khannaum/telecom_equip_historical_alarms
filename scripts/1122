@@ -1,0 +1,41 @@
+#55 3 * * *  /home/noccord/scripts/sitestatus
+# * 8,16 * * *  /home/noccord/scripts/sitestatus
+#0,3,44,55 * * * * PATH=/usr/IXImotif/bin:/usr/bin/X11:/usr/openwin/bin:/usr/openwin/bin/xview:/usr/opt/OrbixE2A_6.3/config:/usr/opt/OrbixE2A_6.3/asp/6.3/bin:/usr/opt/OrbixE2A_6.3/config/etc/bin:.:/home/noccord:/home/noccord/bin:/bin:/usr/local:/usr/bin:/usr/ucb:/usr/etc:/usr/newsprint/bin:/usr/sbin/:/usr/local/bin:/usr/omc/current/bin:/usr/omc/sbin:/usr/omc/current/sbin:/usr/informix/bin:/interleaf/iview2/bin:/usr/dt/bin MSGDIR=/usr/omc/current/config OMC_TOP=/usr/omc BATCH_NERESP_TIMEOUT=10 SYS_CONFIG_BATCH_OUTPUT=/usr/omc/config/global/batch/output SYS_CONFIG_BATCH=/usr/omc/config/global/batch BATCH_LONGEST_NERESP_TIMEOUT=600 BATCH_IPC_TIMEOUT=600 /home/noccord/act/AL_one
+
+15 6 * * * /bin/sh /home/oann/scripts/RSL/main_rsl
+
+15 11 * * * /bin/sh /home/oann/scripts/mtl/main_mtl
+
+01 6 * * * /bin/sh /home/oann/scripts/alcatel/main_hal
+01 9 * * * /bin/sh /home/oann/scripts/alcatel/main_cal
+20 0,8,4 * * * /bin/sh /home/oann/scripts/alcatel/main_dt
+
+#
+#05,20 08,17 * * * * LD_LIBRARY_PATH=/usr/opt/OrbixE2A_6.3/shlib:/usr/opt/OrbixE2A_6.3/shlib/default:/usr/jdk/instances/jdk1.5.0/jre/lib/sparc/server:/usr/jdk/instances/jdk1.5.0/jre/lib/sparc:/usr/omc/current/lib:/usr/dt/lib:/usr/informix/lib/esql:/usr/lib/X11:/usr/openwin/lib:/usr/applix/axdata/axshlib:/usr/informix/lib:/usr/local/lib:/usr/vendor/OSP_5.3/tcltk/8.4/sol28/lib:/usr/vendor/OSP_5.3/python/2.2.1/sol28/lib:/usr/vendor/OSP_5.3/tcltk/8.4/lib /bin/sh /home/oann/scripts/act_alm/main_act 
+
+04 08 * * *  /usr/bin/sh /home/oann/scripts/act_alm/main_act
+
+20 7 * * * /usr/bin/sh /home/oann/scripts/eas/main_eas
+
+30,27 09,11 * * * /usr/bin/sh /home/oann/scripts/daily_gen/main_daily_gen
+
+30,20 12 * * * /usr/bin/sh /home/oann/scripts/tre/main_tre
+
+20 08,17  * * *  /usr/bin/sh /home/oann/scripts/gprs_mot/main_gprs
+
+20 22 * * 01,03 /usr/bin/sh /home/oann/scripts/core/h_tg/main_h_tg
+
+20 12 * * 01,03,05 /usr/bin/sh /home/oann/scripts/core/hu_c7/main_c7
+
+30 12 * * 01,03,05 /usr/bin/sh /home/oann/scripts/core/nsn/main_nsn_c7
+
+40 22 * * 01,03 /usr/bin/sh /home/oann/scripts/core/nsn/main_nsn_tg
+
+50 12 * * 01,03,05 /usr/bin/sh /home/oann/scripts/core/stp/main_stps
+
+
+
+ 
+
+
+

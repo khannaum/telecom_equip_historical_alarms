@@ -1,0 +1,95 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+#echo "###start North####"
+
+PDAY=`TZ=GMT date +%d`
+PYEAR=`TZ=GMT date +%Y`
+PMONTH=`TZ=GMT date +%m`
+PHOUR=`TZ=GMT date +%H`
+
+DAY=`date +%d`
+YEAR=`date +%Y`
+MONTH=`date +%m`
+HOUR=`date +%H`
+
+HOUR=`date +%H`
+
+NPHOUR=`echo "$PHOUR-1" | bc`
+NCHOUR=`echo "$HOUR-1" | bc`
+
+PDATE=`echo $PYEAR" "$PMONTH" "$PDAY`
+CDATE=`echo $YEAR" "$MONTH" "$DAY`
+
+#echo $PDATE
+#NHOUR=`echo NHOUR`
+#NHOUR=$(($HOUR+1))
+#NHOUR=((HOUR+1))
+
+#echo $NPHOUR,$NCHOUR
+#echo $(($HOUR+1))
+
+cd /home/NCOR6649/scripts/drill6
+
+dirh="/home/NCOR6649/logs/huawei/hsix"
+dirz="/home/NOCCORDT/logs"
+#-v pdate="2016 01 19"
+#cdate="2016 02 01"
+#ph="06"
+#ch="18"
+#-v mct="${mt}" 
+#cat /home/NCOR6649/huawei4_2101201610.txt   | /usr/local/bin/gawk -v pdate="${PDATE}" -v cdate="${CDATE}" -v ph="${NPHOUR}" -v ch="${NCHOUR}"  -f getmain2
+
+echo "Huawei" 
+echo "Sanity Checks ---- RAW Files" > report
+echo "" >> report
+echo "ZTE" >> report
+ls -ltrh $dirz/report_${HOUR}00HA\_$YEAR$MONTH$DAY\_${HOUR}????\_???.csv >> report
+ls -ltrh $dirz/report_${HOUR}00H\_$YEAR$MONTH$DAY\_${HOUR}????\_???.csv  >> report
+echo "Huawei" >>  report
+ls -ltrh $dirh/huawei*_$DAY$MONTH$YEAR$HOUR.txt.bz2 >> report
+echo "Ercisson" >>  report
+ls -ltrh  /tmp/erc/erc_hal_$DAY$MONTH$YEAR* >>  report
+ls -ltrh  /tmp/erc/erc_cal_$DAY$MONTH$YEAR* >>  report
+
+/bin/bzcat $dirh/huawei*_$DAY$MONTH$YEAR$HOUR.txt.bz2 | /usr/local/bin/gawk -v pdate="${PDATE}" -v cdate="${CDATE}" -v ph="${NPHOUR}" -v ch="${NCHOUR}"  -f getmain2 | sort -u   > $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt
+#zcat /home/NCOR6649/huawei*_active_alm.txt.Z |  /bin/egrep "GSM Cell out of Service|SCTP Link Fault|UMTS Cell Unavailable"  | /usr/local/bin/gawk -v pdate="${PDATE}" -v cdate="${CDATE}" -v ph="${NPHOUR}" -v ch="${NCHOUR}"  -f getmain_act | sort -u >> $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt
+
+echo "ZTE"
+
+
+#cat $dirz/report_${HOUR}00HA\_$YEAR$MONTH$DAY\_${HOUR}????\_???.csv | egrep "Cell is out of service|NodeB is out of service" | nawk -f zte_rsl_gen_act_v1 | grep -v "||" | /usr/local/bin/gawk -v pdate="${PDATE}" -v cdate="${CDATE}" -v ph="${NPHOUR}" -v ch="${NCHOUR}"  -f getmain_act_zte | sort -u >> $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt
+#cat $dirz/report_${HOUR}00HA\_$YEAR$MONTH$DAY\_${HOUR}????\_???.csv | grep "Cell interruption alarm" |  nawk -f zte_rsl_awk_act | grep -v "//" |  nawk 'FS="|" , OFS="|" { print $0,"Cell interruption alarm" } '   |  /usr/local/bin/gawk -v pdate="${PDATE}" -v cdate="${CDATE}" -v ph="${NPHOUR}" -v ch="${NCHOUR}"  -f getmain_act_zte >> $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt
+
+cat $dirz/report_${HOUR}00H\_$YEAR$MONTH$DAY\_${HOUR}????\_???.csv |  grep "Cell interruption alarm" | nawk -f zte_rsl_awk | grep -v "//"  |  nawk 'FS="|" , OFS="|" { print $0,"Cell interruption alarm" } ' | /usr/local/bin/gawk -v pdate="${PDATE}" -v cdate="${CDATE}" -v ph="${NPHOUR}" -v ch="${NCHOUR}"  -f getmain2 | sort -u    >> $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt
+cat $dirz/report_${HOUR}00H\_$YEAR$MONTH$DAY\_${HOUR}????\_???.csv |  grep "Cell is out of service" | nawk -f zte_3rsl_awk | grep -v "//"  |  nawk 'FS="|" , OFS="|" { print $0,"Cell is out of service" } ' | /usr/local/bin/gawk -v pdate="${PDATE}" -v cdate="${CDATE}" -v ph="${NPHOUR}" -v ch="${NCHOUR}"  -f getmain2 | sort -u   >> $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt
+cat $dirz/report_${HOUR}00H\_$YEAR$MONTH$DAY\_${HOUR}????\_???.csv |  grep "NodeB is out of service" | nawk -f zte_3rsl_awk | grep -v "//"  |  nawk 'FS="|" , OFS="|" { print $0,"NodeB is out of service" } ' | /usr/local/bin/gawk -v pdate="${PDATE}" -v cdate="${CDATE}" -v ph="${NPHOUR}" -v ch="${NCHOUR}"  -f getmain2 | sort -u   >> $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt
+
+echo "erc"
+
+bzcat /tmp/erc/erc_hal_$DAY$MONTH$YEAR$HOUR.bz2 |  /usr/local/bin/gawk -v pdate="${PDATE}" -v cdate="${CDATE}" -v ph="${NPHOUR}" -v ch="${NCHOUR}"  -f getmain2 | sort -u   >> $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt
+
+#bzcat /tmp/erc/erc_cal_$DAY$MONTH$YEAR$HOUR.bz2 | /usr/local/bin/gawk -v pdate="${PDATE}" -v cdate="${CDATE}" -v ph="${NPHOUR}" -v ch="${NCHOUR}"  -f getmain_act_erc | sort -u >> $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt
+
+rm -f  $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt.bz2
+
+
+/bin/bzip2  $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt
+/bin/bzip2  $dirz/report_${HOUR}00HA\_$YEAR$MONTH$DAY\_${HOUR}????\_???.csv
+/bin/bzip2  $dirz/report_${HOUR}00H\_$YEAR$MONTH$DAY\_${HOUR}????\_???.csv
+
+
+nwd_cell=nwd_log_$DAY$MONTH$YEAR$HOUR.txt
+subj='Six Hourly Sanity Checks for alarms report_'$DAY$MONTH$YEAR$HOUR
+
+
+(cat report ; /usr/bin/uuencode $dirh/nwd_log_$DAY$MONTH$YEAR$HOUR.txt.bz2  $nwd_cell.bz2 ) | mailx -s "$subj" nauman.khan@mobilink.net,NOOR.HUDA@mobilink.net,farrukh.hussain@mobilink.net,aamir.mahmood@mobilink.net,arshad.hamid@mobilink.net
+#echo "### End #####"
+
+
+ 
+ 

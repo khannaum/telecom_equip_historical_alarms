@@ -1,0 +1,13 @@
+cat m_reg.csv | sort  -u -t , -k 7  > s_reg.csv
+
+zcat loac_alu_05-09.Z | nawk 'FS="|" , OFS="," {print substr($2,1,7),$1,$2,$3,$4,$5} ' |  sort  -t , -k 1 > s_loac.txt
+
+# zcat loac_alu_23-05.Z | nawk 'FS="|" , OFS="," {print substr($2,1,7),$1,$2,$3,$4,$5} '   > s_loac.txt
+
+
+join -j1 1 -j2 7 -t , -e "N/A"  -o 1.2 1.3 1.4 1.5 1.6 2.9  s_loac.txt s_reg.csv > f_loac.txt
+
+zcat loac_alu_05-09.Z  | wc -l
+
+wc -l f_loac.txt
+

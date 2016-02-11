@@ -1,0 +1,108 @@
+BEGIN{
+print "     BSC/Site                              ","|"," Down_Date ","|","Down_Time","|"," Up_Date", "|" , "Up_Time"
+	FS="|"
+}
+
+
+
+function rewind(    i)
+{
+    # shift remaining arguments up
+    for (i = ARGC; i > ARGIND; i--)
+        ARGV[i] = ARGV[i-1]
+
+    # make sure gawk knows to keep going
+    ARGC++
+  # FILENAME="rslr"
+    # make current file next to get done
+    ARGV[ARGIND+1] = FILENAME
+    # do it
+     # nextfile rslr  
+   j=j+1 
+}
+
+
+{
+    getline var < "indexs"
+# "cat indexs" | getline var
+ "more indexs|wc -l " | getline i
+
+dt=""
+ut=""
+aa=0
+bb=0
+# print var
+while (getline !=0 )
+#getline !=0
+{
+   
+     if (var==$1)
+    {
+    
+       if (aa==0)
+       {
+
+          printf("%15s|\n ",var)
+          aa=1
+       }
+
+
+        #print $1,$2,$3,$4,$5,NR
+
+
+
+       if ($3!="" && $5=="" && dt=="" && var ==$1)
+       {
+
+          dt=$3
+          dd=$2
+       }
+       if ($5!="" && var ==$1)
+       {
+          ut=$5
+          ud=$4
+      } 
+         if (dt!="" && ut!="" && var ==$1)
+         {
+		  printf ("%35s|%10s|%8s|  %10s|%8s|  \n","",dd,dt,ud,ut)
+
+           ut="";dt=""
+          pr=1
+         
+         } 
+        
+ 
+}
+       
+
+      
+    
+
+}
+
+if (dt!="" )
+{
+
+printf ("%35s|%10s|%8s|  |%s|%s|\n","",dd,dt,"","")
+} 
+if (ut!="")
+{
+printf ("%35s|%s|%s|  %10s|%8s|\n","","","",ud,ut)
+} 
+
+   # NR=NR-1
+# j=j+1
+
+if ((j+1)<int(i))
+{
+ rewind()
+}
+  close ( var < "indexs")
+## getline var 
+}
+END{
+
+ print "thanks"
+}
+
+

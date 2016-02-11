@@ -1,0 +1,35 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd /home/oann/scripts/alcatel/
+
+sh  ftp_cal
+
+
+
+
+# compress /home/oann/logs/rsl/all_mot_rsl_site_$DAY-$MONTH 
+
+
+cat /tmp/cal/omc*_cal.csv |  grep "notCleared" | nawk -f get_alm_cal  > /home/noccord/alu_alm
+
+rm -f  /home/noccord/alu_alm.Z
+
+compress /home/noccord/alu_alm
+
+echo "### End #####"
+
+
+
+ 
+ 

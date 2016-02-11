@@ -1,0 +1,63 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd  /home/NCOR6649/scripts/daily_gen/ 
+
+nwd_gen_run=nwd_gen_run_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/huawei/lapd_genset_low*_vol_$DAY$MONTH$YEAR.txt.Z | sort -u |  /usr/xpg4/bin/grep -i -E "genset|DG Running|GenSet|Custom Environment|Genset Operation|Generator" | perl perl_d_gen.pl > /home/NCOR6649/logs/genset/nwd_gen_run_$DAY$MONTH$YEAR 
+cat /home/NCOR6649/daily_h_gen.txt | /usr/xpg4/bin/grep -i -E "genset|DG Running|GenSet|Custom Environment|Genset Operation|Generator" | sort -u | perl perl_h_gen_alm.pl >> /home/NCOR6649/logs/genset/nwd_gen_run_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/txngen/txn_rep_gen_$YEAR$MONTH$DAY.Z | perl perl_txn_gen.pl  >> /home/NCOR6649/logs/genset/nwd_gen_run_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/zte/daily_zte_gen_$YEAR$MONTH$DAY.Z >> /home/NCOR6649/logs/genset/nwd_gen_run_$DAY$MONTH$YEAR
+
+
+
+
+
+#  ALU
+
+
+# zcat /home/NCOR6649/logs/eas/alu_eas_16-12.Z  | grep -i genset |  nawk 'FS="|" , OFS="|" { print $1,$2,"",$3,$4,$5 } ' |  perl perl_d_gen_alu.pl |
+
+
+# zcat /home/NCOR6649/nwd_bss_cur.txt.Z | /usr/xpg4/bin/grep -i -E "genset|DG Running|GenSet|Custom Environment" | grep -i "Alcatel" | nawk 'FS="|" , OFS="|" { print $2,$3,$5,$6 } ' | sort -u |  perl perl_alu_gen_alm.pl
+
+
+# Mot
+
+# zcat /home/NCOR6649/logs/eas/mot_eas_01-01.Z  | grep -i gen |  nawk 'FS="|" , OFS="|" { print $1,$2,"",$3,$4,$5 } ' |  perl perl_d_gen_mot.pl
+
+# zcat /home/NCOR6649/nwd_bss_cur.txt.Z | /usr/xpg4/bin/grep -i -E "genset|DG Running|GenSet|Custom Environment" | grep -i "Motorola" | nawk 'FS="|" , OFS="|" { print $2,$3,$5,$6,$7 } ' | sort -u |  perl perl_alu_gen_mot.pl |
+
+
+
+rm -f  /home/NCOR6649/logs/genset/nwd_gen_run_$DAY$MONTH$YEAR.Z
+
+
+
+  
+compress /home/NCOR6649/logs/genset/nwd_gen_run_$DAY$MONTH$YEAR 
+
+# /usr/bin/uuencode /home/NCOR6649/logs/genset/nwd_gen_run_$DAY$MONTH$YEAR.Z $nwd_gen_run.Z | mailx -s $nwd_gen_run nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net
+
+# rm -f hu_lapd_genset_low.txt.Z
+
+
+echo "### End #####"
+
+
+
+ 
+ 

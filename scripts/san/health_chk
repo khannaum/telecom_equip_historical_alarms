@@ -1,0 +1,76 @@
+#!/bin/sh
+
+cd /home/NCOR6649/scripts/san
+
+# tput sgr 0 1
+
+echo " This report Contains System Wide health checks of the following for below mentioned System"
+echo "1:-Process Stattistics Summary"
+echo "2:-Disk Behaviour & Anaylysis"
+echo "3:-File System Analysis"
+echo "4:-Network Statistics Analysis"
+
+uname -a
+
+echo "============="
+
+echo "Process Stattistics Summary"
+echo "---Per Size-----"
+prstat  -s size | head -40
+
+echo " "
+
+prstat -mL | head -40
+
+echo " "
+
+echo "----Per user-----"
+prstat  -t | head -40
+
+echo "----Per Project-----"
+prstat  -J | head -40
+
+echo "----Disk Behaviour & Anaylysis-----"
+vmstat -i
+
+sar -d 5
+
+iostat -d 
+
+iostat -c
+
+iostat -xnzt 5 | head -100
+
+iostat -xnmPz 5 2
+
+echo " File System Analysis---------------"
+
+swap -l
+
+swap -s
+prtconf | head -3
+
+vmstat 
+
+vmstat -p 5 | head -20
+
+vmstat 5 | head -10
+
+sar -q
+
+vmstat -S
+
+kstat -n system_pages
+
+
+echo " Network Statistics Analysis---------------"
+
+netstat -i
+
+netstat -i 2 | head -10
+
+netstat -s | grep -i byte
+
+kstat -m tcp
+kstat -m ip
+

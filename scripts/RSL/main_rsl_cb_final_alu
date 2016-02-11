@@ -1,0 +1,28 @@
+#!/bin/sh
+
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd  /home/NCOR6649/scripts/RSL/
+
+####Alcatel###########
+
+# zcat /home/NCOR6649/logs/rsl/loac_alu_$DAY-$MONTH.Z | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,$5 }'  | perl perl_d_rsl_alu.pl | nawk 'FS="|" , OFS="|" { print "Alcatel",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+#zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z  | grep -i "Alcatel" | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $2,$3,$4,$5 } ' |sort -u | perl perl_alu_rsl_alm.pl | nawk 'FS="|" , OFS="|" { print "Alcatel",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/rsl/loac_alu_$DAY-$MONTH.Z | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,$5 }'  | perl perl_d_rsl_alu.pl  > /home/NCOR6649/logs/rsl/Alcatel.txt
+
+chmod 777 /home/NCOR6649/logs/rsl/Alcatel.txt 
+
+zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z  | grep -i "Alcatel" | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $2,$3,$4,$5 } ' |sort -u | perl perl_alu_rsl_alm.pl  >> /home/NCOR6649/logs/rsl/Alcatel.txt
+
+rm -f /home/NCOR6649/logs/rsl/Alcatel.txt.Z
+compress /home/NCOR6649/logs/rsl/Alcatel.txt
+
+chmod 777  /home/NCOR6649/logs/rsl/Alcatel.txt.Z
+
+#####Huawei#########
+

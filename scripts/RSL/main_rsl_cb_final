@@ -1,0 +1,133 @@
+#!/bin/sh
+
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd  /home/NCOR6649/scripts/RSL/
+
+####Motorola###########
+
+zcat /home/NCOR6649/logs/rsl/all_mot_rsl_site_$DAY-$MONTH.Z  | grep -v "|/          /" | nawk 'FS="|" , OFS="|" { print $1,$2,"",$3,$4,$5 } ' | perl perl_d_rsl_mot.pl | sed  "s/\.//g" | grep -vi "_OLD\>" | grep -v "_ML\>"  |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980" | nawk 'FS="|" , OFS="|" {print $1,$2,"",$3,$4,$5 } ' | nawk 'FS="|" , OFS="|" { print "Motorola",$0}' > /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z  | grep "Motorola" |  grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980" | nawk 'FS="|" , OFS="|" { split($5,dd," ");split(dd[1],d,"-");print $2,$3,d[2]"-"d[3]"-"d[1]" "dd[2]} ' | sed -e "s/  //g" | sort -u | perl perl_alu_rsl_mot.pl  | nawk 'FS="|" , OFS="|" {print $1,$2,"",$3,$4,$5 } ' | nawk 'FS="|" , OFS="|" { print "Motorola",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/rsl/all_mot_rsl_site_$DAY-$MONTH.Z  | grep -v "|/          /" | nawk 'FS="|" , OFS="|" { print $1,$2,"",$3,$4,$5 } ' | perl perl_d_rsl_mot.pl | sed  "s/\.//g" | grep -vi "_OLD\>" | grep -v "_ML\>"  |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980" | nawk 'FS="|" , OFS="|" {print $1,$2,$3,$4 } '  > /home/NCOR6649/logs/rsl/Motorola.txt
+
+zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z  | grep "Motorola" |  grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980" | nawk 'FS="|" , OFS="|" { split($5,dd," ");split(dd[1],d,"-");print $2,$3,d[2]"-"d[3]"-"d[1]" "dd[2]} ' | sed -e "s/  //g" | sort -u | perl perl_alu_rsl_mot.pl  | nawk 'FS="|" , OFS="|" {print $1,$2,$3,$4 } '  >> /home/NCOR6649/logs/rsl/Motorola.txt
+
+rm -f /home/NCOR6649/logs/rsl/Motorola.txt.Z
+compress /home/NCOR6649/logs/rsl/Motorola.txt
+chmod 777 /home/NCOR6649/logs/rsl/Motorola.txt /home/NCOR6649/logs/rsl/Motorola.txt.Z
+####Alcatel###########
+
+ zcat /home/NCOR6649/logs/rsl/loac_alu_$DAY-$MONTH.Z | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,$5 }'  | perl perl_d_rsl_alu.pl | nawk 'FS="|" , OFS="|" { print "Alcatel",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z  | grep -i "Alcatel" | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $2,$3,$4,$5 } ' |sort -u | perl perl_alu_rsl_alm.pl | nawk 'FS="|" , OFS="|" { print "Alcatel",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/rsl/loac_alu_$DAY-$MONTH.Z | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,$5 }'  | perl perl_d_rsl_alu.pl  > /home/NCOR6649/logs/rsl/Alcatel.txt
+
+chmod 777 /home/NCOR6649/logs/rsl/Alcatel.txt 
+
+zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z  | grep -i "Alcatel" | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $2,$3,$4,$5 } ' |sort -u | perl perl_alu_rsl_alm.pl  >> /home/NCOR6649/logs/rsl/Alcatel.txt
+
+zcat /home/NCOR6649/logs/err/erc_rsl_$DAY$MONTH$YEAR.Z >> /home/NCOR6649/logs/rsl/Alcatel.txt
+zcat /home/NCOR6649/logs/err/erc_rsl_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print "Ericsson",$0}'  >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+rm -f /home/NCOR6649/logs/rsl/Alcatel.txt.Z
+compress /home/NCOR6649/logs/rsl/Alcatel.txt
+
+chmod 777 /home/NCOR6649/logs/rsl/Alcatel.txt /home/NCOR6649/logs/rsl/Alcatel.txt.Z
+
+#####Huawei#########
+
+zcat /home/NCOR6649/logs/huawei/lapd_genset_low*_vol_$DAY$MONTH$YEAR.txt.Z |  grep  -v "GSM Cell out of Service" > /home/NCOR6649/logs/huawei/hu_lapd_genset_low.txt
+
+ zcat /home/NCOR6649/logs/huawei/lapd_genset_low*_vol_$DAY$MONTH$YEAR.txt.Z |  grep "GSM Cell out of Service" | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| perl perl_d_rsl_alu.pl | nawk 'FS="|" , OFS="|" { print "Huawei",$0}' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+ zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z  | grep -i "Huawei" | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $2,$3,$4,$5 } ' |sort -u | perl perl_hu_rsl_alm.pl | nawk 'FS="|" , OFS="|" { print "Huawei",$0}' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/huawei/lapd_genset_low*_vol_$DAY$MONTH$YEAR.txt.Z |  grep "GSM Cell out of Service" | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| perl perl_d_rsl_alu.pl  | nawk 'FS="|" , OFS="|" { print $0,"GSM Cell out of Service|21801"}' >> /home/NCOR6649/logs/huawei/hu_lapd_genset_low.txt
+zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z  | grep -i "Huawei" | grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test"| grep -v "|1980"| nawk 'FS="|" , OFS="|" { print $2,$3,$4,$5 } ' |sort -u | perl perl_hu_rsl_alm.pl | nawk 'FS="|" , OFS="|" { print $0,"GSM Cell out of Service|21801"}' >> /home/NCOR6649/logs/huawei/hu_lapd_genset_low.txt
+
+
+
+rm -f /home/NCOR6649/logs/huawei/hu_lapd_genset_low.txt.Z
+compress /home/NCOR6649/logs/huawei/hu_lapd_genset_low.txt
+
+chmod 777 /home/NCOR6649/logs/rsl/Alcatel.txt.Z /home/NCOR6649/logs/huawei/hu_lapd_genset_low.txt
+chmod 777 /home/NCOR6649/logs/zte/daily_zte_rsl.Z
+#######Zte#########
+
+echo "ZTE"
+
+# zcat /home/NCOR6649/logs/zte/daily_zte_rsl.Z |  grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test" | grep -v "|1980" | nawk 'FS="|" , OFS="|" { split($4,oc," ");split(oc[1],coc,"/"); newoc=coc[2]"/"coc[3]"/"coc[1]" "oc[2]; split($5,cl," ");split(cl[1],ccl,"/"); newcl=ccl[2]"/"ccl[3]"/"ccl[1]" "cl[2];print $1,$2,$3,newoc,newcl} ' | perl perl_d_rsl_alu.pl | nawk 'FS="|" , OFS="|" { print "ZTE",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/zte/daily_zte_rsl.Z |  grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test" | grep -v "|1980" | nawk 'FS="|" , OFS="|" { print "ZTE",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+#zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z | grep "ZTE" |  grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test" | grep -v "|1980" |  nawk 'FS="|" , OFS="|" { split($5,oc," ");split(oc[1],coc,"-"); newoc=coc[2]"/"coc[3]"/"coc[1]" "oc[2]; print $2,$3,$4,newoc} ' | perl perl_hu_rsl_alm.pl | nawk 'FS="|" , OFS="|" { print "ZTE",$0} ' >> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+zcat /home/NCOR6649/logs/zte/daily_zte_rsl.Z   > /home/NCOR6649/logs/zte/daily_zte_rsl
+
+#zcat /home/NCOR6649/logs/dt_site/nwd_dt_new.Z | grep "ZTE" |  grep -v "BSS" | grep -vi "_OLD\>" | grep -v "_ML\>" |grep -v "_SS\>" | grep -v "SITE-"| grep -v -i "Test" | grep -v "|1980" |  nawk 'FS="|" , OFS="|" { split($5,oc," ");split(oc[1],coc,"-"); newoc=coc[2]"/"coc[3]"/"coc[1]" "oc[2]; print $2,$3,$4,newoc} ' | perl perl_hu_rsl_alm.pl  >> /home/NCOR6649/logs/zte/daily_zte_rsl
+rm -f /home/NCOR6649/logs/zte/daily_zte_rsl.Z
+compress /home/NCOR6649/logs/zte/daily_zte_rsl
+chmod 777 /home/NCOR6649/logs/zte/daily_zte_rsl /home/NCOR6649/logs/zte/daily_zte_rsl.Z
+
+cat /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR | sort -u > /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv
+rm -f /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR
+
+rm -f /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv.Z
+
+compress /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv
+
+ sh main_rsl_cb_reg
+
+nwd_rsl=nwd_rsl_$DAY$MONTH$YEAR.csv
+
+echo "============================" > cell_ste
+echo "Daily Cell Outages Data file:\n Kindly consider these incase Daily RSL reports not recived" >> cell_ste
+
+echo "============================" > 3cell_ste
+echo "Daily 3G (Huawei+Ericsson) Cell Outages Data file: Please verify Outage and Provide respective Reasons accordingly" >> 3cell_ste
+# e-mail 2g
+ (cat cell_ste ; /usr/bin/uuencode /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv.Z  $nwd_rsl.Z )  | mailx -s $nwd_rsl nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,A.IQBAL@mobilink.net,NOOR.HUDA@mobilink.net,muhammad.salman@mobilink.net,sikandar.a@mobilink.net,ALI.AS@mobilink.net ,ASGHAR.ALI@mobilink.net,EOC@mobilink.net.pk ,FAISAL.H@mobilink.net,FARHAN.T@mobilink.net,HAFIZ.A@mobilink.net,HAROON.KHAN@mobilink.net,HASSAAN.ANWAR@mobilink.net,HASSAN.E@mobilink.net,JAWED.F@mobilink.net,MAQSOOD.S@mobilink.net,MUHAMMAD.IQ@mobilink.net,NOOR.HUDA@mobilink.net,SHAHBAZ.AH@mobilink.net,SOHAIL.ZAFAR@mobilink.net,TASHFEEN.TABISH@mobilink.net,UNSER.QURESHI@mobilink.net,VERKHA.R@mobilink.net,aarish.hameed@mobilink.net,abd.raoof@mobilink.net,abdul.basit@mobilink.net,abdul.hannan01@mobilink.net,abdul.jamil@mobilink.net,abdul.sa@mobilink.net,aftab.iqbal@mobilink.net ,ahmed.shahbaz@mobilink.net,ahsan.shahzad@mobilink.net,akhtar.m@mobilink.net,akmal.shahzad@mobilink.net,ali.sarwar@mobilink.net,amjad.al@mobilink.net,asif.hameed@mobilink.net,asif.rehman@mobilink.net,azka.jamil@mobilink.net,faiq.raza@mobilink.net,faisal.fazlani@mobilink.net,ghulam.abbas@mobilink.net,hannan.ashraf@mobilink.net,haq.nawaz@mobilink.net,haroon.ahmad@mobilink.net,hassan.waqar@mobilink.net,iftikhar.hussain@mobilink.net,kamal.turi@mobilink.net,kashif.k@mobilink.net,khuram.khaliq@mobilink.net,m.adeel@mobilink.net,m.riaz@mobilink.net ,mamoona.fatima@mobilink.net,mohsin.bakhtyar@mobilink.net,muhammad.abubakar@mobilink.net,muhammad.alvi01@mobilink.net,muhammad.ashfaq@mobilink.net,muhammad.ka@mobilink.net,muhammad.rafique@mobilink.net,muhammad.rehan01@mobilink.net,muhammad.salman@mobilink.net,muneeb.ahmad@mobilink.net,nauman.ahmad@mobilink.net,nauman.khan@mobilink.net,nayyir.ejaz@mobilink.net,oan.fsd@mobilink.net,rashid.iqbal@mobilink.net,rehman.randhawa@mobilink.net,saadi.rahman@mobilink.net,salman.shehzad@mobilink.net,salman.tariq@mobilink.net,shariq.ismail@mobilink.net,sharjeel.ahmad@mobilink.net,sibt.hassan@mobilink.net,sumera.naseer@mobilink.net,syed.hassan@mobilink.net,tahir.latif@mobilink.net,talat.nawab@mobilink.net,tanzeel.rehman@mobilink.net,tariq.fareed@mobilink.net,tauqir.shahzad@mobilink.net,tauseef.ah@mobilink.net,tehmina.iftikhar@mobilink.net,usman.ansari@mobilink.net,usman.ar@mobilink.net,usman.khan@mobilink.net,usman.sadiq@mobilink.net,usman.siddiqui@mobilink.net,waqas.javaid@mobilink.net,waseem.ab@mobilink.net,zain.hafeez@mobilink.net,zia.abdus@mobilink.net,zohaib.siddiqui@mobilink.net,MAJID.MUNIR@mobilink.net,muhammad.ahsaan@mobilink.net,muhammad.saqib@mobilink.net,SYED.SHAH@mobilink.net,marvi.waheed@mobilink.net,hashim.mushtaq@mobilink.net,naveed.ahmed03@mobilink.net,salman.ahmad@mobilink.net
+ 
+ # upload the data to pat location
+ 
+ cd /home/NCOR6649/logs/rsl/
+ echo "uploading the data to pat location"
+ftp -n -p 10.33.4.150 <<EOF
+user patftpuser pat2015user
+hash
+bin
+cd /mnt/array1/PAT_FTP/
+
+mput nwd_rsl_$DAY$MONTH$YEAR.csv.Z 
+bye
+
+EOF
+ 
+ 
+ 
+ cd  /home/NCOR6649/scripts/RSL/
+ 
+zcat /home/NCOR6649/logs/huawei/3g_cell_out_$DAY$MONTH$YEAR.txt.Z |   nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,$5 }' |  perl perl_d_rsl_alu.pl > /home/NCOR6649/logs/huawei/3g_cell_out_$DAY$MONTH$YEAR_n.txt
+zcat /home/NCOR6649/logs/huawei/3g_cell_out5_$DAY$MONTH$YEAR.txt.Z |   nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,$5 }' |  perl perl_d_rsl_alu.pl >> /home/NCOR6649/logs/huawei/3g_cell_out_$DAY$MONTH$YEAR_n.txt
+
+zcat /home/NCOR6649/logs/err/3g_cell_out_$DAY$MONTH$YEAR.Z  >>  /home/NCOR6649/logs/huawei/3g_cell_out_$DAY$MONTH$YEAR_n.txt
+zcat /home/NCOR6649/logs/zte/zte_3g_$YEAR$MONTH$DAY.Z | sed -e "s/|U2/|/g" -e  "s/|U6/|/g" >> /home/NCOR6649/logs/huawei/3g_cell_out_$DAY$MONTH$YEAR_n.txt
+
+sh main_rsl_cb_reg_3g
+
+rm -f /home/NCOR6649/logs/huawei/3g_cell_out_$DAY$MONTH$YEAR_n.txt.Z
+
+compress /home/NCOR6649/logs/huawei/3g_cell_out_$DAY$MONTH$YEAR_n.txt
+
+nwd_rsl=3g_cell_out_$DAY$MONTH$YEAR.csv
+# e-mail 3g
+(cat 3cell_ste ;/usr/bin/uuencode /home/NCOR6649/logs/3g/3g_cell_out_$DAY$MONTH$YEAR.csv.Z $nwd_rsl.Z ) | mailx -s $nwd_rsl nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,A.IQBAL@mobilink.net,NOOR.HUDA@mobilink.net,muhammad.salman@mobilink.net,sikandar.a@mobilink.net,ALI.AS@mobilink.net ,ASGHAR.ALI@mobilink.net,EOC@mobilink.net.pk ,FAISAL.H@mobilink.net,FARHAN.T@mobilink.net,HAFIZ.A@mobilink.net,HAROON.KHAN@mobilink.net,HASSAAN.ANWAR@mobilink.net,HASSAN.E@mobilink.net,JAWED.F@mobilink.net,MAQSOOD.S@mobilink.net,MUHAMMAD.IQ@mobilink.net,NOOR.HUDA@mobilink.net,SHAHBAZ.AH@mobilink.net,SOHAIL.ZAFAR@mobilink.net,TASHFEEN.TABISH@mobilink.net,UNSER.QURESHI@mobilink.net,VERKHA.R@mobilink.net,aarish.hameed@mobilink.net,abd.raoof@mobilink.net,abdul.basit@mobilink.net,abdul.hannan01@mobilink.net,abdul.jamil@mobilink.net,abdul.sa@mobilink.net,aftab.iqbal@mobilink.net ,ahmed.shahbaz@mobilink.net,ahsan.shahzad@mobilink.net,akhtar.m@mobilink.net,akmal.shahzad@mobilink.net,ali.sarwar@mobilink.net,amjad.al@mobilink.net,asif.hameed@mobilink.net,asif.rehman@mobilink.net,azka.jamil@mobilink.net,faiq.raza@mobilink.net,faisal.fazlani@mobilink.net,ghulam.abbas@mobilink.net,hannan.ashraf@mobilink.net,haq.nawaz@mobilink.net,haroon.ahmad@mobilink.net,hassan.waqar@mobilink.net,iftikhar.hussain@mobilink.net,kamal.turi@mobilink.net,kashif.k@mobilink.net,khuram.khaliq@mobilink.net,m.adeel@mobilink.net,m.riaz@mobilink.net ,mamoona.fatima@mobilink.net,mohsin.bakhtyar@mobilink.net,muhammad.abubakar@mobilink.net,muhammad.alvi01@mobilink.net,muhammad.ashfaq@mobilink.net,muhammad.ka@mobilink.net,muhammad.rafique@mobilink.net,muhammad.rehan01@mobilink.net,muhammad.salman@mobilink.net,muneeb.ahmad@mobilink.net,nauman.ahmad@mobilink.net,nauman.khan@mobilink.net,nayyir.ejaz@mobilink.net,oan.fsd@mobilink.net,rashid.iqbal@mobilink.net,rehman.randhawa@mobilink.net,saadi.rahman@mobilink.net,salman.shehzad@mobilink.net,salman.tariq@mobilink.net,shariq.ismail@mobilink.net,sharjeel.ahmad@mobilink.net,sibt.hassan@mobilink.net,sumera.naseer@mobilink.net,syed.hassan@mobilink.net,tahir.latif@mobilink.net,talat.nawab@mobilink.net,tanzeel.rehman@mobilink.net,tariq.fareed@mobilink.net,tauqir.shahzad@mobilink.net,tauseef.ah@mobilink.net,tehmina.iftikhar@mobilink.net,usman.ansari@mobilink.net,usman.ar@mobilink.net,usman.khan@mobilink.net,usman.sadiq@mobilink.net,usman.siddiqui@mobilink.net,waqas.javaid@mobilink.net,waseem.ab@mobilink.net,zain.hafeez@mobilink.net,zia.abdus@mobilink.net,zohaib.siddiqui@mobilink.net,MAJID.MUNIR@mobilink.net,muhammad.ahsaan@mobilink.net,muhammad.saqib@mobilink.net,SYED.SHAH@mobilink.net,marvi.waheed@mobilink.net,hashim.mushtaq@mobilink.net,naveed.ahmed03@mobilink.net,salman.ahmad@mobilink.net
+
+
+rm -f /home/NCOR6649/logs/huawei/3g_cell_out_$DAY$MONTH$YEAR_n.txt.Z

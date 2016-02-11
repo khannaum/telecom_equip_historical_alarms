@@ -1,0 +1,41 @@
+BEGIN{
+
+        FS="|"
+echo "       CENTRE-2       ALARMS SUMMARY REPORT           "
+echo "     ================================================="
+
+}
+
+{
+
+# cmd="grep -c   \'"substr($3,2)"\' m_alm_c1"
+
+#total="cat rslr"
+
+
+
+
+
+"grep -c \'"$3"\' omc3" | getline s 
+"grep -c \'"$3"\' omc4" | getline c3
+"grep -c \'"$3"\' omc2" | getline c2
+"grep -c \'"$3"\' omc5" | getline n
+
+
+# print $1,$2,c2
+if ($3~/CRITICAL/   )
+{
+
+t=n+c2+c3+s
+printf("%2s|%30s|%5s|%5s|%5s|%5s|%5s\n",$1,$2,n,c2,c3,s,t)
+}
+
+# printf("%2s|%15s|%25s|%5s|%5s|%5s\n",$1,$2,n,c2,c3,s)
+
+close("grep -c \'"$3"\' omc3")
+close("grep -c \'"$3"\' omc4")
+close ("grep -c \'"$3"\' omc2")
+close ("grep -c \'"$3"\' omc5")
+
+}
+

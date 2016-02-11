@@ -1,0 +1,46 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+zcat /home/Motorola/ev_logs/sunfire2-$jj.txt.Z  | nawk -f first > n_rsl.txt
+
+nawk -f getmain1 n_rsl.txt|sort -u  > indexs
+
+  nawk -f get_rsl_n n_rsl.txt > evt.txt 
+rm -f n_rsl.txt
+
+
+
+echo "###start Centre 2 ####"
+
+zcat /home/Motorola/ev_logs/sunfire1-$jj.txt.Z  /home/Motorola/ev_logs/sunfire3-$jj.txt.Z| nawk -f first > c2_rsl.txt
+nawk -f getmain1 c2_rsl.txt|sort -u > indexs
+nawk -f get_rsl_n c2_rsl.txt > /home/Motorola/ev_logs/dt_c2
+rm -f c2_rsl.txt
+
+
+echo "### start South ####"
+zcat /home/Motorola/ev_logs/somcsys2-$jj.txt.Z | nawk -f first > s_rsl.txt
+nawk -f getmain1 s_rsl.txt|sort -u > indexs
+nawk -f get_rsl_n s_rsl.txt > /home/Motorola/ev_logs/dt_s
+rm -f s_rsl.txt
+
+
+
+echo "###start centre1 ####" 
+
+zcat   /home/Motorola/ev_logs/somcsys1-$jj.txt.Z /home/Motorola/ev_logs/sunfire4-$jj.txt.Z | nawk -f first > c1_rsl.txt 
+nawk -f getmain1 c1_rsl.txt | sort -u > indexs
+nawk -f get_rsl_n c1_rsl.txt > /home/Motorola/ev_logs/dt_c1
+rm -f c1_rsl.txt
+
+echo "### End #####"
+
+
+
+ 
+ 

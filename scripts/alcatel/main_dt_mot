@@ -1,0 +1,36 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=` date +%d`
+YEAR=` date +%Y`
+MONTH=`date +%m`
+Time=`date +%H%M%S`
+
+
+
+
+
+
+
+# compress /home/oann/logs/rsl/all_mot_rsl_site_$DAY-$MONTH 
+
+
+#perl perldt
+
+#cd /home/noccord/scripts/ ; ./sitestatus 
+cd /home/oann/scripts/alcatel
+/bin/perl getbsc1.pl
+
+
+
+
+
+
+ 
+ 

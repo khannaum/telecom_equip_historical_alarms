@@ -1,0 +1,105 @@
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  00:00:41.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 8007e5
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  00:00:55.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 8007e5
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  00:02:52.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 8007e9
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  05:02:26.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 8007f6
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  05:06:43.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 8007f7
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  05:06:57.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 8007f7
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  05:08:53.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 8007fb
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  08:42:18.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 800804
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  08:45:39.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 800806
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  08:45:52.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 800806
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  08:47:49.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 80080a
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  22:30:27.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 80080d
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  22:36:34.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 80080e
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  22:36:48.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 80080e
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  KSR037M__BSC29_GeneralBus(KSR4870__S_GridStation_A): 11 SITE  -  23/01/2011  22:38:45.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 800812
+<EndEvent>
+

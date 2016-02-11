@@ -1,0 +1,47 @@
+BEGIN{
+
+	FS="|"
+}
+
+
+
+function rewind(    i)
+{
+    # shift remaining arguments up
+    for (i = ARGC; i > ARGIND; i--)
+        ARGV[i] = ARGV[i-1]
+
+    # make sure gawk knows to keep going
+    ARGC++
+print FILENAME
+ FILENAME="rslr"
+    # make current file next to get done
+    ARGV[ARGIND+1] = FILENAME
+    # do it
+     nextfile rslr  
+}
+
+
+{
+
+getline var < "indexs"
+ print "======" var "====="
+while (  NR<800)
+{
+  
+ 
+ if (var==$1)
+{
+print "========================",var,$1
+}
+
+       getline
+
+       NR=NR+1
+
+}
+
+NR=1
+ rewind()
+
+}

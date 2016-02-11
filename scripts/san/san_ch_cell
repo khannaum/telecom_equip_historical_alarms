@@ -1,0 +1,76 @@
+Alcatel Files Status:
+Alcatel-OMC-1
+Not connected.
+Not connected.
+-----------------------------------------------------------
+
+Alcatel-OMC-2
+Not connected.
+Not connected.
+-----------------------------------------------------------
+
+Alcatel-OMC-3
+Not connected.
+Not connected.
+-----------------------------------------------------------
+
+Alcatel-OMC-4
+Not connected.
+Not connected.
+-----------------------------------------------------------
+
+Alcatel-OMC-5
+-rw-r--r--   1 omc3ftp  gadmin       1219 Feb 11 02:15 /MISC/alcomc5m
+-----------------------------------------------------------
+
+Huawei Files Status:
+Huawei-OMC-1
+-rwxrwxrwx    1 0        0              91 Aug 15 06:15 hu_cell.txt
+-rwxrwxrwx    1 0        0              94 Aug 15 06:15 hu_bsc_opc.txt
+-rwxrwxrwx    1 0        0              94 Aug 15 06:15 hu_bsc_dpc.txt
+-----------------------------------------------------------
+
+Huawei-OMC-2
+-rwxrwxrwx    1 0        0              91 Dec 18  2014 hu_cell.txt
+-rwxrwxrwx    1 0        0              94 Dec 18  2014 hu_bsc_opc.txt
+-rwxrwxrwx    1 0        0              94 Dec 18  2014 hu_bsc_dpc.txt
+-----------------------------------------------------------
+
+Huawei-OMC-3
+-rw-rw-rw-    1 102      10             91 Jul 01  2015 hu_cell.txt
+-rw-rw-rw-    1 102      10             94 Jul 01  2015 hu_bsc_opc.txt
+-rw-rw-rw-    1 102      10             94 Jul 01  2015 hu_bsc_dpc.txt
+-----------------------------------------------------------
+
+Motorola Files Status:
+mk5sys1
+-rw-rw-r--   1 omcadmin omc        42916 Feb 10 12:15 /home/omcadmin/cellexport.out
+-rw-rw-r--   1 omcadmin omc         1284 Feb 10 12:26 /home/omcadmin/m5ksys1.dpcopccell.out
+-rw-rw-r--   1 omcadmin omc       265287 Feb 11 09:00 /usr/omc/config/global/cellX/RFExport_OPT/m5ksys1_RFPlanCell.out
+-----------------------------------------------------------
+
+sunfire3
+Not connected.
+Not connected.
+Not connected.
+Not connected.
+-----------------------------------------------------------
+
+sunfire4
+Not connected.
+Not connected.
+Not connected.
+Not connected.
+-----------------------------------------------------------
+
+IP-Access - Nano Files Status:
+Nano-IP-Access-OMC-1
+-rwxrwxrwx   1 NCOR6649 omcread       57 Feb 11 07:09 /home/NCOR6649/logs/nano/nan_bsc.txt
+-rwxrwxrwx   1 NCOR6649 omcread       82 Feb 11 07:09 /home/NCOR6649/logs/nano/nan_opc_dpc.txt
+-rwxrwxrwx   1 NCOR6649 omcread    12827 Feb 11 07:09 /home/NCOR6649/logs/nano/nan_site_cell.txt
+-----------------------------------------------------------
+
+ZTE Files Status is not available yet...
+-----------------------------------------------------------
+End of Script
+-----------------------------------------------------------

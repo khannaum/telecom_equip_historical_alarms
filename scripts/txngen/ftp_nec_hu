@@ -1,0 +1,91 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT date +%d`
+YEAR=`TZ=GMT date +%Y`
+MONTH=`TZ=GMT date +%m`
+
+PDAY=`TZ=GMT+24 date +%d`
+PYEAR=`TZ=GMT+24 date +%Y`
+PMONTH=`TZ=GMT+24 date +%m`
+#cd /home/NCOR6649/scripts/RSL
+
+#` cp /home/Motorola/ev_logs/s*.txt.Z /tmp/ev_logs/
+
+
+# Huawei txn u2000 alarms 
+cd /home/NCOR6649/scripts/txngen/
+
+echo $YEAR$MONTH$DAY 
+
+
+
+echo "nec"
+ftp -n -p 10.231.15.16 <<EOF
+user FTPU2000 Ftp#user
+hash
+bin
+cd /opt/oss/server/var/fileint/fm/$PYEAR$PMONTH$PDAY
+
+mget  $PYEAR$PMONTH$PDAY*
+
+
+
+bye
+
+EOF
+
+echo "nec"
+ftp -n -p 10.231.15.16 <<EOF
+user FTPU2000 Ftp#user
+hash
+bin
+cd /opt/oss/server/var/fileint/fm/$YEAR$MONTH$DAY
+
+mget  $YEAR$MONTH$DAY*
+
+
+
+bye
+
+EOF
+
+# unzip -ca '$YEAR$MONTH$DAY*.zip' | /usr/xpg4/bin/grep -iE "genset|low|main failure" > txn_rep_gen_$YEAR$MONTH$DAY
+
+
+
+
+
+
+unzip -ca   "$PYEAR$PMONTH$PDAY*.zip" | grep -i "genset" | nawk 'FS="," , OFS="|" { gsub(/ /,"_",$15);gsub(/ GMT\+05:00/,"",$21);gsub(/ GMT\+05:00/,"",$23); if( length($21) >1 && length($23)>1 ){  print "TXN",$15,$21,$23 } } ' | perl perl_txn_gen.pl   > txn_rep_gen_$PYEAR$PMONTH$PDAY
+
+unzip -ca "$YEAR$MONTH$DAY*.zip"  | grep -i "genset" | nawk 'FS="," , OFS="|" { gsub(/ /,"_",$15);gsub(/ GMT\+05:00/,"",$21);gsub(/ GMT\+05:00/,"",$23); if( length($21) >1 && length($23)>1 ){  print "TXN",$15,$21,$23 } } ' | perl perl_txn_gen.pl   >> txn_rep_gen_$PYEAR$PMONTH$PDAY
+
+ cat txn_rep_gen_$PYEAR$PMONTH$PDAY  | nawk -f change_date_awk | sort -u > /home/NCOR6649/logs/txngen/txn_rep_gen_$PYEAR$PMONTH$PDAY
+
+ rm -f /home/NCOR6649/logs/txngen/txn_rep_gen_$PYEAR$PMONTH$PDAY.Z
+  compress /home/NCOR6649/logs/txngen/txn_rep_gen_$PYEAR$PMONTH$PDAY
+
+
+ rm -f  $YEAR$MONTH$DAY*.zip
+  rm -f  $PYEAR$PMONTH$PDAY*.zip
+ rm -f txn_rep_gen_$PYEAR$PMONTH$PDAY 
+  
+ 
+ #cat txn_rep_gen_$PYEAR$PMONTH$PDAY | nawk 'FS="," , OFS="|" { gsub(/ /,"_",$15);gsub(/ GMT\+05:00/,"",$21);gsub(/ GMT\+05:00/,"",$23); if( length($21) >1 && length($23)>1 ){  print "TXN",$15,$21,$23 } } ' | perl perl_txn_gen.pl 
+# 20120307_*.log
+
+
+
+echo "### End #####"
+
+
+
+ 
+ 

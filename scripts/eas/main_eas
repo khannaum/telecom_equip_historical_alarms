@@ -1,0 +1,46 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd /home/NCOR6649/scripts/eas
+
+ 
+ 
+ zcat /tmp/ev_logs/*-$DAY-$MONTH.txt.Z  | perl search.pl -l "\-  EAS  \-" | nawk -f getmain2 | nawk -f first > n_eas.txt
+
+# zcat /tmp/ev_logs/*-$DAY-$MONTH.txt.Z  | perl search.pl -l "\-  EAS  \-" | nawk -f getmain2 | nawk -f first > n_eas.txt
+
+nawk -f getmain1 n_eas.txt|sort -u  > indexs
+
+  nawk -f get_eas_n n_eas.txt |  nawk -f sep_bsc_site_date > /home/NCOR6649/logs/eas/mot_eas_$DAY-$MONTH 
+
+rm -f /home/NCOR6649/logs/eas/mot_eas_$DAY-$MONTH.Z
+
+compress /home/NCOR6649/logs/eas/mot_eas_$DAY-$MONTH 
+
+rm -f n_eas.txt
+rm -f indexs
+
+gzcat /tmp/hal/omc*$DAY$MONTH$YEAR.tgz | grep "environmentAlarm" |  grep -v "notCleared" | nawk -f get_alm_eas | grep -v "::" |  perl eas_date_c.pl |  grep "\/$DAY" > /home/NCOR6649/logs/eas/alu_eas_$DAY-$MONTH
+
+
+rm -f /home/NCOR6649/logs/eas/alu_eas_$DAY-$MONTH.Z
+
+compress /home/NCOR6649/logs/eas/alu_eas_$DAY-$MONTH
+
+
+echo "### End #####"
+
+
+
+ 
+ 

@@ -1,0 +1,246 @@
+Msoft,MsoftIps,user,password,MGWs,MGWIPs,user,password,Pointcode(HEX)
+user
+MsoftIps
+"user"
+MsoftIps: node name or service name not known
+unknown remote host: MGWIPs at get_mg_alm.pl line 24
+HW9PSH,10.122.20.101,noc_core,Mobilink123,HW09-PSH1-MGW,10.122.20.105,nocfm,Mobilink123,1432
+noc_core
+10.122.20.101
+"noc_core"
+Connection to 10.122.20.101 closed by foreign host.
+HW10ISB,10.175.4.20,noc_core,Mobilink123,HW10-ISB3-MGW,10.175.4.24,nocfm,Mobilink123,1430
+noc_core
+10.175.4.20
+"noc_core"
+Connection to 10.175.4.20 closed by foreign host.
+HW11RYK,10.31.24.21,noc_core,Mobilink123,HW11-RYK1-MGW,10.31.24.25,nocfm,Mobilink123,1035
+noc_core
+10.31.24.21
+"noc_core"
+Connection to 10.31.24.21 closed by foreign host.
+HW13GUJ,10.20.26.21,noc_core,Mobilink123,HW13-GUJ1-MGW,10.20.26.25,nocfm,Mobilink123,1262
+noc_core
+10.20.26.21
+"noc_core"
+Connection to 10.20.26.21 closed by foreign host.
+login failed: bad name or password at get_mg_alm.pl line 24
+HW15QTA,10.65.25.21,noc_core,Mobilink123,HW15-QTA1-MGW,10.65.25.25,nocfm,Mobilink123,902
+noc_core
+10.65.25.21
+"noc_core"
+Connection to 10.65.25.21 closed by foreign host.
+HW16SUK,10.65.26.21,noc_core,Mobilink123,HW16-SUK1-MGW,10.65.26.25,nocfm,Mobilink123,903
+noc_core
+10.65.26.21
+"noc_core"
+Connection to 10.65.26.21 closed by foreign host.
+HW18SWL,10.20.29.21,noc_core,Mobilink123,HW18-SWL1-MGW,10.20.29.25,nocfm,Mobilink@1,139F
+noc_core
+10.20.29.21
+"noc_core"
+Connection to 10.20.29.21 closed by foreign host.
+HW20JHL,10.110.22.21,noc_core,Mobilink123,HW20-JHE1-MGW,10.110.22.25,nocfm,Mobilink123,1557
+noc_core
+10.110.22.21
+"noc_core"
+Connection to 10.110.22.21 closed by foreign host.
+HW21SUK,10.65.26.41,noc_core,Mobilink123,HW21-SUK2-MGW,10.65.26.45,nocfm,Mobilink123,1C1A
+noc_core
+10.65.26.41
+"noc_core"
+Connection to 10.65.26.41 closed by foreign host.
+HW22FSD,10.31.50.21,noc_core,Mobilink123,HW22-FSD2-MGW,10.31.50.25,nocfm,Mobilink123,1199
+noc_core
+10.31.50.21
+"noc_core"
+Connection to 10.31.50.21 closed by foreign host.
+HW23SKT,10.31.25.41,noc_core,Mobilink123,HW23-SKT2-MGW,10.31.25.45,nocfm,Mobilink123,130D
+noc_core
+10.31.25.41
+"noc_core"
+Connection to 10.31.25.41 closed by foreign host.
+HW26HYD,10.65.28.21,noc_core,Mobilink123,HW26-HYD1-MGW,10.65.28.25,nocfm,Mobilink123,9F5
+noc_core
+10.65.28.21
+"noc_core"
+Connection to 10.65.28.21 closed by foreign host.
+HW27HYD,10.65.28.34,noc_core,Mobilink123,HW27-HYD2-MGW,10.65.28.38,nocfm,Mobilink123,9F6
+noc_core
+10.65.28.34
+"noc_core"
+Connection to 10.65.28.34 closed by foreign host.
+HW28MRD,10.110.23.21,noc_core,Mobilink123,HW28-MRD1-MGW,10.110.23.25,nocfm,Mobilink123,1653
+noc_core
+10.110.23.21
+"noc_core"
+Connection to 10.110.23.21 closed by foreign host.
+HW29MZH,10.31.51.21,noc_core,Mobilink123,HW29-MZH1-MGW,10.31.51.25,nocfm,Mobilink123,1857
+noc_core
+10.31.51.21
+"noc_core"
+Connection to 10.31.51.21 closed by foreign host.
+HW30BHP,10.31.52.21,noc_core,Mobilink123,HW30-BHP1-MGW,10.31.52.25,nocfm,Mobilink123,1C4E
+noc_core
+10.31.52.21
+"noc_core"
+Connection to 10.31.52.21 closed by foreign host.
+HW31GJN,10.20.27.32,noc_core,Mobilink123,HW31-GJN2-MGW,10.20.27.36,nocfm,Mobilink123,12F7
+noc_core
+10.20.27.32
+"noc_core"
+Connection to 10.20.27.32 closed by foreign host.
+HW2LHR,10.20.23.100,noc_core,Mobilink123,HW2LHR-MGW1,10.20.23.104,nocfm,Mobilink123,1250
+noc_core
+10.20.23.100
+"noc_core"
+Connection to 10.20.23.100 closed by foreign host.
+command timed-out at get_mg_alm.pl line 41
+HW2LHR,10.20.23.100,noc_core,Mobilink123,HW2LHR-MGW3,10.215.8.130,nocfm,Mobilink123,129F
+noc_core
+10.20.23.100
+"noc_core"
+Connection to 10.20.23.100 closed by foreign host.
+HW7LHR,10.20.23.112,noc_core,Mobilink123,HW7LHR-MGW1,10.20.23.116,nocfm,Mobilink123,1260
+noc_core
+10.20.23.112
+"noc_core"
+Connection to 10.20.23.112 closed by foreign host.
+HW7LHR,10.20.23.112,noc_core,Mobilink123,HW7LHR-MGW4,10.215.8.132,nocfm,Mobilink123,129E
+noc_core
+10.20.23.112
+"noc_core"
+Connection to 10.20.23.112 closed by foreign host.
+HW14GJN,10.20.27.21,noc_core,Mobilink123,HW14GJN-MGW1,10.20.27.25,noc_core,Mobilink123,126A
+noc_core
+10.20.27.21
+"noc_core"
+Connection to 10.20.27.21 closed by foreign host.
+login failed: bad name or password at get_mg_alm.pl line 24
+HW14GJN,10.20.27.21,noc_core,Mobilink123,HW14LHR-MGW5,10.215.8.134,nocfm,Mobilink@1,12F8
+noc_core
+10.20.27.21
+"noc_core"
+Connection to 10.20.27.21 closed by foreign host.
+login failed: bad name or password at get_mg_alm.pl line 24
+HW12SKT,10.31.25.21,noc_core,Mobilink123,HW12SKT1MGW1,10.31.25.25,nocfm,Mobilink123,1036
+noc_core
+10.31.25.21
+"noc_core"
+Connection to 10.31.25.21 closed by foreign host.
+login failed: bad name or password at get_mg_alm.pl line 24
+HW12SKT,10.31.25.21,noc_core,Mobilink123,HW12FSD-MGW4,10.215.8.104,nocfm,Mobilink123,1859
+noc_core
+10.31.25.21
+"noc_core"
+Connection to 10.31.25.21 closed by foreign host.
+HW19SGD,10.31.28.21,noc_core,Mobilink123,HW19SGDMGW1,10.31.28.25,nocfm,Mobilink123,1369
+noc_core
+10.31.28.21
+"noc_core"
+Connection to 10.31.28.21 closed by foreign host.
+HW19SGD,10.31.28.21,noc_core,Mobilink123,HW19FSD-MGW5,10.215.8.110,nocfm,Mobilink123,1858
+noc_core
+10.31.28.21
+"noc_core"
+Connection to 10.31.28.21 closed by foreign host.
+HW24SGD,10.31.27.21,noc_core,Mobilink123,HW24SGD2MGW1,10.31.27.25,nocfm,Mobilink123,136A
+noc_core
+10.31.27.21
+"noc_core"
+Connection to 10.31.27.21 closed by foreign host.
+HW24SGD,10.31.27.21,noc_core,Mobilink123,HW24FSD-MGW6,10.215.8.116,nocfm,Mobilink123,1348
+noc_core
+10.31.27.21
+"noc_core"
+Connection to 10.31.27.21 closed by foreign host.
+HW25MUL,10.184.50.21,noc_core,Mobilink123,HW25MLT2MGW1,10.184.50.25,nocfm,Mobilink123,1855
+noc_core
+10.184.50.21
+"noc_core"
+Connection to 10.184.50.21 closed by foreign host.
+HW25MUL,10.184.50.21,noc_core,Mobilink123,HW25FSD-MGW8,10.215.8.126,nocfm,Mobilink123,1037
+noc_core
+10.184.50.21
+"noc_core"
+Connection to 10.184.50.21 closed by foreign host.
+HW4FSD,10.218.4.2,noc_core,Mobilink123,HW4FSDMGW1,10.218.4.34,nocfm,Mobilink123,102F
+noc_core
+10.218.4.2
+"noc_core"
+Connection to 10.218.4.2 closed by foreign host.
+command timed-out at get_mg_alm.pl line 41
+HW4FSD,10.218.4.2,noc_core,Mobilink123,HW4FSD-MGW3,10.215.8.99,nocfm,Mobilink123,1856
+noc_core
+10.218.4.2
+"noc_core"
+Connection to 10.218.4.2 closed by foreign host.
+HW5MUL,10.218.5.2,noc_core,Mobilink123,HW5MLTMGW1,10.218.5.3,nocfm,Mobilink123,1851
+noc_core
+10.218.5.2
+"noc_core"
+Connection to 10.218.5.2 closed by foreign host.
+command timed-out at get_mg_alm.pl line 41
+HW5MUL,10.218.5.2,noc_core,Mobilink123,HW5FSD-MGW7,10.215.8.122,nocfm,Mobilink123,103A
+noc_core
+10.218.5.2
+"noc_core"
+Connection to 10.218.5.2 closed by foreign host.
+HW17KHI,10.65.23.135,noc_core,Mobilink123,HW17KHIMGW1,10.65.23.139,nocfm,Mobilink123,935
+noc_core
+10.65.23.135
+"noc_core"
+Connection to 10.65.23.135 closed by foreign host.
+HW17KHI,10.65.23.135,noc_core,Mobilink123,HW17KHI-MGW6,10.215.8.6,nocfm,Mobilink123,93C
+noc_core
+10.65.23.135
+"noc_core"
+Connection to 10.65.23.135 closed by foreign host.
+HW3KHI,10.65.23.101,noc_core,Mobilink123,HW3KHIMGW1,10.65.23.105,nocfm,Mobilink123,8A0
+noc_core
+10.65.23.101
+"noc_core"
+Connection to 10.65.23.101 closed by foreign host.
+HW3KHI,10.65.23.101,noc_core,Mobilink123,HW3KHI-MGW4,10.215.8.2,nocfm,Mobilink@1,949
+noc_core
+10.65.23.101
+"noc_core"
+Connection to 10.65.23.101 closed by foreign host.
+HW8KHI,10.65.23.112,noc_core,Mobilink123,HW8KHI2MGW1,10.65.23.116,nocfm,Mobilink123,8B2
+noc_core
+10.65.23.112
+"noc_core"
+Connection to 10.65.23.112 closed by foreign host.
+login failed: bad name or password at get_mg_alm.pl line 24
+HW8KHI,10.65.23.112,noc_core,Mobilink123,HW8KHI-MGW5,10.215.8.4,nocfm,Mobilink123,93D
+noc_core
+10.65.23.112
+"noc_core"
+Connection to 10.65.23.112 closed by foreign host.
+login failed: bad name or password at get_mg_alm.pl line 24
+HW1ISB,10.218.1.2,noc_core,Mobilink123,HW1ISBMGW1,10.218.1.3,nocfm,Mobilink123,DEF
+noc_core
+10.218.1.2
+"noc_core"
+Connection to 10.218.1.2 closed by foreign host.
+command timed-out at get_mg_alm.pl line 41
+HW1ISB,10.218.1.2,noc_core,Mobilink123,HW1ISB-MGW4,10.215.8.34,nocfm,Mobilink123,16B6
+noc_core
+10.218.1.2
+"noc_core"
+Connection to 10.218.1.2 closed by foreign host.
+HW6ISB,10.175.4.10,noc_core,Mobilink123,HW6-PSH1-MGW1,10.122.20.112,nocfm,Mobilink123,142C
+noc_core
+10.175.4.10
+"noc_core"
+Connection to 10.175.4.10 closed by foreign host.
+HW6ISB,10.175.4.10,noc_core,Mobilink123,HW6-ISB2-MGW2,10.175.4.14,nocfm,Mobilink123,142A
+noc_core
+10.175.4.10
+"noc_core"
+Connection to 10.175.4.10 closed by foreign host.
+command timed-out at get_mg_alm.pl line 41
+
+real  1:00:52.8
+user        3.3
+sys         1.1

@@ -1,0 +1,133 @@
+Trying 10.200.219.18...
+Connected to 10.200.219.18.
+Escape character is '^]'.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Welcome to MSOFTX3000 Operation and Maintenance Center
+Version : MSC9880 MSOFTX3000V100R008
+Copyright(c) HuaWei. All Rights Reserved
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++    LDIAJKMSS        2014-05-20 08:10:10+05:00
+O&M    #3693636
+%%LGI:op="noc_core",PWd="*****",SER="10.200.219.18---O&M System";%%
+RETCODE = 0  Operation succeeded
+
+noc_core logged in successfully
+---    END
+
++++    LDIAJKMSS        2014-05-20 08:10:13+05:00
+O&M    #3693637
+%%LST ALMLOG: CLRFLG=CLEARED-1&UNCLEARED-1, STARTAID=2754, ALVL=CRITICAL-1&MAJOR-1&MINOR-1&WARNING-1, ASS=POWER-1&ENV-1&SIG-1&TRUNK-1&HARDWARE-1&SOFTWARE-1&RUN-
+1&COMM-1&SERVICE-1&HANDLE-1,  SD=2014&05&19;%%
+RETCODE = 0  Operation succeeded
+
+ALARM  362427      Fault  Major       Exchange  2754    Signaling       
+     Sync serial No.  =  552415    
+          Alarm name  =  SCCP SSN Paused
+   Alarm raised time  =  2014-05-19 18:40:23+05:00
+       Location info  =  NI=National network, SPC=H'0014F0, OPC=H'0015FC, 
+                         SSN=0xEE, SSN Name=AJKSCOMZD1-SMS(18)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2014-05-19 18:40:28+05:00
+          Module No.  =  0(BAM)
+
+ALARM  362426      Fault  Major       Exchange  2754    Signaling       
+     Sync serial No.  =  552413    
+          Alarm name  =  SCCP SSN Paused
+   Alarm raised time  =  2014-05-19 18:40:23+05:00
+       Location info  =  NI=National network, SPC=H'0014F0, OPC=H'0015FC, 
+                         SSN=0x92, SSN Name=AJKSCOMZD1-CAP(2)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2014-05-19 18:40:28+05:00
+          Module No.  =  0(BAM)
+
+ALARM  362425      Fault  Major       Exchange  2754    Signaling       
+     Sync serial No.  =  552411    
+          Alarm name  =  SCCP SSN Paused
+   Alarm raised time  =  2014-05-19 18:40:23+05:00
+       Location info  =  NI=National network, SPC=H'0014F0, OPC=H'0015FC, 
+                         SSN=0x08, SSN Name=AJKSCOMZD1-MSC(17)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2014-05-19 18:40:28+05:00
+          Module No.  =  0(BAM)
+
+ALARM  362424      Fault  Major       Exchange  2754    Signaling       
+     Sync serial No.  =  552409    
+          Alarm name  =  SCCP SSN Paused
+   Alarm raised time  =  2014-05-19 18:40:23+05:00
+       Location info  =  NI=National network, SPC=H'0014F0, OPC=H'0015FC, 
+                         SSN=0x07, SSN Name=AJKSCOMZD1-VLR(16)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2014-05-19 18:40:28+05:00
+          Module No.  =  0(BAM)
+
+ALARM  362423      Fault  Major       Exchange  2754    Signaling       
+     Sync serial No.  =  552407    
+          Alarm name  =  SCCP SSN Paused
+   Alarm raised time  =  2014-05-19 18:40:23+05:00
+       Location info  =  NI=National network, SPC=H'0014F0, OPC=H'0015FC, 
+                         SSN=0x06, SSN Name=AJKSCOMZD1-HLR(15)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2014-05-19 18:40:28+05:00
+          Module No.  =  0(BAM)
+
+ALARM  362422      Fault  Major       Exchange  2754    Signaling       
+     Sync serial No.  =  552405    
+          Alarm name  =  SCCP SSN Paused
+   Alarm raised time  =  2014-05-19 18:40:23+05:00
+       Location info  =  NI=National network, SPC=H'0014F0, OPC=H'0015FC, 
+                         SSN=0x05, SSN Name=AJKSCOMZD1-MAP(5)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2014-05-19 18:40:28+05:00
+          Module No.  =  0(BAM)
+
+ALARM  362421      Fault  Major       Exchange  2754    Signaling       
+     Sync serial No.  =  552403    
+          Alarm name  =  SCCP SSN Paused
+   Alarm raised time  =  2014-05-19 18:40:23+05:00
+       Location info  =  NI=National network, SPC=H'0014F0, OPC=H'0015FC, 
+                         SSN=0x01, SSN Name=AUOTOADDED-SCMG(0)
+          Auto Clear  =  true                  
+        Cleared type  =  Normal cleared        
+        Cleared time  =  2014-05-19 18:40:28+05:00
+          Module No.  =  0(BAM)
+
+(Number of results = 7)
+---    END
+Trying 10.200.219.18...
+Connected to 10.200.219.18.
+Escape character is '^]'.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Welcome to MSOFTX3000 Operation and Maintenance Center
+Version : MSC9880 MSOFTX3000V100R008
+Copyright(c) HuaWei. All Rights Reserved
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++    LDIAJKMSS        2014-05-20 08:10:23+05:00
+O&M    #3693638
+%%LGI:op="noc_core",PWd="*****",SER="10.200.219.18---O&M System";%%
+RETCODE = 0  Operation succeeded
+
+noc_core logged in successfully
+---    END
+
++++    LDIAJKMSS        2014-05-20 08:10:26+05:00
+O&M    #3693640
+%%LST ALMLOG: CLRFLG=CLEARED-1&UNCLEARED-1, STARTAID=2756, ALVL=CRITICAL-1&MAJOR-1&MINOR-1&WARNING-1, ASS=POWER-1&ENV-1&SIG-1&TRUNK-1&HARDWARE-1&SOFTWARE-1&RUN-
+1&COMM-1&SERVICE-1&HANDLE-1,  SD=2014&05&19;%%
+RETCODE = 0  Operation succeeded
+
+No matching result is found
+---    END

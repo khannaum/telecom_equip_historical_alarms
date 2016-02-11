@@ -1,0 +1,28 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+
+alu_rsl=alu_rsl_$DAY$MONTH$YEAR
+
+
+/usr/bin/uuencode /home/NCOR6649/logs/rsl/loac_alu_$DAY-$MONTH.Z  $alu_rsl.txt.Z | mailx -s $alu_rsl nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net
+
+
+
+
+echo "### End #####"
+
+
+
+ 
+ 

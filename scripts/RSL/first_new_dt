@@ -1,0 +1,171 @@
+function du(y){
+	
+	 
+ # 	  if ( $0 ~ /Critical/ || $0 ~/Major/ || $0 ~/Minor/ )
+
+          if ( $4 ~ /Busy/ && $5 ~/Disabled/  )
+ 
+ 	  {
+ 	  dsite=site
+ 	  ddate=date
+ 	  dtime=time
+ 	  dstatus="Critical"
+ 	  
+ 	   
+ 	   
+ 	   #  print dsite,ddate,dtime,dstatus
+ 	    }
+ 	    if (  $5 ~ /Busy/ && $4 ~/Disabled/     )
+ 	      {
+ 	      
+ 	         csite=site
+ 	 	 cdate=date
+ 	  	ctime=time
+ 	  	cstatus="Clear"
+ 	        #  print cstatus	
+ 	  
+ 	   	 # Critical-Clear csite is not equal to dsite		
+ 	          
+ 	         if ( dsite!="" && csite!="" && csite==dsite && (dstatus=="Critical" || dstatus=="Major" || dstatus=="Minor") && cstatus=="Clear"  )
+ 	  	{
+ 	  	
+ 	  	   printf ("%s|%s|%s|%s|%s\n",csite,ddate,dtime,cdate,ctime)
+ 	  	  
+ 	  	   y=1
+ 	  	   x=y
+ 	          }
+ 	          if (dsite="" && csite!="" && csite!=dsite )
+ 	          {
+ 	           # printf ("%s|%s|%s|%s|%s\n",csite,"","",cdate,ctime)
+ 	            }
+  	        
+ 	        }  
+	
+	}
+function uu(y){
+	
+	  
+ 	  # if ( $0 ~ /Clear/ )
+            if (  $5 ~ /Busy/ && $4 ~/Disabled/     ) 
+ 	  {
+ 	  dsite=site
+ 	  ddate=date
+ 	  dtime=time
+ 	  dstatus="Clear"
+ 	  
+ 	  
+ 	   ll=ll+1
+ 	   
+ 	     }
+ 	    if ( ( $5 ~ /Busy/ && $4 ~/Disabled/ )   &&  ll > 0   )
+ 	      {
+ 	      
+ 	         csite=site
+ 	 	 cdate=date
+ 	  	ctime=time
+ 	  	cstatus="Clear"
+ 	  	
+ 	  	# print y
+ 	  
+ 	   	 # Clear-Clear 		
+ 	   	if ( dsite!=""  && csite!="" && x == 0)
+ 	   	{
+ 	  	      printf ("%s|%s|%s|%s|%s\n",dsite,"","",ddate,dtime)  
+ 	           	# printf ("%s|%s|%s|%s|%s\n",csite,"","",cdate,ctime)
+ 	           	# print "Clear"
+ 	           	y=1
+ 	          }
+ 	         } 
+ 	        # print y
+ 	         # return(y)
+ 	         
+	}
+
+function dd (y) {
+	 
+	
+	
+ 	 # if ( ($0 ~ /Critical/ || $0 ~ /Major/ || $0 ~ /Minor/)  )
+         if ( $4 ~ /Busy/ && $5 ~/Disabled/  ) 
+       
+ 	  {
+ 	  dsite=site
+ 	  ddate=date
+ 	  dtime=time
+ 	  dstatus="Critical"
+ 	  
+ 	  	   
+ 	  # print dsite,dstatus
+ 	  
+ 	  ll=ll+1
+ 	  }
+ 	   	  
+ 	    if ( ( $4 ~ /Busy/ && $5 ~/Disabled/   ) && ll >0   )
+ 	      {
+ 	      
+ 	         csite=site
+ 	 	 cdate=date
+ 	  	ctime=time
+ 	  	cstatus="Critical"
+ 	  	  #print csite,cstatus
+ 	  
+ 	   	 # Critical-Critical 		
+ 	   	if ( dsite!=""  && csite!="" && x == 0 )
+ 	   	{
+ 	  	     # printf ("%s|%s|%s|%s|%s\n",dsite,ddate,dtime,"","")  
+ 	            	printf ("%s|%s|%s|%s|%s\n",csite,cdate,ctime,"","")
+ 	           	y=1
+ 	           	
+ 	          }
+ 	          d=2
+ 	          
+ 	       
+ 	                
+ 	}         
+	}	
+	
+	
+	
+BEGIN {
+	# print "     BSC/Site                              ","|"," Down_Date ","|","Down_Time","|"," Up_Date", "|" , "Up_Time"
+	 FS="|"
+	}
+{	
+	 
+ 	  if ($0 ~ /stateChangeEvent/ && $0 ~ /SITE/ )
+ 	  {
+          split($3,aa,"- ")
+         
+               #  print $3,length($3),length($4)
+
+          # print $4
+
+          # print $5
+ 
+          # split(aa[4],bb," ")
+          # print length(aa[4])
+          # if(length($3)<4){ aa[3]=aa[3]aa[4]aa[5]aa[6];aa[4]=$4 }
+          split(aa[4],bb," ") 
+
+          # print aa[3] 
+ 	  site=aa[3]
+ 	  date=bb[1]
+ 	  time=bb[2]
+ 	  
+ 	  }
+ 	
+ 	x=0
+ 	  du(x); 
+ 	  dd(x);
+ 	  
+ 	    	  
+ 	  uu(x);
+ 	 
+ 	       
+ 		
+ 	       
+  	  
+ 	  
+ }
+
+	

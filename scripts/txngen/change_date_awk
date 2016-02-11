@@ -1,0 +1,19 @@
+BEGIN{
+	 FS="|" ; OFS="|"
+}
+{
+  split($3,od," ")
+  split(od[1],dod,"/")
+  split($4,cd," ")
+  split(cd[1],cod,"/")
+  #print $0
+  if(f1[1]!~/CL/){f1[2]=f1[1] }
+  
+  oc=dod[2]"/"dod[3]"/"dod[1]" "od[2] 
+  cl=cod[2]"/"cod[3]"/"cod[1]" "cd[2]
+  # if(NR>2  && length($32) > 2)
+   {print $1,$2,oc,cl } 
+ 
+ }
+END{
+ }

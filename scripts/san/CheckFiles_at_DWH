@@ -1,0 +1,17 @@
+#!/usr/bin/sh
+#
+echo "Alarm Files Uploading Status at DWH:"
+echo "=================="
+ftp -n -p 10.50.28.202 <<EOF
+user ftp_user_omcr ftpomcr12
+hash
+bin
+cd /data5/ALARMS/ALARMS_DATA
+dir 
+bye
+EOF
+echo "-----------------------------------------------------------"
+
+echo "-----------------------------------------------------------"
+
+

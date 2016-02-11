@@ -1,0 +1,74 @@
+#!/bin/sh
+
+
+
+echo " " > final
+echo " " > raw
+echo "" > ms_gath
+
+for i in `cat fip.csv | awk ' { FS="," ; OFS="|" ;  print $2,$4 } ' | sort -u  ` 
+do
+
+
+
+ server=`echo $i | awk ' { FS="|" ;print $1 } '`
+
+
+ mgt=`echo $i | awk ' { FS="|" ;print $2 } '` 
+
+ echo $server
+echo $mgt
+
+
+Ser=`echo  "\"$server---O&M System\""`
+ 
+#tid[$j]=` echo $i | nawk ' { FS="|" ;print $6 } ' `
+
+echo $Ser
+
+
+x -ascii -850 fip.csv  > mfip.csv;
+
+for i in `cat mfip.csv | perl -e 's/ //g' -w -p -i `
+do
+
+echo $i
+
+#printf $i
+msc=`printf $i | awk ' { FS="," ;print $2 } '`
+m_user=`echo $i | awk ' { FS="," ;print $3 } '`
+m_passwd=`echo $i | awk ' { FS="," ;print $4 } '`
+m_ser=`echo  "\"$msc---O&M System\""`
+
+media=`echo $i | awk ' { FS="," ;print $6 } '`
+md_user=`echo $i | awk ' { FS="," ;print $7 } '`
+md_passwd=`echo $i | awk ' { FS="," ;print $8 } '`
+pt_code=`echo $i | awk ' { FS="," ;print $9 } '`
+echo $m_user
+
+
+
+ user=`echo  "\"$m_user\"" `
+ password=`echo "\"$m_passwd\"" `
+
+ echo  $msc
+ echo $user
+
+
+ (echo  "LGI:op=$user,PWd=$password,SER=$m_ser;";sleep 3 ; echo "LST OFCTKC: CDT=OFCCIC, QR=LOCAL;";sleep 300 ) |
+telnet  $msc 6000    | nawk -f comp  | grep $pt_code > gath
+
+
+
+
+(echo  "LGI:op=$user,PWd=$password,SER=$mser;";sleep 3 ; echo "LST N7LNK:;"; echo "LST MDU:;"; echo "LST OFCLNK:;"; echo "LST OFC:;";sleep 15  ) | telnet  $server 6000  >> ms_gath
+
+# echo "ZZZZ;" 
+
+   done
+
+
+
+
+
+

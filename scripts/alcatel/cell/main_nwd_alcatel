@@ -1,0 +1,47 @@
+#!/bin/sh
+
+
+DAY=` date +%d`
+YEAR=` date +%Y`
+MONTH=` date +%m`
+
+echo "omc5"
+
+ftp -n -p 10.231.150.1 <<EOF
+user omc3ftp omc3ftp
+hash
+bin
+cd ACME
+mget BSSConf.alcomc5m."$YEAR$MONTH$DAY"05*
+bye
+
+EOF
+
+compress BSSConf*
+
+zcat BSSConf* | nawk -f bsc | sort -u  > bsc.txt
+
+ zcat BSSConf* | nawk -f cell | sort -u  > cell.txt
+cat bsc.txt | grep -v "^$" | grep -v "#" | nawk ' FS="," ,OFS="," { print $2,$1,$3 } ' | sed 's/ //g' | sort -t "," -k 1n,1n > bsc_sort
+cat cell.txt |  nawk ' FS="," ,OFS="," { print $1,$7,$2,$3,$4,$5 } ' | sort -u | grep -v "^$" | grep -v ",,,,," | grep -v "#" |  sed 's/ //g' | sort -t "," -k 1n,1n  > cell_sort
+
+
+
+for i in `cat bsc_sort`
+do
+a=`echo $i | nawk ' FS="," ,OFS="," { print $1 } ' `
+b=`echo $i | nawk ' FS="," ,OFS="," { print $2 } ' `
+c=`echo $i | nawk ' FS="," ,OFS="," { print $3 } ' `
+
+for j in `cat cell_sort | grep "$a,"`
+do
+aa=`echo $j | nawk ' FS="," ,OFS="," { print $1 } ' `
+
+if [ $aa -eq  $a ]; then 
+ echo $j | nawk -v omc=$b -v bsc=$c ' FS="," ,OFS="|" { print "Alcatel",omc,bsc,substr($6,1,7)""substr($6,9,length($6)),$6,$3,$4,$5 } ' >> nwd_bsc_bts_cell  
+fi
+
+done
+
+ done
+

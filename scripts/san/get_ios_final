@@ -1,0 +1,38 @@
+BEGIN{
+ ORS="\n"
+   OFS="|" 
+   FS=","
+  print "HOST|Device|Soft Errors|Hard Errors|Transport Errors|Vendor|Product|Revision|Device Id|SD|Size|Media Error|Device Not Ready|No Device|Recoverable|Illegal Request|Predictive Failure Analysis"
+"hostname" | getline abc
+}
+{
+#if(NR==1){print ""} 
+#print $0
+#print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13
+#split($3,aa,"- ") 
+
+split($1,device_name," ")
+split($2,Soft_Errors,":")
+split($3,Hard_Errors,":")
+split($4,Transport_Errors," ")
+split($5,Vendor,":")
+split($6,Product,":")
+split($7,Revision,":")
+split($8,Device_Id,":")
+
+
+split(Device_Id[1],id," ");split(Device_Id[2],idd," ")
+#split($9,Size," ")
+#split(Size[3],byte," ")
+
+split($9,Media_Error,":")
+split($10,Device_Not_Ready,":")
+split($11,No_Device,":")
+split($12,Recoverable_Illegal_Request," ")
+
+
+split($13,Predictive_Failure_Analysis,":")
+
+print abc,device_name[1],Soft_Errors[2],Hard_Errors[2],Transport_Errors[3],Transport_Errors[5],Vendor[2],Product[2],Revision[2],id[1],idd[1],Media_Error[2],Device_Not_Ready[2],No_Device[2],Recoverable_Illegal_Request[2],Recoverable_Illegal_Request[5],Predictive_Failure_Analysis[2]
+
+}

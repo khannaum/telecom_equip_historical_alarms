@@ -1,0 +1,8 @@
+#!/bin/bash 
+start_date=20100501
+num_days=5
+for i in `seq 1 $num_days`
+do 
+    date=date +%Y/%m/%d -d "${start_date}-${i} days"
+    echo $date # Use this however you want!
+done

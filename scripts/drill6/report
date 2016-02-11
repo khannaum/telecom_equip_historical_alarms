@@ -1,0 +1,14 @@
+Sanity Checks ---- RAW Files
+
+ZTE
+-rw-r--r--   1 NOCCORDT omc         130K Feb 11 05:59 /home/NOCCORDT/logs/report_0600HA_20160211_060000_182.csv
+-rw-r--r--   1 NOCCORDT omc         1.1M Feb 11 05:59 /home/NOCCORDT/logs/report_0600H_20160211_060000_182.csv
+Huawei
+-rw-r--r--   1 NCOR6649 omcread      19K Feb 11 06:03 /home/NCOR6649/logs/huawei/hsix/huawei5_1102201606.txt.bz2
+-rw-r--r--   1 NCOR6649 omcread      16K Feb 11 06:06 /home/NCOR6649/logs/huawei/hsix/huawei6_1102201606.txt.bz2
+-rw-r--r--   1 NCOR6649 omcread      22K Feb 11 06:06 /home/NCOR6649/logs/huawei/hsix/huawei4_1102201606.txt.bz2
+Ercisson
+-rw-r--r--   1 NCOR6649 omcread     2.5K Feb 11 00:14 /tmp/erc/erc_hal_1102201600.bz2
+-rw-r--r--   1 NCOR6649 omcread     4.8K Feb 11 06:14 /tmp/erc/erc_hal_1102201606.bz2
+-rw-r--r--   1 NCOR6649 omcread      659 Feb 11 00:14 /tmp/erc/erc_cal_1102201600.bz2
+-rw-r--r--   1 NCOR6649 omcread      943 Feb 11 06:14 /tmp/erc/erc_cal_1102201606.bz2

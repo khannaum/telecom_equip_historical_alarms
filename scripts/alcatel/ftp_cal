@@ -1,0 +1,72 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+#cd /home/oann/scripts/RSL
+
+#` cp /home/Motorola/ev_logs/s*.txt.Z /tmp/ev_logs/
+
+mkdir /tmp/cal
+chmod 777 /tmp/cal/ 
+
+
+
+
+echo "omc2"
+ftp -n -p 10.231.80.1 <<EOF
+user omc3ftp omc3ftp
+hash
+bin
+cd SOCAD
+
+mget cal.csv
+bye
+
+EOF
+mv cal.csv /tmp/cal/omc2_cal.csv
+
+
+
+
+
+
+echo "omc5"
+ftp -n -p 10.231.150.1 <<EOF
+user omc3ftp omc3ftp
+hash
+bin
+cd SOCAD
+
+mget cal.csv
+bye
+
+EOF
+mv cal.csv /tmp/cal/omc5_cal.csv
+
+
+
+
+
+
+
+
+
+
+# gzcat HAL*.tgz | grep "LOSS-OF-ALL-CHAN" | nawk -f get_alm_hal | grep "\/18"
+
+
+echo "### End #####"
+
+
+
+ 
+ 

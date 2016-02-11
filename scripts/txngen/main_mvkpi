@@ -1,0 +1,114 @@
+#!/bin/sh
+
+
+DAY=`date +%d`
+YEAR=`date +%Y`
+MONTH=`date +%m`
+
+cd  /home/NCOR6649/scripts/txngen/
+
+####Motorola###########
+
+#Availability-2015-09-13.xls
+#FadeMargin-2015-09-13.xls
+#LANEthTrafficRX-2015-09-13.xls
+#LANEthTrafficTX-2015-09-13.xls
+#MSTP-2015-09-13.xls
+#RAWLinks-2015-09-13.xls
+#Utilization-2015-09-13.xls
+#WANEthTrafficRX-2015-09-13.xls
+#WANEthTrafficTX-2015-09-13.xls
+
+rm -f *.xls
+
+ # Download the data to local location
+ 
+ #cd /home/NCOR6649/logs/rsl/
+ echo "uploading the data to pat location"
+ftp -n -p 10.231.120.240 <<EOF
+user anonymous anonymous
+hash
+bin
+
+
+mget "Bit Error Rate (DAILY)_$YEAR-$MONTH-$DAY-*.xls"
+     
+mget "Fade Margin_$YEAR-$MONTH-$DAY*.xls"
+
+mget "Fiber Bandwidth Utilization (DAILY)_$YEAR-$MONTH-$DAY*.xls"
+
+mget "LANEthTrafficRX_$YEAR-$MONTH-$DAY*.xls"
+
+mget "LANEthTrafficTX_$YEAR-$MONTH-$DAY*.xls"
+
+mget "Link Utilization Report Combined(DAILY)_$YEAR-$MONTH-$DAY*.xls"
+
+mget "MSTP Report_$YEAR-$MONTH-$DAY*.xls"
+
+mget "Optical Bit Error Rate_$YEAR-$MONTH-$DAY*.xls"
+     
+mget "SPO Performance Report_$YEAR-$MONTH-$DAY*.xls"
+     
+mget "Transport KPI Report_$YEAR-$MONTH-$DAY*.xls
+     
+mget WANEthBandwidRX_$YEAR-$MONTH-$DAY*.xls
+
+mget WANEthBandwidTX_$YEAR-$MONTH-$DAY*.xls
+
+mget LANEthTrafficRX_$YEAR-$MONTH-$DAY*.xls
+
+mget WANEthTrafficTX_$YEAR-$MONTH-$DAY*.xls
+
+
+
+bye
+
+EOF
+
+
+
+echo "Dear Teams," > body
+
+echo "Kindly find required files in tar zipped format." >> body
+
+echo "Use View option to view  the tarfile in winzip program." >> body
+
+echo "Following are the files avialable today." >> body
+
+echo "==================" >> body
+
+ls -ltrh *.xls >> body
+
+
+echo "==================" >> body
+
+echo "\nBr," >> body
+echo "NOC-CORDINATION" >> body 
+  
+
+ 
+
+
+tar -cvf - *.xls | /bin/bzip2 > mwkp_reports_$DAY$MONTH$YEAR.tar.bz2
+
+mv mwkp_reports_$DAY$MONTH$YEAR.tar.bz2 /home/NCOR6649/logs/txngen/mwkp_reports_$DAY$MONTH$YEAR.tar.bz2
+
+ 
+ch=`du -k /home/NCOR6649/logs/txngen/mwkp_reports_$DAY$MONTH$YEAR.tar.bz2 |  cut -f 1`
+
+if [ $ch -lt 100 ]; then echo $ch"done" ; exit; fi
+
+nwd_rsl=mwkp_reports_$DAY$MONTH$YEAR.tar.bz2
+sub=mwkp_reports_$DAY$MONTH$YEAR
+#ksh mail_mwkp_reports
+CC_LIST=`echo "farooq.r@mobilink.net,imran.rana@mobilink.net,FAISAL.H@mobilink.net,HAFIZ.A@mobilink.net,TEC-NOCTXNLevelIISupportTEAM@mobilink.net.pk,babur.hussain@mobilink.net,nauman.khan@mobilink.net,haroon.ahmad@mobilink.net,rashid.iqbal@mobilink.net,bilal.zahoor@mobilink.net,nabeel.zafar01@mobilink.net,salman.mustafa@mobilink.net,jawad.ashraf@mobilink.net,abdul.ghaffar01@mobilink.net,TAUQEER.JAVED@mobilink.net,hammad.ahmed@mobilink.net,shoaib.yousuf@mobilink.net,muhammad.attique@mobilink.net,muhammad.saeed01@mobilink.net,hassan.tasawar@mobilink.net"`
+TO_LIST=`echo "sohail.h@mobilink.net,usman.siddiqui@mobilink.net,ASIM.REHMAN@mobilink.net,ahsan.haq@mobilink.net,tahir.latif@mobilink.net,NADEEM.U@mobilink.net,NOOR.HUDA@mobilink.net,zia.abdus@mobilink.net,ENGGOPERATIONSFAISALABAD@mobilink.net.pk,ENGGOPERATIONSMULTAN@mobilink.net.pk,TEC-SOUTHENGGOPERATIONSTEAM@mobilink.net.pk"`
+
+#CC_LIST=`echo "farooq.r@mobilink.net,sohaib.a@mobilink.net"`
+#TO_LIST=`echo "sohail.h,usman.siddiqui@mobilink.net,ASIM.REHMAN@mobilink.net,ahsan.haq@mobilink.net,tahir.latif@mobilink.net,NADEEM.U@mobilink.net"`
+
+
+( cat body ; /usr/bin/uuencode /home/NCOR6649/logs/txngen/mwkp_reports_$DAY$MONTH$YEAR.tar.bz2 $nwd_rsl ) | mailx -s $sub  -c "$CC_LIST" "$TO_LIST"
+
+rm -f *.xls
+

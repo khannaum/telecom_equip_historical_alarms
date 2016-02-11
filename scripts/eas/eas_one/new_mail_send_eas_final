@@ -1,0 +1,39 @@
+#!/bin/sh
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+
+cd /home/NCOR6649/scripts/eas/eas_one
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+
+
+echo "SITE|OCC|CLR|ALARM" > /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+# "Genset & mains failure
+zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z /home/NCOR6649/logs/genset/nwd1_gen_run_excl_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"GEN" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/netecho/nwd_mains_fail_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"MF" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+# system on batteries
+zcat /home/NCOR6649/logs/err/erc_sob_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"SOB" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/zte/zte_eas_$YEAR$MONTH$DAY.Z | grep -i "SYSTEM" | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"SOB" } ' >>  /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+# Low voltage
+zcat /home/NCOR6649/logs/err/erc_low_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"LOW" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/low_vol/nwd_low_vol_$DAY$MONTH$YEAR.txt.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"LOW" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/zte/zte_eas_$YEAR$MONTH$DAY.Z | grep -i "LOW VOL" | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"LOW" } ' >>  /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+rm -f /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv.Z
+
+compress /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+nwd_cell=nwd_eas_$DAY$MONTH$YEAR.csv
+
+
+
+(cat cell_ste ; /usr/bin/uuencode /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv.Z  $nwd_cell.Z ) | mailx -s $nwd_cell nauman.khan@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,marvi.waheed@mobilink.net,hashim.mushtaq@mobilink.net,farrukh.hussain@mobilink.net,aamir.mahmood@mobilink.net
+#,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net, 

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+cd /home/NCOR6649/scripts/san
+
+echo "************system Wide health checks **********************"                                                                                                          
+                                                                                                                                                                       
+ /bin/sh health_chk > san_health_ch                                                                                                                                                                       
+ san_ch_cell=san_health_ch                                                                                                                                                         
+                                                                                                                                                                       
+                                                                                                                                                                       
+  mailx -s "System Wide Health Checks" nauman.khan@mobilink.net < san_health_ch 
+

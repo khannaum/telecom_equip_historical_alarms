@@ -1,0 +1,83 @@
+#!/bin/sh
+
+user=`echo '"noc_core"'`
+#echo  "$user"
+password=` echo '"Mobilink123"' `
+#echo "$password"
+
+server="10.31.24.21"
+
+Ser=`echo  "\"$server---O&M System\""`
+last=`echo "\"---O&MSystem\""`
+#echo "$Ser"
+
+#for file in `cat ll`;do echo " ";done
+
+#grep "BSGSM" /usr/gsm/config/global/NE.MAP|awk '{print $2}'>./bss_name
+
+# echo " " > ./gath 
+
+echo " " > final
+echo " " > raw
+
+for i in `cat fip.csv | awk ' { FS="," ; OFS="|" ;  print $2,$4 } ' | sort -u  ` 
+do
+
+
+
+ server=`echo $i | awk ' { FS="|" ;print $1 } '`
+
+
+ mgt=`echo $i | awk ' { FS="|" ;print $2 } '` 
+
+ echo $server
+echo $mgt
+
+
+Ser=`echo  "\"$server---O&M System\""`
+ 
+#tid[$j]=` echo $i | nawk ' { FS="|" ;print $6 } ' `
+
+echo $Ser
+
+
+
+
+
+
+(echo  "LGI:op=$user,PWd=$password,SER=$Ser;";sleep 3 ; echo "LST OFCTKC: CDT=OFCCIC, QR=LOCAL;";sleep 500 ) | telnet  $server 6000 | nawk -f comp > gath
+
+
+
+  for i in `cat ./gath`
+   do
+
+   tid=` echo $i | nawk ' { FS="|" ;print $7 } ' `
+   fied=` echo $i | nawk ' { FS="|" ;print $0 } ' `
+
+   muser=`echo 'noc_core'`
+
+    mpassword=` echo 'Mobilink123' `
+
+   echo $tid
+
+  echo "============"
+
+   (echo "$muser";sleep 3 ; echo "$mpassword" ; sleep 3; echo "LST TDMTID: TIDFVDEC=$tid ;";echo "\n";sleep 1;) | telnet -c  $mgt > raw 
+
+cat raw | tr -d '\015' | nawk -f comp2 file=$fied  >> final
+
+   echo "=======l===="
+
+# > ./final
+ 
+# | tr -d '\015' | nawk -f comp2 file=$fied  >> final
+
+
+   done
+
+
+
+
+done
+

@@ -1,0 +1,42 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd /home/oann/scripts/eas
+
+ 
+ 
+# zcat /home/Motorola/ev_logs/s*.txt.Z  | perl search.pl -l "\-  EAS  \-" | nawk -f getmain2 | nawk -f first > n_eas.txt
+
+# zcat /tmp/ev_logs/s*-$DAY-$MONTH.txt.Z /tmp/ev_logs/m5ksys1-$DAY-$MONTH.txt.Z | perl search.pl -l "\-  EAS  \-" | nawk -f getmain2 | nawk -f first > n_eas.txt
+
+zcat /tmp/ev_logs/*-07-06.txt.Z |  perl /home/oann/scripts/RSL/search.pl -l "stateChangeEvent  -  SITE"| nawk -f getmain2| nawk -f first_new_dt > n_eas.txt 
+
+nawk -f getmain1 n_eas.txt|sort -u  > indexs
+
+  nawk -f get_eas_n n_eas.txt |  nawk -f sep_bsc_site_date > /home/oann/logs/eas/mot_eas_$DAY-$MONTH 
+
+rm -f /home/oann/logs/eas/mot_eas_$DAY-$MONTH.Z
+
+compress /home/oann/logs/eas/mot_eas_$DAY-$MONTH 
+
+rm -f n_eas.txt
+
+
+
+
+echo "### End #####"
+
+
+
+ 
+ 

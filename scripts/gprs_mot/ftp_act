@@ -1,0 +1,117 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+#cd /home/NCOR6649/scripts/RSL
+
+#` cp /home/Motorola/ev_logs/s*.txt.Z /tmp/ev_logs/
+
+cd /home/noccord/  
+
+echo "sunfire2"
+ftp -n -p 10.231.10.65 <<EOF
+user noccord noccord1 
+hash
+bin
+cd /home/noccord/scripts  
+
+mget gprs_report gprs_report_cell 
+
+bye
+
+EOF
+
+cat  gprs_report > nwd_gprs_report
+cat gprs_report_cell > nwd_gprs_report_cell
+
+rm -f gprs_report gprs_report_cell
+
+echo "sunfire3"
+ftp -n -p 10.231.10.30 <<EOF
+user NOCCORDT Mobilink1
+hash
+bin
+
+cd /home/noccord/scripts
+
+mget gprs_report gprs_report_cell
+
+
+
+bye
+
+EOF
+
+cat  gprs_report >> nwd_gprs_report
+cat gprs_report_cell >> nwd_gprs_report_cell
+
+rm -f gprs_report gprs_report_cell
+
+echo "sunfire4"
+ftp -n -p 10.231.10.50 <<EOF
+user noccord Mobilink1
+hash
+bin
+
+cd /home/noccord/scripts
+
+mget gprs_report gprs_report_cell
+
+
+bye
+
+EOF
+
+cat  gprs_report >> nwd_gprs_report
+cat gprs_report_cell >> nwd_gprs_report_cell
+
+rm -f gprs_report gprs_report_cell
+
+
+echo "somcsys2"
+ftp -n -p 10.231.10.40 <<EOF
+user noccord Mobilink1
+hash
+bin
+
+
+cd /home/noccord/scripts
+
+mget gprs_report gprs_report_cell
+
+
+bye
+
+EOF
+
+cat  gprs_report >> nwd_gprs_report
+cat gprs_report_cell >> nwd_gprs_report_cell
+
+rm -f gprs_report gprs_report_cell
+
+
+
+sleep 20
+
+mv nwd_gprs_report /home/NCOR6649/logs/gprs/
+
+mv nwd_gprs_report_cell /home/NCOR6649/logs/gprs/
+
+
+
+
+echo "### End #####"
+
+
+
+ 
+ 

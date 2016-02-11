@@ -1,0 +1,36 @@
+#!/bin/sh
+
+user=`echo '"noc_core"'`
+#echo  "$user"
+password=` echo '"Mobilink123"' `
+#echo "$password"
+
+server="10.175.4.24"
+
+Ser=`echo  "\"$server---O&M System\""`
+last=`echo "\"---O&MSystem\""`
+echo "$Ser"
+
+#for file in `cat ll`;do echo " ";done
+
+#grep "BSGSM" /usr/gsm/config/global/NE.MAP|awk '{print $2}'>./bss_name
+
+for i in `cat ./gath`
+do
+
+ tid=` echo $i | nawk ' { FS="|" ;print $5 } ' ` 
+
+echo $tid  
+
+done
+
+
+#server=`
+#echo  'LGI:op="noc_core",PWd="Mobilink123",SER="10.31.24.21---O&M System";'; echo 'LST N7TKC: QR=LOCAL;'; sleep 15; echo 'LGO:;'; sleep 3) | telnet  10.31.24.21 6000 
+
+#(echo  "LGI:op=$user,PWd=$password,SER=$Ser;";sleep 3 ; echo "LST N7TKC: QR=LOCAL;"; sleep 5 ;echo "LGO:;") | telnet  $server 6000
+
+#(echo  "LGI:op=$user,PWd=$password,SER=$Ser;";sleep 3 ; echo "LST OFCTKC: CDT=OFCCIC, QR=LOCAL;";sleep 200 ) | telnet  $server 6000
+(echo  "LGI:op=$user,PWd=$password,SER=$Ser;";sleep 3 ; echo "LST TDMTID: TIDFVDEC=$tid, TIDNUM=100;";sleep 100 ) | telnet  $server 6000
+
+

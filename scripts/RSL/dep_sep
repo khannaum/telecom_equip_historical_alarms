@@ -1,0 +1,14 @@
+BEGIN{
+ FS="|"
+OFS="|"
+}
+{ 
+
+#print $1
+
+split($3,oc," ")
+split($4,cl," ")
+
+print $1,$2,oc[1],oc[2],cl[1],cl[2] 
+
+} 

@@ -1,0 +1,19 @@
+BEGIN{
+ FS = "|"
+# RS="\n"
+# ORS="|"
+OFS="|"
+}
+
+
+#/<BeginEvent>/,/<EndEvent>/{s=$0;l=NR}
+{
+  gg=$7/32
+   split(($7/32),rem,".")
+ print $2,$10,$11,rem[1],$4,$5,$6,$9,$8
+   
+}
+END {
+#print "===================="
+}
+

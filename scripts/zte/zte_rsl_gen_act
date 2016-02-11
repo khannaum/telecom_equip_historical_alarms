@@ -1,0 +1,26 @@
+BEGIN{
+	 FS="," 
+	 OFS="|"
+	 #FS="([^,]+)|(\"[^\"]+\")"
+	 FS="^\"|\",\"|\"$"
+}
+{
+ 	 split($36,cd," ")
+ 	   split(cd[1],cod,"-")
+ 	   if($12!~/:/){$12=$14}
+  split($12,od," ")
+  
+  split(od[1],dod,"-")
+  split($3,f1,"_")
+  split($10,alm_s,"(")
+  #print f1[2]
+  if(f1[1]!~/CL/){f1[2]=f1[1] }
+  if(f1[3]~/\(/){f1[2]=f1[3]}
+  #print $12,$14
+   #print $3
+  oc=dod[2]"/"dod[3]"/"dod[1]" "od[2] ; cl=cod[2]"/"cod[3]"/"cod[1]" "cd[2]
+   if(NR>2  && length($36) > 2){print $31,substr(f1[2],1,7),oc,cl,alm_s[1] } 
+   #print $31,substr(f1[2],1,7),oc,cl,alm_s[1]
+ }
+END{
+ }

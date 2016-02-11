@@ -1,0 +1,77 @@
+c0t0d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST930003SSUN300G ,Revision: 0B70 ,Device Id: id1,sd@n5000c5003233ba13 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c0t1d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST930003SSUN300G ,Revision: 0B70 ,Device Id: id1,sd@n5000c50031dd1fe7 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c2t0d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0605 ,Device Id: id1,sd@n5000c500179c0abf 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c2t1d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0605 ,Device Id: id1,sd@n5000c500179dba9f 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c0t3d0           ,Soft Errors: 8 ,Hard Errors: 1 ,Transport Errors: 0 
+Vendor: TEAC     ,Product: DV-W28SS-R       ,Revision: J.1A ,Device Id: 
+Size: 0.00GB <0 bytes>
+,Media Error: 0 ,Device Not Ready: 1 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 8 ,Predictive Failure Analysis: 0 
+c2t2d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0605 ,Device Id: id1,sd@n5000c500179bfaef 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c2t3d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0605 ,Device Id: id1,sd@n5000c500179e01cf 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c2t4d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0605 ,Device Id: id1,sd@n5000c50009468c17 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c2t5d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0605 ,Device Id: id1,sd@n5000c500179cfa1b 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c1t1d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0705 ,Device Id: id1,sd@n5000c50028af05ff 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c1t2d0           ,Soft Errors: 6 ,Hard Errors: 6 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0705 ,Device Id: id1,sd@n5000c50028aeb73f 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 6 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c1t3d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0705 ,Device Id: id1,sd@n5000c50028aebdf3 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c1t4d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0705 ,Device Id: id1,sd@n5000c50028af091f 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c1t5d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0705 ,Device Id: id1,sd@n5000c50028aeb883 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+c1t6d0           ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: SEAGATE  ,Product: ST330057SSUN300G ,Revision: 0705 ,Device Id: id1,sd@n5000c50028af096b 
+Size: 299.99GB <299993600000 bytes>
+,Media Error: 0 ,Device Not Ready: 0 ,No Device: 0 ,Recoverable: 0 
+Illegal Request: 0 ,Predictive Failure Analysis: 0 
+rmt/0            ,Soft Errors: 0 ,Hard Errors: 0 ,Transport Errors: 0 
+Vendor: HP       ,Product: Ultrium 4-SCSI   ,Revision: U52D ,Device Id: 

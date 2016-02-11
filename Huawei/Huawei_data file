@@ -1,0 +1,33 @@
+hu_omc4=10.231.170.104,omc5={10.231.250.227,"/export/home/omc/var/TimerTask/31562"},omc6=10.231.250.211
+hsl location:/opt/oss/server/var/TimerTask
+GSM Cell out of Service--21801:
+
+ 
+ Location info  =  Site Index=113, Cell Index=318, Alarm Cause=Other 
+                         causes, Site Type=BTS3900A GSM, Site 
+                         Name=KRM3690__P_UpperSatin, Cell 
+                         Name=KRM33690__P_UpperSatin, Cell CGI=410-01-f7-839a
+ SCTP Link Fault--21541:
+  
+  Location info  =  Subrack No.=0, Slot No.=1, Subsystem No.=1, SCTP Link 
+                         ID=0, SCTP Link No.=0, Interface Type=Iur/Iu/A/LB/IUPC/Iur-g, DSP Code=0xfa9/1-245-1
+                         
+                         
+ UMTS Cell Unavailable--22202:
+ 
+ ALARM  55613       Fault     Major           BSC       22202    QoS             
+     Sync serial No.  =  110931
+          Alarm name  =  UMTS Cell Unavailable
+   Alarm raised time  =  2016-01-21 05:24:38
+       Location info  =  Subrack No.=0, Slot No.=0, Subsystem No.=1, RNC ID=3, 
+                         Cell ID=20864, NodeB ID=2086, NodeB 
+                         Name=UPSH0566__S_Tehkaal, Local Cell ID=4, Alarm 
+                         Cause=NCP/CCP failure.
+        Cleared type  =  Normally cleared
+        Cleared time  =  2016-01-21 06:13:25
+      Root alarm CSN  =  55601
+                      =  55602
+                      =  55609
+     Root Cause Flag  =  0
+         Alarm Group  =  55601
+                      =  55602

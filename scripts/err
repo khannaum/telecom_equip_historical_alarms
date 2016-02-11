@@ -1,0 +1,24 @@
+BEGIN{
+# ORS="|"
+ OFS="|"
+ print "RNC|SITE|CELL|LAC|SAC"
+}
+{ 
+
+if($0~/get UtranCell ServiceArea/)
+{
+#print $0
+split($0,rnc,">")
+#print rnc[1]
+getline;getline;getline;getline;getline
+
+while ( $0 !~ /Total:/)
+{
+getline
+if(($0 !~ /Total:/)&&($0!~/\=\=/)){split($1,cell,"=");split($3,valv,",");split(valv[1],lac,"=");split(valv[2],sa,"=");print rnc[1],substr(cell[2],3,7),cell[2],lac[2],sa[2]} 
+#print $0
+#print "\n"
+}
+}
+}
+

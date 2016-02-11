@@ -1,0 +1,16 @@
+Daily NWD BSS BSC , Site, Cell,Site_id,LAC,Cell Id  Information
+
+*********Summary**********
+Vendor|OMC|BSC|Sites|Cells
+==========================
+Ericsson,OMC|42|2303|6903
+Huawei,homc1|2|1|2
+Huawei,homc2|2|1|2
+Huawei,homc3|2|1|2
+Huawei,homc4|17|2491|7094
+Huawei,homc5|10|1541|4230
+Huawei,homc6|26|2629|7999
+ZTE,ZTE_OMC|10|1431|4757
+ipaccess,Nano|1|77|77
+============================
+Cell Data files are generated at 5:00 am daily

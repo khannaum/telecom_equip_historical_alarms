@@ -1,0 +1,28 @@
+#!/usr/bin/ksh
+
+export DAY=`TZ=GMT+24 date +%d`
+export YEAR=`TZ=GMT+24 date +%Y`
+export MONTH=`TZ=GMT+24 date +%m`
+export MAILTO="nauman.khan@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,marvi.waheed@mobilink.net,hashim.mushtaq@mobilink.net,farrukh.hussain@mobilink.net,aamir.mahmood@mobilink.net"
+#export MAILTO="nauman.khan@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,ASIM.REHMAN@mobilink.net,SOHAIL.H@mobilink.net,HAFIZ.A@mobilink.net,tahir.latif@mobilink.net,muhammad.rehan01@mobilink.net,AFTAB.IQBAL@mobilink.net,mohsin.bakhtyar@mobilink.net,ALI.AS@mobilink.net,imran.rana@mobilink.net,faisal.fazlani@mobilink.net,sikandar.a@mobilink.net,KASHIF.ZIA@mobilink.net,zubair.manzoor@mobilink.net,aqsam.omar@ericsson.com,zia.abdus@mobilink.net,ghulam.abbas@mobilink.net,shoaibsarwar.ecp@gmail.com,MANSOOR.H@mobilink.net,asif.hameed@mobilink.net,sarfraz.kareem@ericsson.com,tahir.ahmad@ericsson.com,aqsam.omar@ericsson.com,asad.nadeem.khan@ericsson.com,shah.hussain@ericsson.com,musman.ahmed.khan@ericsson.com,aamir.mahmood@mobilink.net,aamir.younus@mobilink.net,abdullah.yasir@mobilink.net,arshad.hamid@mobilink.net,farrukh.hussain@mobilink.net,bashir.imran@mobilink.net,junaid.ashraf@mobilink.net,SHARAHBEEL.AZIZ@mobilink.net,haroon.ahmad@mobilink.net,ASIF.R@mobilink.net,ABDUL.RAUF@mobilink.net,ASIM.AHMED@mobilink.net,farukh.ayoub@mobilink.net,aarish.hameed@mobilink.net,muhammad.shafiq01@mobilink.net,aamir.mahmood@mobilink.net,farrukh.hussain@mobilink.net,,naveed.ahmed03@mobilink.net,salman.ahmad@mobilink.net,ali.hassan@mobilink.net"
+#export MAILTO="nauman.khan@mobilink.net"
+export SUBJECT="EAS Alarms Status_$DAY$MONTH$YEAR"
+export BODY="new_gen.html"
+export ATTACH="/home/NCOR6649/scripts/eas/eas_head.html.Z"
+(
+ echo "To: $MAILTO"
+ echo "Subject: $SUBJECT"
+ echo "MIME-Version: 1.0"
+ echo 'Content-Type: multipart/mixed; boundary="-q1w2e3r4t5"'
+ echo
+ echo '---q1w2e3r4t5'
+ echo "Content-Type: text/html"
+ echo "Content-Disposition: inline"
+ cat $BODY
+ echo '---q1w2e3r4t5'
+ echo 'Content-Type: application; name="'$(basename $ATTACH)'"'
+ echo "Content-Transfer-Encoding: uuencode"
+ echo 'Content-Disposition: attachment; filename="'$(basename $ATTACH)'"'
+ uuencode  $ATTACH $(basename $ATTACH)
+ echo '---q1w2e3r4t5--'
+) | /usr/sbin/sendmail $MAILTO

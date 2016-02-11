@@ -1,0 +1,61 @@
+BEGIN{
+ FS="|"
+ OFS="|"
+}
+{ 
+
+#YYYY MM DD HH MM SS
+
+#split($4,
+#01/18/2016 20:19:26
+
+
+
+#print $1,$2,$3,$4,$5
+#print $0
+gsub(/[/:]/," ",$4)
+#;gsub(/[/:]/," ",$5)
+
+split($4,oc," ")
+$4=oc[3]" "oc[1]" "oc[2]" "oc[4]" "oc[5]" "oc[6]
+
+d1=mktime($4)
+
+#pdate="2016 01 27"
+#cdate="2016 01 27"
+#ph="00"
+#ch="06"
+
+#print pdate,cdate,ph,ch
+
+pdt=pdate" "ph" ""00 00"
+cdt=cdate" "ch" ""59 59"
+time1=mktime(pdt)
+time2=mktime(cdt)
+
+
+
+#time1=mktime("2016 01 18 06 00 00")
+#time2=mktime("2016 01 18 11 59 59")
+#print (time2-time1)/(60*60)
+#print d1-time2
+if(!(((d1-time2)>0) )  )
+{
+d2=time2
+
+ if((d1-time1)<0 ){d1=time1}
+
+
+occ=strftime("%m/%d/%Y %H:%M:%S",d1)
+clr=strftime("%m/%d/%Y %H:%M:%S",d2)
+split($2,site,"~")
+print $1,$2,$3,occ,clr,$5
+
+
+
+}
+
+
+} 
+END{
+}

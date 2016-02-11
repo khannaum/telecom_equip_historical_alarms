@@ -1,0 +1,89 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`date +%d`
+YEAR=`date +%Y`
+MONTH=`date +%m`
+
+cd /home/NCOR6649/scripts/txngen/ 
+
+#` cp /home/Motorola/ev_logs/s*.txt.Z /tmp/ev_logs/
+
+echo $YEAR$MONTH$DAY 
+
+echo "nec"
+ftp -n -p 10.231.70.2 <<EOF
+user NOCCORDT Noccord1 
+hash
+bin
+
+mget active_alm.log  NeList.csv 
+
+
+bye
+
+EOF
+
+chmod 777 *
+
+cat active_alm.log > nec_act_alm.csv
+
+cat NeList.csv > nec_NeList.csv 
+
+
+ftp -n -p 10.231.70.5 <<EOF
+user NOCCORDT Noccord1 
+hash
+bin
+mget active_alm.log  NeList.csv
+
+bye
+
+EOF
+ echo "kk"
+chmod 777 *
+cat active_alm.log >> nec_act_alm.csv
+cat NeList.csv >> nec_NeList.csv  
+
+
+ftp -n -p 10.231.70.1 <<EOF
+user NOCCORDT Noccord1 
+hash
+bin
+
+mget active_alm.log  NeList.csv
+
+
+bye
+
+EOF
+
+cat active_alm.log >> nec_act_alm.csv
+cat NeList.csv >> nec_NeList.csv  
+
+chmod 777 *
+
+echo "### End #####"
+
+
+rm -f  nec_act_alm.csv.Z nec_NeList.csv.Z
+ 
+ compress nec_act_alm.csv nec_NeList.csv
+
+ 
+nec_act_alm=nec_act_alm_$DAY$MONTH$YEAR
+nec_NeList=nec_NeList_$DAY$MONTH$YEAR 
+
+/usr/bin/uuencode nec_act_alm.csv.Z $nec_act_alm.Z | mailx -s $nec_act_alm nauman.khan@mobilink.net,kanwal.abad@mobilink.net,shoaib.sarwar@mobilink.net,tehmina.iftikhar@mobilink.net,usman.ar@mobilink.net 
+
+/usr/bin/uuencode nec_NeList.csv.Z $nec_NeList.Z | mailx -s $nec_NeList nauman.khan@mobilink.net,kanwal.abad@mobilink.net,shoaib.sarwar@mobilink.net,tehmina.iftikhar@mobilink.net,usman.ar@mobilink.net
+
+rm -f   active_alm.log NeList.csv 
+
+ 

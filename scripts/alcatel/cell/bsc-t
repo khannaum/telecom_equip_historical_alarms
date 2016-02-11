@@ -1,0 +1,16 @@
+BEGIN{
+ FS=",";OFS="|" ; ORS="|"
+}
+{ 
+
+if($0 ~ "OMC_NAME"){  
+
+getline ; print $0,"====" 
+
+}
+
+
+
+
+
+} 

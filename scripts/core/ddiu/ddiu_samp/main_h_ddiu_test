@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# cd /home/oann/scripts/core/h_tg
+
+
+
+for j in `cat ofts_falt | nawk -f comp1`
+do
+
+a1=`echo $j | awk ' { FS="|" ; print $1 } ' `
+a2=`echo $j | awk ' { FS="|" ; print $2 } ' `
+a3=`echo $j | awk ' { FS="|" ; print $3 } ' `
+
+
+
+for i in `cat ofc_test  | nawk -f comp_com`
+do
+
+
+ 
+
+b1=`echo $i | awk ' { FS="|" ; print $1 } ' `
+b2=`echo $i | awk ' { FS="|" ; print $2 } ' `
+b3=`echo $i | awk ' { FS="|" ; print $3 } ' `
+b4=`echo $i | awk ' { FS="|" ; print $4 } ' `
+b5=`echo $i | awk ' { FS="|" ; print $5 } ' `
+b6=`echo $i | awk ' { FS="|" ; split($4,cic,"-");print cic[1]  } ' `
+b7=`echo $i | awk ' { FS="|" ; split($4,cic,"-");print cic[2]  } ' `
+
+
+#if [ $a1==$b1 && $a2==$b3 && $a3>=$b6 && $a3<=$b7 ] then
+
+if [  $a1 = $b1  -a  $a2 = $b3  -a  $a3 -ge $b6  -a  $a3 -le $b7  ] ; then
+# echo $b4
+ echo $j"|"$b4"|"$b5"|"$b2 >> lk 
+break
+fi
+
+done
+done

@@ -1,0 +1,47 @@
+BEGIN{
+#  FS = "\\\n"
+ ORS="|"
+OFS="|"
+}
+
+#/objectClass=/{s=$0;l=NR;split($0,ne,"=");split(ne[2],neid,",");print neid[1]}
+#/bssId=/{s=$0;l=NR;split($0,ne,"=");split(ne[2],neid,",");print neid[1]}
+/objectName=/{s=$0;l=NR;split($0,ne,"=");split(ne[2],neid,",");print neid[1]}
+/administrativeState=/{s=$0;l=NR;split($0,ne,"=");split(ne[2],neid,",");print neid[1]}
+/operationalState=/{s=$0;l=NR;split($0,ne,"=");split(ne[2],neid,",");print neid[1]}
+
+
+/cellGlobalIdentity=/{s=$0;l=NR;split($0,ne,"=");split(ne[2],neid,",");print  neid[1]"-"neid[2]"-"neid[3]"-"neid[4]}
+
+#/localPointCode=/{s=$0;l=NR;split($0,ne,"=");split(ne[2],neid,",");print neid[1]}
+#/remotePointCode=/{s=$0;l=NR;split($0,ne,"=");split(ne[2],neid,",");print neid[1]}
+
+/objectInstanceId=/{s=$0;l=NR;split($0,ne,"=");split(ne[2],neid,",");print neid[1]}
+#/swVersions=/{s=$0;l=NR;split($0,ne,"=");split(ne[2],neid,",");print neid[1]}
+
+
+{
+if ($0~/EVENT CREATION/)
+{
+
+while ($0!~/EVENT CREATION/)
+{
+getline
+print $0
+if ($0!~/EVENT CREATION/)
+{
+#print $0
+}
+
+}
+print "\n"
+}
+#print "\n"
+
+
+
+}
+END {
+#print "===================="
+}
+

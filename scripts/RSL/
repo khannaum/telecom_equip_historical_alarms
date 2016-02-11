@@ -1,0 +1,20 @@
+BEGIN {
+#	 print "     BSC/Site                              ","|"," Down_Date ","|","Down_Time","|"," Up_Date", "|" , "Up_Time"
+	# FS="\n";OFS="|";RS="\n"
+	}
+{	
+	 
+ 	if  ( $0!="")
+        {
+        site=$1
+        start="on" 
+NR=NR+1
+ssite=$1
+print NR,$0 
+for  (;ssite==site;NR=NR+1)
+{
+print ssite
+ssite=$0
+}
+}
+} 

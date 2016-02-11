@@ -1,0 +1,63 @@
+BEGIN{
+ 
+#ORS="|"
+}
+
+{ 
+if($0~/\+\+\+/){ anode=$2}
+if($0~/ALARM/){ alarm=$2"|"$4"|"$6"|"$7 }
+if($0~/Sync serial No./) { split($0,tp,"=");ser_n=tp[2] }
+if($0~/Alarm name/) { split($0,tp,"=");alarm_name=tp[2]}
+if($0~/Alarm raised time/) { split($0,tp,"=");split(tp[2],dt,"+");alarm_rt=dt[1]}
+
+if($0~/Location info/)
+{
+lc=$0
+lc1=""
+
+a=""
+
+if($0~/Office Name/) { split($0,ofn,"Office Name="); split(ofn[2],ifn1,",");offi_name=ifn1[1] }
+if($0~/Board Type/) { split($0,board_ty,"Board Type=");split(board_ty[2],bty1,",");board_type=bty1[1] }
+if($0~/Shelf No./) { split($0,board_ty,"Shelf No.=");split(board_ty[2],bty1,",");shelf_no=bty1[1] }
+
+
+ while ( $0 !~ /Module No/)
+{
+  
+  # if(NR==1){print ""}
+
+ if($0~/Frame No./) {split($0,board_ty,"Frame No.=");split(board_ty[2],bty1,",");frame_no=bty1[1]  }
+ if($0~/Slot No./) { split($0,board_ty,"Slot No.=");split(board_ty[2],bty1,",");slot_no=bty1[1] }
+ if($0~/Location No./){split($0,board_ty,"Location No.=");split(board_ty[2],bty1,",");loc_no=bty1[1] }
+ if($0~/Module No./) { split($0,board_ty,"Module No.=");split(board_ty[2],bty1,",");module_no=bty1[1] }
+ if($0~/Link Name/){ split($0,board_ty,"Link Name.=");split(board_ty[2],bty1,",");link_name=bty1[1] }
+ if($0~/DPC/){ split($0,board_ty,"DPC=");split(board_ty[2],bty1,",");dpc=bty1[1] }
+ if($0~/OPC/){split($0,board_ty,"OPC=");split(board_ty[2],bty1,",");opc=bty1[1] }
+ if($0~/DSP Name /){ split($0,board_ty,"DSP Name =");split(board_ty[2],bty1,",");dsp_name=bty1[1] bty1[2] bty1[3] bty1[4] }
+ if($0~/SLC/){ split($0,board_ty,"SLC=");split(board_ty[2],bty1,",");slc=bty1[1] }
+ if($0~/Cause/){ split($0,board_ty,"Cause=");split(board_ty[2],bty1,",");cause=bty1[1] }
+  
+  if($0~/Cleared time/) { split($0,clrt,"=");alarm_clr=clrt[2]}
+  getline  
+  
+  if($0 !~ /Module No/ && length($0)>0){ a=a" "$1" "$2" "$3" "$4" "$5" "$6" "$7} 
+   
+  if($0 ~/Module No/ && length($0)>0 && length(lc)>0 )
+     {  print offi_name "_" board_type "_" shelf_no "_" frame_no "_" slot_no "_" loc_no "_" module_no "_" link_name "_" dpc "_" opc "_" dsp_name "_" slc "_" cause ,"|",alarm_rt,"|",alarm_clr,"|",alarm_name} 
+   
+}
+
+#print "\n" 
+
+
+
+
+} 
+
+}
+
+END{
+#print "thanks"
+}
+

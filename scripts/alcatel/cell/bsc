@@ -1,0 +1,19 @@
+BEGIN{
+ FS="," ; OFS="," 
+}
+{ 
+
+if( $0 ~ /OMC_NAME/ ){ getline ; omc=$0 }
+
+if($0~/START BSC_SECTION/)
+{
+
+while ( $0 !~ /END BSC_SECTION/)
+{if(NR==1){ getline ; print ""};getline ; if($0 !~ /END BSC_SECTION/ && length($0)>0){print omc,$1,$2} }
+
+print "\n"
+}
+
+
+
+} 

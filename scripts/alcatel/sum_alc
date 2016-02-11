@@ -1,0 +1,50 @@
+#!/bin/sh
+
+cr=CRITICAL
+ind=INDETERMINATE
+maj=MAJOR
+min=MINOR
+war=WARNING
+
+cr_s=`grep -c $cr omc3`
+cr_n=`grep -c $cr omc5`
+cr_c2=`grep -c $cr omc2`
+cr_c3=`grep -c $cr omc4`
+# cr_t=$(($cr_s+$cr_n+$cr_c2+$cr_c3))
+
+# cr_t=$(($cr_s+$cr_n)) 
+echo $cr"|"$cr_s"|"$cr_c2"|"$cr_c3"|"$cr_n"|"
+
+
+cr=INDETERMINATE
+cr_s=`grep -c $cr omc3`
+cr_n=`grep -c $cr omc5`
+cr_c2=`grep -c $cr omc2`
+cr_c3=`grep -c $cr omc4`
+echo $cr"|"$cr_s"|"$cr_c2"|"$cr_c3"|"$cr_n"|"
+
+cr=MAJOR
+cr_s=`grep -c $cr omc3`
+cr_n=`grep -c $cr omc5`
+cr_c2=`grep -c $cr omc2`
+cr_c3=`grep -c $cr omc4`
+echo $cr"|"$cr_s"|"$cr_c2"|"$cr_c3"|"$cr_n"|"
+
+cr=MINOR
+cr_s=`grep -c $cr omc3`
+cr_n=`grep -c $cr omc5`
+cr_c2=`grep -c $cr omc2`
+cr_c3=`grep -c $cr omc4`
+echo $cr"|"$cr_s"|"$cr_c2"|"$cr_c3"|"$cr_n"|"
+
+cr=WARNING
+cr_s=`grep -c $cr omc3`
+cr_n=`grep -c $cr omc5`
+cr_c2=`grep -c $cr omc2`
+cr_c3=`grep -c $cr omc4`
+echo $cr"|"$cr_s"|"$cr_c2"|"$cr_c3"|"$cr_n"|"
+
+
+
+ 
+ 

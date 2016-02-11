@@ -1,0 +1,1076 @@
+Alarm|Domain|Service Affecting|Date
+Zero Terminating Calls|OAN+NOC|Yes|04/01/2014
+TSC-TRUNK [66] TWO-MB-MISSING [50]|OAN|Yes|04/01/2014
+BTS-EXTERNAL [9] Genset On [82]|OAN|No|04/01/2014
+Sleeping_GPU_Alerter|NOC|No|04/01/2014
+RX-TX [10] HW-DEGRADED [237]|OAN|Yes|04/01/2014
+CELL [43] LOSS-OF-ALL-CHAN [3]|OAN|Yes|04/01/2014
+CELL [43] LOSS-OF-TCH [2]|OAN+NOC|Yes|04/01/2014
+ENVIR [5] HW-DEGRADED [237]|OAN|No|04/01/2014
+CALL_DROP_RATE|OAN+NOC|No|04/01/2014
+BSC-TRANS [101] AIS [1]|OAN|Yes|04/01/2014
+TSC-TRUNK [66] BER-10E-4 [100]|OAN|Yes|04/01/2014
+BTS-TRANS [11] FAR-END-ALARM [176]|OAN|Yes|04/01/2014
+BTS-EXTERNAL [9] Rectifier Minor [92]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Water Break IN [87]|OAN|No|04/01/2014
+TCSM-ADAPT [75] RESTART [216]|OAN|No|04/01/2014
+PROCESS [96] ACCESS-FAIL [3]|OAN+NOC|Redundancy Failure|04/01/2014
+BTS-EXTERNAL [9] Intruder [84]|OAN|No|04/01/2014
+TSC-TRUNK [66] FAR-END-ALARM [176]|OAN|Yes|04/01/2014
+RX-TX [10] TRE-VSWR [10]|OAN|Yes|04/01/2014
+BTS-EXTERNAL [9] External Temperature [89]|OAN|No|04/01/2014
+TCSM-ADAPT [75] NO-Q1-CONN [202]|OAN|No|04/01/2014
+TCSM-ADAPT [75] TRIB-AIS-2-MB [222]|OAN|No|04/01/2014
+RX-TX [10] RX-CABLE [3]|OAN|Yes|04/01/2014
+G-BTS [8] RESYNCH [3]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Fire Alarm [86]|OAN|No|04/01/2014
+RX-TX [10] HW-FAILURE [239]|OAN|Yes|04/01/2014
+BTS-EXTERNAL [9] External Low Voltage [90]|OAN|No|04/01/2014
+CLK [1] HW-DEGRADED [237]|OAN|Yes|04/01/2014
+BTS-TRANS [11] BER-10E-6 [102]|OAN|No|04/01/2014
+TSC-TRUNK [66] BER-10E-3 [99]|OAN|Yes|04/01/2014
+Error(s) in checked DLS|NOC|No|04/01/2014
+TCSM-ADAPT [75] ACCESS-FAIL [247]|OAN|No|04/01/2014
+ENVIR [5] HW-FAILURE [239]|OAN|Yes|04/01/2014
+BTS-EXTERNAL [9] Rectifier Major [91]|OAN|No|04/01/2014
+BSC-TRANS [101] FRAME-SLIP [8]|OAN|Yes|04/01/2014
+SWITCH-G2 [51] SWITCH-FAIL [1]|OAN|No|04/01/2014
+Low Efficient TRX|OAN|No|04/01/2014
+BSC-TRANS [101] RAI [5]|OAN|Yes|04/01/2014
+GLOBAL-BSC [47] MLPPP-PARTIAL-FAILURE [18]|NOC|No|04/01/2014
+BTS-OM [44] AUDIT-FAIL [0]|OAN|No|04/01/2014
+RX-TX [10] MODULE-CLOCK-SIGNAL [22]|OAN|No|04/01/2014
+TSC-TRUNK [66] AIS-2-MB [66]|OAN|Yes|04/01/2014
+LapDLink is broken|OAN|Yes|04/01/2014
+ATCA-SWITCH [98] TEMPERATURE-MINOR [13]|OAN|No|04/01/2014
+ENVIR [5] SUBRACK-POWER [24]|OAN|Yes|04/01/2014
+TCSM-ADAPT [75] LOSS-OF-CLK-2M [211]|OAN|Yes|04/01/2014
+BTS-TRANS [11] AIS-2-MB [66]|OAN|Yes|04/01/2014
+ALERTER [49] TCH-OCCUP-SHORT [3]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Air condition [88]|OAN|No|04/01/2014
+TCSM-ADAPT [75] INT-BUS-FLT-G25 [209]|OAN|Yes|04/01/2014
+RX-TX [10] IOM-DISCONNECTION [234]|OAN|No|04/01/2014
+BSC-TRANS [101] LIS [0]|OAN|Yes|04/01/2014
+ENVIR [5] POWER-SUPPLY-U [11]|OAN|No|04/01/2014
+RX-TX [10] ANTENNA-VSWR-WARNING [11]|OAN|Yes|04/01/2014
+TRUNK [36] SLIP-OV [5]|OAN+NOC|No|04/01/2014
+ENVIR [5] FATAL-TEMPERATURE [32]|OAN|No|04/01/2014
+GLOBAL-BSC [47] TC-HW-RESYNCH [25]|NOC|No|04/01/2014
+Loss of Packet Service|OAN+NOC|Yes|04/01/2014
+RX-TX [10] RESTART [248]|OAN|No|04/01/2014
+TSC-TRUNK [66] FRAME-ALIGNMENT [81]|OAN|No|04/01/2014
+TELECOM [42] GPRS-RESET [14]|NOC|No|04/01/2014
+ATCA-SHELF [99] FAN-FAILURE [19]|OAN|No|04/01/2014
+G-BTS [8] RESET [247]|OAN|No|04/01/2014
+TSC-TRUNK [66] BER-10E-6 [102]|OAN|Yes|04/01/2014
+BTS-OM [44] RECONFIG-FAIL [2]|OAN|No|04/01/2014
+BTS-TRANS [11] TWO-MB-MISSING [50]|OAN|Yes|04/01/2014
+N7 [35] LNK-REP [0]|OAN|Yes|04/01/2014
+ENVIR [5] POWER-SUPPLY-NU [12]|OAN|No|04/01/2014
+RX-TX [10] ANTENNA-VSWR-URGENT [12]|OAN|Yes|04/01/2014
+CELL [43] LOSS-OF-BCCH [0]|OAN|Yes|04/01/2014
+CELL [43] LOSS-OF-SDCCH [1]|OAN|Yes|04/01/2014
+SW-AN [3] CONFIG-FAIL [246]|OAN|Yes|04/01/2014
+Rack 1 Shelf 4 GPU 2|OAN|No|04/01/2014
+BSC-EXTERNAL [50] Intruder [5]|OAN|No|04/01/2014
+ATCA-SHELF [99] RESET [0]|OAN|No|04/01/2014
+SW-AN [3] SW-PROBLEM [11]|OAN+NOC|Yes|04/01/2014
+BTS-TRANS [11] FRAME-ALIGNMENT [81]|OAN|Yes|04/01/2014
+BTS-EXTERNAL [9] window override [85]|NOC|No|04/01/2014
+BSC-TRANS [101] LFA [2]|OAN|Yes|04/01/2014
+RX-TX [10] MODULE-NOT-PRESENT [51]|OAN|Yes|04/01/2014
+TCSM-ADAPT [75] FIRST-DSP-FAIL [136]|OAN|No|04/01/2014
+ATCA-SHELF [99] VOLTAGE-FATAL [14]|OAN|Redundancy Failure|04/01/2014
+BTS-TRANS [11] BER-10E-3 [99]|OAN|No|04/01/2014
+PROCESSOR [33] RESET [1]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Genset ON [96]|OAN|No|04/01/2014
+ATCA-SWITCH [98] FATAL-HW-FAILURE [10]|OAN|Redundancy Failure|04/01/2014
+ENVIR [5] MAINS-AL [20]|OAN|No|04/01/2014
+ENVIR [5] TEMPERATURE-WARNING [31]|OAN|No|04/01/2014
+BSC-EXTERNAL [50] Intruder|OAN|No|04/01/2014
+LOS: PCM link between transceiver and receiver broken|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Rectifier Minor (Outdoor) [95]|OAN|No|04/01/2014
+ATCA-SHELF [99] FATAL-HW-FAILURE [10]|OAN|Redundancy Failure|04/01/2014
+BTS-EXTERNAL [9] Genset On (Outdoor) [94]|OAN|No|04/01/2014
+CLK [1] MCL-XCLK [31]|OAN|Yes|04/01/2014
+BTS-POOL [54] EXTRA-TS-NOT-FULLY-USABLE [1]|OAN|Yes|04/01/2014
+ATCA-SWITCH [98] IP-ROUTER-LINK-FAIL [18]|OAN|No|04/01/2014
+G-BTS [8] HW-RESYNCH [8]|OAN|No|04/01/2014
+BSC-TRANS [101] BER-10E-6 [7]|OAN|Yes|04/01/2014
+LIU-SHELF [100] NE1OE-FAILURE [50]|NOC|Redundancy Failure|04/01/2014
+RX-TX [10] MODULE-FRAME-SIGNAL [21]|OAN|Yes|04/01/2014
+G-BTS [8] MODULE-INSERTED [32]|OAN|No|04/01/2014
+SW-AN [3] WRONG-CONFIGURATION [14]|OAN|No|04/01/2014
+ATCA-PROCESSOR [97] ETHERNET-LINK-FAILURE [17]|OAN|Redundancy Failure|04/01/2014
+No response from network|OAN+NOC|No|04/01/2014
+BTS-OM [44] SW-ACTIVATE-FAIL [5]|OAN|No|04/01/2014
+AIS: only bits '1' into two successive frames|OAN|Yes|04/01/2014
+Loss of contact with SU|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Temp Alarm 1 [97]|OAN|No|04/01/2014
+RAI: remote alarm indication signalling an emission problem|OAN|No|04/01/2014
+BTS-OM [44] DOWNLOAD-FAIL [3]|OAN|No|04/01/2014
+BSC-EXTERNAL[50] External Temperature|OAN|No|04/01/2014
+PVC DLCI is unknown from the network|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet intruder Alarm [99]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Rectifier Minor (Outdoor) [96]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Genset On (Outdoor) [97]|OAN|No|04/01/2014
+GLOBAL-BSC [47] BSC-SYNC-REQ [4]|NOC|No|04/01/2014
+Zero Call|NOC|Yes|04/01/2014
+TELECOM [42] BSC-TRAFFIC-REPORT [13]|OAN|No|04/01/2014
+OMU [2] RESTART [248]|OAN|No|04/01/2014
+Alarm/state audit failed|NOC|No|04/01/2014
+Mod_CSSR|OAN+NOC|No|04/01/2014
+Zero Originating calls|OAN+NOC|Yes|04/01/2014
+BTS-EXTERNAL [9] BTS Low Fuel [83]|OAN|No|04/01/2014
+PROCESS [96] RESET [0]|OAN|No|04/01/2014
+ENVIR [5] POWER-SHUTDOWN [23]|OAN|No|04/01/2014
+Hardware audit failed|OAN+NOC|No|04/01/2014
+RX-TX [10] RSL-LINK [1]|OAN+NOC|Yes|04/01/2014
+LIU-SHELF [100] UNPLUGGED [6]|OAN|No|04/01/2014
+TCSM-ADAPT [75] FAN-ALARM [112]|OAN|No|04/01/2014
+BTS-TRANS [11] BER-10E-4 [100]|OAN|Yes|04/01/2014
+BTS-OM [44] PROTOCOL-FAIL [1]|OAN|No|04/01/2014
+SW-AN [3] TELECOM-CONFIG-FAIL [13]|OAN+NOC|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Temp. Alarm 1 [99]|OAN|No|04/01/2014
+ATCA-PROCESSOR [97] TAKEOVER [1]|OAN+NOC|No|04/01/2014
+TELECOM [42] NACK-MSC [1]|NOC|No|04/01/2014
+TELECOM [42] START-RESET [3]|NOC|No|04/01/2014
+ATCA-PROCESSOR [97] SYSTEM-FATAL-TERMINATION [5]|OAN|No|04/01/2014
+TRUNK [36] RAI [3]|OAN|Yes|04/01/2014
+BTS-TRANS [11] CRC-MFRAME-ALGN [86]|OAN|No|04/01/2014
+PROCESSOR [33] RELC-OV [4]|OAN|No|04/01/2014
+GLOBAL-BSC [47] TRE-SECTOR-MISMATCH [13]|NOC|No|04/01/2014
+GLOBAL-BSC [47] BTS-SYNC-REQ [5]|NOC|No|04/01/2014
+ATCA-PROCESSOR [97] RESET [0]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Intruder Alarm [101]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Air con Alarm [102]|OAN|No|04/01/2014
+OMU [2] RESET [247]|OAN|No|04/01/2014
+PROCESSOR [33] ACCESS-FAIL [3]|OAN|Yes|04/01/2014
+BTS-EXTERNAL [9] External Low voltage (Outdoor) [95]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Temp. Alarm 2 [100]|OAN|No|04/01/2014
+ATCA-PROCESSOR [97] ACCESS-FAIL [3]|OAN|No|04/01/2014
+OMC-BSC Link Failure : BSC unreachable|OAN+NOC|No|04/01/2014
+2001796|NOC|No|04/01/2014
+TSC-TRUNK [66] CRC-MFRAME-ALGN [86]|OAN|Yes|04/01/2014
+ATCA-PROCESSOR [97] HDLC-HANDLER [31]|OAN|No|04/01/2014
+OMU [2] LOSS-OF-TWIN-CONFIGURATION [1]|OAN|Yes|04/01/2014
+PROCESSOR [33] RESTART [0]|OAN+NOC|No|04/01/2014
+OMC-BSC Link Failure : first link down|OAN|No|04/01/2014
+Loss of EDGE Service|NOC|No|04/01/2014
+PROCESSOR [33] TAKEOVER [7]|OAN+NOC|No|04/01/2014
+ATCA-SHELF [99] TEMPERATURE-MAJOR [12]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Temp. Alarm 1 [97]|OAN|No|04/01/2014
+BTS-OM [44] PRELOAD-FAIL [11]|OAN+NOC|No|04/01/2014
+ATCA-PROCESSOR [97] TEMPERATURE-MINOR [13]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Rectifier Minor (Outdoor) [101]|OAN|No|04/01/2014
+ATCA-PROCESSOR [97] TEMPERATURE-MAJOR [12]|OAN|No|04/01/2014
+ATCA-PROCESSOR [97] UNPLUGGED [6]|OAN|Redundancy Failure|04/01/2014
+BTS-EXTERNAL [9] Genset On (Outdoor) [99]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Air con Alarm [104]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Rectifier Minor (Outdoor) [98]|OAN|No|04/01/2014
+On free run mode|NOC|No|04/01/2014
+RACK 1 lower SHELF 3 BOARD JBXOMCP slot6|OAN|Redundancy Failure|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Temp. Alarm 1 [101]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Temp. Alarm 2 [102]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Intruder Alarm [103]|OAN|No|04/01/2014
+G-BTS [8] BCB-LINK [30]|NOC|No|04/01/2014
+LIU-SHELF [100] ACCESS-FAIL [4]|OAN+NOC|No|04/01/2014
+LIU-SHELF [100] REDUNDANT-VBAT-LOSS [21]|OAN|Redundancy Failure|04/01/2014
+TOMAS A|NOC|Redundancy Failure|04/01/2014
+ATCA-SHELF [99] ACCESS-FAIL [3]|OAN|Redundancy Failure|04/01/2014
+SDCCH_100%_Blocking|NOC|Yes|04/01/2014
+LIU-SHELF [100] PEM-OWN-VBAT-LOSS [20]|OAN|No|04/01/2014
+AADR: JBETIs on a subrack have not the same rack/subrack address|OAN|No|04/01/2014
+Communications Subsystem Failure|OAN+NOC|No|04/01/2014
+component 0|OAN+NOC|No|04/01/2014
+component 10|OAN+NOC|No|04/01/2014
+component 11|OAN+NOC|No|04/01/2014
+component 12|OAN+NOC|No|04/01/2014
+component 13|OAN+NOC|No|04/01/2014
+component 2|OAN+NOC|No|04/01/2014
+component 3|OAN+NOC|No|04/01/2014
+component 4|OAN+NOC|No|04/01/2014
+component 5|OAN+NOC|No|04/01/2014
+component 6|OAN+NOC|No|04/01/2014
+component 9|OAN+NOC|No|04/01/2014
+CPU Temperature Problem|OAN|No|04/01/2014
+DLS backup failed|NOC|Yes|04/01/2014
+Ethernet [0] Reduced self-test autotest error|OAN|No|04/01/2014
+External communication link failure|OAN|No|04/01/2014
+FAN Problem|OAN|No|04/01/2014
+Hard disk problem|NOC|No|04/01/2014
+Kernel messages (CRIT) (/var/log/alarms)|NOC|No|04/01/2014
+Loss of contact with JBETI slot 4|OAN|No|04/01/2014
+NE_Unmapped_NE_Communication_failure_Specific_Problem|NOC|No|04/01/2014
+System daemons messages (ALERT) (/var/log/alarms)|NOC|No|04/01/2014
+BSC-EXTERNAL [50] Genset On|OAN|No|04/01/2014
+BSC-EXTERNAL [50] Genset On [1]|OAN|No|04/01/2014
+BSC-TRANS [101] BER-10E-4 [6]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Heating-Cooling-Control-12 [12]|NOC|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Temp. Alarm 2 [98]|NOC|No|04/01/2014
+External alarm number 1|NOC|No|04/01/2014
+External alarm number 2|NOC|No|04/01/2014
+External alarm number 3|NOC|No|04/01/2014
+External alarm number 4|NOC|No|04/01/2014
+External alarm number 5|NOC|No|04/01/2014
+External alarm number 6|NOC|No|04/01/2014
+External alarm number 7|NOC|No|04/01/2014
+External alarm number 8|NOC|No|04/01/2014
+GLOBAL-BSC [47] NTP-DRIFT-TIME-ALERT [20]|NOC|No|04/01/2014
+GPU NE1OE contact error|OAN|Redundancy Failure|04/01/2014
+LFA: Loss of Frame Alignment|OAN|No|04/01/2014
+Loss of contact with GPU|OAN|Yes|04/01/2014
+NE1OE supervision error on GPU board|OAN|Redundancy Failure|04/01/2014
+No operational GPU spare board in the rack|OAN|Redundancy Failure|04/01/2014
+No Reply from SGSN FR NSVC|OAN+NOC|No|04/01/2014
+OMC-BSC Link Failure : second link down|NOC|No|04/01/2014
+PROCESS [96] RESTART [1]|OAN|No|04/01/2014
+PVC DLCI is inactive|OAN+NOC|No|04/01/2014
+RACK 1 lower SHELF 3 POWER PVPEM 2|OAN|No|04/01/2014
+Rack 1 Shelf 1 PEM 1|OAN|No|04/01/2014
+Rack 1 Shelf 1 PEM 21|OAN|No|04/01/2014
+RACK 1 upper SHELF 4 BOARD JAXSMM slot1|OAN|Redundancy Failure|04/01/2014
+RACK 1 upper SHELF 4 BOARD JAXSMM slot2|OAN|Redundancy Failure|04/01/2014
+RACK 1 upper SHELF 4 POWER PVPEM 2|OAN|No|04/01/2014
+SWITCH-G2 [51] ROUTINE-TEST-REP [2]|OAN|No|04/01/2014
+TSC-TRUNK [66] I1I2-AIS [208]|OAN|No|04/01/2014
+BSC GENSET ON (17)|OAN|No|04/01/2014
+BSC INTRUDER (21)|OAN|No|04/01/2014
+INTRUDER (5)|OAN|No|04/01/2014
+GENSET ON (1)|OAN|No|04/01/2014
+FIRE (7)|OAN|No|04/01/2014
+No connection to alarm board - Alarm Board Removed|OAN|No|04/01/2014
+Unavailable - No EGPRS|OAN+NOC|No|04/01/2014
+SURGE ARRESTOR FAILURE (2)|OAN|No|04/01/2014
+Fan Tray 0 Failure|OAN|No|04/01/2014
+Fan Tray 1 Failure|OAN|No|04/01/2014
+Alarm Board Failed|OAN|No|04/01/2014
+Fan Tray 2 Failure|OAN|No|04/01/2014
+Door Open|OAN|No|04/01/2014
+RECTIFIER MINOR (8)|OAN|No|04/01/2014
+No Connection to Alarm Board - Radio OOS|OAN|Yes|04/01/2014
+Power Supply Temperature High|OAN|No|04/01/2014
+Power Supply Unit - Input Failure|OAN|No|04/01/2014
+Power Supply Unit - Output Failure|OAN|No|04/01/2014
+BTS Cabinet Over Temperature|OAN|No|04/01/2014
+LOW VOLTAGE (4)|OAN|No|04/01/2014
+High Reverse Power|OAN|Yes|04/01/2014
+Unlocked Device Not In Service|OAN|Yes|04/01/2014
+RECTIFIER MAJOR (6)|OAN|No|04/01/2014
+Heat Management System Unit Failure 1|OAN|No|04/01/2014
+Power Amplifier Power Low But Functioning|OAN|No|04/01/2014
+Battery Backup Output Failure|OAN|No|04/01/2014
+Hub BTS FIRE (15)|OAN|No|04/01/2014
+Hub BTS INTRUDER (13)|OAN|No|04/01/2014
+Power Amplifier Temperature High But Functioning|OAN|No|04/01/2014
+Low Voltage Disconnect Imminent|OAN|No|04/01/2014
+Hub BTS GENSET ON (9)|OAN|No|04/01/2014
+AIR CONDITIONER ALARM (3)|OAN|No|04/01/2014
+Processor Failure|OAN|Yes|04/01/2014
+Mains A.C. Supply Failure|OAN|No|04/01/2014
+Rectifier Failure|OAN|No|04/01/2014
+Battery Box Temperature High|OAN|No|04/01/2014
+Flow procedure has|NOC|No|04/01/2014
+Power Supply Unit 1 Failure|OAN|No|04/01/2014
+Power Supply Unit 3 Failure|OAN|No|04/01/2014
+Transmitter Failure - Output Power|OAN|Yes|04/01/2014
+Phase Lock Lost|NOC|No|04/01/2014
+Radio Capacity|OAN|No|04/01/2014
+GPRS|OAN+NOC|No|04/01/2014
+Synchronization Loss OOS Timer Expired|OAN|Yes|04/01/2014
+No Clock References Available|OAN|No|04/01/2014
+Power Supply Unit 2 Failure|OAN|No|04/01/2014
+Unavailable - No GPRS|OAN+NOC|No|04/01/2014
+No Redundant Connection to Alarms Board - Radio OOS|OAN|Yes|04/01/2014
+Long-Term-Average Values are Unstable|NOC|No|04/01/2014
+Phase Lock Failure|NOC|No|04/01/2014
+KSWX/DSWX in Slot 9 Detected Expanded KSW Matrix Failure|OAN+NOC|No|04/01/2014
+Remote Alarm OOS Timer Expired|OAN|No|04/01/2014
+Last RSL Link Failure|OAN|Yes|04/01/2014
+Power Supply Unit 0 Failure|OAN|No|04/01/2014
+Active Link Connection Failure|OAN|Yes|04/01/2014
+Serial Bus Connection Failure|OAN|No|04/01/2014
+BSC FIRE (23)|OAN|No|04/01/2014
+Heat Management System Unit Failure|OAN|No|04/01/2014
+Urgent Critical Alarm|OAN|No|04/01/2014
+Auxiliary Alarm 1|OAN|No|04/01/2014
+Baseband Hopping GSM Timeslot Misalignment|OAN|No|04/01/2014
+Timeslot 4 Configuration Failure|OAN|Yes|04/01/2014
+Bad clock source or GCLK calibration requested|OAN|No|04/01/2014
+Standby Multiplexer 0 Loopback Failure|NOC|No|04/01/2014
+Heat Management System Unit Failure 2|OAN|No|04/01/2014
+Hub BTS HIGH TEMPERATURE (11)|OAN|No|04/01/2014
+Active Multiplexer 0 Loopback Failure|OAN|Redundancy Failure|04/01/2014
+Hub BTS LOW VOLTAGE (12)|OAN|No|04/01/2014
+Link Disconnected|OAN|Yes|04/01/2014
+Timeslot 6 Configuration Failure|OAN|Yes|04/01/2014
+Timeslot 7 Configuration Failure|OAN|Yes|04/01/2014
+Software Failure|NOC|No|04/01/2014
+Rectifier Failure 1|OAN|No|04/01/2014
+GPRS - No PDCHs|OAN+NOC|No|04/01/2014
+Processor Bus Communication Failure|OAN|No|04/01/2014
+Failure of Expanded Inbound TDM Highway from KSW pair 0|OAN|No|04/01/2014
+Database Configuration and Hardware Mismatch|NOC|No|04/01/2014
+Receiver Synthesizer Failure|OAN|No|04/01/2014
+Clock Reference Failure|OAN|No|04/01/2014
+Mains A.C. Supply Failure 2|OAN|No|04/01/2014
+TRAU Frame Synchronization Loss|OAN|No|04/01/2014
+Bit Error OOS Threshold Exceeded|OAN|No|04/01/2014
+EGPRS|OAN+NOC|No|04/01/2014
+Receive Matrix Failure|OAN|Yes|04/01/2014
+Critical Alarm Threshold Exceeded|OAN|Yes|04/01/2014
+Last XBL Link Failure|OAN|Yes|04/01/2014
+Tx VSWR Antenna Fault|OAN|No|04/01/2014
+Timeslot 5 Configuration Failure|OAN|Yes|04/01/2014
+Mains A.C. Supply Failure 1|OAN|No|04/01/2014
+Rectifier Failure 2|OAN|No|04/01/2014
+Ancillary Cabinet Over Temperature|OAN|No|04/01/2014
+Smoke Alarm|OAN|No|04/01/2014
+LAN Connection Failure|OAN|Redundancy Failure|04/01/2014
+Internal Loopback Audit Failure|OAN|Redundancy Failure|04/01/2014
+Circuit Configuration Problem|NOC|No|04/01/2014
+Lower Cage Fan #0 Failure|OAN|No|04/01/2014
+DSP Channel 18 Audit Failure|OAN|No|04/01/2014
+DSP Channel 19 Audit Failure|OAN|No|04/01/2014
+Frequency Difference in Mate GCLK|OAN|No|04/01/2014
+Lower Cage Fan #1 Failure|OAN|No|04/01/2014
+GPRS - No Cell|OAN+NOC|No|04/01/2014
+AIR CONDITIONER ALARM. (3)|OAN|No|04/01/2014
+LOW VOLTAGE. (4)|OAN|No|04/01/2014
+INTRUDER. (5)|OAN|No|04/01/2014
+RECTIFIER MAJOR. (6)|OAN|No|04/01/2014
+Trunk Critical Threshold Exceeded|OAN|No|04/01/2014
+Signalling Link Failure|OAN|Yes|04/01/2014
+Remote Alarm OOS Timer (ARTESYN NIB) Expired|OAN|Yes|04/01/2014
+Power Supply Unit #1 - Over Temperature|OAN|No|04/01/2014
+Power Supply Unit #2 - Over Temperature|OAN|No|04/01/2014
+Power Supply Unit #3 - Over Temperature|OAN|No|04/01/2014
+All Channels Out Of Sync|OAN|Yes|04/01/2014
+Output Failure|OAN|No|04/01/2014
+Input Failure|OAN|No|04/01/2014
+GCLK Calibration Request|OAN|No|04/01/2014
+Invalid Transceiver Calibration Data|OAN|Yes|04/01/2014
+Active Multiplexer 1 Loopback Failure|OAN|Redundancy Failure|04/01/2014
+BSC SURGE AREST FAIL (18)|OAN|No|04/01/2014
+BSC RECTIFIER MAJOR (22)|OAN|No|04/01/2014
+BSC RECTIFIER MINOR (24)|OAN|No|04/01/2014
+Receiver Failure|OAN|Yes|04/01/2014
+BSC LOW FUEL (25)|OAN|No|04/01/2014
+Upper Cage Fan #3 Failure|OAN|No|04/01/2014
+Hub BTS M/W RECT MAJ (16)|OAN|No|04/01/2014
+Hub BTS SURGE AREST FAIL (10)|OAN|No|04/01/2014
+Hub BTS RECTIFIER MAJOR (14)|OAN|No|04/01/2014
+Transmitter Synthesizer Failure|OAN|No|04/01/2014
+External Power Booster Failure|OAN|No|04/01/2014
+NSVC Failure|OAN|Yes|04/01/2014
+Synchronization Loss OOS (ARTESYN NIB) Timer Expired|OAN|Yes|04/01/2014
+Power Supply Unit #1 - Output Failure|OAN|No|04/01/2014
+Power Supply Unit #2 - Output Failure|OAN|No|04/01/2014
+Power Supply Unit #3 - Output Failure|OAN|No|04/01/2014
+Battery Backup Input Failure|OAN|No|04/01/2014
+Remote Alarm OOS Threshold Exceeded|OAN|Yes|04/01/2014
+Timeslot 0 Configuration Failure|OAN|Yes|04/01/2014
+Timeslot 1 Configuration Failure|OAN|Yes|04/01/2014
+Timeslot 2 Configuration Failure|OAN|Yes|04/01/2014
+Timeslot 3 Configuration Failure|OAN|Yes|04/01/2014
+Duplexer Voltage Error|OAN|No|04/01/2014
+Hard Reset|OAN|Yes|04/01/2014
+Transceiver to DRI Communication Failure|OAN|Yes|04/01/2014
+Device Failure|OAN|No|04/01/2014
+Power Supply Failure|OAN|No|04/01/2014
+Over Temperature Warning|OAN|No|04/01/2014
+Lower Cage Fan #2 Failure|OAN|No|04/01/2014
+BSC LOW VOLTAGE (20)|OAN|No|04/01/2014
+LAPD controller failure|OAN+NOC|No|04/01/2014
+DELTA2 MSC ASIA RECT MAJ (27)|OAN|No|04/01/2014
+Too Many LAPD Protocol Errors|OAN|No|04/01/2014
+Clock B Signal Loss|OAN|No|04/01/2014
+DSP Channel 38 Audit Failure|OAN|No|04/01/2014
+DSP Channel 39 Audit Failure|OAN|No|04/01/2014
+DSP Channel 40 Audit Failure|OAN|No|04/01/2014
+DSP Channel 41 Audit Failure|OAN|No|04/01/2014
+DSP Channel 42 Audit Failure|OAN|No|04/01/2014
+DSP Channel 43 Audit Failure|OAN|No|04/01/2014
+DSP Channel 44 Audit Failure|OAN|No|04/01/2014
+DSP Channel 45 Audit Failure|OAN|No|04/01/2014
+Power Supply Unit #3 - Not Detected|OAN|No|04/01/2014
+Power Supply Unit #2 - Not Detected|OAN|No|04/01/2014
+Power Supply Unit #1 - Fan Failure|OAN|No|04/01/2014
+Power Supply Unit #2 - Fan Failure|OAN|No|04/01/2014
+Call Processing Failure - BSS Detected BSSAP Down|OAN+NOC|Yes|04/01/2014
+Configuration and Hardware Mismatch|NOC|No|04/01/2014
+DSP Channel 0 Audit Failure|OAN|No|04/01/2014
+DSP Channel 1 Audit Failure|OAN|No|04/01/2014
+DSP Channel 12 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 13 Audit Failure|OAN|Yes|04/01/2014
+Last GSL Failed|OAN|No|04/01/2014
+Last PCU Failed|OAN|No|04/01/2014
+Power Amplifier Temperature High|OAN|No|04/01/2014
+Process Safe Test Audit Failure|OAN|No|04/01/2014
+Processor Communication (FORCE DPROC) Failure|OAN|Redundancy Failure|04/01/2014
+Transceiver Processor Failure|OAN|No|04/01/2014
+External Clock Reference Problem|OAN+NOC|Yes|04/01/2014
+Multiple Rectifier Failure|OAN|No|04/01/2014
+High Temperature|OAN|No|04/01/2014
+Genset Operation|OAN|No|04/01/2014
+Single Rectifier Alarm|OAN|No|04/01/2014
+Low Voltage|OAN|No|04/01/2014
+E1/T1 Alarm Indication Signal|OAN|Yes|04/01/2014
+OML Fault|OAN|Yes|04/01/2014
+GSM Cell out of Service|NOC|Yes|04/01/2014
+Monitoring Device Power Supply Problem|OAN|No|04/01/2014
+Monitoring Device Maintenance Link Failure|OAN|No|04/01/2014
+RF Unit Optical Module Fault|OAN|No|04/01/2014
+E1/T1 Excessive Bit Error Rate|OAN|Yes|04/01/2014
+Burglar Alarm|OAN|No|04/01/2014
+E1/T1 Remote Alarm Indication Signal|OAN|Yes|04/01/2014
+E1/T1 Loss of Frame Alignment|OAN|Yes|04/01/2014
+Intruder|OAN|No|04/01/2014
+E1/T1 Loss of Signal|OAN|Yes|04/01/2014
+Fan Stalled|OAN|No|04/01/2014
+RF Unit VSWR Threshold Crossed|OAN|Yes|04/01/2014
+Temperature Sensor Fault Alarm|OAN|No|04/01/2014
+PSU Shutdown Alarm|OAN|No|04/01/2014
+AC Lightning Arrester Failure Alarm|OAN|No|04/01/2014
+Door alarm|OAN|No|04/01/2014
+SFP Module fault Alarm|OAN|No|04/01/2014
+Loss of E1/T1 Frames (LOF)|OAN|No|04/01/2014
+Fire alarm|OAN|No|04/01/2014
+E1/T1 Remote Alarm|OAN|No|04/01/2014
+Input Mains Lack of Phase|OAN|No|04/01/2014
+Genset ON|OAN|No|04/01/2014
+Hierarchical Power Supply Alarm|OAN|No|04/01/2014
+Cell Out of Service|OAN|No|04/01/2014
+LAPD Alarm|OAN|No|04/01/2014
+E1/T1 Alarm Indication Signal (AIS)|OAN|No|04/01/2014
+LAPD OML Fault|OAN|No|04/01/2014
+Majar Rectifier alarm|OAN|No|04/01/2014
+DG Running|OAN|No|04/01/2014
+Loss of Signals on the Optical Port (RLOS)|OAN|No|04/01/2014
+Sensor Failure Alarm|OAN|No|04/01/2014
+Battery Temperature Too Low Alarm|OAN|No|04/01/2014
+Remote E1/T1 Alarm (RAI)|NOC|No|04/01/2014
+Loss of E1/T1 Multiframes (LOM)|OAN|No|04/01/2014
+VSWR Prompt Alarm|OAN|No|04/01/2014
+DC Lightning Arrester Failure Alarm|OAN|No|04/01/2014
+Boolean 9 Alarm|NOC|No|04/01/2014
+Heat exchanger board communication alarm|OAN|No|04/01/2014
+PMU Communication Alarm|OAN|No|04/01/2014
+Fan Alarm|OAN|No|04/01/2014
+Major|OAN|No|04/01/2014
+Radio link prompt alarm|OAN|No|04/01/2014
+Fan Subassembly Communication Alarm|OAN|No|04/01/2014
+Fan Fault Alarm|OAN|No|04/01/2014
+DG low Fuel|OAN|No|04/01/2014
+Board Communication Alarm|OAN|No|04/01/2014
+Diversity receive channel alarm|OAN|No|04/01/2014
+Temperature high or low alarm|OAN|No|04/01/2014
+Remote Alarm Indication over the Tributary (RAI)|OAN|No|04/01/2014
+Battery Power Off Alarm|OAN|No|04/01/2014
+BBU Optical Module Transmit/Receive Fault|OAN|Yes|04/01/2014
+Clock Reference Abnormal Alarm|OAN|No|04/01/2014
+DC Under Voltage Alarm|OAN|No|04/01/2014
+RF Unit Maintenance Link Failure|OAN|Yes|04/01/2014
+TSC-ENVIRON[71]POWER-SUPPLY[0]|OAN|No|04/01/2014
+RACK1upperSHELF4POWERPVPEM4|OAN|No|04/01/2014
+TCSM-ADAPT[75]RESET[148]|NOC|No|04/01/2014
+IPMB0DiagnosisError|OAN|No|04/01/2014
+12VoutputofPEMisinfailure|OAN|No|04/01/2014
+Voltageoutofrange|OAN|No|04/01/2014
+Rack1Shelf4GPU4|OAN|No|04/01/2014
+Rack1Shelf3GPU10|OAN|No|04/01/2014
+Rack1Shelf3GPU11|OAN|No|04/01/2014
+Rack1Shelf4GPU5|OAN|No|04/01/2014
+BTS-EXTERNAL[9]MainsFailure[83]|OAN|No|04/01/2014
+Rack1Shelf4GPU11|OAN|No|04/01/2014
+Rack1Shelf3GPU14|OAN|No|04/01/2014
+SingleRectifierFailure|OAN|No|04/01/2014
+RFCDoor|OAN|No|04/01/2014
+NumberofResourcesUsedReachingAlarmThresholdSpecifiedbyLicense|NOC|No|04/01/2014
+NumberofResourcesUsedExceedingAlarmThresholdSpecifiedbyLicense|NOC|No|04/01/2014
+EGPRSUnavailable-NoEGPRS|OAN+NOC|No|04/01/2014
+ProcessorCommunication(UnknownDPROC)Failure|OAN|No|04/01/2014
+CellRadioCapacity|OAN|No|04/01/2014
+GPRSUnavailable-NoGPRS|OAN+NOC|No|04/01/2014
+IntermittentOCXOFailure|OAN|No|04/01/2014
+DSP Channel 4 Audit Failure|OAN|No|04/01/2014
+DSP Channel 5 Audit Failure|OAN|No|04/01/2014
+RACK 1 upper SHELF 4 POWER PVPEM 4|OAN|No|04/01/2014
+component 1|OAN|No|04/01/2014
+Unexpected Board Type|OAN|No|04/01/2014
+BSC Detecting CIC Validation Failure|NOC|No|04/01/2014
+ATCA-SWITCH [98] FIRMWARE-NOT-UP-TO-DATE [21]|NOC|No|04/01/2014
+Rack 1 Shelf 4 GPU 12|OAN|No|04/01/2014
+IPMB0 Diagnosis Error|OAN+NOC|Yes|04/01/2014
+TSC-ENVIRON [71] POWER-SUPPLY [0]|OAN|No|04/01/2014
+TCSM-ADAPT [75] DSP-LOSS [130]|OAN|No|04/01/2014
+ATCA-SHELF [99] FIRMWARE-NOT-UP-TO-DATE [20]|NOC|No|04/01/2014
+ATCA-PROCESSOR [97] FIRMWARE-NOT-UP-TO-DATE[19]|NOC|No|04/01/2014
+ATCA-SHELF [99] TEMPERATURE-MINOR [13]|OAN|No|04/01/2014
+Rack 1 Shelf 3 GPU 3|OAN|No|04/01/2014
+Watchdog Timer Expired|OAN|No|04/01/2014
+ATCA-PROCESSOR [97] FATAL-HW-FAILURE [10]|OAN|No|04/01/2014
+TRUNK [36] AIS [4]|OAN|Yes|04/01/2014
+ATCA-PROCESSOR [97] CONFIGURATION-FAILURE [20]|NOC|No|04/01/2014
+Last MTL Link Failure - Signalling Point|OAN|No|04/01/2014
+DSP Channel 22 Audit Failure|OAN|No|04/01/2014
+DSP Channel 23 Audit Failure|OAN|No|04/01/2014
+DSP Channel 28 Audit Failure|OAN|No|04/01/2014
+DSP Channel 29 Audit Failure|OAN|No|04/01/2014
+Board Unavailable|OAN|No|04/01/2014
+PROCESS [96] MULTIPLE-RESET [2]|OAN|Yes|04/01/2014
+Safe Test Audit Failure|OAN|No|04/01/2014
+Rack 1 Shelf 3 GPU 11|OAN|No|04/01/2014
+Intermittent OCXO Failure|OAN|No|04/01/2014
+DSP Channel 2 Audit Failure|OAN|No|04/01/2014
+DSP Channel 3 Audit Failure|OAN|No|04/01/2014
+Power Supply Unit #3 - Fan Failure|OAN|No|04/01/2014
+X25 [38] MODEM-FLT [0]|OAN|No|04/01/2014
+Voltage out of range|OAN|No|04/01/2014
+ATCA-SWITCH [98] VOLTAGE-FATAL [14]|OAN+NOC|No|04/01/2014
+SDH/SONET Loss of Signal|OAN|Yes|04/01/2014
+BROADCAST-BUS [53] DEGRAD-BROAD-BUS-CE [8]|OAN|No|04/01/2014
+BCU Lower Cage Fan #2 Fuse Failure|OAN|No|04/01/2014
+LIU-SHELF [100] E1-SL-FAILURE [51]|OAN|No|04/01/2014
+E1/T1 Loss of Multiframe Alignment|OAN|No|04/01/2014
+MTP3 Signaling Link Faulty|OAN|No|04/01/2014
+No Signalling BVC Reset Acknowledgement from the|OAN|No|04/01/2014
+ATCA-SHELF [99] IPMI-BUS-FAILURE [21]|OAN|Redundancy Failure|04/01/2014
+SDH/SONET Tributary Alarm Indication Signal|OAN|Yes|04/01/2014
+BTS-EXTERNAL [9] Rectifier Minor (Outdoor) [97]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Genset On (Outdoor) [95]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Mains Failure [83]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Array Fault [94]|OAN|No|04/01/2014
+Single Rectifier Failure|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Air con Alarm [100]|OAN|No|04/01/2014
+RFC Door|OAN|No|04/01/2014
+Mains Failure|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Rectifier Minor (Ourdoor) [101]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Water BreakIN [87]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Air con Alarm [101]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Temp. Alarm 2 [99]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] External Low Voltage (Outdoor) [93]|OAN|No|04/01/2014
+BBU Fan Stalled|OAN|No|04/01/2014
+BBU Board Maintenance Link Failure|OAN|Yes|04/01/2014
+BTS-EXTERNAL [9] Door-Alarm-Failure-15 [15]|OAN|No|04/01/2014
+Degraded TRX|OAN|No|04/01/2014
+BTS-EXTERNAL [9] AC Power Failure [93]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Rectifier Minor (Outdoor) [94]|OAN|No|04/01/2014
+RF Unit Optical Interface Performance Degraded|OAN|Yes|04/01/2014
+Radio Link Failure|OAN|Yes|04/01/2014
+BTS-EXTERNAL [9] REK-Fatal-Alarm-TRX3-19 [19]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Inverter-Failure-16 [16]|OAN|No|04/01/2014
+EGPRS Unavailable - No EGPRS|OAN+NOC|Yes|04/01/2014
+BTS-EXTERNAL [9] Outdoor Enclosure Temperature [102]|OAN|No|04/01/2014
+PCMCIA Card Removed (COMPACT FLASH)|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Temp Alarm 2 [98]|OAN|No|04/01/2014
+Cell Radio Capacity|OAN|Yes|04/01/2014
+Sleeping GPU - Patch Issue|OAN|No|04/01/2014
+BTS-OM [44] OMU-SELFTEST-FAIL [7]|OAN|No|04/01/2014
+D.G. Start Failure|OAN|No|04/01/2014
+Equalizer Control Processor Failure - Watchdog Timer|OAN|No|04/01/2014
+Water Alarm|OAN|No|04/01/2014
+Low Noise Amplifier Fuse Failure|OAN|No|04/01/2014
+GPRS Unavailable - No GPRS|OAN+NOC|Yes|04/01/2014
+Voltage Standing Wave Ratio Sector 1 Failure|OAN|No|04/01/2014
+Voltage Standing Wave Ratio Sector 3 Failure|OAN|No|04/01/2014
+Voltage Standing Wave Ratio Performance Low|OAN|No|04/01/2014
+Voltage Standing Wave Ratio Sector 2 Failure|OAN|No|04/01/2014
+GEN SET ON. (1)|OAN|No|04/01/2014
+Power Module and Monitoring Module Communication Failure|OAN|No|04/01/2014
+RF Unit RX Channel Fault|OAN|Yes|04/01/2014
+Cell Transmit Power Unachievable|OAN|Yes|04/01/2014
+Monitoring Device Hardware Fault|OAN|Yes|04/01/2014
+Sensor Failure|OAN|No|04/01/2014
+SRAN Custom Environment Alarm6|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Temp. Alarm 1 [98]|OAN|No|04/01/2014
+Reference Distribution Module Failure|OAN|No|04/01/2014
+BSC-EXTERNAL [50] DC-DC [2]|OAN|No|04/01/2014
+Rack 1 Shelf 4 GPU 5|OAN|No|04/01/2014
+BSC-CLOCK [52] LOSS-OF-CLK-GEN-FN [1]|OAN|No|04/01/2014
+Rack 1 Shelf 3 GPU 13|OAN|No|04/01/2014
+Rack 1 Shelf 3 GPU 14|OAN|No|04/01/2014
+Rack 1 Shelf 4 GPU 3|OAN|No|04/01/2014
+Rack 1 Shelf 4 GPU 11|OAN|No|04/01/2014
+Rack 1 Shelf 4 GPU 13|OAN|No|04/01/2014
+Rack 1 Shelf 4 GPU 1|OAN|No|04/01/2014
+Rack 1 Shelf 4 GPU 9|OAN|No|04/01/2014
+Rack 1 Shelf 4 GPU 14|OAN|No|04/01/2014
+Rack 1 Shelf 3 GPU 10|OAN|No|04/01/2014
+Software Failure (FORCE DPROC)|OAN|No|04/01/2014
+DSP Channel 14 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 15 Audit Failure|OAN|Yes|04/01/2014
+GLOBAL-BSC [47] NTP-TIME-SERVER-UNREACHABLE [21]|OAN|No|04/01/2014
+One Input of Fan Box Power Failure|OAN|No|04/01/2014
+external alarm no 2|NOC|No|04/01/2014
+Rack 1 Shelf 3 GPU 1|OAN|No|04/01/2014
+Rack 1 Shelf 3 GPU 12|OAN|No|04/01/2014
+TOMAS|NOC|No|04/01/2014
+Last GBL Failed|OAN|No|04/01/2014
+Over Temperature - Component Damage Imminent|OAN|No|04/01/2014
+Synchronization Loss OOS Threshold Exceeded|OAN|No|04/01/2014
+Last TRAU GDS Failed|OAN|Yes|04/01/2014
+OMU Time Synchronization Abnormity|OAN|No|04/01/2014
+Rack 1 Shelf 3 GPU 2|OAN|No|04/01/2014
+BSC-ADAPT [73] LOSS-OF-ACT [203]|OAN|Yes|04/01/2014
+BSC-TRANS [101] LOS[21]|OAN|Yes|04/01/2014
+BTS-EXTERNAL [9] REK-Fatal-Alarm-TRX4-20 [20]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Power Cabinet Intruder Alarm [100]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Intruder (MW Cabnit) [96]|OAN|No|04/01/2014
+AC Surge Protector Fault|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Water BreakIn (MW Cabnit) [101]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Temperature (MW Cabnit) [102]|OAN|No|04/01/2014
+Radio Signaling Link Disconnected|OAN+NOC|Yes|04/01/2014
+Board Not In Position|OAN|Yes|04/01/2014
+Board Type and Configuration Mismatch|NOC|No|04/01/2014
+Multi Rectifier Failure|OAN+NOC|No|04/01/2014
+RF Unit Temperature Unacceptable|OAN|Yes|04/01/2014
+CLK [1] IOM-DISCONNECTION [234]|OAN|No|04/01/2014
+Unrecoverable Error|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Door-Window-Alarm-3 [83]|OAN|No|04/01/2014
+Fire|OAN|No|04/01/2014
+Base Station DC Power Supply Abnormal|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Outdoor Enclosure Temperature [96]|OAN|No|04/01/2014
+Battery Current Out of Range|OAN|No|04/01/2014
+Mains Input Out of Range|OAN|No|04/01/2014
+Zero Terminationg Calls|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Not-Customized [34]|OAN+NOC|No|04/01/2014
+BTS-EXTERNAL [9] Antenna-Failure-Slave1-TRX2-20 [44]|OAN+NOC|No|04/01/2014
+BSC-TRANS [101] MS-RDI[24]|OAN|No|04/01/2014
+BSC HIGH TEMPERATURE (19)|OAN|No|04/01/2014
+BSC-TRANS [101] TU-LOP[51]|OAN|Yes|04/01/2014
+CRC4-BERL : excessive error rate BER 10-6|OAN|Yes|04/01/2014
+CH0-EERH : excessive error rate BER 10-3|OAN|No|04/01/2014
+ATCA-PROCESSOR [97] FW-UPGRADE [8]|OAN|No|04/01/2014
+SDH/SONET TU Loss of Pointer|OAN|No|04/01/2014
+DSP Channel 8 Audit Failure|OAN|No|04/01/2014
+DSP Channel 9 Audit Failure|OAN|No|04/01/2014
+DSP Channel 10 Audit Failure|OAN|No|04/01/2014
+DSP Channel 11 Audit Failure|OAN|No|04/01/2014
+Trunk Major Threshold Exceeded|OAN|No|04/01/2014
+Battery Temperature Unacceptable|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Not-Customized [50]|OAN|No|04/01/2014
+RF Unit Hardware Fault|OAN|Yes|04/01/2014
+Rack 1 Shelf 1 MUX 10|OAN|Redundancy Failure|04/01/2014
+Rack 1 Shelf 1 MUX 12|OAN|No|04/01/2014
+GLOBAL-BSC [47] PS-TEL-TEST-NOK [41]|OAN|No|04/01/2014
+SAU Board Fault|OAN|No|04/01/2014
+SDH/SONET TU Alarm Indication Signal|OAN|No|04/01/2014
+No Reply from SGSN IP NSVC|OAN|No|04/01/2014
+Rack 1 Shelf 3 GPU 4|OAN|No|04/01/2014
+ATCA-SWITCH [98] TEMPERATURE-MAJOR [12]|OAN|No|04/01/2014
+DSP Channel 6 Audit Failure|OAN|No|04/01/2014
+DSP Channel 7 Audit Failure|OAN|No|04/01/2014
+DSP Channel 16 Audit Failure|OAN|No|04/01/2014
+DSP Channel 17 Audit Failure|OAN|No|04/01/2014
+DSP Channel 20 Audit Failure|OAN|No|04/01/2014
+DSP Channel 21 Audit Failure|OAN|No|04/01/2014
+DSP Channel 24 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 25 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 26 Audit Failure|OAN|No|04/01/2014
+DSP Channel 27 Audit Failure|OAN|No|04/01/2014
+ATCA-SHELF [99] TEMPERATURE-FATAL [11]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Not-Customized [33]|OAN|No|04/01/2014
+BTS-EXTERNAL [9] Heating-Cooling-Control-12 [36]|OAN|No|04/01/2014
+TRX Manually Blocked|OAN|Yes|04/01/2014
+Reset Due To Recurring Fault|OAN|Yes|04/01/2014
+N7 [35] RTE-REP [2]|OAN|Yes|04/01/2014
+Local KSWX/DSWX Slot 0 Communication Failure|OAN+NOC|No|04/01/2014
+SDH/SONET Tributary Remote Alarm Indication Signal|OAN|Yes|04/01/2014
+SDH/SONET Tributary Loss of Multiframe|OAN|No|04/01/2014
+Rack 1 Shelf 4 GPU 6|OAN|No|04/01/2014
+Rack 1 Shelf 3 GPU 5|OAN|No|04/01/2014
+BBU CPRI Interface Error|OAN|Yes|04/01/2014
+GSM Cell Manually Blocked|NOC|No|04/01/2014
+SRAN Custom Environment Alarm8|OAN|No|04/01/2014
+Cell PS Service Faulty|NOC|No|04/01/2014
+RF Unit CPRI Interface Error|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Hazard-Light-Alarm-10 [90]|OAN|No|04/01/2014
+Power Supply Unit #1 - Not Detected|OAN|No|04/01/2014
+ATCA-SWITCH [98] ACCESS-FAIL [3]|OAN|No|04/01/2014
+ATCA-PROCESSOR [97] IPMI-FW-NOT-UP-TO-DATE [18]|NOC|No|04/01/2014
+E1/T1 Excessive Slip Frames|OAN|No|04/01/2014
+X25 [38] LINK-FLT [1]|OAN|No|04/01/2014
+Rack 1 Shelf 4 GPU 4|OAN|No|04/01/2014
+Access failure from OMCP to the reach ability telecom O&M IP address via LSN 0|OAN|Redundancy Failure|04/01/2014
+Access failure from OMCP to the reach ability telecom O&M IP address via LSN 1|OAN|Redundancy Failure|04/01/2014
+ATCA-SHELF [99] UNPLUGGED [6]|OAN|Redundancy Failure|04/01/2014
+BTS-EXTERNAL [6100] Hazard-Light-Alarm-10 [10]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Temperature-Alarm-35-Degrees-C-8 [8]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Door-Window-Alarm-3 [3]|OAN|No|04/01/2014
+High Temperature Alarm|OAN|No|04/01/2014
+Rack 1 Shelf 4 GPU 10|OAN|No|04/01/2014
+Barq1 Rect Major 1 (2)|OAN|No|04/01/2014
+Barq1 Low Voltage 1 (3)|OAN|No|04/01/2014
+Barq1 Rect Minor 1 (1)|OAN|No|04/01/2014
+Barq1 Rect Minor 2 (4)|OAN|No|04/01/2014
+Barq1 Rect Major 2 (5)|OAN|No|04/01/2014
+Barq1 Low Voltage 2 (6)|OAN|No|04/01/2014
+Last NS-VC for the PCU Failed|OAN|Yes|04/01/2014
+PTP BVC Faulty|OAN|No|04/01/2014
+external alarm no 5|OAN|No|04/01/2014
+ATCA-SWITCH [98] VOLTAGE-MINOR [16]|OAN|No|04/01/2014
+Optical Module Fault|OAN|No|04/01/2014
+ATCA-SWITCH [98] IP-CONFIG-FAIL [22]|OAN|No|04/01/2014
+BSC-CLOCK [52] SWITCH-TO-LOCAL-CLK [2]|OAN|No|04/01/2014
+SDH/SONET Tributary Excessive Bit Error Rate|OAN|Yes|04/01/2014
+ATCA-PROCESSOR [97] FIRMWARE-INCOMPATIBILITY [9]|OAN|No|04/01/2014
+BSC-TRANS [101] AU-LOP[31]|OAN|No|04/01/2014
+Cabinet Air Inlet Temperature Unacceptable|OAN|No|04/01/2014
+RACK 1 lower SHELF 3 POWER PVPEM 4|OAN|No|04/01/2014
+RACK 1 lower SHELF 3 BOARD JBXOMCP slot9|OAN|No|04/01/2014
+BSC-TRANS [101] BER-10E-3 [4]|OAN|Yes|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX1-17 [337]|OAN|No|04/01/2014
+BBU CPRI Optical Module Fault|OAN|No|04/01/2014
+CLK [1] MCL-FATAL-AL [6]|OAN|No|04/01/2014
+Local KSWX/DSWX Slot 1 Communication Failure|OAN|No|04/01/2014
+Processor Communication (Unknown DPROC) Failure|OAN|Redundancy Failure|04/01/2014
+TCSM-ADAPT [75] TRIB-FAR-END-ALARM [228]|OAN|No|04/01/2014
+ATCA-PROCESSOR [97] FW-UPGRADE-UNSUCCESS [7]|OAN|No|04/01/2014
+BSC-EXTERNAL [50] Fire Alarm [7]|OAN|No|04/01/2014
+ATCA-PROCESSOR [97] CS-TEL-TEST-NOK [40]|OAN|No|04/01/2014
+NSVL Faulty|OAN|No|04/01/2014
+RF Unit Clock Problem|OAN|No|04/01/2014
+RF Unit Software Program Error|OAN|No|04/01/2014
+SRAN Custom Environment Alarm64|OAN|No|04/01/2014
+SRAN Custom Environment Alarm58|OAN|No|04/01/2014
+SRAN Custom Environment Alarm56|OAN|No|04/01/2014
+RF Unit Optical Module Transmit/Receive Fault|OAN|No|04/01/2014
+SRAN Custom Environment Alarm54|OAN|No|04/01/2014
+SRAN Custom Environment Alarm50|OAN|No|04/01/2014
+SRAN Custom Environment Alarm62|OAN|No|04/01/2014
+RF Unit Optical Module or Electrical Port Not Ready|OAN|Yes|04/01/2014
+RACK 1 lower SHELF 3 BOARD JAXSMM slot2|OAN|Redundancy Failure|04/01/2014
+SDH/SONET LP Trace Identifier Mismatch|OAN|No|04/01/2014
+Ethernet Link Fault|OAN|No|04/01/2014
+TELECOM [42] OVERLOAD-BSC [9]|OAN+NOC|No|04/01/2014
+Memory location is corrupt. Replace GPROC board|OAN|No|04/01/2014
+OMU Board Fault|OAN|No|04/01/2014
+System backup does not match current MFS version|NOC|No|04/01/2014
+ATCA-PROCESSOR [97] VOLTAGE-FATAL [14]|OAN|No|04/01/2014
+Software Version Inconsistency Between OMU and Host|NOC|No|04/01/2014
+Firmware level not up to date|NOC|No|04/01/2014
+Fan Stalling|OAN|No|04/01/2014
+GSM KPI Exceed Threshold|NOC|No|04/01/2014
+BSC-ENVIRON [32] CONV [0]|OAN|No|04/01/2014
+SDH/SONET MS Remote Defect Indication|OAN|No|04/01/2014
+Single Rectifire Failure|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Intruder [163]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Window Override [164]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Air Condition [167]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Air-Condition-24 [184]|OAN|No|04/01/2014
+Multiple Rectifire Failure|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Door-Window-Alarm-3 [187]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Door-Window-Override-4 [4]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Temperature-Alarm-40-Degrees-C-9 [9]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Major [170]|OAN|No|04/01/2014
+Baseband Hopping TDM Link Error|OAN|No|04/01/2014
+SDCCH_100_Blocking|NOC|No|04/01/2014
+Board Hardware Fault|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Minor (Outdoor) [174]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Fire Alarm [165]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX5-21 [181]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Non-Fatal-Alarm-23 [183]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Water Break In [166]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] External Low Voltage (Outdoor) [172]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Genset On (Outdoor) [173]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX6-22 [182]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Intruder [243]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX6-22 [262]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX5-21 [261]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] External Low Voltage (Outdoor) [252]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Non-Fatal-Alarm-23 [263]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Major [250]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Minor (Outdoor) [254]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Outdoor Enclosure Temperature [175]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX4-20 [180]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Mains-Power-Failure-2 [186]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Not-Customized [185]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Not-Customized [190]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Not-Customized [192]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] PMS-Alarm-Master-5 [189]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Heating-Cooling-Control-7 [191]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] COBO-Door-Alarm-Master-4 [188]|OAN|No|04/01/2014
+PCMCIA Card Removed|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Outdoor Enclosure Temperature [174]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX3-19 [179]|OAN|No|04/01/2014
+Synchronization Loss|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Genset On(Outdoor) [173]|OAN|No|04/01/2014
+SRAN Custom Environment Alarm52|OAN|No|04/01/2014
+Genet Off (31)|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Air Condition [247]|OAN|No|04/01/2014
+Battery Power Unavailable|OAN|No|04/01/2014
+Safe Test Audit Failure (ARTESYN NIB)|OAN|No|04/01/2014
+LAN Failure|OAN|No|04/01/2014
+LANX Slot 19 Communication Failure|OAN|No|04/01/2014
+RACK 1 lower SHELF 3 COOLING PVFAN003 2|OAN|No|04/01/2014
+Connectivity Mismatch Between BSC and RXCDR|NOC|Yes|04/01/2014
+BSC-EXTERNAL [50] External Temperature [3]|OAN|No|04/01/2014
+BSC-EXTERNAL [50] Low Voltage [4]|OAN|No|04/01/2014
+LIU-SHELF [100] FIRMWARE-NOT-UP-TO-DATE [19]|NOC|No|04/01/2014
+GE Link on GE Switching Board Panel Faulty|OAN|No|04/01/2014
+Code objects unavailable|NOC|No|04/01/2014
+BTS-EXTERNAL [6100] Air-Condition-24 [264]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Battery-Deep-Discharge-11 [11]|OAN|No|04/01/2014
+Hub BTS M/W RectMajor (16)|OAN|No|04/01/2014
+ATCA-SWITCH [98] UNPLUGGED [6]|OAN+NOC|Redundancy Failure|04/01/2014
+Firmware Upgrade failure|NOC|No|04/01/2014
+Internal link failure|OAN+NOC|No|04/01/2014
+One LSN access of the station is out of service|NOC|Redundancy Failure|04/01/2014
+TOMAS LSN 1|NOC|Redundancy Failure|04/01/2014
+RACK 1 upper SHELF 4 BOARD JBXSSW slot8|OAN+NOC|Redundancy Failure|04/01/2014
+MUX cannot communicate with PEM on I2C bus|OAN+NOC|Redundancy Failure|04/01/2014
+System backup content too old|NOC|No|04/01/2014
+Trunk error(198000519)|OAN|Yes|04/01/2014
+Communication between power board and OMP is abnormal(198005382)|OAN|No|04/01/2014
+PPP link broken(198066029)|OAN|Yes|04/01/2014
+Cell interruption alarm(198087342)|OAN|Yes|04/01/2014
+Trunk abnormal(198000520)|OAN|Yes|04/01/2014
+Site Abis control link broken(198087337)|OAN|Yes|04/01/2014
+Link Broken Between OMM and NE(198099803)|OAN|Yes|04/01/2014
+High BER on E1 link(198005647)|OAN|No|04/01/2014
+RECTIFIER MINOR(198092557)|OAN|No|04/01/2014
+AIR CONDITIONER ALARM(198092552)|OAN|No|04/01/2014
+LOW VOLTAGE(198092553)|OAN|No|04/01/2014
+TRX manual block alarm(198087380)|OAN|Yes|04/01/2014
+Downlink digital IF pre-distortion alarm(198092634)|OAN|Yes|04/01/2014
+Power amplifier disabled alarm(198093958)|OAN|Yes|04/01/2014
+GENSET ON(198092550)|OAN|No|04/01/2014
+RECTIFIER MAJOR(198092555)|OAN|No|04/01/2014
+FCE-fan failure(198092069)|OAN|No|04/01/2014
+E1/T1 input port unavailable(198092011)|OAN|Yes|04/01/2014
+PPP Link Broken(198093828)|OAN|Yes|04/01/2014
+Smoke detected(198092046)|OAN|No|04/01/2014
+Temperature sensor is abnormal(198092071)|OAN|No|04/01/2014
+Loss of Signal at Ir interface(198093804)|OAN|Yes|04/01/2014
+Fan failure(198092041)|OAN|No|04/01/2014
+Board communication link is interrupted(198092010)|OAN|Yes|04/01/2014
+Baseband data link error alarm(198092612)|OAN|Yes|04/01/2014
+Abnormal DPD running status(198092648)|OAN|No|04/01/2014
+lightning protection box alarm(198092049)|OAN|No|04/01/2014
+Remote antenna over VSWR alarm(198092660)|OAN|Yes|04/01/2014
+Optical/electrical module not-in-position alarm(198093821)|OAN|No|04/01/2014
+Performance Data Delayed(15010001)|NOC|No|04/01/2014
+E1/T1 output port unavailable(198092012)|OAN|Yes|04/01/2014
+ES or SES detected on the E1 link in the past 15 minutes has exceeded the threshold(198092013)|OAN|No|04/01/2014
+RU board has high temperature.(198092720)|OAN|No|04/01/2014
+PA slight over-temperature alarm(198092721)|OAN|No|04/01/2014
+cabinet door alarm(198092044)|OAN|No|04/01/2014
+INTRUDER(198092554)|OAN|No|04/01/2014
+Clock has significant alarm(198093817)|OAN|No|04/01/2014
+DL IQ channel checking block alarm(198092722)|OAN|Yes|04/01/2014
+DL 60ms tag lost alarm(198092723)|OAN|Yes|04/01/2014
+PPP Link Configuration is unmatched with peer end(198093927)|OAN|Yes|04/01/2014
+Optical fiber wrong connection alarm(198093820)|OAN|No|04/01/2014
+Node B reboot(198093926)|OAN|No|04/01/2014
+Abnormal power(198092641)|OAN|No|04/01/2014
+DSP Handware Checking Fail(198092795)|OAN|No|04/01/2014
+Board initialization(198093933)|OAN|No|04/01/2014
+Overvoltage of DC input is abnormal.(198092053)|OAN|No|04/01/2014
+Flood detected(198092045)|OAN|No|04/01/2014
+Clock reference source is degraded(198093802)|OAN|No|04/01/2014
+PA over temperature alarm(198092685)|OAN|No|04/01/2014
+RRU LOS alarm(198093811)|OAN|No|04/01/2014
+Application software monitoring alarm(198093920)|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] External Low Voltage (Outdoor) [254]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Power Cabinet Air con Alarm [264]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Outdoor Cabinet Door Alarm [243]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Fire Alarm [245]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Retifier Minor (Outdoor) [253]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Water BreakIn (MW Cabinet) [259]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Power Cabinet Temp Alarm 1 [261]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Power Cabinet Intruder Alarm [263]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Outdoor Cabinet Door Alarm [163]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Water Break In [246]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Power Cabinet Temp Alarm 2 [262]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Major [330]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Minor (Outdoor) [333]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Air Condition [327]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Intruder [323]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Power Cabinet Temp. Alarm 1 [336]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Minor (Outdoor) [253]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Power Cabinet Temp. Alarm 1 [256]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Non-Fatal-Alarm-23 [343]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX6-22 [342]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Air-Condition-24 [344]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Fire Alarm [325]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] External Low voltage (Outdoor) [332]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Intruder (MW Cabnit) [335]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Temperature (MW Cabnit) [341]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Water Break IN [326]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Power Cabinet T emp. Alarm 1 [256]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Water BreakIn ( MW Cabnit) [260]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Water BreakIn (MW Cabnit) [260]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] window override [244]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Genset On (Outdoor) [254]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Intruder (MW Cabnit) [255]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Temperature (MW Cabnit) [261]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] window override [324]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Water BreakIn (MW Cabnit) [340]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Genset On (Outdoor) [334]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Genset On (Outdoor) [257]|OAN|No|04/01/2014
+100%_BSS_Failure_GPRS|NOC|Yes|04/01/2014
+Access failure from OMCP to the reach ability telecom Gb IP address via LSN 0|OAN+NOC|Redundancy Failure|04/01/2014
+Board not-configured alarm(198092203)|OAN|No|04/01/2014
+SNMP Manager Trapd daemon down|NOC|No|04/01/2014
+TRUNK [36] CRC4-BERL [13]|OAN|No|04/01/2014
+Software version in package is abnormal(198092030)|OAN|No|04/01/2014
+Upper Cage Fan #4 Failure|OAN|No|04/01/2014
+LIU-SHELF [100] PEM-NOT-RESPONDING [24]|OAN|No|04/01/2014
+BSC-EXTERNAL [50] Fire Alarm|OAN|No|04/01/2014
+Air Conditioning Unit Failure|OAN|No|04/01/2014
+Cabinet Fan Failure|OAN|No|04/01/2014
+TELECOM [42] TCH-RM-LOST [15]|OAN|Yes|04/01/2014
+SRAN Custom Environment Alarm1|OAN|No|04/01/2014
+BSC-EXTERNAL [50] Rectifier Major [6]|OAN|No|04/01/2014
+Genset OFF (31)|OAN|No|04/01/2014
+BSC-TRANS [101] SFP-UNEQ[20]|OAN|No|04/01/2014
+NVM Board Failure|OAN|No|04/01/2014
+BSC-EXTERNAL [50] Rectifier Minor|OAN|No|04/01/2014
+KSWX/DSWX in Slot 21 Detected Expanded KSW Matrix|OAN|Redundancy Failure|04/01/2014
+RACK 1 lower SHELF 3 RTM JAXSSW slot8|OAN|Redundancy Failure|04/01/2014
+Access failure from OMCP to the reach ability telecom Gb IP address via LSN 1|OAN|Redundancy Failure|04/01/2014
+TOMAS LSN 0|OAN|Redundancy Failure|04/01/2014
+RACK 1 upper SHELF 4 BOARD JBXSSW slot7|OAN|Redundancy Failure|04/01/2014
+Abnormal temperature sensor(198092071)|OAN|No|04/01/2014
+Smog alarm(198092046)|OAN|No|04/01/2014
+Lightning protection device alarm(198092049)|OAN|No|04/01/2014
+Door control alarm(198092044)|OAN|No|04/01/2014
+Remote antenna VSWR alarm(198092661)|OAN|Yes|04/01/2014
+Board not-in-position(198092072)|OAN|No|04/01/2014
+Abnormal software in specification package(198092030)|OAN|No|04/01/2014
+Flooding alarm(198092045)|OAN|No|04/01/2014
+E1 link looped(198093824)|OAN|No|04/01/2014
+Loss of Active/standby communication link(198005122)|OAN|No|04/01/2014
+Control plane communication is abnormal between MP and OMP(198066004)|OAN|No|04/01/2014
+Board offline or CPU in reset status for a long period(198066070)|OAN|No|04/01/2014
+Voltage of DC input is abnormal(198092053)|OAN|No|04/01/2014
+User face Emac Interface Error(198092617)|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Genset On [241]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] External Low Voltage [249]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Minor [251]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Door-Alarm-Failure-15 [255]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Intruder [483]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Minor [493]|OAN|No|04/01/2014
+BSC-EXTERNAL [50] BSC Low Fuel [2]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Temperature (MW Cabinet) [260]|OAN|No|04/01/2014
+BSC-EXTERNAL [50] Rectifier Major for Rectifier-2|OAN|No|04/01/2014
+external alarm no 17|OAN|No|04/01/2014
+external alarm no 18|OAN|No|04/01/2014
+external alarm no 21|OAN|No|04/01/2014
+external alarm no 23|OAN|No|04/01/2014
+external alarm no 24|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Battery-Deep-Discharge-11 [195]|OAN|No|04/01/2014
+RACK 1 lower SHELF 3 BOARD JBXSSW slot8|OAN|Redundancy Failure|04/01/2014
+HeaterHardware Fault|OAN|No|04/01/2014
+SRAN Custom Environment Alarm66|OAN|No|04/01/2014
+Wapda Failure|OAN|No|04/01/2014
+SRAN Custom Environment Alarm2|OAN|No|04/01/2014
+Number of Resources Used Reaching Alarm Threshold Specified by License|NOC|No|04/01/2014
+Power Supply DC Output Out of Range|OAN|No|04/01/2014
+RF Unit TX Channel Gain Out of Range|OAN|No|04/01/2014
+Genset Operation-2|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Intruder (MW Cabinet) [258]|OAN|No|04/01/2014
+SURGE ARRESTOR FAILURE(198092551)|OAN|No|04/01/2014
+GE optical connection is cross connected(198005125)|OAN|Yes|04/01/2014
+Control plane communication is abnormal between board and its home module(198066003)|OAN|No|04/01/2014
+SDH/SONET Tributary Loss of Frame|OAN|No|04/01/2014
+Loss of contact with SU (DEV_TYPE_1)|OAN|No|04/01/2014
+RACK 1 lower SHELF 3 POWER PVPEM 1|OAN|No|04/01/2014
+2262148|OAN|No|04/01/2014
+GPU 11|OAN|No|04/01/2014
+BSC-TRANS [101] SFP-NOT-SUP [28]|OAN|No|04/01/2014
+GLOBAL-BSC [47] BSC-HW-RESYNCH [7]|OAN|No|04/01/2014
+1004121|OAN|No|04/01/2014
+GPU 18|OAN|No|04/01/2014
+LIU-SHELF [100] PEM-OWN-12V-FAILURE [22]|OAN|No|04/01/2014
+BSC-EXTERNAL [50] Low Voltage|OAN|No|04/01/2014
+BSC-EXTERNAL [50] Rectifier Major|OAN|No|04/01/2014
+GPU 2|OAN|No|04/01/2014
+GPRS_UL_TBF_Degradation|OAN|No|04/01/2014
+GPU 5|OAN|No|04/01/2014
+Assigned Timeslot Counter Overflow|OAN|No|04/01/2014
+DSP Channel 46 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 47 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 48 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 49 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 50 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 51 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 52 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 53 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 30 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 31 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 32 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 33 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 34 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 35 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 36 Audit Failure|OAN|Yes|04/01/2014
+DSP Channel 37 Audit Failure|OAN|Yes|04/01/2014
+SDH/SONET HP Trace Identifier Mismatch|OAN|No|04/01/2014
+SDH/SONET Loss of Frame|OAN|No|04/01/2014
+SDH/SONET RS Trace Identifier Mismatch|OAN|No|04/01/2014
+Failure in Locking System Clock Source|OAN|No|04/01/2014
+System Clock Reference Source Unavailable|OAN|No|04/01/2014
+SDH/SONET Tributary Excessive Slip Frames|OAN|No|04/01/2014
+SDH/SONET MS Alarm Indication Signal|OAN|No|04/01/2014
+SDH/SONET Signal Degraded|OAN|No|04/01/2014
+SDH/SONET Signal Failure|OAN|No|04/01/2014
+Current System Clock Reference Source Status Abnormal|OAN|No|04/01/2014
+GPRS_DL_TBF_Degredation|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] External Low Voltage [494]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Major [490]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Genset On [497]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Minor [411]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Genset On [401]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] External Temperature [408]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Major [410]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Intruder [403]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Fire Alarm [405]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Air-Condition-7 [487]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX6-22 [502]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Air-Condition-24 [504]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] External Low Voltage [409]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX5-21 [501]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Fire Alarm [485]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Power Cabinet Intruder [503]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Power Cabinet Temperature [498]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX4-20 [500]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] REK-Fatal-Alarm-TRX3-19 [499]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Heating-Cooling-Control-12 [412]|OAN+NOC|No|04/01/2014
+BTS-EXTERNAL [6100] External Temperature [248]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Genset On (Outdoor) [262]|OAN|No|04/01/2014
+GPRS_Degradation|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] BTS Low Fuel [242]|OAN|No|04/01/2014
+BSC-TRANS [101] HP-UNEQ[41]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier-Failure-1 [1]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] External Low Voltage [169]|OAN|No|04/01/2014
+BTS-EXTERNAL [6100] Rectifier Minor [171]|OAN|No|04/01/2014
+GPRS Unavailable|OAN|No|04/01/2014
+05-30-2013 GPRS|OAN|No|04/01/2014
+05-31-2013 GPRS|OAN|No|04/01/2014
+05-29-2013 GPRS|OAN|No|04/01/2014
+Internal Communication Error|OAN|No|04/01/2014
+05-18-2013 EGPRS|OAN|No|04/01/2014
+DC Air Con Fault|OAN|No|04/01/2014
+AC Main Failure|OAN|No|04/01/2014
+Generator Running|OAN|No|04/01/2014
+Rectifier Major|OAN|No|04/01/2014
+Rectifier Minor|OAN|No|04/01/2014
+SRAN Custom Environment Alarm11|OAN|No|04/01/2014
+SRAN Custom Environment Alarm4|OAN+NOC|No|04/01/2014
+SRAN Custom Environment Alarm7|OAN|No|04/01/2014
+Ambient Temperature Unacceptable|OAN|No|04/01/2014
+SRAN Custom Environment Alarm12|OAN|No|04/01/2014
+SRAN Custom Environment Alarm14|OAN|No|04/01/2014
+Statistical Alarm|OAN|No|04/01/2014
+Software loading is abnormal(198092613)|OAN|No|04/01/2014
+Abnormal status in SDH/SONET(198001824)|OAN|No|04/01/2014
+Cell no GPRS Traffic(1005)|OAN|No|04/01/2014
+Zero_Calls_On_Cell(1002)|OAN|No|04/01/2014
+SCTP association is interrupted.(198093827)|OAN|No|04/01/2014
+SCTP path broken(198094001)|OAN|No|04/01/2014
+Physical param not consistant with radio param(198092600)|OAN|No|04/01/2014
+Lost of frame number at optical port(198092646)|OAN+NOC|No|04/01/2014
+The board is not plugged firmly(198005635)|OAN|No|04/01/2014
+FIRE(198092556)|OAN|No|04/01/2014
+RRU LOF alarm(198093812)|OAN|No|04/01/2014

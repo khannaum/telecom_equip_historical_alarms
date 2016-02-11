@@ -1,0 +1,22 @@
+#!/bin/ksh
+
+#user=`echo '"noc_core"'`
+#echo  "$user"
+#password=` echo '"Mobilink123"' `
+#echo "$password"
+
+DAY=`TZ=GMT+72 date +%d`
+YEAR=`TZ=GMT+72 date +%Y`
+MONTH=`TZ=GMT+72 date +%m`
+
+# 2011&09&29
+
+date_v=$YEAR"&"$MONTH"&"$DAY
+date_v="lllllll"
+
+echo "khfjsdfjh" | nawk -v ll=$date_v  ' { print $0,"===",ll } ' 
+ #
+
+
+
+

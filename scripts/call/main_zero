@@ -1,0 +1,51 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+
+cd /home/NCOR6649/scripts/call 
+
+echo "Motorola"
+zcat /tmp/ev_logs/*.txt.Z | perl search.pl -l "30059" | nawk -f first > n_rsl.txt
+
+
+
+
+nawk -f getmain1 n_rsl.txt|sort -u  > indexs
+
+  nawk -f get_rsl_n n_rsl.txt |  nawk -f sep_bsc_site_date | grep "/  /" |  nawk 'FS="|" , OFS="|" { print $0,"Motorola"} ' | sort -u > /home/NCOR6649/logs/call/zero_call_$DAY-$MONTH 
+
+echo "Alcatel & ZTE "
+
+zcat /home/NCOR6649/nwd_bss_cur.txt.Z | grep -i "zero" |  nawk 'FS="|" , OFS="|" { print $2,$3,$4,$5,"",$1 } ' >> /home/NCOR6649/logs/call/zero_call_$DAY-$MONTH
+
+
+
+rm -f /home/NCOR6649/logs/call/zero_call_$DAY-$MONTH.Z
+
+compress /home/NCOR6649/logs/call/zero_call_$DAY-$MONTH 
+
+rm -f n_rsl.txt
+
+zero_call=zero_call_$DAY-$MONTH
+
+
+
+/usr/bin/uuencode /home/NCOR6649/logs/call/zero_call_$DAY-$MONTH.Z $zero_call.Z | mailx -s $zero_call nauman.khan@mobilink.net,kanwal.abad@mobilink.net,shoaib.sarwar@mobilink.net,usman.ar@mobilink.net
+
+
+echo "### End #####"
+
+
+
+ 
+ 

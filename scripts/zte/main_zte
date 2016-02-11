@@ -1,0 +1,91 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+
+
+DAY=`TZ=GMT date +%d`
+YEAR=`TZ=GMT date +%Y`
+MONTH=`TZ=GMT date +%m`
+
+PDAY=`TZ=GMT+24 date +%d`
+PYEAR=`TZ=GMT+24 date +%Y`
+PMONTH=`TZ=GMT+24 date +%m`
+
+cd /home/NCOR6649/scripts/zte
+echo $YEAR$MONTH$DAY
+#ls -ltrh /home/NOCCORDT/logs/report_3g_cell_out_$YEAR$MONTH$DAY*_*.csv.Z 
+ 
+## <<COMMENT1
+
+
+#cat  /home/NOCCORDT/logs/report_rsl_$YEAR$MONTH$DAY*_*.csv  | nawk 'FS="," , OFS="|" { split($37,cd," ");split(cd[1],cod,"-");split($9,od," ");split(od[1],dod,"-");split($3,f1,"_"); oc=dod[2]"/"dod[3]"/"dod[1]" "od[2] ; cl=cod[2]"/"cod[3]"/"cod[1]" "cd[2] ; if(NR>2  && length($32) > 2){print $32,substr(f1[2],1,7),$49,oc,cl} }' | perl /home/NCOR6649/scripts/RSL/perl_d_rsl_alu.pl > /home/NCOR6649/logs/zte/zte_rsl_$PYEAR$PMONTH$PDAY
+
+# extract cell outage
+cat  /home/NOCCORDT/logs/report_rsl_$YEAR$MONTH$DAY*_*.csv  | nawk -f zte_rsl_awk | grep -v "//" | perl /home/NCOR6649/scripts/RSL/perl_d_rsl_alu.pl > /home/NCOR6649/logs/zte/zte_rsl_$PYEAR$PMONTH$PDAY
+
+#zcat /home/NOCCORDT/logs/report_3g_cell_out_$YEAR$MONTH$DAY*_*.csv.Z |  egrep "Cell is out of service|NodeB is out of service" | sed "s/\"//g" |  nawk -f zte_3rsl_awk |  sed "s;\";;g" | perl /home/NCOR6649/scripts/RSL/perl_d_rsl_alu.pl   > /home/NCOR6649/logs/zte/zte_3g_$PYEAR$PMONTH$PDAY
+
+zcat /home/NOCCORDT/logs/report_3g_cell_out_$YEAR$MONTH$DAY*_*.csv.Z |  grep "Cell is out of service" | sed "s/\"//g" |  nawk -f zte_3rsl_awk |  sed "s;\";;g" | perl /home/NCOR6649/scripts/RSL/perl_d_rsl_alu.pl   > /home/NCOR6649/logs/zte/zte_3g_$PYEAR$PMONTH$PDAY
+
+# extract eas alarms(genset,low_vol,sob,mf)
+#cat /home/NOCCORDT/logs/report_gen_mf_sob_low_20150410_*_*.csv  | nawk -f zte_rsl_gen  |  perl  perl_zte_gen.pl
+
+cat /home/NOCCORDT/logs/report_gen_mf_sob_low_$YEAR$MONTH$DAY*_*.csv | nawk -f zte_rsl_gen  | sed "s/\"//g"  | grep -v "//" | perl  perl_zte_gen.pl >  /home/NCOR6649/logs/zte/zte_eas_$PYEAR$PMONTH$PDAY
+
+#cat  /home/NOCCORDT/logs/report_active_alarm_$YEAR$MONTH$DAY_*.csv | grep "Cell interruption alarm" |  nawk 'FS="," , OFS="|" { split($37,cd," ");split(cd[1],cod,"-");split($9,od," ");split(od[1],dod,"-");split($3,f1,"_"); oc=dod[2]"/"dod[3]"/"dod[1]" "od[2] ; cl=cod[2]"/"cod[3]"/"cod[1]" "cd[2] ; if(NR>2 && length($32) > 2){print $32,substr(f1[2],1,7),$43,oc} }' | perl /home/NCOR6649/scripts/RSL/perl_hu_rsl_alm.pl >>  /home/NCOR6649/logs/zte/zte_rsl_$PYEAR$PMONTH$PDAY
+
+cat  /home/NOCCORDT/logs/report_active_alarm_$YEAR$MONTH$DAY*_*.csv | grep "Cell interruption alarm" | nawk -f zte_rsl_awk_act | grep -v "//" |  perl /home/NCOR6649/scripts/RSL/perl_hu_rsl_alm.pl >> /home/NCOR6649/logs/zte/zte_rsl_$PYEAR$PMONTH$PDAY
+cat  /home/NOCCORDT/logs/report_active_alarm_$YEAR$MONTH$DAY*_*.csv | grep "Cell is out of service" | nawk -f zte_3g_act | grep -v "//" |  perl /home/NCOR6649/scripts/RSL/perl_hu_rsl_alm.pl >>  /home/NCOR6649/logs/zte/zte_3g_$PYEAR$PMONTH$PDAY
+
+#cat  /home/NOCCORDT/logs/report_active_alarm_$YEAR$MONTH$DAY*_*.csv | egrep -i "genset|low voltage|AC MAIN FAILURE|SYSTEM ON BATTERIES" | sed "s/\"//g" | nawk -f zte_rsl_gen_act | grep -v "\."  |    perl  perl_zte_eas_act.pl |  sort -u >> /home/NCOR6649/logs/zte/zte_eas_$PYEAR$PMONTH$PDAY
+
+cat  /home/NOCCORDT/logs/report_active_alarm_$YEAR$MONTH$DAY*_*.csv | egrep -i "genset|low voltage|AC MAIN FAILURE|SYSTEM ON BATTERIES" | nawk -f zte_rsl_gen_act_v1 |  grep -v "||"  |    perl  perl_zte_eas_act.pl | sort -u >> /home/NCOR6649/logs/zte/zte_eas_$PYEAR$PMONTH$PDAY
+
+rm -f  /home/NCOR6649/logs/zte/zte_3g_$PYEAR$PMONTH$PDAY.Z
+compress  /home/NCOR6649/logs/zte/zte_3g_$PYEAR$PMONTH$PDAY
+
+
+
+cp /home/NCOR6649/logs/zte/zte_rsl_$PYEAR$PMONTH$PDAY /home/NCOR6649/logs/zte/daily_zte_rsl
+
+rm -f /home/NCOR6649/logs/zte/zte_rsl_$PYEAR$PMONTH$PDAY.Z /home/NCOR6649/logs/zte/daily_zte_rsl.Z /home/NCOR6649/logs/zte/zte_eas_$PYEAR$PMONTH$PDAY.Z
+
+compress /home/NCOR6649/logs/zte/zte_rsl_$PYEAR$PMONTH$PDAY
+compress /home/NCOR6649/logs/zte/daily_zte_rsl
+compress /home/NCOR6649/logs/zte/zte_eas_$PYEAR$PMONTH$PDAY
+
+sh cell_main_zte
+
+#20150403_050000_159.csv
+
+#mv HAL.tgz /tmp/hal/omc1$DAY$MONTH$YEAR.tgz
+
+mv /home/NOCCORDT/logs/report_rsl_$YEAR$MONTH$DAY*_*.csv  /tmp/zte/
+mv  /home/NOCCORDT/logs/report_active_alarm_$YEAR$MONTH$DAY_*.csv /tmp/zte/
+compress /home/NOCCORDT/logs/*.csv
+compress /tmp/zte/*.csv
+
+ zcat /home/NOCCORDT/logs/report_3g_cell_out_$YEAR$MONTH$DAY*_*.csv.Z |  egrep "Cell is out of service" |  nawk -f zte_3rsl_awk | sed "s;\";;g" |  perl /home/NCOR6649/scripts/RSL/perl_d_rsl_alu.pl | sed "s/\"//g"   > /home/NCOR6649/logs/zte/zte_3g_$PYEAR$PMONTH$PDAY
+
+#zcat /home/NOCCORDT/logs/report_3g_cell_out_$YEAR$MONTH$DAY*_*.csv.Z |  grep "Cell is out of service" |  nawk -f zte_3rsl_awk | sed "s;\";;g" |  perl /home/NCOR6649/scripts/RSL/perl_d_rsl_alu.pl | sed "s/\"//g"   > /home/NCOR6649/logs/zte/zte_3g_$PYEAR$PMONTH$PDAY
+
+#zcat  /tmp/zte/report_active_alarm_$YEAR$MONTH$DAY*_*.csv.Z |  egrep "Cell is out of service|NodeB is out of service" |  nawk -f zte_3rsl_awk_act |  sed "s;\";;g"   | grep -v "//" |  perl /home/NCOR6649/scripts/RSL/perl_hu_rsl_alm.pl  >> /home/NCOR6649/logs/zte/zte_3g_$PYEAR$PMONTH$PDAY 
+
+zcat  /tmp/zte/report_active_alarm_$YEAR$MONTH$DAY*_*.csv.Z |  egrep "Cell is out of service" |  nawk -f zte_3rsl_awk_act |  sed "s;\";;g"   | grep -v "//" |  perl /home/NCOR6649/scripts/RSL/perl_hu_rsl_alm.pl  >> /home/NCOR6649/logs/zte/zte_3g_$PYEAR$PMONTH$PDAY 
+
+rm -f  /home/NCOR6649/logs/zte/zte_3g_$PYEAR$PMONTH$PDAY.Z
+
+compress  /home/NCOR6649/logs/zte/zte_3g_$PYEAR$PMONTH$PDAY
+
+# COMMENT1
+
+
+
+
+
+ 
+ 

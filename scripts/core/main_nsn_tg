@@ -1,0 +1,53 @@
+#!/bin/sh
+
+#user=`echo '"noc_core"'`
+#echo  "$user"
+#password=` echo '"Mobilink123"' `
+#echo "$password"
+
+#echo "$Ser"
+
+#for file in `cat ll`;do echo " ";done
+
+#grep "BSGSM" /usr/gsm/config/global/NE.MAP|awk '{print $2}'>./bss_name
+
+# echo " " > ./gath 
+
+echo "" > nsntg_gath
+
+
+dos2unix -ascii -850 nsnip.csv  > mnsnip.csv;
+
+
+for i in `cat mnsnip.csv | perl -e 's/ //g' -w -p -i `
+do
+
+echo $i
+
+#printf $i
+msc=`printf $i | awk ' { FS="," ;print $2 } '`
+
+
+
+
+ mmsc=`echo  "\"$msc\"" `
+
+ echo  $msc
+
+perl nsntg.pl $msc 
+
+cat nsntg.txt >> nsntg_gath.txt
+
+done
+
+rm -f nsntg_gath.txt.Z
+
+compress nsntg_gath.txt
+
+
+
+
+
+
+
+

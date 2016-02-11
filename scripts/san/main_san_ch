@@ -1,0 +1,12 @@
+#!/bin/sh
+
+cd /home/NCOR6649/scripts/san
+
+echo "************Daily Sanity Checks **********************"                                                                                                          
+                                                                                                                                                                       
+ /bin/sh CheckFiles_at_OMCs > san_ch_cell                                                                                                                                                                       
+ san_ch_cell=san_ch_cell                                                                                                                                                         
+                                                                                                                                                                       
+                                                                                                                                                                       
+  mailx -s "Daily Sanity Checks for Cell Reports" nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,mohammad.imran@mobilink.net < san_ch_cell 
+

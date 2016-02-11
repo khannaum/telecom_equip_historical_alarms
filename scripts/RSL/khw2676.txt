@@ -1,0 +1,196 @@
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  00:01:54.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 80042b
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  00:02:08.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 80042b
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  00:04:03.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 80042d
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  04:05:09.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 80042e
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  04:08:17.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 80042f
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  04:08:31.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 80042f
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  04:10:26.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 800431
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  07:01:30.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 800432
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  07:04:37.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 800433
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  07:04:51.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 800433
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  07:06:46.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 800435
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  11:00:36.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 800436
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  11:03:44.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 800437
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  11:03:57.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 800437
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  11:05:52.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 800439
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  12:06:28.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 80043a
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  12:09:36.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 80043b
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  12:09:50.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 80043b
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  12:11:45.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 80043d
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  15:00:44.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 800440
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  15:03:52.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 800441
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  15:04:06.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 800441
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  15:06:01.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 800443
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  19:00:23.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 800455
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  19:03:31.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 800456
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  19:03:45.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 800456
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  19:05:39.
+  [0]  Last RSL Link Failure   -  FMIC  -  Clear -/-.
+  Config Tag 800458
+<EndEvent>
+
+<BeginEvent>
+#0  -  NOT APPL  -  *NONE*.
+  communicationFailureEvent  -  SITE  -  CWA630M__BSC101_KalarKahar_1(KHW2676__S_IslamGunj): 12 SITE  -  01/02/2011  23:57:31.
+  [0]  Last RSL Link Failure   -  FMIC  -  Critical -/-.
+  Config Tag 800459
+<EndEvent>
+

@@ -1,0 +1,46 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT date +%d`
+YEAR=`TZ=GMT date +%Y`
+MONTH=`TZ=GMT date +%m`
+
+cd /home/oann/scripts/daily_gen 
+
+
+
+
+
+
+
+zcat /home/noccord/alu_alm.txt.Z |  nawk 'FS="|" , OFS="|" { if(length($2)<=7){print "Alcatel",$1,$2,$3,$6,$7} } '> bsc.txt
+
+zcat /home/noccord/alu_alm.txt.Z |  nawk 'FS="|" , OFS="|" { if(length($2)>7){print "Alcatel",$1,$2,$3,$6,$7} } ' > bts.txt 
+
+
+
+zcat /home/noccord/nwd_mot_act.txt.Z |  nawk 'FS="|" , OFS="|" { if($3==0||$3~/PCU/){print "Motorola",$1,$2,$3" "$4" "$5" ",$8,$9 } } ' >> bsc.txt
+zcat /home/noccord/nwd_mot_act.txt.Z |  nawk 'FS="|" , OFS="|" { if($3>0&&$3!~/PCU/){print "Motorola",$1,$2,$3"_"$4"_"$5"_"$6,$8,$9 } } ' >> bts.txt
+
+zcat /home/oann/huawei*.txt.Z | sort -u | nawk 'FS="," , OFS="|" { if(length($2)==1){print "Huawei",$1,$2,$7"_"$4,$5,$3 }} ' >>bsc.txt
+
+zcat /home/oann/huawei*.txt.Z | sort -u | nawk 'FS="," , OFS="|" { if(length($2)!=1){print "Huawei",$1,$2,$7"_"$4,$5,$3 }} ' >> bts.txt
+
+
+rm -f bsc.txt.Z bts.txt.Z
+
+compress bsc.txt bts.txt
+
+mv bsc.txt.Z /home/oann/logs/genset/bsc.txt.Z
+mv bts.txt.Z /home/oann/logs/genset/bts.txt.Z
+
+
+#zcat /home/oann/huawei*.txt.Z | nawk 'FS="," , OFS="|" { if(length($2)>1){print "Huawei",$1,$2,$7"_"$4,$5,$3 }} '
+echo "======End======"
+

@@ -1,0 +1,107 @@
+#!/bin/sh
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+
+cd /home/NCOR6649/scripts/eas
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+# ====================R1========================================
+hr1g=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $19!=0){print $0} } ' |    wc -l`
+hr1m=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $20!=0){print $0} } ' |    wc -l`
+hr1s=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $21!=0){print $0} } ' |    wc -l`
+hr1l=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $22!=0){print $0} } ' |    wc -l`
+hr1=`cat regsheet_n.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/&& $14~/R1/ ){print $0} } ' |    wc -l`
+
+er1g=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $19!=0){print $0} } ' |    wc -l`
+er1m=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $20!=0){print $0} } ' |    wc -l`
+er1s=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $21!=0){print $0} } ' |    wc -l`
+er1l=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $22!=0){print $0} } ' |    wc -l`
+er1=`cat regsheet_n.txt | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/&& $14~/R1/ ){print $0} } ' |    wc -l`
+
+ar1g=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Alcatel/ && $14~/R1/ && $19!=0){print $0} } ' |    wc -l`
+ar1m=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Alcatel/ && $14~/R1/ && $20!=0){print $0} } ' |    wc -l`
+ar1s=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Alcatel/ && $14~/R1/ && $21!=0){print $0} } ' |    wc -l`
+ar1l=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Alcatel/ && $14~/R1/ && $22!=0){print $0} } ' |    wc -l`
+ar1=`cat regsheet_n.txt | nawk 'FS="|" , OFS="|" { if($4~/Alcatel/&& $14~/R1/ ){print $0} } ' |    wc -l`
+
+# ====================R2========================================
+hr2g=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $19!=0){print $0} } ' |    wc -l`
+hr2m=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $20!=0){print $0} } ' |    wc -l`
+hr2s=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $21!=0){print $0} } ' |    wc -l`
+hr2l=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $22!=0){print $0} } ' |    wc -l`
+hr2=`cat regsheet_n.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/&& $14~/R2/ ){print $0} } ' |    wc -l`
+
+er2g=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $19!=0){print $0} } ' |    wc -l`
+er2m=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $20!=0){print $0} } ' |    wc -l`
+er2s=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $21!=0){print $0} } ' |    wc -l`
+er2l=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $22!=0){print $0} } ' |    wc -l`
+er2=`cat regsheet_n.txt | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/&& $14~/R2/ ){print $0} } ' |    wc -l`
+
+ar2g=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Alcatel/ && $14~/R2/ && $19!=0){print $0} } ' |    wc -l`
+ar2m=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Alcatel/ && $14~/R2/ && $20!=0){print $0} } ' |    wc -l`
+ar2s=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Alcatel/ && $14~/R2/ && $21!=0){print $0} } ' |    wc -l`
+ar2l=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/Alcatel/ && $14~/R2/ && $22!=0){print $0} } ' |    wc -l`
+ar2=`cat regsheet_n.txt | nawk 'FS="|" , OFS="|" { if($4~/Alcatel/&& $14~/R2/ ){print $0} } ' |    wc -l`
+
+
+
+echo "********* No of sites with Alarms Appear on last Seven Days**********" > cell_ste
+echo "         R1                            "  >> cell_ste
+echo "=================================================================" >> cell_ste
+
+echo "Vendor|Total|Main Failure|Low Voltage|System on Battery|Genset On" >> cell_ste
+echo "=================================================================" >> cell_ste
+
+echo "Huawei  |$hr1|$hr1m|$hr1l|$hr1s|$hr1g" >> cell_ste
+echo "Ericsson|$er1|$er1m|$er1l|$er1s|$er1g" >> cell_ste
+echo "Alcatel|$ar1|$ar1m|$ar1l|$ar1s|$ar1g" >> cell_ste
+
+echo "                                         " >> cell_ste
+
+echo "         R2                            "  >> cell_ste
+echo "================================================================="  >> cell_ste
+
+echo "Vendor|Total|Main Failure|Low Voltage|System on Battery|Genset On"  >> cell_ste
+echo "================================================================="  >> cell_ste
+
+echo "Huawei  |$hr2|$hr2m|$hr2l|$hr2s|$hr2g" >> cell_ste
+echo "Ericsson|$er2|$er2m|$er2l|$er2s|$er2g" >> cell_ste
+echo "Alcatel|$ar2|$ar2m|$ar2l|$ar2s|$ar2g" >> cell_ste
+
+
+echo "SITE|OCC|CLR|ALARM" > /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"GEN" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/netecho/nwd_mains_fail_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"MF" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/err/erc_sob_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"SOB" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/err/erc_low_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"LOW" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/low_vol/nwd_low_vol_$DAY$MONTH$YEAR.txt.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"LOW" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+rm -f /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv.Z
+
+compress /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+nwd_cell=nwd_eas_$DAY$MONTH$YEAR.csv
+
+echo "$DAY/$MONTH/$YEAR|R1|Huawei|$hr1|$hr1m|$hr1l|$hr1s|$hr1g" > cell_ste
+echo "$DAY/$MONTH/$YEAR|R1|Ericsson|$er1|$er1m|$er1l|$er1s|$er1g" >> cell_ste
+echo "$DAY/$MONTH/$YEAR|R1|Alcatel|$ar1|$ar1m|$ar1l|$ar1s|$ar1g" >> cell_ste
+
+echo "$DAY/$MONTH/$YEAR|R2|Huawei|$hr2|$hr2m|$hr2l|$hr2s|$hr2g" >> cell_ste
+echo "$DAY/$MONTH/$YEAR|R2|Ericsson|$er2|$er2m|$er2l|$er2s|$er2g" >> cell_ste
+echo "$DAY/$MONTH/$YEAR|R2|Alcatel|$ar2|$ar2m|$ar2l|$ar2s|$ar2g" >> cell_ste
+cat cell_ste  | nawk -f awk_html  > new_gen.html
+
+
+cat heading_date | nawk -f awk_html_head > eas_head.html ; cat new_reg_eas | nawk -f awk_html_details >> eas_head.html
+rm -f  eas_head.html.Z
+compress eas_head.html
+
+ksh new_mail_send_eas_final_new
+
+# (cat cell_ste ; /usr/bin/uuencode /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv.Z  $nwd_cell.Z ) | mailx -s $nwd_cell nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net
+
+#,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,asif.r@mobilink.net 

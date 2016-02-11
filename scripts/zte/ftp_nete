@@ -1,0 +1,42 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT date +%d`
+YEAR=`TZ=GMT date +%Y`
+MONTH=`TZ=GMT date +%m`
+
+
+# cd /export/home/omc/netnumen/ems/ums-server/rundata/ppus/uca.ppu/uca-fm.pmu/timing_report
+# cd /export/home/omc/netnumen/ems/ums-server/rundata/ppus/uca.ppu/uca-pm.pmu/query-file/20150421
+
+sftp  10.231.250.180 <<EOF
+user FTPZTEUR Mobi#9090
+hash
+bin
+
+cd /export/home/omc/netnumen/ems/ums-server/rundata/ppus/uca.ppu/uca-pm.pmu/query-file/$YEAR$MONTH$DAY
+ls -ltr
+
+# report_rsl_20150325_050000_160.csv
+
+
+
+bye
+
+EOF
+#mv HAL.tgz /tmp/hal/omc1$DAY$MONTH$YEAR.tgz
+
+
+
+
+
+
+
+ 
+ 

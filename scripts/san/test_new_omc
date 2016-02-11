@@ -1,0 +1,161 @@
+#!/usr/bin/sh
+#
+echo "Alcatel Files Status:"
+echo "Alcatel-OMC-1"
+echo `/usr/bin/ftp -in '10.231.160.1' <<EndFTP
+user omc3ftp omc3ftp
+dir  /MISC/alcomc1
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "Alcatel-OMC-2"
+echo `/usr/bin/ftp -in '10.231.80.1' <<EndFTP
+user omc3ftp omc3ftp
+dir  /MISC/alcomc2
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "Alcatel-OMC-3"
+echo `/usr/bin/ftp -in '10.231.90.1' <<EndFTP
+user omc3ftp omc3ftp
+dir  /MISC/alcomc3m
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "Alcatel-OMC-4"
+echo `/usr/bin/ftp -in '10.231.140.1' <<EndFTP
+user omc3ftp omc3ftp
+dir  /MISC/alcomc4m
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "Alcatel-OMC-5"
+echo `/usr/bin/ftp -in '10.231.150.1' <<EndFTP
+user omc3ftp omc3ftp
+dir  /MISC/alcomc5m
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "Huawei Files Status:"
+echo "Huawei-OMC-1"
+echo `/usr/bin/ftp -in '10.231.170.10' <<EndFTP
+user ftpuser ftpuser
+ls /export/home/noccord/logs/hu_cell.txt
+quit
+EndFTP`
+echo `/usr/bin/ftp -in '10.231.170.10' <<EndFTP
+user ftpuser ftpuser
+ls /export/home/noccord/logs/hu_bsc_opc.txt
+quit
+EndFTP`
+echo `/usr/bin/ftp -in '10.231.170.10' <<EndFTP
+user ftpuser ftpuser
+ls /export/home/noccord/logs/hu_bsc_dpc.txt
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "Huawei-OMC-2"
+echo `/usr/bin/ftp -in '10.231.170.30' <<EndFTP
+user ftpuser ftpuser
+ls /export/home/noccord/logs/hu_cell.txt
+quit
+EndFTP`
+echo `/usr/bin/ftp -in '10.231.170.30' <<EndFTP
+user ftpuser ftpuser
+ls /export/home/noccord/logs/hu_bsc_opc.txt
+quit
+EndFTP`
+echo `/usr/bin/ftp -in '10.231.170.30' <<EndFTP
+user ftpuser ftpuser
+ls /export/home/noccord/logs/hu_bsc_dpc.txt
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "Huawei-OMC-3"
+echo `/usr/bin/ftp -in '10.231.170.70' <<EndFTP
+user ftpuser ftpuser
+ls /export/home/noccord/logs/hu_cell.txt
+quit
+EndFTP`
+echo `/usr/bin/ftp -in '10.231.170.70' <<EndFTP
+user ftpuser ftpuser
+ls /export/home/noccord/logs/hu_bsc_opc.txt
+quit
+EndFTP`
+echo `/usr/bin/ftp -in '10.231.170.70' <<EndFTP
+user ftpuser ftpuser
+ls /export/home/noccord/logs/hu_bsc_dpc.txt
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "Motorola Files Status:"
+echo "mk5sys1"
+echo `/usr/bin/ftp -in '10.231.10.65' <<EndFTP
+user ftpuser ftpuser
+ls /home/omcadmin/cellexport.out
+quit
+EndFTP`
+echo `/usr/bin/ftp -in '10.231.10.65' <<EndFTP
+user ftpuser ftpuser
+ls /home/omcadmin/m5ksys1.dpcopccell.out
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "sunfire3"
+echo `/usr/bin/ftp -in '10.231.10.30' <<EndFTP
+user ftpuser ftpuser
+ls /home/omcadmin/cellexport.out
+quit
+EndFTP`
+echo `/usr/bin/ftp -in '10.231.10.30' <<EndFTP
+user ftpuser ftpuser
+ls /home/omcadmin/sunfire3.dpcopccell.out
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "sunfire4"
+echo `/usr/bin/ftp -in '10.231.10.50' <<EndFTP
+user ftpuser ftpuser
+ls /home/omcadmin/cellexport.out
+quit
+EndFTP`
+echo `/usr/bin/ftp -in '10.231.10.50' <<EndFTP
+user ftpuser ftpuser
+ls /home/omcadmin/sunfire4.dpcopccell.out
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "IP-Access - Nano Files Status:"
+echo "Nano-IP-Access-OMC-1"
+echo `/usr/bin/ftp -in '10.231.10.65' <<EndFTP
+user ftpuser ftpuser
+ls /home/NCOR6649/logs/nano/nan_bsc.txt
+quit
+EndFTP`
+echo `/usr/bin/ftp -in '10.231.10.65' <<EndFTP
+user ftpuser ftpuser
+ls /home/NCOR6649/logs/nano/nan_opc_dpc.txt
+quit
+EndFTP`
+echo `/usr/bin/ftp -in '10.231.10.65' <<EndFTP
+user ftpuser ftpuser
+ls /home/NCOR6649/logs/nano/nan_site_cell.txt
+quit
+EndFTP`
+echo "-----------------------------------------------------------"
+echo ""
+echo "ZTE Files Status is not available yet..."
+echo "-----------------------------------------------------------"
+echo "End of Script"
+echo "-----------------------------------------------------------"

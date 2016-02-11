@@ -1,0 +1,47 @@
+BEGIN{
+#print "BSC","|","Site","|","Site_ID","|","Device","|","Device_ID","|","Alarm Code","|","TAG","|", "Date","|","Time","|","Alarm Description"
+
+	
+FS="|"
+       OFS="|"
+}
+
+
+{    
+ print "jsdkjfksdjfk"
+
+
+
+getline var < "lk"
+
+#print "fdsf"
+
+#split (var,code,"|")
+
+#"more lk | wc -l  " | getline i
+
+# print i
+
+#dt=""
+#ut=""
+#aa=0
+
+#print code
+
+
+
+    
+   print $0 ;
+   getline ; 
+
+
+
+}
+
+
+END{
+ 
+
+}
+
+

@@ -1,0 +1,45 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT date +%d`
+YEAR=`TZ=GMT date +%Y`
+MONTH=`TZ=GMT date +%m`
+
+cd /home/NCOR6649/scripts/daily_gen 
+
+
+
+
+
+
+
+zcat /home/NOCCORDT/alu_alm.txt.Z |  nawk 'FS="|" , OFS="|" { if(length($2)<=7){print "Alcatel",$1,$2,$3,$6,$7,$8,"bsc",$4} } ' | grep -i "gen" | perl alu_act_alm_5.pl > bsc.txt
+
+zcat /home/NOCCORDT/alu_alm.txt.Z |  nawk 'FS="|" , OFS="|" { if(length($2)>7){print "Alcatel",$1,$2,$3,$6,$7,$8,"bts",$4} } ' | grep -i "gen" | perl alu_act_alm_5.pl > bts.txt 
+
+
+
+#zcat /home/NOCCORDT/nwd_mot_act.txt.Z |  nawk 'FS="|" , OFS="|" { if($3==0||$3~/PCU/){print "Motorola",$1,$2,$3" "$4" "$5" ",$8,$9,"ll","bsc",$4 } } ' | grep -i "gen"  >> bsc.txt
+#zcat /home/NOCCORDT/nwd_mot_act.txt.Z |  nawk 'FS="|" , OFS="|" { if($3>0&&$3!~/PCU/){print "Motorola",$1,$2,$3"_"$4"_"$5"_"$6,$8,$9,"ll","bts",$4 } } ' | grep -i "gen" >> bts.txt
+
+
+cat bsc.txt bts.txt | perl -e 's/  / /g' -w -p -i  > alu_cur_gen.txt
+
+
+rm -f bsc.txt bts.txt
+
+rm -f alu_cur_gen.txt.Z
+
+compress alu_cur_gen.txt 
+
+mv alu_cur_gen.txt.Z /home/NCOR6649/logs/genset/alu_cur_gen.txt.Z
+
+
+
+

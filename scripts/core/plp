@@ -1,0 +1,40 @@
+"10.31.24.25---O&M System"
+11424
+Trying 10.31.24.25...
+Connected to 10.31.24.25.
+Escape character is '^]'.
+
+    Huawei Technologies co., Ltd.
+  Welcome to UMG8900 Telnet Server
+        CopyRight 2002, 2003
+
+Login :noc_core
+Password :***********
+mml>LST TDMTID: TIDFVDEC=11424, TIDNUM=100;
++++    HUAWEI UMG8900        2010-10-18 17:17:09
+O&M    #2         
+%%LST TDMTID: TIDFVDEC=11424, TIDNUM=100;%%
+RETCODE = 0  accomplished
+
+TID Information
+---------------
+TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+
+11424   3     0     NULL  5     0     
+11425   3     0     NULL  5     1     
+11426   3     0     NULL  5     2     
+11427   3     0     NULL  5     3     
+11428   3     0     NULL  5     4     
+11429   3     0     NULL  5     5     
+11430   3     0     NULL  5     6     
+11431   3     0     NULL  5     7     
+11432   3     0     NULL  5     8     
+11433   3     0     NULL  5     9     
+11434   3     0     NULL  5     10    
+11435   3     0     NULL  5     11    
+11436   3     0     NULL  5     12    
+11437   3     0     NULL  5     13    
+11438   3     0     NULL  5     14    
+11439   3     0     NULL  5     15    
+
+Press CTRL+C to break, other key to continue...

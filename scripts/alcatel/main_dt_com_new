@@ -1,0 +1,53 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=` date +%d`
+YEAR=` date +%Y`
+MONTH=`date +%m`
+Time=`date +%H%M%S`
+
+cd /home/NCOR6649/scripts/alcatel/
+
+
+
+
+
+
+
+
+
+
+zcat /home/NCOR6649/logs/dt_site/alu_dt_new_$DAY$MONTH*.Z | nawk ' FS="|" ,OFS="|" { print "Alcatel",$0 } ' > /home/NCOR6649/logs/dt_site/nwd_dt_new 
+
+ 
+ 
+zcat /home/NCOR6649/logs/dt_site/mot_dt_new_$DAY$MONTH*.Z | nawk ' FS="|" ,OFS="|" { print "Motorola",$1,$2,$4,$5 } ' >> /home/NCOR6649/logs/dt_site/nwd_dt_new 
+
+
+
+
+
+zcat /home/NCOR6649/logs/dt_site/hu_dt_new_$DAY$MONTH*.Z | nawk ' FS="," ,OFS="|" { split($2,cell,"~"); print "Huawei",$1,cell[1],cell[2],$5 } '  >> /home/NCOR6649/logs/dt_site/nwd_dt_new
+
+
+zcat /home/NCOR6649/logs/zte/zte_down_st_new_$YEAR$MONTH$DAY.Z | nawk ' FS="|" ,OFS="|" { print "ZTE",$1,$2,$3,$4} ' >> /home/NCOR6649/logs/dt_site/nwd_dt_new 
+
+rm -f /home/NCOR6649/logs/dt_site/nwd_dt_new.Z
+compress /home/NCOR6649/logs/dt_site/nwd_dt_new
+
+
+
+
+
+echo "### End #####"
+
+
+
+ 
+ 

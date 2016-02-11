@@ -1,0 +1,18 @@
+line: HYD|TXHYD|TXHYD|0009F6|0009F3|0|11264|31|
+
++++    HUAWEI UMG8900        2011-03-01 09:38:00
+ O&M    #7         
+ %%LST TDMTID: TIDFVDEC=11264 ;%%
+ RETCODE = 0  accomplished
+ 
+ TID Information
+ ---------------
+ TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+ 
+ 11264   2     3     NULL  0     0     
+ (Number of results = 1)
+ 
+ ---    END
+ 
+ 
+ 

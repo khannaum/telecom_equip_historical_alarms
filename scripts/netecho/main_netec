@@ -1,0 +1,71 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT date +%d`
+YEAR=`TZ=GMT date +%Y`
+MONTH=`TZ=GMT date +%m`
+
+PDAY=`TZ=GMT+24 date +%d`
+PYEAR=`TZ=GMT+24 date +%Y`
+PMONTH=`TZ=GMT+24 date +%m`
+
+
+cd  /home/NCOR6649/scripts/netecho
+
+ sh ftp_nete
+
+
+cat ne_gen_mf_hs_$DAY$MONTH$YEAR.txt | grep "$PDAY" | grep " Running" | sort -u  | nawk 'FS="|" , OFS="|" { print $1,$2,"",$3,$4 } ' | perl perl_h_net.pl > /home/NCOR6649/logs/netecho/net_gen_run_$PDAY$PMONTH$PYEAR 
+cat ne_gen_mf_act_$DAY$MONTH$YEAR.txt | grep "$PDAY"  | grep " Running" | sort -u | perl perl_net_gen_alm.pl | nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,"A" } '  >> /home/NCOR6649/logs/netecho/net_gen_run_$PDAY$PMONTH$PYEAR  
+
+cat ne_gen_mf_hs_$DAY$MONTH$YEAR.txt | grep -i "mains"  | sort -u  | nawk 'FS="|" , OFS="|" { print $1,$2,"",$3,$4 } ' | perl perl_h_net.pl > /home/NCOR6649/logs/netecho/net_mains_fail_$PDAY$PMONTH$PYEAR 
+cat ne_gen_mf_act_$DAY$MONTH$YEAR.txt | grep -i "mains"  | sort -u | perl perl_net_gen_alm.pl >> /home/NCOR6649/logs/netecho/net_mains_fail_$PDAY$PMONTH$PYEAR
+
+rm -f /home/NCOR6649/logs/netecho/net_gen_run_$PDAY$PMONTH$PYEAR.Z
+rm -f /home/NCOR6649/logs/netecho/net_mains_fail_$PDAY$PMONTH$PYEAR.Z
+
+compress /home/NCOR6649/logs/netecho/net_gen_run_$PDAY$PMONTH$PYEAR /home/NCOR6649/logs/netecho/net_mains_fail_$PDAY$PMONTH$PYEAR
+
+rm -f  ne_gen_mf_hs_$DAY$MONTH$YEAR.txt ne_gen_mf_act_$DAY$MONTH$YEAR.txt
+
+zcat /home/NCOR6649/logs/err/erc_mains_$PDAY$PMONTH$PYEAR.Z /home/NCOR6649/logs/netecho/net_mains_fail_$PDAY$PMONTH$PYEAR.Z | sort -u > /home/NCOR6649/logs/netecho/nwd_mains_fail_$PDAY$PMONTH$PYEAR
+
+# Add zte mains failure
+
+zcat /home/NCOR6649/logs/zte/zte_eas_$PYEAR$PMONTH$PDAY.Z | grep -i "main" | nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4 } '  >>  /home/NCOR6649/logs/netecho/nwd_mains_fail_$PDAY$PMONTH$PYEAR
+
+# Add Huawei mains failure
+zcat /home/NCOR6649/logs/huawei/lapd_genset_low*_vol_$PDAY$PMONTH$PYEAR.txt.Z | egrep -i  "mains|ac main"  | perl /home/NCOR6649/scripts/daily_gen/perl_d_gen.pl  | sort -u >> /home/NCOR6649/logs/netecho/nwd_mains_fail_$PDAY$PMONTH$PYEAR
+zcat /home/NCOR6649/huawei5_active_alm.txt.Z | egrep -i  "mains fail|ac main" | nawk 'FS="," , OFS="|" { print $1,$2,$5 } ' |  perl /home/NCOR6649/scripts/daily_gen/perl_h_gen_alm.pl | sort -u >> /home/NCOR6649/logs/netecho/nwd_mains_fail_$PDAY$PMONTH$PYEAR
+# Add Huawei mains failure
+
+# zcat /home/NCOR6649/logs/zte/zte_eas_20150409.Z | grep -i "main"
+
+rm -f /home/NCOR6649/logs/netecho/nwd_mains_fail_$PDAY$PMONTH$PYEAR.Z
+
+compress /home/NCOR6649/logs/netecho/nwd_mains_fail_$PDAY$PMONTH$PYEAR
+
+
+echo "Ericsson Daily  Logs Files" > san_ch
+echo "==============================" >> san_ch
+ls -ltr /home/NCOR6649/logs/err/ | tail -f >> san_ch
+ls -ltr /home/NCOR6649/logs/err/erc_mains_* | tail -f  >> san_ch
+
+ mailx -s "Ericsson Daily  Logs Files" nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net < san_ch 
+ 
+ 
+
+echo "============================" > 3cell_ste
+echo "Mains Failure (Huawei+Ericsson) Data file:" >> 3cell_ste
+
+
+nwd_rsl=nwd_mains_fail_$PDAY$PMONTH$PYEAR
+
+( cat 3cell_ste ; /usr/bin/uuencode /home/NCOR6649/logs/netecho/nwd_mains_fail_$PDAY$PMONTH$PYEAR.Z  $nwd_rsl.Z )  | mailx -s $nwd_rsl nauman.khan@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net,aamir.mahmood@mobilink.net,farrukh.hussain@mobilink.net
+ 

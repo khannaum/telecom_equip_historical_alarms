@@ -1,0 +1,19 @@
+BEGIN{
+ FS="," ; OFS="," 
+}
+{ 
+
+if( $0 ~ /OMC_NAME/ ){ getline ; omc=$0 }
+
+if($0~/START CELL_SECTION/)
+{
+
+while ( $0 !~ /END CELL_SECTION/)
+{if(NR==1){ getline ; print ""};getline ; if($0 !~ /END CELL_SECTION/ && length($0)>0){print $1,$2,$4,$5,$6,$12,omc} }
+
+print "\n"
+}
+
+
+
+} 

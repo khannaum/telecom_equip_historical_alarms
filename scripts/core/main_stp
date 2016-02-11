@@ -1,0 +1,33 @@
+#!/bin/ksh
+
+
+ 
+
+dos2unix -ascii -850 stp.csv  > mstp.csv;
+
+for i in `cat mstp.csv | perl -e 's/ //g' -w -p -i `
+do
+
+echo $i
+
+#printf $i
+stp=`printf $i | awk ' { FS="," ;print $2 } '`
+user=`echo $i | awk ' { FS="," ;print $3 } '`
+passwd=`echo $i | awk ' { FS="," ;print $4 } '`
+
+
+
+  perl stp.pl $stp $user $passwd 
+
+#  cat raw | tr -d '\015' | nawk -f comp2 | /usr/xpg4/bin/grep -vE "TID-|-----|\(N" | sed '/^$/d'   >> final
+
+cat tmp_stp.txt >> stp.txt
+
+
+
+done
+
+rm -f stp.txt.Z
+compress stp.txt
+
+

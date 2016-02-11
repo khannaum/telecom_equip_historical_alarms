@@ -1,0 +1,19 @@
+BEGIN{
+ FS="|"
+OFS="|"
+}
+{ 
+
+#print $1
+
+split($1,bsc,"(")
+split(bsc[2],site,")")
+split($2,oc,"/")
+split($4,cl,"/")
+
+oc_date=oc[2]"/"oc[1]"/"oc[3]
+cl_date=cl[2]"/"cl[1]"/"cl[3]
+
+print bsc[1],site[1],oc_date" " $3,cl_date" "$5
+
+} 

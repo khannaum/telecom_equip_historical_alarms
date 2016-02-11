@@ -1,0 +1,30 @@
+#!/usr/bin/ksh
+
+export DAY=`TZ=GMT+24 date +%d`
+export YEAR=`TZ=GMT+24 date +%Y`
+export MONTH=`TZ=GMT+24 date +%m`
+#export MAILTO="nauman.khan@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net"
+export MAILTO="nauman.khan@mobilink.net,usman.ar@mobilink.net"
+export MAILCC="nauman.khan@mobilink.net,usman.ar@mobilink.net"
+#export MAILTO="nauman.khan@mobilink.net"
+export SUBJECT="mwkp_reports_$DAY$MONTH$YEAR"
+#export BODY="new_gen.html"
+export ATTACH="/home/NCOR6649/logs/txngen/mwkp_reports_$DAY$MONTH$YEAR.tar.gz"
+(
+ echo "To: $MAILTO"
+ echo "Cc: $MAILCC"
+ echo "Subject: $SUBJECT"
+ echo "MIME-Version: 1.0"
+ echo 'Content-Type: multipart/mixed; boundary="-q1w2e3r4t5"'
+ echo
+ echo '---q1w2e3r4t5'
+ echo "Content-Type: text/html"
+ echo "Content-Disposition: inline"
+# cat $BODY
+ echo '---q1w2e3r4t5'
+ echo 'Content-Type: application/zip; name="'$(basename $ATTACH)'"'
+ echo "Content-Transfer-Encoding: uuencode"
+ echo 'Content-Disposition: attachment; filename="'$(basename $ATTACH)'"'
+ uuencode  $ATTACH $(basename $ATTACH)
+ echo '---q1w2e3r4t5--'
+) | /usr/sbin/sendmail $MAILTO $MAILCC $ATTACH

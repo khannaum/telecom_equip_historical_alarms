@@ -1,0 +1,33 @@
+BEGIN{
+# FS = "=";RS="="
+FS="/n"
+# ORS="|"
+OFS="|"
+#Office direction name  Trunk group name  Network indicator  OPC     DPC     Circuit type  Start CIC  End CIC.  Start TID.  E
+#nd TID.  Module No.  Start Circuit No.  End Circuit No.  Server name  Domain name  Total Installed Circuits
+}
+
+
+/Location info/,/Auto Clear/{  s=$0;l=NR;s=s $0 ; print $3 }
+{
+
+
+if($0~/\+\+\+/){ anode=$2}
+if($0~/ALARM/){ alarm=$0 }
+if($0~/Sync serial No./) { ser_n=$0 }
+if($0~/Alarm name/) { alarm_name=$0}
+if($0~/Alarm raised time/) { alarm_rt=$0}
+
+
+# if($0~/Location info/){ loc_info1=$0; getline ;loc_info2=$0;getline;loc_info3=$0;locai=loc_info1 loc_info2 loc_info3;print locai }
+
+# print anode,alarm,ser_n,alarm_name,alarm_rt
+ 
+# print length($1),$0
+ 
+}
+
+END {
+#print "===================="
+}
+

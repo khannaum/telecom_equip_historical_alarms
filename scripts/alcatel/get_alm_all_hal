@@ -1,0 +1,20 @@
+BEGIN{
+ FS=";"
+OFS="|"
+}
+
+{
+split($2,bsc," ")
+oc_date=substr($1,5,2)"/"substr($1,7,2)"/"substr($1,1,4)" "substr($1,9,2)":"substr($1,11,2)":"substr($1,13,2)
+cl_date=substr($13,5,2)"/"substr($13,7,2)"/"substr($13,1,4)" "substr($13,9,2)":"substr($13,11,2)":"substr($13,13,2)
+#print $2,$3,$4,$6,oc_date 
+
+
+split($6,aln,",")
+split($3,sev,"(")
+
+if (length(aln[1])<1){aln[1]=aln[2]}
+if(aln[1]!~/^[0-9]+$/){ aln[2]=aln[1];aln[1]="0"}
+print bsc[1],bsc[2],bsc[3]bsc[4]bsc[5]bsc[6]bsc[7]bsc[8],$4,aln[2],oc_date,cl_date,aln[1],sev[1]
+}
+

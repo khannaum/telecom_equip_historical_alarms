@@ -1,0 +1,136 @@
++++    HUAWEI UMG8900        2011-02-28 18:02:23
+ O&M    #2         
+ %%LST TDMTID: TIDFVDEC=32128 ;%%
+ RETCODE = 0  accomplished
+ 
+ TID Information
+ ---------------
+ TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+ 
+ 32128   4     15    NULL  12    0     
+ (Number of results = 1)
+ 
+ ---    END
+ 
+ 
+ 
++++    HUAWEI UMG8900        2011-02-28 18:02:23
+ O&M    #3         
+ %%LST TDMTID: TIDFVDEC=32416 ;%%
+ RETCODE = 0  accomplished
+ 
+ TID Information
+ ---------------
+ TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+ 
+ 32416   4     15    NULL  21    0     
+ (Number of results = 1)
+ 
+ ---    END
+ 
+ 
+ 
++++    HUAWEI UMG8900        2011-02-28 18:02:23
+ O&M    #4         
+ %%LST TDMTID: TIDFVDEC=32448 ;%%
+ RETCODE = 0  accomplished
+ 
+ TID Information
+ ---------------
+ TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+ 
+ 32448   4     15    NULL  22    0     
+ (Number of results = 1)
+ 
+ ---    END
+ 
+ 
+ 
++++    HUAWEI UMG8900        2011-02-28 18:02:23
+ O&M    #5         
+ %%LST TDMTID: TIDFVDEC=32480 ;%%
+ RETCODE = 0  accomplished
+ 
+ TID Information
+ ---------------
+ TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+ 
+ 32480   4     15    NULL  23    0     
+ (Number of results = 1)
+ 
+ ---    END
+ 
+ 
+ 
++++    HUAWEI UMG8900        2011-02-28 18:02:26
+ O&M    #6         
+ %%LST TDMTID: TIDFVDEC=0 ;%%
+ RETCODE = 0  accomplished
+ 
+ TID Information
+ ---------------
+ TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+ 
+ 0       1     2     NULL  0     0     
+ (Number of results = 1)
+ 
+ ---    END
+ 
+ 
+ 
++++    HUAWEI UMG8900        2011-02-28 18:02:26
+ O&M    #7         
+ %%LST TDMTID: TIDFVDEC=11264 ;%%
+ RETCODE = 0  accomplished
+ 
+ TID Information
+ ---------------
+ TID     FrNo  SlNo  OpNo  PoNo  TsNo  
+ 
+ 11264   2     3     NULL  0     0     
+ (Number of results = 1)
+ 
+ ---    END
+ 
+ 
+ 
++++    HUAWEI UMG8900        2011-02-28 18:02:26
+ O&M    #8         
+ %%LST TDMTID: TIDFVDEC= ;%%
+ RETCODE = 60003  Grammar error in command line
+ 
+ 
+ ---    END
+ 
+ 
+ 
++++    HUAWEI UMG8900        2011-02-28 18:02:26
+ O&M    #9         
+ %%LST TDMTID: TIDFVDEC= ;%%
+ RETCODE = 60003  Grammar error in command line
+ 
+ 
+ ---    END
+ 
+ 
+ 
++++    HUAWEI UMG8900        2011-02-28 18:02:26
+ O&M    #10        
+ %%LST TDMTID: TIDFVDEC= ;%%
+ RETCODE = 60003  Grammar error in command line
+ 
+ 
+ ---    END
+ 
+ 
+ 
++++    HUAWEI UMG8900        2011-02-28 18:02:26
+ O&M    #11        
+ %%LST TDMTID: TIDFVDEC= ;%%
+ RETCODE = 60003  Grammar error in command line
+ 
+ 
+ ---    END
+ 
+ 
+ 

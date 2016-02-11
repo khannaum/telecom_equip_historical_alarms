@@ -1,0 +1,128 @@
+#!/usr/bin/sh
+#
+echo "Alcatel Files Status:"
+echo "Alcatel-OMC-1"
+ftp -n -p 10.231.160.1 <<EOF
+user omc3ftp omc3ftp
+dir  /MISC/alcomc1
+bye
+EOF
+echo "-----------------------------------------------------------"
+echo ""
+echo "Alcatel-OMC-2"
+ftp -n -p 10.231.80.1 <<EOF
+user omc3ftp omc3ftp
+dir  /MISC/alcomc2
+bye
+EOF
+echo "-----------------------------------------------------------"
+echo ""
+echo "Alcatel-OMC-3"
+ftp -n -p 10.231.90.1 <<EOF
+user omc3ftp omc3ftp
+dir  /MISC/alcomc3m
+bye
+EOF
+echo "-----------------------------------------------------------"
+echo ""
+echo "Alcatel-OMC-4"
+ftp -n -p 10.231.140.1 <<EOF
+user omc3ftp omc3ftp
+dir  /MISC/alcomc4m
+bye
+EOF
+echo "-----------------------------------------------------------"
+echo ""
+echo "Alcatel-OMC-5"
+ftp -n -p 10.231.150.1 <<EOF
+user omc3ftp omc3ftp
+dir  /MISC/alcomc5m
+bye
+EOF
+echo "-----------------------------------------------------------"
+echo ""
+echo "Huawei Files Status:"
+echo "Huawei-OMC-1"
+ftp -n -p 10.231.170.10 <<EOF
+user ftpuser ftpuser
+dir /export/home/noccord/logs/hu_cell.txt
+dir /export/home/noccord/logs/hu_bsc_opc.txt
+dir /export/home/noccord/logs/hu_bsc_dpc.txt
+bye
+EOF
+
+echo "-----------------------------------------------------------"
+echo ""
+echo "Huawei-OMC-2"
+ftp -n -p 10.231.170.30 <<EOF
+user ftpuser ftpuser
+dir /export/home/noccord/logs/hu_cell.txt
+dir /export/home/noccord/logs/hu_bsc_opc.txt
+dir /export/home/noccord/logs/hu_bsc_dpc.txt
+bye
+EOF
+
+echo "-----------------------------------------------------------"
+echo ""
+echo "Huawei-OMC-3"
+ftp -n -p 10.231.170.70 <<EOF
+user ftpuser ftpuser
+dir /export/home/noccord/logs/hu_cell.txt
+dir /export/home/noccord/logs/hu_bsc_opc.txt
+dir /export/home/noccord/logs/hu_bsc_dpc.txt
+bye
+EOF
+
+echo "-----------------------------------------------------------"
+echo ""
+echo "Motorola Files Status:"
+echo "mk5sys1"
+ftp -n -p 10.231.10.65 <<EOF
+user ftpuser ftpuser
+dir /home/omcadmin/cellexport.out
+dir /home/omcadmin/m5ksys1.dpcopccell.out
+dir /usr/omc/config/global/cellX/RFExport_OPT/m5ksys1_RFPlanCell.out
+bye
+EOF
+
+echo "-----------------------------------------------------------"
+echo ""
+echo "sunfire3"
+ftp -n -p 10.231.10.30 <<EOF
+user ftpuser ftpuser
+dir /home/omcadmin/cellexport.out
+dir /home/omcadmin/sunfire3.dpcopccell.out
+dir /usr/omc/config/global/cellX/RFExport_OPT/sunfire3_RFPlanCell.out
+bye
+EOF
+echo "-----------------------------------------------------------"
+echo ""
+echo "sunfire4"
+ftp -n -p 10.231.10.50 <<EOF
+user ftpuser ftpuser
+dir /home/omcadmin/cellexport.out
+dir /home/omcadmin/sunfire4.dpcopccell.out
+dir /usr/omc/config/global/cellX/RFExport_OPT/sunfire4_RFPlanCell.out
+bye
+EOF
+
+echo "-----------------------------------------------------------"
+echo ""
+echo "IP-Access - Nano Files Status:"
+echo "Nano-IP-Access-OMC-1"
+ftp -n -p 10.231.10.65 <<EOF
+user ftpuser ftpuser
+dir /home/NCOR6649/logs/nano/nan_bsc.txt
+dir /home/NCOR6649/logs/nano/nan_opc_dpc.txt
+dir /home/NCOR6649/logs/nano/nan_site_cell.txt
+bye
+EOF
+
+echo "-----------------------------------------------------------"
+echo ""
+echo "ZTE Files Status is not available yet..."
+echo "-----------------------------------------------------------"
+echo "End of Script"
+echo "-----------------------------------------------------------"
+
+

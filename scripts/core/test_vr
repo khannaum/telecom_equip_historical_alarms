@@ -1,0 +1,27 @@
+#!/bin/sh
+
+user=`echo '"noc_core"'`
+#echo  "$user"
+password=` echo '"Mobilink123"' `
+#echo "$password"
+
+server="10.31.24.21"
+
+Ser=`echo  "\"$server---O&M System\""`
+last=`echo "\"---O&MSystem\""`
+#echo "$Ser"
+
+#for file in `cat ll`;do echo " ";done
+
+#grep "BSGSM" /usr/gsm/config/global/NE.MAP|awk '{print $2}'>./bss_name
+
+echo " " > ./gath
+
+
+for i in `cat fip.csv  | awk ' { FS="," ; OFS="|" ;  print $2,$4 } ' | sort -u `
+do
+
+echo $i
+
+done
+cat final |  grep -v "^$" | grep -v "(B" | grep "|TID"  > TG1

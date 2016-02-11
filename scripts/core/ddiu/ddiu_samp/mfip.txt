@@ -1,0 +1,2 @@
+HW2 LHR ,10.20.23.100,noc_core ,Mobilink123 ,HW2LHR-MGW1,10.20.23.104,nocfm,Mobilink123 ,1250,4688
+HW2 LHR ,10.20.23.100,noc_core ,Mobilink123 ,HW2LHR-MGW3,10.215.8.130,nocfm,Mobilink123 ,129F,4767

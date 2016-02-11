@@ -1,0 +1,62 @@
+#!/bin/sh
+
+user=`echo 'noc_core'`
+
+password=` echo 'Mobilink123' `
+
+
+#server="10.31.24.25"
+server="10.175.4.24"
+
+#for file in `cat ll`;do echo " ";done
+
+#grep "BSGSM" /usr/gsm/config/global/NE.MAP|awk '{print $2}'>./bss_name
+
+#echo " " > ./final
+#echo "" > ./vart
+
+#for i in `cat ./gath`
+#do
+
+# tid=` echo $i | nawk ' { FS="|" ;print $6 } ' ` 
+# fied=` echo $i | nawk ' { FS="|" ;print $0 } ' ` 
+
+#echo "LST TDMTID: TIDFVDEC=$tid ;" >> ./vart
+#
+#done
+
+#( sleep 1
+# echo "$user";sleep 1 ; echo "$password" ; 
+#sleep 1
+#cat gath | while read LINE
+#do 
+# echo "LST TDMTID: TIDFVDEC=$LINE ;";
+# sleep 5 
+#done< /home/oann/logs/core/gath
+# sleep 5 
+# echo " kk") | telnet -c $server 
+
+
+
+
+(echo "$user";sleep 3 ; echo "$password" ; sleep 1; cat vart ;sleep 3;) | telnet    $server 
+
+#| tr -d '\015' | nawk -f comp2 file=$fied  >> final
+
+#; echo "LST TDMTID: TIDFVDEC=$tid ;"; done ; sleep 15 ) | telnet -c   $server 
+# | tr -d '\015'  
+#| nawk -f comp2 file=$fied 
+ 
+#| nawk -f comp2 file=$fied  >> final
+
+#| tr -d '\015' | nawk -f comp2 file=$fied  >> final 
+
+#perl -e '($_ = join "",<>) =~ s/(\^M)/     /g; print;' < what  > fwhat
+
+#cat what | tr -d '\015'
+
+#cat what | tr -d '\015' > fwhat
+
+#more fwhat | nawk -f comp2 file=$fied  
+
+#done

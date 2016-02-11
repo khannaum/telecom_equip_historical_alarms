@@ -1,0 +1,42 @@
+ COMMUNICATIONS | AIS% only bits '1' into two successive frames |  123|  211|   55|  336|  725
+ COMMUNICATIONS | OMC-BSC Link Failure % BSC unreachable |  123|  211|   55|  336|  725
+ ENVIRONMENTAL |  BTS-EXTERNAL [9] External Low Voltage [90] |  123|  211|   55|  336|  725
+ ENVIRONMENTAL |  BTS-EXTERNAL [9] External low voltage [90] |  123|  211|   55|  336|  725
+ ENVIRONMENTAL |  BTS-EXTERNAL [9] Externel Low Voltage [90] |  123|  211|   55|  336|  725
+ ENVIRONMENTAL |  BTS-EXTERNAL [9] Fire Alarm [86] |  123|  211|   55|  336|  725
+ ENVIRONMENTAL |  BTS-EXTERNAL [9] Low Voltage Hub [95] |  123|  211|   55|  336|  725
+ ENVIRONMENTAL |  BTS-EXTERNAL [9] Low voltage HUB [95] |  123|  211|   55|  336|  725
+ ENVIRONMENTAL |  BTS-EXTERNAL [9] MFS Rectifier Major [93] |  123|  211|   55|  336|  725
+ ENVIRONMENTAL |  BTS-EXTERNAL [9] MFS Rectifier Minor [94] |  123|  211|   55|  336|  725
+ ENVIRONMENTAL |  BTS-EXTERNAL [9] window override [85] |  123|  211|   55|  336|  725
+ ENVIRONMENTAL |                   Fire Alarm |  123|  211|   55|  336|  725
+ EQUIPMENT |    BSC-ENVIRON [32] CONV [0] |  123|  211|   55|  336|  725
+ EQUIPMENT |  ENVIR [5] POWER-SUPPLY-U [11] |  123|  211|   55|  336|  725
+ EQUIPMENT |  Rack 1 Shelf 3 BOARD JBXOMCP Slot 9 |  123|  211|   55|  336|  725
+ EQUIPMENT |                  component 1 |  123|  211|   55|  336|  725
+ EQUIPMENT |                 component 10 |  123|  211|   55|  336|  725
+ EQUIPMENT |                 component 11 |  123|  211|   55|  336|  725
+ EQUIPMENT |                 component 12 |  123|  211|   55|  336|  725
+ EQUIPMENT |                 component 13 |  123|  211|   55|  336|  725
+ EQUIPMENT |                 component 14 |  123|  211|   55|  336|  725
+ EQUIPMENT |                 component 16 |  123|  211|   55|  336|  725
+ EQUIPMENT |                 component 17 |  123|  211|   55|  336|  725
+ EQUIPMENT |                  component 2 |  123|  211|   55|  336|  725
+ EQUIPMENT |                  component 3 |  123|  211|   55|  336|  725
+ EQUIPMENT |                  component 4 |  123|  211|   55|  336|  725
+ EQUIPMENT |                  component 5 |  123|  211|   55|  336|  725
+ EQUIPMENT |                  component 6 |  123|  211|   55|  336|  725
+ EQUIPMENT |                  component 7 |  123|  211|   55|  336|  725
+ EQUIPMENT |                  component 9 |  123|  211|   55|  336|  725
+ EQUIPMENT |     Loss of contact with GPU |  123|  211|   55|  336|  725
+ EQUIPMENT | NE1OE supervision error on GPU board |  123|  211|   55|  336|  725
+ EQUIPMENT |             On free run mode |  123|  211|   55|  336|  725
+ EQUIPMENT |         Voltage out of range |  123|  211|   55|  336|  725
+ PROCESSING ERROR |                      TOMAS B |  123|  211|   55|  336|  725
+ QUALITY OF SERVICE |  CELL [43] LOSS-OF-ALL-CHAN [3] |  123|  211|   55|  336|  725
+ QUALITY OF SERVICE |        Rack 1 Shelf 4 GPU 10 |  123|  211|   55|  336|  725
+ QUALITY OF SERVICE |          Preparation Failure |  123|  211|   55|  336|  725
+ QUALITY OF SERVICE |          Preperation Failure |  123|  211|   55|  336|  725
+ QUALITY OF SERVICE |               Remote TC Drop |  123|  211|   55|  336|  725
+ QUALITY OF SERVICE |       Zero Terminating Calls |  123|  211|   55|  336|  725
+ QUALITY OF SERVICE |                 Zero Traffic |  123|  211|   55|  336|  725

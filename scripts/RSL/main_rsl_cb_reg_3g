@@ -1,0 +1,35 @@
+#!/bin/sh
+
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd  /home/NCOR6649/scripts/RSL/
+
+
+#join -t "," -a1 -o 1.2 2.2 1.5 1.6 1.7 -e "--MISSING--" <(cat /etc/passwd | awk -F: '{$4=sprintf("%06s", $4);print $4","$1","$2","$3","$6","$7","$5}' | sort) <(cat /etc/group | awk -F: '{$3=toupper(sprintf("%06s", $3));print $3","$1}' | sort)
+
+cat /home/NCOR6649/logs/huawei/3g_cell_out_$DAY$MONTH$YEAR_n.txt | nawk 'FS="|" , OFS="|" { gsub(/[ \t]+$/,"",$7);print $0 } ' | sort -u |   nawk 'FS="|" , OFS="|" { n=substr($2,1,8) ; new=substr( n, length(n) - 6, length(n) ) ;print new,$0 } '  |  nawk 'FS="|" , OFS="|" { $1=toupper(sprintf("%07s", $1)) ; print $0 } ' | sort  > C
+dos2unix 3regsheet.csv > 3regsheet1.csv
+cat 3regsheet1.csv | sed "s/,/|/g" > 3regsheet.txt 
+cat 3regsheet.txt  | nawk 'FS="|" , OFS="|" { $1=toupper(sprintf("%07s", $1)) ; print $0 } ' | sort  > D
+
+join -t "|" -a1 -o 2.1,1.2,1.3,1.4,1.5,1.6,2.5,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18  -e "missing" C D  | sed "s/|/,/g" | nawk 'FS="," , OFS="," { gsub(/[ \t]+$/,"",$7);print $0 } ' | sort -u > /home/NCOR6649/logs/3g/3g_cell_out_$DAY$MONTH$YEAR.csv
+
+
+#> /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv
+
+rm -f /home/NCOR6649/logs/3g/3g_cell_out_$DAY$MONTH$YEAR.csv.Z
+rm -f C
+rm -f D
+
+compress /home/NCOR6649/logs/3g/3g_cell_out_$DAY$MONTH$YEAR.csv
+
+
+
+
+
+
+
+ # /home/NCOR6649/logs/rsl/nwd_rsl_$DAY$MONTH$YEAR.csv

@@ -1,0 +1,52 @@
+#!/bin/sh
+
+cd /home/NCOR6649/scripts/san
+
+#echo "************Daily Sanity Checks **********************" > san_ch                                                                                                         
+#echo >> san_ch                                                                                                                                                                       
+                                                     
+echo "==============================" > san_ch                                                                                                                        
+echo "Huawei Daily  event  Omc Data Files" >> san_ch                                                                                                                            
+echo "==============================" >> san_ch                                                                                                                        
+ls -ltrh /home/NCOR6649/logs/huawei/ | tail -10  >> san_ch                                                                                                              
+echo "==============================" >> san_ch                                                                                                                        
+echo "Huawei Daily  Current Alarms  OMC Data Files" >> san_ch   
+echo >> san_ch                                                                                                                    
+echo "==============================" >> san_ch                                                                                                                        
+ls -ltrh  /home/NCOR6649/huawei* | tail -5  >> san_ch                                                                                                                           
+echo "==============================" >> san_ch                                                                                                                        
+echo "ZTE Daily    Files" >> san_ch                                                                                                                                    
+echo "==============================" >> san_ch                                                                                                                        
+ls -ltrh /home/NCOR6649/logs/zte | tail -10  >> san_ch                                                                                                                  
+echo "==============================" >> san_ch                                                                                                                        
+                                                                                                                      
+
+echo "Ericssion Daily Alarms omc data Files" >> san_ch                                                                                                                                    
+echo "==============================" >> san_ch                                                                                                                        
+ls -ltrh /home/NCOR6649/logs/err  | tail -10  >> san_ch                                                                                                                  
+echo "==============================" >> san_ch  
+
+echo "Netecho Daily Alarms omc data Files" >> san_ch                                                                                                                                    
+echo "==============================" >> san_ch                                                                                                                        
+ls -ltrh /home/NCOR6649/logs/netecho |  tail -10   >> san_ch                                                                                                                  
+echo "==============================" >> san_ch  
+
+echo "TXN Daily    Files" >> san_ch                                                                                                                                    
+echo "==============================" >> san_ch                                                                                                                        
+ls -ltrh /home/NCOR6649/logs/txngen/ | tail -3  >> san_ch                                                                                                               
+echo "==============================" >> san_ch  
+
+
+echo "Sotrage stats" >> san_ch
+
+echo "==============================" >> san_ch
+
+df -kh    >> san_ch
+
+echo "==============================" >> san_ch
+                                                                                                                       
+ san_ch=san_ch                                                                                                                                                         
+                                                                                                                                                                       
+                                                                                                                                                                       
+  mailx -s "Daily Sanity Checks" nauman.khan@mobilink.net,noor.huda@mobilink.net,marvi.waheed@mobilink.net,hashim.mushtaq@mobilink.net,farrukh.hussain@mobilink.net,aamir.mahmood@mobilink.net < san_ch 
+

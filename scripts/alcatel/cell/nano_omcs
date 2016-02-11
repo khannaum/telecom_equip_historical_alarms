@@ -1,0 +1,25 @@
+#!/usr/bin/sh
+
+cd /home/NCOR6649/scripts/alcatel/cell
+
+bss=`cat /home/NCOR6649/logs/nano/nan_bsc.txt |  nawk 'FS="|" ,OFS="|" { print $3 } ' |  sed -e 's/"//' -e 's/\"//' -e "s/\'//"`
+cat /home/NCOR6649/logs/nano/nan_site_cell.txt |  nawk ' FS="|" ,OFS="|" { if(NF<7){split($3,bs," ");print bs[1],$4} } ' > bsc_nano
+
+for i in ` cat bsc_nano`
+do
+
+a=`echo $i | nawk ' FS="|" ,OFS="|" { print $1 }'`
+ 
+b=`echo $i | nawk ' FS="|",OFS="|" { print $2 }'` 
+
+
+#echo $a
+
+
+
+
+ cat /home/NCOR6649/logs/nano/nan_site_cell.txt |  grep $a | nawk -v site=$b -v bsc=$bss  ' FS="|" ,OFS="|" { if(NF>5){ split($5,bs," ");split($4,cell,"-");print "ipaccess","Nano",bsc,bs[1],bs[1],site,cell[3],cell[4] }  } ' >> /home/NCOR6649/logs/cell/taskdata/nwd_bsc_bts_cell   
+
+#echo  $a$b
+
+done

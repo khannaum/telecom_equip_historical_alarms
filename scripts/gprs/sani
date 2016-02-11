@@ -1,0 +1,26 @@
+total 220
+drwxrwxrwx   2 NCOR6649 omcread      512 Jul 25 09:43 evt
+-rw-r--rw-   1 NCOR6649 omcread     4370 Aug 13 08:41 search.pl
+-rw-r--rw-   1 NCOR6649 omcread     6584 Aug 13 08:41 dift
+-rw-r--rw-   1 NCOR6649 omcread     2562 Aug 13 08:41 td.c
+-rw-r--rw-   1 NCOR6649 omcread     2930 Aug 13 08:41 first_no
+-rw-r--rw-   1 NCOR6649 omcread     2923 Aug 13 08:41 first
+-rw-r--rw-   1 NCOR6649 omcread     1654 Aug 13 08:41 mot_c
+-rw-r--rw-   1 NCOR6649 omcread     2323 Aug 13 08:41 get_rsl_m
+-rw-r--rw-   1 NCOR6649 omcread     1075 Aug 13 08:41 main_rsl_org
+-rw-r--rw-   1 NCOR6649 omcread     1603 Aug 13 08:41 ll
+-rw-r--rw-   1 NCOR6649 omcread     1429 Aug 13 08:41 get_rsl_s
+-rw-r--rw-   1 NCOR6649 omcread     1493 Aug 13 08:41 get_rsl_n.bk
+-rw-r--rw-   1 NCOR6649 omcread     1508 Aug 13 08:41 get_rsl_n
+-rw-r--rw-   1 NCOR6649 omcread     1429 Aug 13 08:41 get_rsl_c2
+-rw-r--rw-   1 NCOR6649 omcread     1429 Aug 13 08:41 get_rsl_c1
+-rw-r--rw-   1 NCOR6649 omcread      339 Aug 13 08:41 main_rsl_mod
+-rw-r--rw-   1 NCOR6649 omcread      381 Aug 13 08:41 ff
+-rw-r--rw-   1 NCOR6649 omcread      780 Aug 13 08:41 dift.c
+-rw-r--rw-   1 NCOR6649 omcread      260 Aug 13 08:41 sep_bsc_site_date
+-rw-r--rw-   1 NCOR6649 omcread      150 Aug 13 08:41 nohup.out
+-rw-r--rw-   1 NCOR6649 omcread       30 Aug 13 08:41 getmain1
+-rw-r--rw-   1 NCOR6649 omcread      116 Aug 13 08:41 dep_sep
+-rw-r--rw-   1 NCOR6649 omcread     1914 Jan 11 15:48 main_gprs
+-rwxrwxrwx   1 NCOR6649 omcread    60576 Jan 11 15:58 indexs
+-rw-rw-r--   1 NCOR6649 omcread        0 Jan 11 17:04 sani

@@ -1,0 +1,82 @@
+#!/usr/perl5/5.6.1/bin/perl
+my ($hostname,$username,$passwd);
+
+#$hostname="10.31.24.25";
+#$username="nocfm";
+#$passwd="Mobilink123";
+
+$hostname="$ARGV[0]";
+
+$hostname="$ARGV[0]";
+$username="$ARGV[1]";
+$passwd="$ARGV[2]";
+
+
+
+
+ print $hostname,$username,$passwd;
+## Connect & Login
+use lib '/home/oann/logs/core/net';
+use Net::Telnet();
+
+$host=new Net::Telnet (Timeout => 100,Prompt => '/mml>/');
+
+# $host -> open($hostname); $host -> login($username,$passwd);
+
+
+
+$, = ' ';		# set output field separator
+$\ = "\n";		# set output record separator
+
+$FS = '|';
+#   OFS="|"
+
+
+
+        
+     # @cmd1=$host->cmd("LST TDMTID: TIDFVDEC=$Fld4 ;" )   ;
+
+       # print $_;
+       # print $ARGV[0],$ARGV[1]; 
+       # print @cmd1 ;
+
+#($a)=split(/[|\n]/, $ARGV[1],9999);
+#print $a;
+#@cmd1=$host->cmd("LST TDMTID: TIDFVDEC=$a ;" )   ;
+#print @cmd1;
+
+open(A, "<lk");
+my(@lines) = <A>; # read file into list
+my($line);
+foreach $line (@lines) # loop thru list
+{
+chomp;
+
+($a,$b,$c,$d,$e,$f,$g,$h,$i)=split(/[|\n]/,$line,9999);
+
+($ff,$gg)=split(/[-\n]/,$h,9999);
+
+   my $lop=$h ;
+
+   my $lop2 ;
+
+  while($lop2=$lop)
+
+  {
+      print " Start==========" ;
+      ($a1,$b1,$c1,$d1,$e1,$f1,$g1,$h1,$i1)=split(/[|\n]/,<A>,9999);
+
+      print $h1 ;
+
+      $lop2=$h1 ;
+
+   } 
+   print " Stop =====" ;
+
+print "line:",$line;
+
+# @cmd1=$host->cmd("LST TDMTID: TIDFVDEC=$ff ;" )   ;
+# print @cmd1;
+
+}
+

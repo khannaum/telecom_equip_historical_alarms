@@ -1,0 +1,55 @@
+import sys
+# Create 2 arrays which will contain independently the vendor and the omc:
+# 1 - Initialize your array containing your 'vendor'
+vendor = []
+# 2 - Initialize your array containing your 'omc'
+omc = []
+bsc =[]
+site=[]
+cells=[]
+
+# BSC,Sites,Cells
+
+# Opening file for reading. The path of the file is given in argument
+open_file = open(sys.argv[1], 'r')
+
+for line in open_file:
+    # 'line' is a line in your file
+
+    # We make sure that 'line' is non-empty
+    if line:
+        # for each line in your file, we read something like this: 
+        # subject---omc
+        # We need to split the different information, which are separated by '---'
+        information = line.split(',')
+
+        # 'information' is an array containing 2 values:
+        # 'information[0]' contains the subject
+        # 'information[1]' contains the mark
+
+        # We store each separate information in our arrays 'vendor' and 'omc':
+        vendor.append(information[0])
+        omc.append(information[1])
+        bsc.append(information[2])
+        site.append(information[3])
+        cells.append(information[4])
+      
+# When finishing reading the file, we close it    
+open_file.close()
+
+# Now that all the data inside the file has been read, and store in our arrays
+#    we have to use it to create / print it in an HTML table
+
+# Print opening HTML tags -------------------------
+print "<html>"
+print "<body>" 
+print "<table>"
+
+# Print the content of the table, line by line ----
+print "<tr style=height: 60.8pt>"
+for i in range(0, len(vendor)):
+    print "<tr><td>"+vendor[i]+"</td><td>"+omc[i]+"</td></tr>"
+    #+bsc[i]+"</td></tr>"+site[i]+"</td></tr>"+cells[i]+"</td></tr>"
+
+# Print closing HTML tags -------------------------
+print "</table></body></html>"    

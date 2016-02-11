@@ -1,0 +1,187 @@
+#!/bin/sh
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+
+cd /home/NCOR6649/scripts/eas
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+# ====================R1========================================
+# === Genset ====
+echo "Genset"
+hr1g_pc=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $20!=0){print $0} } ' |    wc -l`
+hr1g_npc=`cat new_reg | /usr/xpg4/bin/grep -v -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $20!=0){print $0} } ' |    wc -l`
+echo "mains_falure"
+# === Mains_failure ====
+hr1m_pc=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $21!=0){print $0} } ' |    wc -l`
+hr1m_npc=`cat new_reg | /usr/xpg4/bin/grep -v -f /home/NCOR6649/scripts/daily_gen/ts.txt  | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $21!=0){print $0} } ' |    wc -l`
+
+echo "sob"
+# === Mains_failure ====
+hr1s_pc=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $22!=0){print $0} } ' |    wc -l`
+hr1s_npc=`cat new_reg | /usr/xpg4/bin/grep -v -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $22!=0){print $0} } ' |    wc -l`
+
+# === Low Voltage ====
+echo "low"
+hr1l_pc=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $23!=0){print $0} } ' |    wc -l`
+hr1l_npc=`cat new_reg | /usr/xpg4/bin/grep -v -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R1/ && $23!=0){print $0} } ' |    wc -l`
+
+# Huawei Power Cube * Non Power Cube 
+echo "Huawei Power Cube * Non Power Cube"
+hr1_pc=`cat regsheet_n.txt | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/&& $14~/R1/ ){print $0} } ' |    wc -l`
+hr1_npc=`cat regsheet_n.txt | /usr/xpg4/bin/grep -v -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/&& $14~/R1/ ){print $0} } ' |    wc -l`
+
+#==== Genset
+echo "Ercisson Genset"
+er1g_od=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/od  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $20!=0){print $0} } ' |    wc -l`
+er1g_in=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/in  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $20!=0){print $0} } ' |    wc -l`
+
+#==== Mains Failure
+er1m_od=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/od  |  nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $21!=0){print $0} } ' |    wc -l`
+er1m_in=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/in  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $21!=0){print $0} } ' |    wc -l`
+
+#=== System on Batteries
+er1s_od=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/od  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $22!=0){print $0} } ' |    wc -l`
+er1s_in=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/in  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $22!=0){print $0} } ' |    wc -l`
+
+#=== Low Voltage
+er1l_od=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/od  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $23!=0){print $0} } ' |    wc -l`
+er1l_in=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/in  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R1/ && $23!=0){print $0} } ' |    wc -l`
+
+# Ercisson Indoor & outdoor 
+er1_od=`cat regsheet_n.txt | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/od  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/&& $14~/R1/ ){print $0} } ' |    wc -l`
+er1_in=`cat regsheet_n.txt | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/in  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/&& $14~/R1/ ){print $0} } ' |    wc -l`
+
+
+ar1g=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/ZTE/ && $14~/R1/ && $19!=0){print $0} } ' |    wc -l`
+ar1m=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/ZTE/ && $14~/R1/ && $20!=0){print $0} } ' |    wc -l`
+ar1s=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/ZTE/ && $14~/R1/ && $21!=0){print $0} } ' |    wc -l`
+ar1l=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/ZTE/ && $14~/R1/ && $22!=0){print $0} } ' |    wc -l`
+ar1=`cat regsheet_n.txt | nawk 'FS="|" , OFS="|" { if($4~/ZTE/&& $14~/R1/ ){print $0} } ' |    wc -l`
+
+# ====================R2========================================
+# === Genset ====
+hr2g_pc=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $20!=0){print $0} } ' |    wc -l`
+hr2g_npc=`cat new_reg | /usr/xpg4/bin/grep -v -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $20!=0){print $0} } ' |    wc -l`
+# === Mains_failure ====
+hr2m_pc=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $21!=0){print $0} } ' |    wc -l`
+hr2m_npc=`cat new_reg | /usr/xpg4/bin/grep -v -f /home/NCOR6649/scripts/daily_gen/ts.txt  | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $21!=0){print $0} } ' |    wc -l`
+
+# === Mains_failure ====
+hr2s_pc=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $22!=0){print $0} } ' |    wc -l`
+hr2s_npc=`cat new_reg | /usr/xpg4/bin/grep -v -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $22!=0){print $0} } ' |    wc -l`
+
+# === Low Voltage ====
+hr2l_pc=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $23!=0){print $0} } ' |    wc -l`
+hr2l_npc=`cat new_reg | /usr/xpg4/bin/grep -v -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/ && $14~/R2/ && $23!=0){print $0} } ' |    wc -l`
+
+# Huawei Power Cube * Non Power Cube 
+hr2_pc=`cat regsheet_n.txt | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/&& $14~/R2/ ){print $0} } ' |    wc -l`
+hr2_npc=`cat regsheet_n.txt | /usr/xpg4/bin/grep -v -f /home/NCOR6649/scripts/daily_gen/ts.txt | nawk 'FS="|" , OFS="|" { if($4~/Huawei/&& $14~/R2/ ){print $0} } ' |    wc -l`
+
+#==== Genset
+er2g_od=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/od  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $20!=0){print $0} } ' |    wc -l`
+er2g_in=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/in  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $20!=0){print $0} } ' |    wc -l`
+
+#==== Mains Failure
+er2m_od=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/od  |  nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $21!=0){print $0} } ' |    wc -l`
+er2m_in=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/in  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $21!=0){print $0} } ' |    wc -l`
+
+#=== System on Batteries
+er2s_od=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/od  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $22!=0){print $0} } ' |    wc -l`
+er2s_in=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/in  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $22!=0){print $0} } ' |    wc -l`
+
+#=== Low Voltage
+er2l_od=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/od  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $23!=0){print $0} } ' |    wc -l`
+er2l_in=`cat new_reg | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/in  | nawk 'FS="|" , OFS="|" { if($4~/Ericsson/ && $14~/R2/ && $23!=0){print $0} } ' |    wc -l`
+
+# Ercisson Indoor & outdoor 
+er2_od=`cat regsheet_n.txt |  nawk 'FS="|" , OFS="|" { if($4~/Ericsson/&& $14~/R2/ ){print $0} } '  |   nawk 'FS="|" , OFS="|" { print $1 }'  | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/od  |    wc -l`
+er2_in=`cat regsheet_n.txt |  nawk 'FS="|" , OFS="|" { if($4~/Ericsson/&& $14~/R2/ ){print $0} } '  |   nawk 'FS="|" , OFS="|" { print $1 }'  | /usr/xpg4/bin/grep -E -f /home/NCOR6649/scripts/RSL/in  |    wc -l`
+
+
+ar2g=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/ZTE/ && $14~/R2/ && $20!=0){print $0} } ' |    wc -l`
+ar2m=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/ZTE/ && $14~/R2/ && $21!=0){print $0} } ' |    wc -l`
+ar2s=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/ZTE/ && $14~/R2/ && $22!=0){print $0} } ' |    wc -l`
+ar2l=`cat new_reg | nawk 'FS="|" , OFS="|" { if($4~/ZTE/ && $14~/R2/ && $23!=0){print $0} } ' |    wc -l`
+ar2=`cat regsheet_n.txt | nawk 'FS="|" , OFS="|" { if($4~/ZTE/&& $14~/R2/ ){print $0} } ' |    wc -l`
+
+
+
+echo "********* No of sites with Alarms Appear on last Seven Days**********" > cell_ste
+echo "         R1                            "  >> cell_ste
+echo "=================================================================" >> cell_ste
+
+echo "Vendor|Total|Main Failure|Low Voltage|System on Battery|Genset On" >> cell_ste
+echo "=================================================================" >> cell_ste
+
+echo "Huawei  |$hr1|$hr1m|$hr1l|$hr1s|$hr1g" >> cell_ste
+echo "Ericsson|$er1|$er1m|$er1l|$er1s|$er1g" >> cell_ste
+echo "ZTE|$ar1|$ar1m|$ar1l|$ar1s|$ar1g" >> cell_ste
+
+echo "                                         " >> cell_ste
+
+echo "         R2                            "  >> cell_ste
+echo "================================================================="  >> cell_ste
+
+echo "Vendor|Total|Main Failure|Low Voltage|System on Battery|Genset On"  >> cell_ste
+echo "================================================================="  >> cell_ste
+
+echo "Huawei  |$hr2|$hr2m|$hr2l|$hr2s|$hr2g" >> cell_ste
+echo "Ericsson|$er2|$er2m|$er2l|$er2s|$er2g" >> cell_ste
+echo "ZTE|$ar2|$ar2m|$ar2l|$ar2s|$ar2g" >> cell_ste
+
+
+echo "SITE|OCC|CLR|ALARM" > /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+# "Genset & mains failure
+zcat /home/NCOR6649/logs/genset/nwd1_gen_run_$DAY$MONTH$YEAR.Z /home/NCOR6649/logs/genset/nwd1_gen_run_excl_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"GEN" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/netecho/nwd_mains_fail_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"MF" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+# system on batteries
+zcat /home/NCOR6649/logs/err/erc_sob_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"SOB" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/zte/zte_eas_$YEAR$MONTH$DAY.Z | grep -i "SYSTEM" | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"SOB" } ' >>  /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+# Low voltage
+zcat /home/NCOR6649/logs/err/erc_low_$DAY$MONTH$YEAR.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"LOW" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/low_vol/nwd_low_vol_$DAY$MONTH$YEAR.txt.Z | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"LOW" } '  >> /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+zcat /home/NCOR6649/logs/zte/zte_eas_$YEAR$MONTH$DAY.Z | grep -i "LOW VOL" | nawk 'FS="|" , OFS="|" { print $2,$3,$4,"LOW" } ' >>  /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+rm -f /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv.Z
+
+compress /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv
+
+nwd_cell=nwd_eas_$DAY$MONTH$YEAR.csv
+
+echo "$DAY/$MONTH/$YEAR|R1|Huawei|Power_Cube|$hr1_pc|$hr1m_pc|$hr1l_pc|$hr1s_pc|$hr1g_pc" > cell_ste
+echo "$DAY/$MONTH/$YEAR|R1|Huawei|Non Power_Cube|$hr1_npc|$hr1m_npc|$hr1l_npc|$hr1s_npc|$hr1g_npc" >> cell_ste
+
+echo "$DAY/$MONTH/$YEAR|R1|Ericsson|OutDoor|$er1_od|$er1m_od|$er1l_od|$er1s_od|$er1g_od" >> cell_ste
+echo "$DAY/$MONTH/$YEAR|R1|Ericsson|InDoor|$er1_in|$er1m_in|$er1l_in|$er1s_in|$er1g_in" >> cell_ste
+
+echo "$DAY/$MONTH/$YEAR|R1|ZTE||$ar1|$ar1m|$ar1l|$ar1s|$ar1g" >> cell_ste
+
+echo "$DAY/$MONTH/$YEAR|R2|Huawei|Power_Cube|$hr2_pc|$hr2m_pc|$hr2l_pc|$hr2s_pc|$hr2g_pc" >> cell_ste
+echo "$DAY/$MONTH/$YEAR|R2|Huawei|Non Power_Cube|$hr2_npc|$hr2m_npc|$hr2l_npc|$hr2s_npc|$hr2g_npc" >> cell_ste
+
+
+echo "$DAY/$MONTH/$YEAR|R2|Ericsson|OutDoor|$er2_od|$er2m_od|$er2l_od|$er2s_od|$er2g_od" >> cell_ste
+echo "$DAY/$MONTH/$YEAR|R2|Ericsson|InDoor|$er2_in|$er2m_in|$er2l_in|$er2s_in|$er2g_in" >> cell_ste
+
+echo "$DAY/$MONTH/$YEAR|R2|ZTE||$ar2|$ar2m|$ar2l|$ar2s|$ar2g" >> cell_ste
+
+cat cell_ste  | nawk -f awk_html  > new_gen.html
+
+
+cat heading_date | nawk -f awk_html_head > eas_head.html ; cat new_reg_eas | nawk -f awk_html_details >> eas_head.html
+rm -f  eas_head.html.Z
+compress eas_head.html
+
+ksh new_mail_send_eas_final_new
+
+# (cat cell_ste ; /usr/bin/uuencode /home/NCOR6649/logs/eas/nwd_eas_$DAY$MONTH$YEAR.csv.Z  $nwd_cell.Z ) | mailx -s $nwd_cell nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net
+
+#,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net, 

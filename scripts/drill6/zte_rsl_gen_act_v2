@@ -1,0 +1,48 @@
+BEGIN{
+	 FS="\"" 
+	#FS="^\"|\",\"|\"$|\""
+	#FS="/,(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/"
+	 
+	 OFS="|"
+	FPAT="([^,]+)|(\"[^\"]+\")"
+	 
+}
+{
+ 	 
+ 	 #print $7
+ 	 # split for site & sector
+ 	 split($29,ss,",")
+ 	 
+ 	 #split for site
+ 	 split($1,site,",")
+ 	 split(site[3],fsite,"(")
+ 	 split(fsite[1],ffsite," ")
+ 	 #split for alarm & occurance time
+ 	 split($7,alm,",")
+ 	 split(alm[2],falm,"(")
+ 	 
+ 	 split($36,cd," ")
+ 	   split(cd[1],cod,"-")
+ 	  # if($12!~/:/){$12=$14}
+  
+  split(alm[4],od," ")
+  split($5,alarm,",")
+  split(od[1],dod,"-")
+  if($26~/GSM/){$26=$30}
+  split($26,bsc,",")
+  
+  split($3,f1,"_")
+  split($10,alm_s,"(")
+  #print f1[2]
+  if(f1[1]!~/CL/){f1[2]=f1[1] }
+  if(f1[3]~/\(/){f1[2]=f1[3]}
+  #print $12,$14,alm[3]
+  
+  oc=dod[2]"/"dod[3]"/"dod[1]" "od[2] ; cl=cod[2]"/"cod[3]"/"cod[1]" "cd[2]
+   #if(NR>2  && length($36) > 2){print $31,substr(f1[2],1,7),oc,cl,alm_s[1] } 
+   #print $31,substr(f1[2],1,7),oc,cl,alm_s[1]
+   print ffsite[1],ss[3],ss[6],oc
+   #print ffsite[1],ss[3],ss[6],oc
+ }
+END{
+ }

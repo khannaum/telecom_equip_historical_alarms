@@ -1,0 +1,45 @@
+#!/bin/sh
+
+user=`echo 'noc_core'`
+
+password=` echo 'Mobilink123' `
+
+
+#server="10.31.24.25"
+server="10.175.2.24"
+
+#for file in `cat ll`;do echo " ";done
+
+#grep "BSGSM" /usr/gsm/config/global/NE.MAP|awk '{print $2}'>./bss_name
+
+echo " " > ./final
+
+for i in `cat ./gath`
+do
+
+ tid=` echo $i | nawk ' { FS="|" ;print $6 } ' ` 
+ fied=` echo $i | nawk ' { FS="|" ;print $0 } ' ` 
+
+echo $tid  
+
+(echo "$user";sleep 3 ; echo "$password" ; sleep 3; echo "LST TDMTID: TIDFVDEC=$tid ;";echo "\n";sleep 5;) | telnet -c   $server 
+
+#| tr -d '\015' | nawk -f comp2 file=$fied  >> final
+
+#; echo "LST TDMTID: TIDFVDEC=$tid ;"; done ; sleep 15 ) | telnet -c   $server 
+# | tr -d '\015'  
+#| nawk -f comp2 file=$fied 
+ 
+#| nawk -f comp2 file=$fied  >> final
+
+#| tr -d '\015' | nawk -f comp2 file=$fied  >> final 
+
+#perl -e '($_ = join "",<>) =~ s/(\^M)/     /g; print;' < what  > fwhat
+
+#cat what | tr -d '\015'
+
+#cat what | tr -d '\015' > fwhat
+
+#more fwhat | nawk -f comp2 file=$fied  
+
+done

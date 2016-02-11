@@ -1,0 +1,22 @@
+Ericsson Daily  Logs Files
+==============================
+-rw-r--r--   1 NCOR6649 omcread   255985 Feb 10 08:49 erc_act_alm.Z
+-rw-r--r--   1 NCOR6649 omcread    18560 Feb 11 05:44 erc_rsl_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread   184005 Feb 11 05:44 erc_mains_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread    86817 Feb 11 05:44 erc_gen_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread   135961 Feb 11 05:44 erc_sob_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread    45693 Feb 11 05:44 erc_low_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread    12668 Feb 11 06:09 3g_cell_out_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread    19083 Feb 11 06:57 erc_3g_cell.Z
+-rw-r--r--   1 NCOR6649 omcread    73041 Feb 11 07:45 erc_rsl_cell.Z
+-rw-r--r--   1 NCOR6649 omcread     5658 Feb 11 07:49 erc_gprs_week_10022016.Z
+-rw-r--r--   1 NCOR6649 omcread   207255 Feb  2 05:44 /home/NCOR6649/logs/err/erc_mains_01022016.Z
+-rw-r--r--   1 NCOR6649 omcread   204117 Feb  3 05:44 /home/NCOR6649/logs/err/erc_mains_02022016.Z
+-rw-r--r--   1 NCOR6649 omcread   192851 Feb  4 05:44 /home/NCOR6649/logs/err/erc_mains_03022016.Z
+-rw-r--r--   1 NCOR6649 omcread   194803 Feb  5 05:44 /home/NCOR6649/logs/err/erc_mains_04022016.Z
+-rw-r--r--   1 NCOR6649 omcread   175936 Feb  6 05:44 /home/NCOR6649/logs/err/erc_mains_05022016.Z
+-rw-r--r--   1 NCOR6649 omcread   178341 Feb  7 05:44 /home/NCOR6649/logs/err/erc_mains_06022016.Z
+-rw-r--r--   1 NCOR6649 omcread   166095 Feb  8 05:44 /home/NCOR6649/logs/err/erc_mains_07022016.Z
+-rw-r--r--   1 NCOR6649 omcread   178118 Feb  9 05:44 /home/NCOR6649/logs/err/erc_mains_08022016.Z
+-rw-r--r--   1 NCOR6649 omcread   174887 Feb 10 05:44 /home/NCOR6649/logs/err/erc_mains_09022016.Z
+-rw-r--r--   1 NCOR6649 omcread   184005 Feb 11 05:44 /home/NCOR6649/logs/err/erc_mains_10022016.Z

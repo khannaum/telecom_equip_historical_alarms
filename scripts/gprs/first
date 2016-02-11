@@ -1,0 +1,157 @@
+function du(y){
+	
+	 
+ 	  if ($0 ~ /GPRS Unavailable/ && $0 ~ /Critical/ )
+ 	  {
+ 	  dsite=site
+ 	  ddate=date
+ 	  dtime=time
+ 	  dstatus=$11
+ 	  
+ 	   
+ 	   
+ 	  # print dstatus
+ 	    }
+ 	    if ( $0 ~ /GPRS Unavailable/  && $0 ~ /Clear/    )
+ 	      {
+ 	      
+ 	         csite=site
+ 	 	 cdate=date
+ 	  	ctime=time
+ 	  	cstatus=$11
+ 	  	
+ 	  
+ 	   	 # Critical-Clear csite is not equal to dsite		
+ 	   	if ( dsite!="" && csite!="" && csite!=dsite && dstatus=="Critical" && cstatus=="Clear"  )
+ 	  	{
+ 	  	  # printf ("%s|%s|%s|%s|%s\n",dsite,ddate,dtime,"","")  
+ 	           	# printf ("%s|%s|%s|%s|%s\n",csite,"","",cdate,ctime)
+ 	          }
+ 	          
+ 	         if ( dsite!="" && csite!="" && csite==dsite && dstatus=="Critical" && cstatus=="Clear"  )
+ 	  	{
+ 	  	
+ 	  	   printf ("%s|%s|%s|%s|%s\n",csite,ddate,dtime,cdate,ctime)
+ 	  	  
+ 	  	   y=1
+ 	  	   x=y
+ 	          }
+ 	          if (dsite="" && csite!="" && csite!=dsite )
+ 	          {
+ 	           # printf ("%s|%s|%s|%s|%s\n",csite,"","",cdate,ctime)
+ 	            }
+  	        
+ 	        }  
+	
+	}
+function uu(y){
+	
+	  
+ 	  if ($0 ~ /GPRS Unavailable/ && $0 ~ /Clear/ )
+ 	  {
+ 	  dsite=site
+ 	  ddate=date
+ 	  dtime=time
+ 	  dstatus=$11
+ 	  
+ 	  
+ 	   ll=ll+1
+ 	   
+ 	     }
+ 	    if ( $0 ~ /GPRS Unavailable/  && $0 ~ /Clear/ &&  ll > 0   )
+ 	      {
+ 	      
+ 	         csite=site
+ 	 	 cdate=date
+ 	  	ctime=time
+ 	  	cstatus=$11
+ 	  	
+ 	  	# print y
+ 	  
+ 	   	 # Clear-Clear 		
+ 	   	if ( dsite!=""  && csite!="" && x == 0)
+ 	   	{
+ 	  	    printf ("%s|%s|%s|%s|%s\n",dsite,"","",ddate,dtime)  
+ 	           	# printf ("%s|%s|%s|%s|%s\n",csite,"","",cdate,ctime)
+ 	           	# print "Clear"
+ 	           	y=1
+ 	          }
+ 	         } 
+ 	        # print y
+ 	         # return(y)
+ 	         
+	}
+
+function dd (y) {
+	 
+	
+	
+ 	  if ($0 ~ /GPRS Unavailable/ && $0 ~ /Critical/  )
+ 	  {
+ 	  dsite=site
+ 	  ddate=date
+ 	  dtime=time
+ 	  dstatus=$11
+ 	  
+ 	  	   
+ 	  # print dsite,dstatus
+ 	  
+ 	  ll=ll+1
+ 	  }
+ 	   	  
+ 	    if ( $0 ~ /GPRS Unavailable/  && $0 ~ /Critical/ && ll >0   )
+ 	      {
+ 	      
+ 	         csite=site
+ 	 	 cdate=date
+ 	  	ctime=time
+ 	  	cstatus=$11
+ 	  	  #print csite,cstatus
+ 	  
+ 	   	 # Critical-Critical 		
+ 	   	if ( dsite!=""  && csite!="" && x == 0 )
+ 	   	{
+ 	  	     # printf ("%s|%s|%s|%s|%s\n",dsite,ddate,dtime,"","")  
+ 	           	printf ("%s|%s|%s|%s|%s\n",csite,cdate,ctime,"","")
+ 	           	y=1
+ 	           	
+ 	          }
+ 	          d=2
+ 	          
+ 	       
+ 	                
+ 	}         
+	}	
+	
+	
+	
+BEGIN {
+	# print "     BSC/Site                              ","|"," Down_Date ","|","Down_Time","|"," Up_Date", "|" , "Up_Time"
+	# FS="\n";OFS="|";RS="\n"
+	}
+{	
+	 
+ 	  if ($0 ~ /equipmentFailureEvent/ && $0 ~ /CELL/ )
+ 	  {
+ 	 #print $0
+ 	  site=$5 " "$8
+ 	  date=$10
+ 	  time=$11
+ 	  
+ 	  }
+ 	
+ 	x=0
+ 	  du(x); 
+ 	  dd(x);
+ 	  
+ 	    	  
+ 	  uu(x);
+ 	 
+ 	       
+ 		
+ 	       
+  	  
+ 	  
+ }
+
+	

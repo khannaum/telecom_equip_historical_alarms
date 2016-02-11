@@ -1,0 +1,17 @@
+BEGIN{
+	 FS="," ; OFS="|"
+	 split(cols,out,",")
+	# print cols
+}
+NR==2 {
+    for (i=1; i<=NF; i++)
+        ix[$i] = i
+}
+
+NR>2 {
+    for (i in out)
+    	#	print out[i]
+        printf "%s%s", $ix[out[i]], OFS
+    print ""
+    print $ix[Severity]
+}

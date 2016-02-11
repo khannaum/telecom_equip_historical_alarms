@@ -1,0 +1,81 @@
+#!/bin/ksh
+
+#user=`echo '"noc_core"'`
+#echo  "$user"
+#password=` echo '"Mobilink123"' `
+#echo "$password"
+
+server="10.31.24.21"
+cd /home/NCOR6649/scripts/core/hu_act_alm
+Ser=`echo  "\"$server---O&M System\""`
+last=`echo "\"---O&MSystem\""`
+#echo "$Ser"
+
+#for file in `cat ll`;do echo " ";done
+
+#grep "BSGSM" /usr/gsm/config/global/NE.MAP|awk '{print $2}'>./bss_name
+
+# echo " " > ./gath
+
+echo "" > core_alm
+
+echo "" > hu_core_alm 
+
+dos2unix -ascii -850 fip.csv   > mfip.csv;
+
+for i in `cat mfip.csv | perl -e 's/ //g' -w -p -i `
+do
+
+echo $i
+
+#printf $i
+
+msc_name=`printf $i | awk ' { FS="," ;print $1 } '`
+mg_name=`printf $i | awk ' { FS="," ;print $5 } '`
+
+msc=`printf $i | awk ' { FS="," ;print $2 } '`
+m_user=`echo $i | awk ' { FS="," ;print $3 } '`
+m_passwd=`echo $i | awk ' { FS="," ;print $4 } '`
+m_ser=`echo  "\"$msc---O&M System\""`
+
+media=`echo $i | awk ' { FS="," ;print $6 } '`
+md_user=`echo $i | awk ' { FS="," ;print $7 } '`
+md_passwd=`echo $i | awk ' { FS="," ;print $8 } '`
+pt_code=`echo $i | awk ' { FS="," ;print $9 } '`
+echo $m_user
+
+
+
+ user=`echo  "\"$m_user\"" `
+ password=`echo "\"$m_passwd\"" ` 
+
+ echo  $msc
+ echo $user
+
+
+ (echo  "LGI:op=$user,PWd=$password,SER=$m_ser;";sleep 3 ; echo "LST ALMAF: CNT=1000;";sleep 20 ) | telnet  $msc 6000     > core_alm
+
+cat core_alm | nawk -f getmain2 | perl -e 's/  //g' -w -p -i | perl -e 's/, /,/g' -w -p -i | nawk -v ll=$msc_name ' { print ll,"_",$0 } '  >> hu_core_alm
+
+sleep 20
+
+  perl get_mg_alm.pl $media $md_user $md_passwd $pt_code > core_alm 
+
+
+ cat core_alm | nawk -f getmain2 | perl -e 's/  //g' -w -p -i | perl -e 's/, /,/g' -w -p -i | nawk -v ll=$mg_name ' { print ll,"_",$0 } ' >> hu_core_alm 
+
+sleep 20 
+
+
+
+
+done
+
+rm -f hu_core_alm.Z
+
+compress hu_core_alm
+
+hu_core_alm=hu_core_alm_$DAY$MONTH$YEAR
+
+
+/usr/bin/uuencode hu_core_alm.Z $hu_core_alm.txt.Z | mailx -s $hu_core_alm nauman.khan@mobilink.net,sana.saleem@mobilink.net,usman.ar@mobilink.net

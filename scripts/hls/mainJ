@@ -1,0 +1,13 @@
+#!/bin/ksh
+
+
+
+for i in ` cat 1 | awk ' { print $1 } '  `
+do
+for j in ` cat 1 | awk ' { print $1 } '  `
+do
+echo $i
+echo $j
+done
+
+done

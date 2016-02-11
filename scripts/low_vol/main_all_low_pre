@@ -1,0 +1,44 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+72 date +%d`
+YEAR=`TZ=GMT+72 date +%Y`
+MONTH=`TZ=GMT+72 date +%m`
+
+cd /home/NCOR6649/scripts/low_vol 
+
+
+
+
+
+zcat /home/NCOR6649/logs/eas/mot_eas_$DAY-$MONTH.Z | grep -i "low voltage" | sort -u | nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,"Motorola"  }' > /home/NCOR6649/logs/low_vol/nwd_low_vol_prv.txt
+
+zcat /home/NCOR6649/logs/eas/alu_eas_$DAY-$MONTH.Z | grep -i "low voltage" | sort -u | nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,"Alcatel"  }' >> /home/NCOR6649/logs/low_vol/nwd_low_vol_prv.txt
+
+
+zcat /home/NCOR6649/logs/huawei/lapd_genset_low*_vol_$DAY$MONTH$YEAR.txt.Z | sort -u | grep -i "low voltage" |  nawk 'FS="|" , OFS="|" { print $1,$2,$4,$5,"Huawei"  }' >> /home/NCOR6649/logs/low_vol/nwd_low_vol_prv.txt
+
+zcat /home/NCOR6649/logs/zte/daily_zte_low.Z | sort -u | nawk 'FS="|" , OFS="|" { print $0,"ZTE"  }' >> /home/NCOR6649/logs/low_vol/nwd_low_vol_prv.txt
+
+cp /home/NCOR6649/logs/low_vol/nwd_low_vol_prv.txt /home/NCOR6649/logs/low_vol/nwd_low_vol_prv_$DAY$MONTH$YEAR.txt
+
+rm -f  /home/NCOR6649/logs/low_vol/nwd_low_vol_prv_$DAY$MONTH$YEAR.txt.Z /home/NCOR6649/logs/low_vol/nwd_low_vol_prv.txt.Z
+
+
+
+
+compress /home/NCOR6649/logs/low_vol/nwd_low_vol_prv.txt /home/NCOR6649/logs/low_vol/nwd_low_vol_prv_$DAY$MONTH$YEAR.txt
+
+
+ 
+
+
+
+echo "======End======"
+

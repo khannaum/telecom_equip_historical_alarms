@@ -1,0 +1,49 @@
+BEGIN{
+ FS = " "
+# RS="\n"
+# ORS="|"
+OFS="-"
+}
+
+
+#/<BeginEvent>/,/<EndEvent>/{s=$0;l=NR}
+{
+
+if($0~/\+\+\+/){ anode=$2}
+
+if($0~/line:/){
+split($0,file,":")
+}
+
+if($0~/Unauthorized operation/){ print file[2]$0 }
+
+if ($0~/---------------/)
+        
+{
+while ($0!~/END/)
+{
+getline
+
+if ($0!~/END/)
+{
+    if(length($0)>0){
+      #if(length($0) > 38){
+          
+          print file[2]$1,$2,$3,$4,$5,$6  
+     
+      } 
+     
+   
+}
+
+}
+print "\n"
+}
+#print "\n"
+
+
+}
+END {
+#print "===================="
+}
+

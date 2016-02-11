@@ -1,0 +1,41 @@
+#!/bin/sh
+
+
+#
+cd /home/oann/scripts/alcatel
+rm -f omc2
+rm -f omc3
+rm -f omc5
+rm -f omc4
+
+rm -f m_alm_cat
+rm -f alcatel_crt_sumy
+rm -f sum_all_alc 
+
+#######################
+nawk -f alc omc2.txt > omc2
+nawk -f alc omc3.txt > omc3
+ nawk -f alc omc5.txt > omc5
+nawk -f alc omc4.txt > omc4
+
+################
+
+nawk -f get_alm_cat omc2 | sort -u  > m_alm_cat
+nawk -f get_alm_cat omc3 | sort -u  >> m_alm_cat
+ nawk -f get_alm_cat omc5 | sort -u  >> m_alm_cat
+nawk -f get_alm_cat omc4 | sort -u  >> m_alm_cat
+
+
+#####################
+echo "Summary of Critical Alcatel Alarms"
+
+sort -u m_alm_cat | nawk -f s_ct_alm  > alcatel_crt_sumy
+
+######################
+echo "SUMMARY of Alcatel Alarms"
+
+sh sum_alc > sum_all_alc
+
+ cd /home/oann/scripts
+echo "END"
+

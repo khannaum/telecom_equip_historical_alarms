@@ -1,0 +1,7 @@
+
+cat dmi_config_09_Aug_2010.txt  | perl /export/home/scripts/genset/search.pl  -bi 'EVENT' "EVENT CREATION dn=BSS#0 "| nawk -f getmain_bsc > nan_bsc.txt
+
+
+cat dmi_config_09_Aug_2010.txt  | perl /export/home/scripts/genset/search.pl  -bi 'EVENT' "EVENT CREATION dn=BSS#0;SITE#" | nawk -f getmain_site | grep "__" | sed  's/\{//g' | sed  's/\}//g' | sed 's/"//g' > nan_site_cell.txt 
+
+cat dmi_config_09_Aug_2010.txt  | perl /export/home/scripts/genset/search.pl  -bi 'EVENT' "EVENT CREATION dn=BSS#0;BSC#" | nawk -f getmain_cell > nan_opc_dpc.txt

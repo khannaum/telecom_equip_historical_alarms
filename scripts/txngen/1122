@@ -1,0 +1,81 @@
+# Minute   Hour   Day of Month       Month          Day of Week        Command    
+# (0-59)  (0-23)     (1-31)    (1-12 or Jan-Dec)  (0-6 or Sun-Sat)
+
+30 5 * * * /bin/sh /home/NCOR6649/scripts/zte/main_zte 
+30 6 * * * /bin/sh /home/NCOR6649/scripts/RSL/main_rsl
+
+15 11 * * * /bin/sh /home/NCOR6649/scripts/mtl/main_mtl
+
+20 12,13,16,19,22  * * * /bin/sh /home/NCOR6649/scripts/mtl/main_mtl_pta
+15 7 * * * /bin/sh /home/NCOR6649/scripts/alcatel/main_hal
+
+01 7 * * * /bin/sh /home/NCOR6649/scripts/alcatel/main_cal
+30 6 * * * /bin/sh /home/NCOR6649/scripts/alcatel/main_cal
+
+11 9 * * * /bin/sh /home/NCOR6649/scripts/daily_gen/main_all_c_alarms 
+
+35 0 * * * /bin/sh /home/NCOR6649/scripts/alcatel/main_dt
+37 0 * * * /bin/sh /home/NCOR6649/scripts/alcatel/main_dt_new
+
+00 1 * * * /bin/sh /home/NCOR6649/scripts/alcatel/main_dt_com
+00 1 * * * /bin/sh /home/NCOR6649/scripts/alcatel/main_dt_com_new
+
+
+04 0,05,15 * * *  /usr/bin/sh /home/NCOR6649/scripts/act_alm/main_act
+
+ 
+25 8 * * * /usr/bin/sh /home/NCOR6649/scripts/eas/main_eas
+
+30 08,11 * * * /usr/bin/sh /home/NCOR6649/scripts/daily_gen/main_daily_gen
+15 05 * * * /usr/bin/sh /home/NCOR6649/scripts/daily_gen/main_daily_gen_hu
+
+
+15 01 * * * /usr/bin/sh /home/NCOR6649/scripts/daily_gen/main_mot_gen_cur
+45 06 * * * /usr/bin/sh /home/NCOR6649/scripts/daily_gen/main_alu_gen_cur
+
+# 30,20 12 * * * /usr/bin/sh /home/NCOR6649/scripts/tre/main_tre
+
+# 59 * * * * /usr/bin/sh /home/NCOR6649/scripts/tre/main_pta_cur_st
+
+20 08,17  * * *  /usr/bin/sh /home/NCOR6649/scripts/gprs_mot/main_gprs
+
+#20 22 * * 01,03 /usr/bin/sh /home/NCOR6649/scripts/core/h_tg/main_h_tg
+
+#20 12 * * 01,03,05 /usr/bin/sh /home/NCOR6649/scripts/core/hu_c7/main_c7
+
+#30 12 * * 01,03,05 /usr/bin/sh /home/NCOR6649/scripts/core/nsn/main_nsn_c7
+
+#40 22 * * 01,03 /usr/bin/sh /home/NCOR6649/scripts/core/nsn/main_nsn_tg
+
+#50 22 * * 01,03,05 /usr/bin/sh /home/NCOR6649/scripts/core/stp/main_stp
+
+#30 6 * * * /bin/sh /home/NCOR6649/scripts/core/flut/main_h_mtp_flu
+
+#30 7 * * * /bin/sh /home/NCOR6649/scripts/core/mtp_r_fl_h/main_h_mtp_flu
+
+#40 7 * * * /bin/sh /home/NCOR6649/scripts/core/sscp_ssn_pasu/main_sscp_ssn_pasu 
+
+# 30 9,16 * * * /usr/bin/cd /home/NOCCORDT/scripts/ ; pwd ; dristatus
+
+40 7 * * * /bin/sh /home/NCOR6649/scripts/txngen/ftp_nec_hu
+
+40 8 * * * /bin/sh /home/NCOR6649/scripts/low_vol/main_all_low 
+
+45 8 * * * /bin/sh /home/NCOR6649/scripts/daily_gen/main_gen_cb
+
+00 9 * * * /bin/sh /home/NCOR6649/scripts/daily_gen/main_gen_cb_new
+
+#10 9 * * * /bin/sh /home/NCOR6649/scripts/core/hu_act_alm/act_alm
+#05 10,11 * * 1,2,3,4,5 /bin/sh /home/NCOR6649/scripts/txngen/ftp_alm_nec 
+25 9 * * * /bin/sh /home/NCOR6649/scripts/gprs/main_gprs_new
+10 10 * * 0,4 /bin/sh /home/NCOR6649/scripts/gprs/main_gprs_week
+20 9 * * * /bin/sh /home/NCOR6649/scripts/san/main_san
+25 9 * * * /bin/sh /home/NCOR6649/scripts/san/main_san_ch
+30 9 * * * /bin/sh /home/NCOR6649/scripts/san/bsc_site/main_hal
+00 10 * * * /bin/sh /home/NCOR6649/scripts/alcatel/cell/main_nwd_cell
+15 8 * * * /bin/sh /home/NCOR6649/scripts/RSL/main_rsl_cb_final
+45 8 * * * /bin/sh /home/NCOR6649/scripts/netecho/main_netec
+45 9 * * * /bin/sh /home/NCOR6649/scripts/eas/new_mail_send_v2 
+
+# mv kpi scripts
+45 9 * * * /bin/sh /home/NCOR6649/scripts/txngen/main_mvkpi

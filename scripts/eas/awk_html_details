@@ -1,0 +1,8 @@
+BEGIN{ 
+FS="|"
+
+}
+ 
+    {$1="'"$1;printf("<tr> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td>  </tr>\n",$10,$12,$14,$1,$4,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26,$27,$28)}
+    END{ print "</table>" ; print "</body>" ;print "</html>" ; }
+    #print "</table>" ; print "</body>" ;print "</html>" }

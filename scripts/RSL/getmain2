@@ -1,0 +1,17 @@
+BEGIN{
+ ORS="|"
+}
+{ 
+
+if($0~/<BeginEvent>/)
+{
+
+while ( $0 !~ /<EndEvent>/)
+{if(NR==1){print ""};getline ; if($0 !~ /<EndEvent>/ && length($0)>0){print $0} }
+
+print "\n"
+}
+
+
+
+} 

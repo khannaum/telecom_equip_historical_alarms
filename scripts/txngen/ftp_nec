@@ -1,0 +1,98 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+#cd /home/NCOR6649/scripts/RSL
+
+#` cp /home/Motorola/ev_logs/s*.txt.Z /tmp/ev_logs/
+cd /home/NCOR6649/scripts/txngen/
+
+echo $YEAR$MONTH$DAY 
+
+echo "nec"
+ftp -n -p 10.231.70.2 <<EOF
+user noctxn tx9noc1 
+hash
+bin
+cd /var/opt/NEC/PNMSj/log/alarm/
+
+mget  $YEAR$MONTH$DAY*
+
+
+
+bye
+
+EOF
+
+cat $YEAR$MONTH$DAY*.log > 2.log
+
+rm -f $YEAR$MONTH$DAY*.log
+
+
+ftp -n -p 10.231.70.5 <<EOF
+user noctxn tx9noc1
+hash
+bin
+cd /var/opt/NEC/PNMSj/log/alarm/
+
+mget  $YEAR$MONTH$DAY*
+
+
+
+bye
+
+EOF
+ echo "kk"
+cat $YEAR$MONTH$DAY*.log > 5.log
+
+rm -f $YEAR$MONTH$DAY*.log
+
+
+ftp -n -p 10.231.70.1 <<EOF
+user noctxn tx9noc1
+hash
+bin
+cd /var/opt/NEC/PNMSj/log/alarm/
+
+mget  $YEAR$MONTH$DAY*
+
+
+
+
+bye
+
+EOF
+
+cat $YEAR$MONTH$DAY*.log > 1.log
+
+rm -f $YEAR$MONTH$DAY*.log
+
+
+cat *.log | grep -i "genset" > txn_rep_gen_$YEAR$MONTH$DAY
+
+ mv txn_rep_gen_$YEAR$MONTH$DAY /home/NCOR6649/logs/txngen/
+
+ rm -f /home/NCOR6649/logs/txngen/txn_rep_gen_$YEAR$MONTH$DAY.Z
+  compress /home/NCOR6649/logs/txngen/txn_rep_gen_$YEAR$MONTH$DAY
+
+ rm -f *.log
+ 
+
+# 20120307_*.log
+
+
+echo "### End #####"
+
+
+
+ 
+ 

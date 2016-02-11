@@ -1,0 +1,5 @@
+#!/bin/sh
+# export TZ=GMT0
+nawk 'BEGIN {$0 = strftime("%c",ARGV[1]-ARGV[2]);print $4}' 
+# $(date +%s -d "$1") $(date +%s -d "$2")
+

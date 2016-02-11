@@ -1,0 +1,171 @@
+Alarm|Severity|Date
+Active Link Connection Failure|critical|04/01/2014
+Active Multiplexer 0 Loopback Failure|critical|04/01/2014
+Active Multiplexer 1 Loopback Failure|critical|04/01/2014
+AIR CONDITIONER ALARM (3)|minor|04/01/2014
+Alarm Board Failed|investigate|04/01/2014
+All Channels Out Of Sync|major|04/01/2014
+Ancillary Cabinet Over Temperature|investigate|04/01/2014
+Auxiliary Alarm 1|investigate|04/01/2014
+Bad clock source or GCLK calibration requested|investigate|04/01/2014
+Baseband Hopping GSM Timeslot Misalignment|critical|04/01/2014
+Battery Box Temperature High|investigate|04/01/2014
+Bit Error OOS Threshold Exceeded|critical|04/01/2014
+BSC GENSET ON (17)|minor|04/01/2014
+BSC HIGH TEMPERATURE (19)|major|04/01/2014
+BSC INTRUDER (21)|minor|04/01/2014
+BSC LOW FUEL (25)|critical|04/01/2014
+BSC RECTIFIER MINOR (24)|major|04/01/2014
+BTS Cabinet Over Temperature|investigate|04/01/2014
+Call Processing Failure - BSS Detected BSSAP Down|critical|04/01/2014
+Cell Radio Capacity|minor|04/01/2014
+Cell Transmit Power Unachievable|major|04/01/2014
+Circuit Configuration Problem|critical|04/01/2014
+Connectivity Mismatch Between BSC and RXCDR|major|04/01/2014
+Critical Alarm Threshold Exceeded|critical|04/01/2014
+Database Configuration and Hardware Mismatch|major|04/01/2014
+Device Failure|critical|04/01/2014
+Door Open|investigate|04/01/2014
+DSP Channel 0 Audit Failure|major|04/01/2014
+DSP Channel 1 Audit Failure|major|04/01/2014
+DSP Channel 10 Audit Failure|major|04/01/2014
+DSP Channel 11 Audit Failure|major|04/01/2014
+DSP Channel 12 Audit Failure|major|04/01/2014
+DSP Channel 13 Audit Failure|major|04/01/2014
+DSP Channel 14 Audit Failure|major|04/01/2014
+DSP Channel 15 Audit Failure|major|04/01/2014
+DSP Channel 18 Audit Failure|major|04/01/2014
+DSP Channel 19 Audit Failure|major|04/01/2014
+DSP Channel 2 Audit Failure|major|04/01/2014
+DSP Channel 24 Audit Failure|major|04/01/2014
+DSP Channel 25 Audit Failure|major|04/01/2014
+DSP Channel 26 Audit Failure|major|04/01/2014
+DSP Channel 27 Audit Failure|major|04/01/2014
+DSP Channel 28 Audit Failure|major|04/01/2014
+DSP Channel 29 Audit Failure|major|04/01/2014
+DSP Channel 3 Audit Failure|major|04/01/2014
+DSP Channel 4 Audit Failure|major|04/01/2014
+DSP Channel 5 Audit Failure|major|04/01/2014
+DSP Channel 6 Audit Failure|major|04/01/2014
+DSP Channel 7 Audit Failure|major|04/01/2014
+DSP Channel 8 Audit Failure|major|04/01/2014
+DSP Channel 9 Audit Failure|major|04/01/2014
+EGPRS Unavailable - No EGPRS|critical|04/01/2014
+Fan Tray 0 Failure|investigate|04/01/2014
+Fan Tray 1 Failure|investigate|04/01/2014
+Fan Tray 2 Failure|investigate|04/01/2014
+FIRE (7)|critical|04/01/2014
+GCLK Calibration Request|investigate|04/01/2014
+Genet Off (31)|Not a valid alarm|04/01/2014
+Genset 2 on (31)|minor|04/01/2014
+Genset OFF (31)|minor|04/01/2014
+GENSET ON (1)|minor|04/01/2014
+GPRS|Not a valid alarm|04/01/2014
+GPRS - No PDCHs|critical|04/01/2014
+GPRS Unavailable - No GPRS|critical|04/01/2014
+Hard Reset|critical|04/01/2014
+Heat Management System Unit Failure|investigate|04/01/2014
+Heat Management System Unit Failure 1|investigate|04/01/2014
+Heat Management System Unit Failure 2|investigate|04/01/2014
+High Reverse Power|major|04/01/2014
+Hub BTS FIRE (15)|critical|04/01/2014
+Hub BTS GENSET ON (9)|minor|04/01/2014
+Hub BTS HIGH TEMPERATURE (11)|major|04/01/2014
+Hub BTS INTRUDER (13)|minor|04/01/2014
+Hub BTS LOW VOLTAGE (12)|critical|04/01/2014
+Hub BTS M/W RECT MAJ (16)|critical|04/01/2014
+Hub BTS M/W RectMajor (16)|critical|04/01/2014
+Hub BTS RECTIFIER MAJOR (14)|major|04/01/2014
+Hub BTS SURGE AREST FAIL (10)|critical|04/01/2014
+Input Failure|minor|04/01/2014
+Intermittent OCXO Failure|investigate|04/01/2014
+Internal Loopback Audit Failure|investigate|04/01/2014
+INTRUDER (5)|minor|04/01/2014
+Invalid Transceiver Calibration Data|warning|04/01/2014
+KSWX/DSWX in Slot 21 Detected Expanded KSW Matrix|major|04/01/2014
+LAN Connection Failure|major|04/01/2014
+LAN Failure|critical|04/01/2014
+LANX Slot 19 Communication Failure|major|04/01/2014
+Last GSL Failed|critical|04/01/2014
+Last PCU Failed|critical|04/01/2014
+Last RSL Link Failure|critical|04/01/2014
+Last TRAU GDS Failed|critical|04/01/2014
+Last XBL Link Failure|critical|04/01/2014
+Link Disconnected|critical|04/01/2014
+Long-Term-Average Values are Unstable|warning|04/01/2014
+LOW VOLTAGE (4)|critical|04/01/2014
+Low Voltage Disconnect Imminent|major|04/01/2014
+Lower Cage Fan #0 Failure|major|04/01/2014
+Lower Cage Fan #1 Failure|major|04/01/2014
+Lower Cage Fan #2 Failure|major|04/01/2014
+Mains A.C. Supply Failure|investigate|04/01/2014
+Mains A.C. Supply Failure 1|investigate|04/01/2014
+Mains A.C. Supply Failure 2|investigate|04/01/2014
+Memory location is corrupt. Replace GPROC board|warning|04/01/2014
+No Clock Reference Available|warning|04/01/2014
+No connection to alarm board - Alarm Board Removed|investigate|04/01/2014
+No Connection to Alarm Board - Radio OOS|investigate|04/01/2014
+No Redundant Connection to Alarms Board - Radio OOS|investigate|04/01/2014
+NSVC Failure|major|04/01/2014
+Output Failure|minor|04/01/2014
+Over Temperature - Component Damage Imminent|critical|04/01/2014
+Over Temperature Warning|investigate|04/01/2014
+Phase Lock Failure|major|04/01/2014
+Phase Lock Lost|major|04/01/2014
+Power Amplifier Power Low But Functioning|major|04/01/2014
+Power Amplifier Temperature High|critical|04/01/2014
+Power Supply Failure|critical|04/01/2014
+Power Supply Temperature High|investigate|04/01/2014
+Power Supply Unit - Input Failure|major|04/01/2014
+Power Supply Unit - Output Failure|major|04/01/2014
+Power Supply Unit #1 - Over Temperature|major|04/01/2014
+Power Supply Unit #2 - Not Detected|major|04/01/2014
+Power Supply Unit #2 - Output Failure|major|04/01/2014
+Power Supply Unit #2 - Over Temperature|major|04/01/2014
+Power Supply Unit #3 - Not Detected|major|04/01/2014
+Power Supply Unit #3 - Output Failure|major|04/01/2014
+Power Supply Unit #3 - Over Temperature|major|04/01/2014
+Power Supply Unit 0 Failure|major|04/01/2014
+Power Supply Unit 1 Failure|major|04/01/2014
+Power Supply Unit 2 Failure|major|04/01/2014
+Power Supply Unit 3 Failure|major|04/01/2014
+Processor Bus Communication Failure|critical|04/01/2014
+Processor Communication (FORCE DPROC) Failure|critical|04/01/2014
+Processor Failure|critical|04/01/2014
+Receive Matrix Failure|major|04/01/2014
+Receiver Failure|critical|04/01/2014
+Receiver Synthesizer Failure|critical|04/01/2014
+Rectifier Failure|investigate|04/01/2014
+Rectifier Failure 1|investigate|04/01/2014
+Rectifier Failure 2|investigate|04/01/2014
+RECTIFIER MAJOR (6)|minor|04/01/2014
+RECTIFIER MINOR (8)|minor|04/01/2014
+Reference Distribution Module Failure|critical|04/01/2014
+Remote Alarm OOS Threshold Exceeded|critical|04/01/2014
+Remote Alarm OOS Timer (ARTESYN NIB) Expired|critical|04/01/2014
+Remote Alarm OOS Timer Expired|critical|04/01/2014
+Reset Due To Recurring Fault|critical|04/01/2014
+Safe Test Audit Failure|critical|04/01/2014
+Safe Test Audit Failure (ARTESYN NIB)|critical|04/01/2014
+Serial Bus Connection Failure|investigate|04/01/2014
+Signalling Link Failure|critical|04/01/2014
+Smoke Alarm|critical|04/01/2014
+Standby Multiplexer 0 Loopback Failure|major|04/01/2014
+SURGE ARRESTOR FAILURE (2)|critical|04/01/2014
+Synchronization Loss OOS (ARTESYN NIB) Timer Expired|critical|04/01/2014
+Synchronization Loss OOS Threshold Exceeded|critical|04/01/2014
+Synchronization Loss OOS Timer Expired|critical|04/01/2014
+Timeslot 0 Configuration Failure|critical|04/01/2014
+Timeslot 1 Configuration Failure|critical|04/01/2014
+Timeslot 4 Configuration Failure|critical|04/01/2014
+Timeslot 5 Configuration Failure|critical|04/01/2014
+Timeslot 6 Configuration Failure|critical|04/01/2014
+Timeslot 7 Configuration Failure|critical|04/01/2014
+Transmitter Failure - Output Power|critical|04/01/2014
+TRAU Frame Synchronization Loss|investigate|04/01/2014
+Trunk Critical Threshold Exceeded|critical|04/01/2014
+Trunk Major Threshold Exceeded|major|04/01/2014
+Unlocked Device Not In Service|investigate|04/01/2014
+Upper Cage Fan #3 Failure|minor|04/01/2014
+Urgent Critical Alarm|investigate|04/01/2014
+Watchdog Timer Expired|critical|04/01/2014

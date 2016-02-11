@@ -1,0 +1,49 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT+24 date +%d`
+YEAR=`TZ=GMT+24 date +%Y`
+MONTH=`TZ=GMT+24 date +%m`
+
+cd /home/NCOR6649/scripts/low_vol 
+
+
+
+
+
+zcat /home/NCOR6649/logs/eas/mot_eas_$DAY-$MONTH.Z | grep -i "low voltage" | sort -u |nawk 'FS="|" , OFS="|" { print $1,$2,"",$3,$4,$5 } ' |  perl /home/NCOR6649/scripts/daily_gen/perl_d_gen_mot.pl | nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,"Motorola"  }' > /home/NCOR6649/logs/low_vol/nwd_low_vol.txt
+
+zcat /home/NCOR6649/logs/eas/alu_eas_$DAY-$MONTH.Z | grep -i "low voltage" | sort -u | nawk 'FS="|" , OFS="|" { print $1,$2,"",$3,$4,$5 } ' |  perl /home/NCOR6649/scripts/daily_gen/perl_d_gen_alu.pl | nawk 'FS="|" , OFS="|" { print $1,$2,$3,$4,"Alcatel"  }' >> /home/NCOR6649/logs/low_vol/nwd_low_vol.txt
+
+
+zcat /home/NCOR6649/logs/huawei/lapd_genset_low*_vol_$DAY$MONTH$YEAR.txt.Z | grep -i "low voltage" | sort -u | perl /home/NCOR6649/scripts/daily_gen/perl_d_gen.pl | nawk 'FS="|" , OFS="|" { print $0,"Huawei"  }' >> /home/NCOR6649/logs/low_vol/nwd_low_vol.txt
+
+# zcat /home/NCOR6649/logs/zte/daily_zte_low.Z | sort -u | nawk 'FS="|" , OFS="|" { print $0,"ZTE"  }' >> /home/NCOR6649/logs/low_vol/nwd_low_vol.txt
+
+cp /home/NCOR6649/logs/low_vol/nwd_low_vol.txt /home/NCOR6649/logs/low_vol/nwd_low_vol_$DAY$MONTH$YEAR.txt
+
+rm -f  /home/NCOR6649/logs/low_vol/nwd_low_vol_$DAY$MONTH$YEAR.txt.Z /home/NCOR6649/logs/low_vol/nwd_low_vol.txt.Z
+
+
+
+
+compress /home/NCOR6649/logs/low_vol/nwd_low_vol.txt /home/NCOR6649/logs/low_vol/nwd_low_vol_$DAY$MONTH$YEAR.txt
+
+
+ 
+mot_rsl=nwd_low_vol_$DAY$MONTH$YEAR
+
+echo " This file contain all vendors Low Voltage Alarms parsed for one day $DAY$MONTH$YEAR " > low 
+
+( cat low ; /usr/bin/uuencode /home/NCOR6649/logs/low_vol/nwd_low_vol_$DAY$MONTH$YEAR.txt.Z $mot_rsl.txt.Z ) | mailx -s $mot_rsl nauman.khan@mobilink.net,muhammad.salman@mobilink.net,usman.ar@mobilink.net,NOOR.HUDA@mobilink.net
+
+
+
+echo "======End======"
+

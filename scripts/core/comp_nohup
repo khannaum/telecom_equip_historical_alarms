@@ -1,0 +1,39 @@
+BEGIN{
+ FS = " "
+
+# ORS="|"
+OFS="|"
+#Office direction name  Trunk group name  Network indicator  OPC     DPC     Circuit type  Start CIC  End CIC.  Start TID.  E
+#nd TID.  Module No.  Start Circuit No.  End Circuit No.  Server name  Domain name  Total Installed Circuits
+}
+
+
+#/<BeginEvent>/,/<EndEvent>/{s=$0;l=NR}
+{
+
+if($0~/\+\+\+/){ anode=$2}
+if ($0~/l/)
+       
+{
+
+while ($0!~/l/)
+{
+getline
+
+if ($0!~/l/)
+{
+
+  print $0 
+}
+
+}
+print "\n"
+}
+#print "\n"
+
+
+}
+END {
+#print "===================="
+}
+

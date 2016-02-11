@@ -1,0 +1,17 @@
+Node,IP,Login,Password
+STP1-LHR,10.20.20.70,noc,mobilink123
+STP1-LHR,10.20.20.71,noc,mobilink123
+STP2-LHR,10.20.20.72,noc,mobilink123
+STP2-LHR,10.20.20.73,noc,mobilink123
+STP1-FSD,10.180.20.70,noc,mobilink1
+STP1-FSD,10.180.20.71,noc,mobilink1
+STP2-FSD,10.180.20.72,noc,mobilink1
+STP2-FSD,10.180.20.73,noc,mobilink1
+STP1-ISB,10.171.30.11,noc,stp321
+STP1-ISB,10.171.30.12,noc,stp321
+STP2-ISB,10.171.30.21,noc,stp321
+STP2-ISB,10.171.30.22,noc,stp321
+STP1-KHI,10.159.30.11,noc,mobilink123
+STP1-KHI,10.159.30.12,noc,mobilink123
+STP2-KHI,10.159.30.21,noc,mobilink123
+STP2-KHI,10.159.30.22,noc,mobilink123

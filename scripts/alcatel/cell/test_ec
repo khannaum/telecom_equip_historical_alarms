@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=` date +%d`
+YEAR=` date +%Y`
+MONTH=` date +%m`
+
+
+echo  BSSConf.alcomc1."$YEAR$MONTH$DAY"05*

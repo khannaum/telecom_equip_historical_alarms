@@ -1,0 +1,24 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+zcat /tmp/ev_logs/s*.txt.Z  | perl search.pl -l "Last RSL Link Failure" | nawk -f first > n_rsl.txt
+
+nawk -f getmain1 n_rsl.txt|sort -u  > indexs
+
+  nawk -f get_rsl_n n_rsl.txt > /tmp/ev_logs/evt.txt 
+rm -f n_rsl.txt
+
+
+
+
+echo "### End #####"
+
+
+
+ 
+ 

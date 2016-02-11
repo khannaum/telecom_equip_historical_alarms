@@ -1,0 +1,30 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT date +%d`
+YEAR=`TZ=GMT date +%Y`
+MONTH=`TZ=GMT date +%m`
+
+cd /home/NCOR6649/scripts/daily_gen 
+
+
+
+
+
+
+zcat /home/NCOR6649/huawei*.txt.Z | /usr/xpg4/bin/grep -i -E "gen|DG Running|GenSet" | nawk 'FS="," , OFS="|" { print $1,$2,$5,$3 } ' > /home/NCOR6649/daily_h_gen.txt
+
+ 
+
+echo "### End #####"
+
+
+
+ 
+ 

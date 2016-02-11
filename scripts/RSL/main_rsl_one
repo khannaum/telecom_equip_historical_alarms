@@ -1,0 +1,43 @@
+#!/bin/sh
+
+
+
+jj="27-09"
+## jj=`date '+%d-%m'`
+# first for North
+echo "###start North####"
+
+DAY=`TZ=GMT24 date +%d`
+YEAR=`TZ=GMT24 date +%Y`
+MONTH=`TZ=GMT24 date +%m`
+
+cd /home/oann/scripts/RSL
+
+# perl sunfire2.pl
+
+#cp /home/Motorola/ev_logs/*.txt.Z /tmp/ev_logs/
+ 
+zcat /tmp/ev_logs/*-06-06.txt.Z  | perl search.pl -l "Last RSL Link Failure" | perl search.pl -l -v "HANDLING" |nawk -f first > n_rsl.txt
+
+nawk -f getmain1 n_rsl.txt|sort -u  > indexs
+
+ nawk -f get_rsl_n n_rsl.txt | sort -u | nawk -f sep_bsc_site_date > /home/oann/logs/rsl/all_mot_rsl_site_$DAY-$MONTH 
+
+ rm -f /home/oann/logs/rsl/all_mot_rsl_site_$DAY-$MONTH.Z
+
+ compress /home/oann/logs/rsl/all_mot_rsl_site_$DAY-$MONTH 
+
+ rm -f n_rsl.txt
+
+
+
+
+
+
+
+echo "### End #####"
+
+
+
+ 
+ 
